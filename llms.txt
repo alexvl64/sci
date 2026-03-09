@@ -1,0 +1,59 @@
+# SparkCore Investment OÜ
+
+> Registered alternative investment fund manager (AIFM) based in Estonia, specialising in crypto-assets.
+
+SparkCore Investment OÜ is an alternative investment fund manager incorporated in Estonia (registry no. 16265864), operating under the Small Fund Manager regime supervised by the Finantsinspektsioon (EFSA). The company manages funds invested in crypto-assets, targeting professional investors, institutional investors, and family offices. Accounting is handled by KPMG Estonia.
+
+## Funds
+
+### Dynamic Trends
+- Risk level: high, actively managed
+- Strategy: directional exposure to crypto-assets, targeting outperformance relative to Bitcoin
+- Status: operational since 01/08/2025
+- Documentation: https://sparkcore.fund/factsheets/dynamic-trends
+
+### CryptoVision
+- Risk level: moderate
+- Strategy: algorithmic defensive approach, targeting consistent returns with controlled volatility
+- Status: operational since 01/02/2021
+- Documentation: https://sparkcore.fund/factsheets/cryptovision
+
+### Equinoxe
+- Risk level: low
+- Strategy: market-neutral (delta-neutral and beta-neutral)
+- Status: planned launch in 2026
+
+## Regulatory Structure
+
+- Legal entity: SparkCore Investment OÜ, Estonian registry no. 16265864
+- Regime: Small Fund Manager registered with the Finantsinspektsioon (EFSA)
+- EFSA registry: https://www.fi.ee/en/guides/fund-management-companies/investment-market/small-fund-managers-without-activity-licence/sparkcoreinvestment-ou
+- Financial Institution licence: EFIU (KYC/AML) — https://mtr.ttja.ee/taotluse_tulemus/609065
+- Investment vehicle: usaldusfond (Estonian limited partnership)
+- AML supervision: dual MLRO structure — internal officer (FIU) and external officer (France)
+- Accounting: KPMG Estonia
+
+## Key Terms
+
+- Minimum subscription: EUR 50,000
+- Accepted currencies: EUR, USD, MiCA-compliant stablecoins
+- Liquidity: quarterly
+- Management fee: 2% per annum
+- Performance fee: 20% with High Water Mark, calculated quarterly
+- Entry / exit fees: 0% (early commitment break: 4%)
+- Minimum commitment: 1 year
+- Target investors: professional investors, institutional investors, family offices
+
+## White-Label Solution
+
+SparkCore Investment OÜ offers a white-label solution allowing third-party partners to distribute managed funds under their own brand, within the applicable EFSA/EFIU regulatory framework.
+
+## Contacts & Resources
+
+- Website: https://sparkcore.fund
+- Dynamic Trends factsheet: https://sparkcore.fund/factsheets/dynamic-trends
+- CryptoVision factsheet: https://sparkcore.fund/factsheets/cryptovision
+- Privacy Policy: https://sparkcore.fund/privacy-policy
+- Contact: contact@sparkcore.fund
+- EFSA registry: https://www.fi.ee/en/guides/fund-management-companies/investment-market/small-fund-managers-without-activity-licence/sparkcoreinvestment-ou
+- EFIU licence: https://mtr.ttja.ee/taotluse_tulemus/609065

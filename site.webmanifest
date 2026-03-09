@@ -1,0 +1,20 @@
+{
+  "name": "SparkCore",
+  "short_name": "SparkCore",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/assets/images/png/favicon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/assets/images/png/favicon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "theme_color": "#e4d8c2",
+  "background_color": "#e4d8c2",
+  "display": "standalone"
+}

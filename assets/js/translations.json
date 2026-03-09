@@ -1,0 +1,16 @@
+{
+  "fr": {
+    "successMessage": "Votre message a bien été envoyé.",
+    "errorMessage": "Une erreur est survenue. Veuillez réessayer.",
+    "recaptchaError": "Veuillez valider le reCAPTCHA pour continuer.",
+    "subscribeSuccess": "Inscription confirmée. Merci.",
+    "subscribeError": "Une erreur est survenue. Veuillez réessayer."
+  },
+  "en": {
+    "successMessage": "Your message was successfully sent.",
+    "errorMessage": "An error occurred. Please try again.",
+    "recaptchaError": "Please validate the reCAPTCHA to proceed.",
+    "subscribeSuccess": "Subscription confirmed. Thank you.",
+    "subscribeError": "An error occurred. Please try again."
+  }
+}

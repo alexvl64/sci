@@ -1,0 +1,36 @@
+# Agents IA — accès explicitement autorisé
+User-agent: GPTBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: *
+Disallow: /
+
+# Pages autorisées à l'indexation
+Allow: /
+Allow: /index.html
+Allow: /factsheets/cryptovision.html
+Allow: /factsheets/dynamic-trends.html
+
+# Assets nécessaires au rendu
+Allow: /assets/
+
+# Exclusions explicites
+Disallow: /ressources/
+Disallow: /validation.html
+Disallow: /404.html
+Disallow: /403.html
+Disallow: /500.html
+Disallow: /form_send.php
+Disallow: /proxy.php
+Disallow: /secure_pdf.php
+
+Sitemap: https://sparkcore.fund/sitemap.xml

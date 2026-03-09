@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+.contact-us-form::-webkit-scrollbar {
+  width: 0;
+}
+
+/* autofill */
+
+input:-webkit-autofill {
+  background-color: transparent !important;
+  transition: background-color 5000s ease-in-out 0s;
+  -webkit-text-fill-color: inherit !important;
+}
+
+input:-webkit-autofill::first-line {
+  font-family: inherit;
+  font-size: inherit;
+  color: inherit;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* ==== GRAPH ==== */
+.apexcharts-legend-text {
+  font-size: 20px !important;
+  font-family: "Funnel Display", "sans-serif" !important;
+  padding-left: 24px !important;
+}
+
+.apexcharts-text tspan {
+  font-family: "Inter", "sans-serif" !important;
+  font-size: 14px !important;
+}
+.apexcharts-legend {
+  padding-left: 0px !important;
+}
+
+@media (max-width: 1023.98px) {
+  .apexcharts-text tspan {
+    font-size: 12px !important;
+  }
+}
+@media (max-width: 767.98px) {
+  .apexcharts-text tspan {
+    font-size: 8px !important;
+  }
+  .apexcharts-legend {
+    padding-left: 20px !important;
+  }
+  .apexcharts-legend-text {
+    font-size: 16px !important;
+    padding-left: 20px !important;
+  }
+}
+
+/* === TOASTTIFY === */
+
+.toastify {
+  display: flex !important;
+  align-items: center !important;
+  border: 1px solid black !important;
+  font-size: 14px !important; /* Ajustez la taille de la police */
+  font-family: 'Funnel Display', sans-serif !important; /* Appliquer la police */
+  color: white !important; /* Couleur du texte */
+  border-radius: 0 !important; /* Pas de bord arrondi */
+  background: rgba(0, 0, 0, 0.7) !important; /* Fond sombre légèrement transparent */
+}
+.toastify .toastify-avatar {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+}
+
+/* === LANGUAGE TOGGLE (index.html) === */
+.lang-toggle {
+  display: flex !important;
+  border: 1px solid #D0DAE3 !important;
+  overflow: hidden;
+  border-radius: 3px;
+}
+.lang-btn {
+  padding: 7px 12px !important;
+  background: #FFFFFF !important;
+  background-color: #FFFFFF !important;
+  color: #6B7B8D !important;
+  border: none !important;
+  cursor: pointer !important;
+  font-family: 'Inter', sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.4px !important;
+  transition: background 0.2s, color 0.2s;
+}
+.lang-btn + .lang-btn {
+  border-left: 1px solid #D0DAE3 !important;
+}
+.lang-btn.active {
+  background: #0E1117 !important;
+  background-color: #0E1117 !important;
+  color: #FFFFFF !important;
+}
+.lang-btn:hover:not(.active) {
+  background: #F3F5F7 !important;
+  background-color: #F3F5F7 !important;
+  color: #0E1117 !important;
+}

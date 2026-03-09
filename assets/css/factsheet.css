@@ -1,0 +1,107 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --darkGray:#0E1117; --mediumGray:#4B5563; --steelBlue:#6B7B8D;
+  --lightGray:#F3F5F7; --paleBlue:#D0DAE3; --cream:#E8DDD0; --white:#FFFFFF;
+}
+html,body { min-height:100%; font-family:'Inter',sans-serif; background:var(--white); color:var(--darkGray); font-size:13px; line-height:1.4; }
+.page { max-width:1440px; margin:0 auto; padding:0 28px; display:flex; flex-direction:column; min-height:100vh; }
+.hdr { display:flex; align-items:center; justify-content:space-between; padding:16px 0 14px; border-bottom:1px solid var(--paleBlue); flex-shrink:0; gap:24px; }
+.hdr-logo { height:34px; flex-shrink:0; }
+.hdr-center { flex:1; display:flex; flex-direction:column; align-items:center; gap:2px; }
+.hdr-center strong { font-family:'Funnel Display',sans-serif; font-size:22px; color:var(--darkGray); }
+.hdr-center span { font-size:11px; color:var(--steelBlue); }
+.hdr-right { flex-shrink:0; display:flex; align-items:center; gap:10px; }
+.lang-toggle { display:flex; border:1px solid var(--paleBlue); overflow:hidden; border-radius:3px; }
+.lang-btn { padding:7px 12px; background:var(--white); color:var(--steelBlue); border:none; cursor:pointer; font-family:'Inter',sans-serif; font-size:11px; font-weight:600; letter-spacing:0.4px; transition:background .2s,color .2s; }
+.lang-btn+.lang-btn { border-left:1px solid var(--paleBlue); }
+.lang-btn.active { background:var(--darkGray); color:var(--white); }
+.lang-btn:hover:not(.active) { background:var(--lightGray); color:var(--darkGray); }
+.btn-contact { display:inline-block; background:var(--cream); color:var(--darkGray); font-family:'Inter',sans-serif; font-size:14px; font-weight:500; padding:9px 22px; border-radius:4px; text-decoration:none; border:1px solid transparent; transition:background .25s,color .25s,border-color .25s; white-space:nowrap; }
+.btn-contact:hover { background:transparent; color:var(--darkGray); border-color:var(--darkGray); }
+.main { display:grid; grid-template-columns:360px 1fr; gap:18px; padding:14px 0; flex:1; align-items:start; }
+.col { display:flex; flex-direction:column; gap:10px; }
+.block { background:var(--lightGray); padding:11px 14px; }
+.block-title { font-family:'Funnel Display',sans-serif; font-size:11px; font-weight:700; color:var(--darkGray); text-transform:uppercase; letter-spacing:0.6px; border-bottom:1px solid var(--paleBlue); padding-bottom:5px; margin-bottom:9px; }
+.specs { width:100%; border-collapse:collapse; }
+.specs tr { border-bottom:1px solid var(--paleBlue); }
+.specs tr:last-child { border-bottom:none; }
+.specs td { padding:4.5px 0; font-size:12px; vertical-align:middle; line-height:1.3; white-space:nowrap; }
+.specs .k { color:var(--steelBlue); width:55%; }
+.specs .v { color:var(--darkGray); font-weight:500; text-align:right; }
+.fees-grid { display:grid; grid-template-columns:1fr 1fr; gap:5px; }
+.fee { background:var(--white); border:1px solid var(--paleBlue); padding:7px 10px; }
+.fee-label { font-size:9px; color:var(--steelBlue); text-transform:uppercase; letter-spacing:0.4px; margin-bottom:2px; }
+.fee-val { font-family:'Funnel Display',sans-serif; font-size:20px; font-weight:700; color:var(--darkGray); line-height:1; margin-bottom:2px; }
+.fee-sub { font-size:9px; color:var(--steelBlue); line-height:1.3; }
+.kf-grid { display:grid; grid-template-columns:1fr 1fr; gap:5px; }
+.kf { background:var(--white); border:1px solid var(--paleBlue); padding:7px 10px; }
+.kf-label { font-size:9px; color:var(--steelBlue); text-transform:uppercase; letter-spacing:0.4px; margin-bottom:3px; }
+.kf-val { font-family:'Funnel Display',sans-serif; font-size:19px; font-weight:700; line-height:1; color:var(--darkGray); }
+.team-list { display:flex; flex-direction:column; gap:9px; }
+.team-item { border-bottom:1px solid var(--paleBlue); padding-bottom:9px; }
+.team-item:last-child { border-bottom:none; padding-bottom:0; }
+.team-role { font-size:9px; color:var(--steelBlue); text-transform:uppercase; letter-spacing:0.4px; margin-bottom:1px; }
+.team-name { font-family:'Funnel Display',sans-serif; font-size:13.5px; font-weight:600; color:var(--darkGray); margin-bottom:2px; }
+.team-desc { font-size:11px; color:var(--mediumGray); line-height:1.45; }
+.strat-intro { font-size:13px; color:var(--steelBlue); line-height:1.65; margin-bottom:12px; text-align:justify; }
+.strat-intro strong { color:var(--darkGray); }
+.strat-blocks { display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-bottom:12px; }
+.strat-block { padding:11px 13px; border:1px solid var(--paleBlue); }
+/* Dynamic Trends: offensive = primary (dark), defensive = secondary (light) */
+.strat-block.offensive { background:var(--darkGray); color:var(--white); border-color:var(--darkGray); }
+.strat-block.defensive { background:var(--white); }
+/* CryptoVision: defensive = primary (dark), offensive = secondary (light) */
+.strat-block.primary { background:var(--darkGray); color:var(--white); border-color:var(--darkGray); }
+.strat-block.secondary { background:var(--white); }
+.strat-tag { font-size:9px; font-weight:600; letter-spacing:0.7px; text-transform:uppercase; opacity:0.5; margin-bottom:4px; }
+.strat-name { font-family:'Funnel Display',sans-serif; font-size:14px; font-weight:700; margin-bottom:5px; }
+.strat-desc { font-size:11px; opacity:0.72; line-height:1.55; }
+.strat-detail { font-size:12px; color:var(--steelBlue); line-height:1.65; border-top:1px solid var(--paleBlue); padding-top:10px; margin-top:2px; text-align:justify; }
+.strat-detail+.strat-detail { border-top:none; padding-top:0; margin-top:8px; }
+.strat-detail strong { color:var(--darkGray); }
+.chart-wrap { background:var(--lightGray); padding:11px 0 8px; }
+.chart-top { display:flex; justify-content:space-between; align-items:center; padding:0 14px 6px; flex-wrap:wrap; gap:6px; }
+.chart-title { font-family:'Funnel Display',sans-serif; font-size:11px; font-weight:700; color:var(--darkGray); text-transform:uppercase; letter-spacing:0.6px; }
+.chart-legend { display:flex; gap:8px; }
+.legend-item { display:flex; align-items:center; gap:6px; font-family:'Funnel Display',sans-serif; font-size:11px; color:var(--darkGray); background:var(--white); border:1px solid var(--paleBlue); padding:3px 8px 3px 5px; }
+.legend-sq { width:12px; height:12px; flex-shrink:0; }
+#chart-el { height:260px; }
+.chart-note { font-size:9px; color:var(--steelBlue); padding:6px 14px 0; line-height:1.4; }
+.perf-table { width:100%; border-collapse:collapse; font-size:11px; }
+.perf-table th { padding:4px 3px; text-align:center; color:var(--steelBlue); font-size:10.5px; font-weight:500; border-bottom:1px solid var(--paleBlue); }
+.perf-table th:first-child { text-align:left; }
+.perf-table td { padding:4px 3px; text-align:center; border-bottom:1px solid var(--lightGray); color:var(--mediumGray); }
+.perf-table td:first-child { text-align:left; font-weight:600; color:var(--darkGray); }
+.perf-table .pos { color:var(--darkGray); }
+.perf-table .neg { color:var(--steelBlue); }
+.perf-table .ytd { font-weight:700; background:var(--lightGray); color:var(--darkGray); }
+.perf-note { font-size:9.5px; color:var(--steelBlue); margin-top:6px; }
+.ftr { border-top:1px solid var(--paleBlue); padding:8px 0 10px; font-size:9px; color:var(--steelBlue); line-height:1.5; display:flex; justify-content:space-between; align-items:flex-start; gap:20px; flex-shrink:0; margin-top:auto; }
+.ftr-disc { max-width:900px; }
+.ftr-right { text-align:right; white-space:nowrap; flex-shrink:0; }
+.ftr-right a { color:var(--steelBlue); text-decoration:underline; }
+
+.seo-h1 {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width:900px) {
+  .page { padding:0 16px; }
+  .hdr { flex-direction:column; align-items:center; gap:10px; padding:14px 0 12px; }
+  .hdr-center strong { font-size:17px; text-align:center; }
+  .hdr-right { flex-wrap:wrap; justify-content:center; }
+  .btn-contact { width:100%; text-align:center; display:block; }
+  .main { grid-template-columns:1fr; gap:10px; }
+  #chart-el { height:220px; }
+  .perf-table { font-size:9.5px; }
+  .perf-table th { font-size:9px; padding:3px 1px; }
+  .perf-table td { padding:3px 1px; }
+  .ftr { flex-direction:column; gap:8px; }
+  .ftr-right { text-align:left; white-space:normal; }
+}
