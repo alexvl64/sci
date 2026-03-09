@@ -151,6 +151,7 @@ const translations = {
     footerDisclaimerLabel: "Avertissement :",
     footerWarning: "Les performances passées ne garantissent pas les performances futures. Les crypto-actifs présentent un risque élevé, incluant un risque de perte totale. Ce site et les graphiques de performance sont fournis à titre informatif uniquement et ne constituent pas une offre d'investissement. L'accès aux stratégies est réservé aux investisseurs qualifiés ou professionnels. Veuillez évaluer votre situation personnelle et obtenir un avis indépendant avant d'investir.",
     footerPrivacyLink: "Politique de confidentialité",
+    footerInsightsLink: "Insights",
 
     // === VALIDATION PAGE ===
     validationTitle: "Vérification complétée",
@@ -320,6 +321,7 @@ const translations = {
     footerDisclaimerLabel: "Disclaimer:",
     footerWarning: "Past performance does not guarantee future results. Crypto-assets carry a high level of risk, including the risk of total loss. This website and performance charts are provided for informational purposes only and do not constitute an investment offer. Access to the strategies is reserved for qualified or professional investors. Please assess your personal situation and seek independent advice before investing.",
     footerPrivacyLink: "Privacy Policy",
+    footerInsightsLink: "Insights",
 
     // === VALIDATION PAGE ===
     validationTitle: "Verification Complete",
