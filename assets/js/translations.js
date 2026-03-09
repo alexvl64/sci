@@ -151,7 +151,7 @@ const translations = {
     footerDisclaimerLabel: "Avertissement :",
     footerWarning: "Les performances passées ne garantissent pas les performances futures. Les crypto-actifs présentent un risque élevé, incluant un risque de perte totale. Ce site et les graphiques de performance sont fournis à titre informatif uniquement et ne constituent pas une offre d'investissement. L'accès aux stratégies est réservé aux investisseurs qualifiés ou professionnels. Veuillez évaluer votre situation personnelle et obtenir un avis indépendant avant d'investir.",
     footerPrivacyLink: "Politique de confidentialité",
-    footerInsightsLink: "Insights",
+    footerInsightsLink: "Articles",
 
     // === VALIDATION PAGE ===
     validationTitle: "Vérification complétée",
