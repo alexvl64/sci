@@ -20,10 +20,6 @@ Allow: /index.html
 Allow: /factsheets/cryptovision.html
 Allow: /factsheets/dynamic-trends.html
 Allow: /blog/
-Allow: /blog/regulated-crypto-fund-manager-estonia.html
-Allow: /blog/how-to-launch-a-crypto-fund-estonia.html
-Allow: /blog/delta-neutral-crypto-strategies-explained.html
-Allow: /blog/white-label-crypto-fund-manager-services.html
 Allow: /privacy-policy.html
 
 # Assets nécessaires au rendu
