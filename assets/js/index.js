@@ -29,8 +29,18 @@ function applyTranslations(lang) {
 }
 
 function setLang(lang) {
-  currentLang = lang;
   try { localStorage.setItem('sc_lang', lang); } catch(e) {}
+  var path = (window.location.pathname || '/').replace(/\/$/, '') || '/';
+  var onFr = path.indexOf('/fr') === 0;
+  if (onFr && lang === 'en') {
+    window.location.href = '/';
+    return;
+  }
+  if ((path === '/' || path === '/index.html') && lang === 'fr') {
+    window.location.href = '/fr/';
+    return;
+  }
+  currentLang = lang;
   applyTranslations(lang);
 }
 

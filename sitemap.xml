@@ -9,6 +9,14 @@
     <priority>1.0</priority>
   </url>
 
+  <!-- Page principale FR -->
+  <url>
+    <loc>https://sparkcore.fund/fr/</loc>
+    <lastmod>2026-03-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
   <!-- Factsheets -->
   <url>
     <loc>https://sparkcore.fund/factsheets/dynamic-trends</loc>
