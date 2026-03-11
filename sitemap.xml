@@ -17,20 +17,6 @@
     <priority>1.0</priority>
   </url>
 
-  <!-- Factsheets -->
-  <url>
-    <loc>https://sparkcore.fund/factsheets/dynamic-trends</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://sparkcore.fund/factsheets/cryptovision</loc>
-    <lastmod>2026-03-05</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
   <!-- Blog index -->
   <url>
     <loc>https://sparkcore.fund/blog/</loc>
@@ -40,6 +26,12 @@
   </url>
 
   <!-- Blog articles -->
+  <url>
+    <loc>https://sparkcore.fund/blog/regulated-crypto-investment-fund</loc>
+    <lastmod>2026-03-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
   <url>
     <loc>https://sparkcore.fund/blog/regulated-crypto-fund-manager-estonia</loc>
     <lastmod>2026-03-09</lastmod>
