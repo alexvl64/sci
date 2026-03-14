@@ -27,6 +27,24 @@
 
   <!-- Blog articles -->
   <url>
+    <loc>https://sparkcore.fund/blog/what-an-institutional-crypto-fund-manager-does</loc>
+    <lastmod>2026-03-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sparkcore.fund/blog/crypto-fund-for-qualified-investors</loc>
+    <lastmod>2025-03-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sparkcore.fund/blog/estonian-aifm-crypto-fund</loc>
+    <lastmod>2026-03-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://sparkcore.fund/blog/regulated-crypto-investment-fund</loc>
     <lastmod>2026-03-11</lastmod>
     <changefreq>monthly</changefreq>
