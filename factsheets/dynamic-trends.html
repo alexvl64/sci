@@ -160,7 +160,7 @@
     <img class="hdr-logo" src="https://sparkcore.fund/assets/images/svg/logo.svg" alt="SparkCore Investment OÜ" width="auto" height="34" />
     <div class="hdr-center">
       <strong id="hdr-title">Dynamic Trends — Fund Factsheet</strong>
-      <span id="hdr-date">March 1, 2026</span>
+      <span id="hdr-date">—</span>
     </div>
     <div class="hdr-right">
       <a href="https://calendar.app.google/QJNJ8EhqHbB47gAo7" target="_blank" rel="noopener noreferrer" class="btn-contact" id="hdr-cta" aria-label="Schedule a call with SparkCore Investment">Schedule a Call</a>
@@ -226,23 +226,23 @@
 
       <!-- KEY FIGURES -->
       <section class="block" aria-labelledby="section-keyfigs">
-        <h2 class="block-title" id="section-keyfigs" data-seo-id="lbl-keyfigs">Key Figures</h2>
+        <h2 class="block-title" id="section-keyfigs" data-seo-id="lbl-key-figs">Key Figures</h2>
         <div class="kf-grid">
           <div class="kf">
             <div class="kf-label" id="lbl-kf-return">Annualised return</div>
-            <div class="kf-val" aria-label="Annualised return: plus 50.0 percent">+50.0%</div>
+            <div class="kf-val" id="kf-return" aria-label="Annualised return">—</div>
           </div>
           <div class="kf">
             <div class="kf-label" id="lbl-kf-maxdd">Max drawdown</div>
-            <div class="kf-val" aria-label="Maximum drawdown: minus 37.1 percent">-37.1%</div>
+            <div class="kf-val" id="kf-maxdd" aria-label="Max drawdown">—</div>
           </div>
           <div class="kf">
             <div class="kf-label" id="lbl-kf-vol">Volatility</div>
-            <div class="kf-val" aria-label="Volatility: 32.7 percent">32.7%</div>
+            <div class="kf-val" id="kf-vol" aria-label="Volatility">—</div>
           </div>
           <div class="kf">
             <div class="kf-label" id="lbl-kf-ratios">Sharpe / Sortino</div>
-            <div class="kf-val" aria-label="Sharpe ratio 1.41, Sortino ratio 2.09">1.41 / 2.09</div>
+            <div class="kf-val" id="kf-ratios" aria-label="Sharpe / Sortino">—</div>
           </div>
         </div>
       </section>
@@ -323,21 +323,13 @@
         <table class="perf-table" aria-label="Dynamic Trends monthly performance history in percent">
           <thead>
             <tr>
-              <th scope="col">Year</th>
-              <th scope="col">Jan</th><th scope="col" id="th-feb">Feb</th><th scope="col">Mar</th><th scope="col" id="th-apr">Apr</th><th scope="col" id="th-may">May</th><th scope="col">Jun</th>
-              <th scope="col">Jul</th><th scope="col" id="th-aug">Aug</th><th scope="col">Sep</th><th scope="col">Oct</th><th scope="col">Nov</th><th scope="col" id="th-dec">Dec</th>
-              <th class="ytd" scope="col">YTD</th>
+              <th scope="col" id="th-year">Year</th>
+              <th scope="col" id="th-jan">Jan</th><th scope="col" id="th-feb">Feb</th><th scope="col" id="th-mar">Mar</th><th scope="col" id="th-apr">Apr</th><th scope="col" id="th-may">May</th><th scope="col" id="th-jun">Jun</th>
+              <th scope="col" id="th-jul">Jul</th><th scope="col" id="th-aug">Aug</th><th scope="col" id="th-sep">Sep</th><th scope="col" id="th-oct">Oct</th><th scope="col" id="th-nov">Nov</th><th scope="col" id="th-dec">Dec</th>
+              <th class="ytd" scope="col" id="th-ytd">YTD</th>
             </tr>
           </thead>
-          <tbody>
-            <tr><th scope="row">2020</th><td class="pos">35.3</td><td class="neg">-1.2</td><td class="neg">-11.6</td><td class="pos">25.9</td><td class="pos">8.3</td><td class="neg">-5.9</td><td class="pos">31.5</td><td class="pos">12.8</td><td class="neg">-19.3</td><td class="pos">5.3</td><td class="pos">36.2</td><td class="pos">13.4</td><td class="ytd">195.4</td></tr>
-            <tr><th scope="row">2021</th><td class="pos">30.4</td><td class="pos">28.4</td><td class="pos">12.5</td><td class="pos">18.7</td><td class="neg">-3.8</td><td class="neg">-3.1</td><td class="pos">4.4</td><td class="pos">31.2</td><td class="neg">-6.2</td><td class="pos">13.4</td><td class="neg">-0.4</td><td class="neg">-4.4</td><td class="ytd">189.1</td></tr>
-            <tr><th scope="row">2022</th><td class="neg">-6.4</td><td class="pos">2.3</td><td class="pos">3.2</td><td class="neg">-0.2</td><td class="pos">0.5</td><td class="neg">-7.0</td><td class="pos">7.7</td><td class="neg">-5.1</td><td class="pos">0.6</td><td class="pos">5.6</td><td class="pos">1.3</td><td class="neg">-2.6</td><td class="ytd">-1.3</td></tr>
-            <tr><th scope="row">2023</th><td class="pos">22.6</td><td class="neg">-0.3</td><td class="pos">1.2</td><td class="neg">-2.7</td><td class="neg">-0.6</td><td class="pos">10.0</td><td class="pos">1.7</td><td class="neg">-8.0</td><td class="pos">4.2</td><td class="pos">15.9</td><td class="pos">16.8</td><td class="pos">26.4</td><td class="ytd">122.1</td></tr>
-            <tr><th scope="row">2024</th><td class="neg">-5.2</td><td class="pos">38.3</td><td class="pos">21.7</td><td class="neg">-14.3</td><td class="pos">7.0</td><td class="neg">-6.2</td><td class="neg">-2.4</td><td class="neg">-7.2</td><td class="pos">3.0</td><td class="pos">4.9</td><td class="pos">78.2</td><td class="neg">-2.6</td><td class="ytd">133.0</td></tr>
-            <tr><th scope="row">2025</th><td class="neg">-1.9</td><td class="neg">-11.0</td><td class="neg">-1.5</td><td class="pos">6.9</td><td class="pos">1.3</td><td class="neg">-1.2</td><td class="pos">15.4</td><td class="neg">-1.5</td><td class="pos">2.9</td><td class="pos">1.0</td><td class="neg">-6.0</td><td class="neg">-2.4</td><td class="ytd">-0.3</td></tr>
-            <tr><th scope="row">2026</th><td class="neg">-4.7</td><td>-9.1</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="ytd">-13.3</td></tr>
-          </tbody>
+          <tbody id="perf-body"></tbody>
         </table>
         <p class="perf-note" id="val-perf-note">Past performance does not guarantee future results.</p>
       </section>
