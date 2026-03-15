@@ -27,6 +27,12 @@
 
   <!-- Blog articles -->
   <url>
+    <loc>https://sparkcore.fund/blog/bitcoin-outperformance-strategy-fund</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://sparkcore.fund/blog/what-an-institutional-crypto-fund-manager-does</loc>
     <lastmod>2026-03-14</lastmod>
     <changefreq>monthly</changefreq>
