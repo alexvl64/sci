@@ -27,6 +27,12 @@
 
   <!-- Blog articles -->
   <url>
+    <loc>https://sparkcore.fund/blog/crypto-arbitrage-investment-fund</loc>
+    <lastmod>2026-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://sparkcore.fund/blog/what-a-market-neutral-crypto-fund-does</loc>
     <lastmod>2026-03-16</lastmod>
     <changefreq>monthly</changefreq>

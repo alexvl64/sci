@@ -37,8 +37,8 @@ const T = {
     lblKfReturn:'Annualised return',
     lblKfMaxdd:'Max drawdown',
     lblKfVol:'Volatility',
-    lblKfTargetDd:'Target max drawdown',
-    valKfNote:'*Since April 2025 strategy update.',
+    lblKfRatios:'Sharpe / Sortino',
+    valKfNote:'*Since April 2025 strategy update (target maximum drawdown 15%).',
     lblTeam:'Team',
     lblRole1:'Manager · Trading & Strategy',
     valBio1:'20+ years trading, co-founder DSM. Technical analysis strategies on crypto-assets.',
@@ -59,7 +59,10 @@ const T = {
     lblChartTitle:'Performance Evolution — Base 100 · Linear Scale',
     valChartNote:'Fund launched 01/01/2025. Data from Feb 2021 to Dec 2024 from real strategies on managed accounts, no backtest. Gross of fees. Since April 2025, the strategy has been updated to integrate a strengthened defensive algorithmic core.',
     lblPerfTitle:'Monthly Performance History (%)',
-    thFeb:'Feb', thApr:'Apr', thMay:'May', thAug:'Aug', thDec:'Dec',
+    thYear:'Year',
+    thJan:'Jan', thFeb:'Feb', thMar:'Mar', thApr:'Apr', thMay:'May', thJun:'Jun',
+    thJul:'Jul', thAug:'Aug', thSep:'Sep', thOct:'Oct', thNov:'Nov', thDec:'Dec',
+    thYtd:'YTD',
     valPerfNote:'Past performance does not guarantee future results. Gross of fees.',
     valDisclaimer:'<strong>Disclaimer:</strong> Past performance is neither a reliable indicator nor a guarantee of future performance. Crypto-assets carry a high level of risk including the risk of total loss of capital. This document is provided for informational purposes only and does not constitute an investment offer. The strategy is reserved for qualified or professional investors. SparkCore.investment OÜ is registered and supervised by the Finantsinspektsioon (Estonia).',
     ftrCompany:'SparkCore.investment OÜ · Estonia',
@@ -103,8 +106,8 @@ const T = {
     lblKfReturn:'Rendement annualisé',
     lblKfMaxdd:'Perte maximale',
     lblKfVol:'Volatilité',
-    lblKfTargetDd:'Drawdown cible',
-    valKfNote:'*Depuis la mise à jour de stratégie d\'avril 2025.',
+    lblKfRatios:'Sharpe / Sortino',
+    valKfNote:'*Depuis la mise à jour de stratégie d\'avril 2025 (drawdown cible 15%).',
     lblTeam:'Équipe',
     lblRole1:'Gérant · Trading & Stratégie',
     valBio1:'+20 ans de trading, co-fondateur DSM. Stratégies basées sur l\'analyse technique des crypto-actifs.',
@@ -125,13 +128,164 @@ const T = {
     lblChartTitle:'Évolution de la performance — base 100 · échelle linéaire',
     valChartNote:'Lancement du fonds le 1er janvier 2025. Données de février 2021 à décembre 2024 issues de stratégies réelles sur comptes gérés, sans backtest. Brut de frais. Depuis avril 2025, la stratégie a été modifiée pour intégrer un socle algorithmique défensif renforcé.',
     lblPerfTitle:'Historique mensuel des performances (%)',
-    thFeb:'Fév', thApr:'Avr', thMay:'Mai', thAug:'Aoû', thDec:'Déc',
+    thYear:'Année',
+    thJan:'Jan', thFeb:'Fév', thMar:'Mar', thApr:'Avr', thMay:'Mai', thJun:'Jun',
+    thJul:'Jul', thAug:'Aoû', thSep:'Sep', thOct:'Oct', thNov:'Nov', thDec:'Déc',
+    thYtd:'YTD',
     valPerfNote:'Les performances passées ne garantissent pas les performances futures. Brut de frais.',
     valDisclaimer:'<strong>Avertissement :</strong> Les performances passées ne constituent ni un indicateur fiable ni une garantie des performances futures. Les crypto-actifs présentent un risque élevé incluant un risque de perte totale du capital. Ce document est fourni à titre informatif uniquement et ne constitue pas une offre d\'investissement. La stratégie est réservée aux investisseurs qualifiés ou professionnels. SparkCore.investment OÜ est enregistrée et supervisée par la Finantsinspektsioon (Estonie).',
     ftrCompany:'SparkCore.investment OÜ · Estonie',
     ftrPrivacy:'Politique de confidentialité',
   }
 };
+
+/* ── DATA SOURCES (Google Sheets) ── */
+// CryptoVision factsheet: same structure as Dynamic Trends but different Sheet ID
+const FACTSHEET_SHEET_ID = "1mH2HtAtqzLJNYMI5gdm0EX6u4E8hkvwH5LPVXXfwpnk";
+const GID_CHART_BASE100 = "1790044601";
+const GID_FACTSHEET_SUMMARY = "1487010429";
+const GID_MONTHLY_RETURNS = "880570107";
+
+let summaryData = null;
+let monthlyReturns = null; // Map(year -> Map(month -> percent number))
+
+function gvizUrl(gid) {
+  return `https://docs.google.com/spreadsheets/d/${FACTSHEET_SHEET_ID}/gviz/tq?tqx=out:json&gid=${gid}`;
+}
+
+async function fetchGvizJson(gid) {
+  const r = await fetch(gvizUrl(gid));
+  if (!r.ok) throw new Error(`HTTP ${r.status}`);
+  const text = await r.text();
+  return JSON.parse(text.substring(47).slice(0, -2));
+}
+
+function parseGvizDate(v) {
+  if (!v) return null;
+  const m = String(v).match(/^Date\((\d+),(\d+),(\d+)\)$/);
+  if (!m) return null;
+  return new Date(+m[1], +m[2], +m[3]);
+}
+
+function monthName(lang, monthIndex) {
+  const en = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const fr = ['janvier','février','mars','avril','mai','juin','juillet','août','septembre','octobre','novembre','décembre'];
+  const name = (lang === 'fr' ? fr : en)[monthIndex];
+  return lang === 'fr' ? (name.charAt(0).toUpperCase() + name.slice(1)) : name;
+}
+
+function formatFactsheetDate(date, lang) {
+  if (!(date instanceof Date)) return '';
+  const day = date.getDate();
+  const month = monthName(lang, date.getMonth());
+  const year = date.getFullYear();
+  if (lang === 'fr') {
+    const dayStr = day === 1 ? '1er' : String(day);
+    return `${dayStr} ${month} ${year}`;
+  }
+  return `${month} ${day}, ${year}`;
+}
+
+function setText(id, v) {
+  const el = document.getElementById(id);
+  if (el) el.textContent = v;
+}
+
+function updateHdrDateFromSummary() {
+  if (!summaryData?.asOf) return;
+  setText('hdr-date', formatFactsheetDate(summaryData.asOf, currentLang));
+}
+
+function setKeyFiguresFromSummary() {
+  if (!summaryData) return;
+  const pct = (x) => {
+    if (typeof x !== 'number' || !isFinite(x)) return '—';
+    const val = x * 100;
+    const sign = val > 0 ? '+' : '';
+    return `${sign}${val.toFixed(1)}%`;
+  };
+  const num = (x, d=2) => (typeof x === 'number' && isFinite(x)) ? x.toFixed(d) : '—';
+
+  setText('kf-return', pct(summaryData.annualisedReturn));
+  setText('kf-maxdd', pct(summaryData.maxDrawdown));
+  setText('kf-vol', pct(summaryData.volatility));
+  setText('kf-ratios', `${num(summaryData.sharpe, 2)} / ${num(summaryData.sortino, 2)}`);
+
+  const setAria = (id, label) => {
+    const el = document.getElementById(id);
+    if (el) el.setAttribute('aria-label', label);
+  };
+  setAria('kf-return', `${T[currentLang].lblKfReturn}: ${pct(summaryData.annualisedReturn)}`);
+  setAria('kf-maxdd', `${T[currentLang].lblKfMaxdd}: ${pct(summaryData.maxDrawdown)}`);
+  setAria('kf-vol', `${T[currentLang].lblKfVol}: ${pct(summaryData.volatility)}`);
+  setAria('kf-ratios', `${T[currentLang].lblKfRatios}: ${num(summaryData.sharpe,2)} / ${num(summaryData.sortino,2)}`);
+}
+
+function updateJsonLdDateModifiedFromSummary() {
+  if (!summaryData?.asOf) return;
+  const iso = summaryData.asOf.toISOString().slice(0, 10);
+  const scripts = Array.from(document.querySelectorAll('script[type="application/ld+json"]'));
+  for (const s of scripts) {
+    try {
+      const obj = JSON.parse(s.textContent);
+      if (obj && Array.isArray(obj['@graph'])) {
+        for (const node of obj['@graph']) {
+          if (node && node['@type'] === 'WebPage' && typeof node.dateModified === 'string') {
+            node.dateModified = iso;
+          }
+        }
+        s.textContent = JSON.stringify(obj, null, 2);
+      }
+    } catch(e) {}
+  }
+}
+
+function buildMonthlyTable() {
+  if (!monthlyReturns) return;
+  const body = document.getElementById('perf-body');
+  if (!body) return;
+
+  const years = Array.from(monthlyReturns.keys()).sort((a,b)=>a-b);
+  const fmt = (x) => (typeof x === 'number' && isFinite(x)) ? x.toFixed(1) : '—';
+  const classFor = (x) => (typeof x === 'number' && isFinite(x)) ? (x >= 0 ? 'pos' : 'neg') : '';
+  const ytdCompoundPct = (vals) => {
+    let acc = 1.0;
+    let seen = false;
+    for (const v of vals) {
+      if (typeof v !== 'number' || !isFinite(v)) continue;
+      seen = true;
+      acc *= (1 + v/100);
+    }
+    return seen ? (acc - 1) * 100 : null;
+  };
+
+  body.innerHTML = '';
+  for (const y of years) {
+    const tr = document.createElement('tr');
+    const th = document.createElement('th');
+    th.setAttribute('scope', 'row');
+    th.textContent = String(y);
+    tr.appendChild(th);
+
+    const vals = [];
+    for (let m=1;m<=12;m++) {
+      const v = monthlyReturns.get(y)?.get(m);
+      vals.push(v);
+      const td = document.createElement('td');
+      if (typeof v === 'number' && isFinite(v)) td.className = classFor(v);
+      td.textContent = fmt(v);
+      tr.appendChild(td);
+    }
+
+    const ytd = ytdCompoundPct(vals);
+    const tdYtd = document.createElement('td');
+    tdYtd.className = 'ytd';
+    tdYtd.textContent = (typeof ytd === 'number' && isFinite(ytd)) ? ytd.toFixed(1) : '—';
+    tr.appendChild(tdYtd);
+
+    body.appendChild(tr);
+  }
+}
 
 function applyLang(lang) {
   const t = T[lang];
@@ -169,7 +323,7 @@ function applyLang(lang) {
   s('lbl-fee-perf', t.lblFeePerf); s('val-fee-perf', t.valFeePerf);
   s('lbl-fee-exit', t.lblFeeExit); s('val-fee-exit', t.valFeeExit);
   s('lbl-kf-return', t.lblKfReturn); s('lbl-kf-maxdd', t.lblKfMaxdd);
-  s('lbl-kf-vol', t.lblKfVol); s('lbl-kf-target-dd', t.lblKfTargetDd);
+  s('lbl-kf-vol', t.lblKfVol); s('lbl-kf-ratios', t.lblKfRatios);
   s('val-kf-note', t.valKfNote);
   s('lbl-role-1', t.lblRole1); s('val-bio-1', t.valBio1);
   s('lbl-role-2', t.lblRole2); s('val-bio-2', t.valBio2);
@@ -181,13 +335,20 @@ function applyLang(lang) {
   s('val-offensive-desc', t.valOffensiveDesc);
   h('val-strat-balance', t.valStratBalance); h('val-strat-risk', t.valStratRisk);
   s('val-chart-note', t.valChartNote);
-  s('th-feb', t.thFeb); s('th-apr', t.thApr); s('th-may', t.thMay); s('th-aug', t.thAug); s('th-dec', t.thDec);
+  s('th-year', t.thYear);
+  s('th-jan', t.thJan); s('th-feb', t.thFeb); s('th-mar', t.thMar); s('th-apr', t.thApr); s('th-may', t.thMay); s('th-jun', t.thJun);
+  s('th-jul', t.thJul); s('th-aug', t.thAug); s('th-sep', t.thSep); s('th-oct', t.thOct); s('th-nov', t.thNov); s('th-dec', t.thDec);
+  s('th-ytd', t.thYtd);
   s('val-perf-note', t.valPerfNote); h('val-disclaimer', t.valDisclaimer);
   s('ftr-company', t.ftrCompany); s('ftr-privacy', t.ftrPrivacy);
   document.getElementById('btn-en').classList.toggle('active', lang==='en');
   document.getElementById('btn-en').setAttribute('aria-pressed', lang==='en');
   document.getElementById('btn-fr').classList.toggle('active', lang==='fr');
   document.getElementById('btn-fr').setAttribute('aria-pressed', lang==='fr');
+
+  // Valeurs dynamiques dépendant du format de langue
+  updateHdrDateFromSummary();
+  setKeyFiguresFromSummary();
 }
 
 let currentLang = 'en';
@@ -206,9 +367,80 @@ function setLang(lang) {
   applyLang(detected);
 })();
 
-/* ── CHART — CryptoVision vs CCi30 ── */
-const SHEET_ID = "1cZ-2Gr_7Oa4bYcgHPPMHADK0m3wsfwy_NZmL9uDzPeE";
-const SHEET_GID = "0";
+/* ── SUMMARY + MONTHLY RETURNS (dynamic blocks) ── */
+async function fetchFactsheetSummary() {
+  const data = await fetchGvizJson(GID_FACTSHEET_SUMMARY);
+  const cols = (data.table.cols || []).map(c => c.label);
+  const idx = Object.fromEntries(cols.map((c,i)=>[c,i]));
+  const rows = data.table.rows || [];
+  const row = rows.find(r => (r.c || []).some(c => c && c.v !== null && c.v !== ''));
+  if (!row) return;
+  const c = row.c || [];
+  const v = (name) => c[idx[name]] ? c[idx[name]].v : null;
+
+  const asOf = parseGvizDate(v('as_of'));
+  const annualisedReturn = Number(v('annualised_return_pct'));
+  const maxDrawdown = Number(v('max_drawdown_pct'));
+  const volatility = Number(v('volatility_pct'));
+
+  const sharpeRaw = v('sharpe');
+  const sortinoRaw = v('sortino');
+  const sharpe = typeof sharpeRaw === 'number' ? sharpeRaw : Number(String(sharpeRaw ?? '').replace(',','.'));
+  const sortino = typeof sortinoRaw === 'number' ? sortinoRaw : Number(String(sortinoRaw ?? '').replace(',','.'));
+
+  summaryData = {
+    asOf,
+    annualisedReturn: isFinite(annualisedReturn) ? annualisedReturn : null,
+    maxDrawdown: isFinite(maxDrawdown) ? maxDrawdown : null,
+    volatility: isFinite(volatility) ? volatility : null,
+    sharpe: isFinite(sharpe) ? sharpe : null,
+    sortino: isFinite(sortino) ? sortino : null,
+  };
+
+  updateHdrDateFromSummary();
+  setKeyFiguresFromSummary();
+  updateJsonLdDateModifiedFromSummary();
+}
+
+async function fetchMonthlyReturns() {
+  const data = await fetchGvizJson(GID_MONTHLY_RETURNS);
+  const cols = (data.table.cols || []).map(c => c.label);
+  const idx = Object.fromEntries(cols.map((c,i)=>[c,i]));
+  monthlyReturns = new Map();
+
+  for (const r of (data.table.rows || [])) {
+    const c = r.c || [];
+    const year = c[idx.year]?.v;
+    const month = c[idx.month]?.v;
+    const ret = c[idx.return_pct]?.v;
+    if (year == null || month == null || ret == null) continue;
+
+    const y = Math.trunc(Number(year));
+    const m = Math.trunc(Number(month));
+    const v = Number(ret);
+    if (!isFinite(y) || !isFinite(m) || !isFinite(v)) continue;
+    if (m < 1 || m > 12) continue;
+
+    if (!monthlyReturns.has(y)) monthlyReturns.set(y, new Map());
+    monthlyReturns.get(y).set(m, v);
+  }
+
+  buildMonthlyTable();
+}
+
+// Initialisation des blocs dynamiques Summary + Monthly Returns
+(async function initDynamicFactsheet() {
+  try {
+    await Promise.all([fetchFactsheetSummary(), fetchMonthlyReturns()]);
+  } catch (e) {
+    console.error(e);
+  }
+})();
+
+/* ── CHART — CryptoVision vs CCi30 (chart_base100) ── */
+// Utilise le même fichier de factsheet que le reste (FACTSHEET_SHEET_ID)
+const SHEET_ID = FACTSHEET_SHEET_ID;
+const SHEET_GID = GID_CHART_BASE100;
 const period = [], cryptoVisionValue = [], cci30Base100 = [];
 
 async function fetchJsonData() {
