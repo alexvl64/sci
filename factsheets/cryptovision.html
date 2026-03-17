@@ -229,22 +229,22 @@
         <div class="kf-grid">
           <div class="kf">
             <div class="kf-label" id="lbl-kf-return">Annualised return</div>
-            <div class="kf-val" aria-label="Annualised return: plus 10.3 percent">+10.3%</div>
+            <div class="kf-val" id="kf-return" aria-label="Annualised return">—</div>
           </div>
           <div class="kf">
             <div class="kf-label" id="lbl-kf-maxdd">Max drawdown</div>
-            <div class="kf-val" aria-label="Maximum drawdown: minus 22.9 percent">-22.9%</div>
+            <div class="kf-val" id="kf-maxdd" aria-label="Max drawdown">—</div>
           </div>
           <div class="kf">
             <div class="kf-label" id="lbl-kf-vol">Volatility</div>
-            <div class="kf-val" aria-label="Volatility: 32.6 percent">32.6%</div>
+            <div class="kf-val" id="kf-vol" aria-label="Volatility">—</div>
           </div>
           <div class="kf">
-            <div class="kf-label" id="lbl-kf-target-dd">Target max drawdown</div>
-            <div class="kf-val" aria-label="Target maximum drawdown: 15 percent">15%*</div>
+            <div class="kf-label" id="lbl-kf-ratios">Sharpe / Sortino</div>
+            <div class="kf-val" id="kf-ratios" aria-label="Sharpe and Sortino ratios">—</div>
           </div>
         </div>
-        <p style="font-size:9px;color:var(--steelBlue);margin-top:5px;" id="val-kf-note">*Since April 2025 strategy update.</p>
+        <p style="font-size:9px;color:var(--steelBlue);margin-top:5px;" id="val-kf-note">*Since April 2025 strategy update (target maximum drawdown 15%).</p>
       </section>
 
       <!-- TEAM -->
@@ -325,20 +325,13 @@
         <table class="perf-table" aria-label="CryptoVision monthly performance history in percent">
           <thead>
             <tr>
-              <th scope="col">Year</th>
-              <th scope="col">Jan</th><th scope="col" id="th-feb">Feb</th><th scope="col">Mar</th><th scope="col" id="th-apr">Apr</th><th scope="col" id="th-may">May</th><th scope="col">Jun</th>
-              <th scope="col">Jul</th><th scope="col" id="th-aug">Aug</th><th scope="col">Sep</th><th scope="col">Oct</th><th scope="col">Nov</th><th scope="col" id="th-dec">Dec</th>
-              <th class="ytd" scope="col">YTD</th>
+              <th scope="col" id="th-year">Year</th>
+              <th scope="col" id="th-jan">Jan</th><th scope="col" id="th-feb">Feb</th><th scope="col" id="th-mar">Mar</th><th scope="col" id="th-apr">Apr</th><th scope="col" id="th-may">May</th><th scope="col" id="th-jun">Jun</th>
+              <th scope="col" id="th-jul">Jul</th><th scope="col" id="th-aug">Aug</th><th scope="col" id="th-sep">Sep</th><th scope="col" id="th-oct">Oct</th><th scope="col" id="th-nov">Nov</th><th scope="col" id="th-dec">Dec</th>
+              <th class="ytd" scope="col" id="th-ytd">YTD</th>
             </tr>
           </thead>
-          <tbody>
-            <tr><th scope="row">2021</th><td>—</td><td class="pos">70.5</td><td class="pos">2.5</td><td class="pos">1.15</td><td class="neg">-22.9</td><td class="neg">-12.7</td><td class="pos">15.6</td><td class="pos">14.0</td><td class="neg">-2.5</td><td class="pos">11.0</td><td class="pos">1.3</td><td class="neg">-11.0</td><td class="ytd">53.1</td></tr>
-            <tr><th scope="row">2022</th><td class="neg">-5.4</td><td class="pos">7.8</td><td class="pos">8.6</td><td class="neg">-8.0</td><td class="neg">-3.0</td><td class="neg">-6.6</td><td class="pos">4.5</td><td class="neg">-5.8</td><td class="neg">-2.7</td><td class="pos">1.8</td><td class="neg">-6.3</td><td class="pos">1.7</td><td class="ytd">-14.3</td></tr>
-            <tr><th scope="row">2023</th><td class="pos">0.0</td><td class="neg">-1.2</td><td class="pos">1.7</td><td class="pos">0.0</td><td class="neg">-2.8</td><td class="pos">5.4</td><td class="neg">-3.0</td><td class="neg">-6.0</td><td class="pos">0.8</td><td class="pos">11.1</td><td class="pos">5.9</td><td class="pos">8.6</td><td class="ytd">21.3</td></tr>
-            <tr><th scope="row">2024</th><td class="neg">-2.0</td><td class="pos">33.5</td><td class="pos">7.1</td><td class="neg">-16.0</td><td class="pos">5.8</td><td class="neg">-0.6</td><td class="pos">0.2</td><td class="neg">-8.2</td><td class="neg">-1.6</td><td class="pos">14.7</td><td class="pos">49.9</td><td class="neg">-16.4</td><td class="ytd">60.3</td></tr>
-            <tr><th scope="row">2025</th><td class="neg">-3.4</td><td class="neg">-12.8</td><td class="neg">-4.3</td><td class="pos">5.6</td><td class="neg">-2.5</td><td class="neg">-0.4</td><td class="neg">-0.2</td><td class="neg">-0.1</td><td class="pos">0.3</td><td class="neg">-0.5</td><td class="pos">3.1</td><td class="neg">-1.7</td><td class="ytd">-16.5</td></tr>
-            <tr><th scope="row">2026</th><td class="neg">-2.1</td><td>-5.3</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td>—</td><td class="ytd">-7.3</td></tr>
-          </tbody>
+          <tbody id="perf-body"></tbody>
         </table>
         <p class="perf-note" id="val-perf-note">Past performance does not guarantee future results. Gross of fees.</p>
       </section>
