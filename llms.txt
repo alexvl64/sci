@@ -57,3 +57,8 @@ SparkCore Investment OÜ offers a white-label solution allowing third-party part
 - Contact: contact@sparkcore.fund
 - EFSA registry: https://www.fi.ee/en/guides/fund-management-companies/investment-market/small-fund-managers-without-activity-licence/sparkcoreinvestment-ou
 - EFIU licence: https://mtr.ttja.ee/taotluse_tulemus/609065
+- Full content index (blog articles & resources): https://sparkcore.fund/llms-full.txt
+
+## License
+
+License: RSL 1.0
