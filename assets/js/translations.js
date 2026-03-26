@@ -41,7 +41,7 @@ const translations = {
     sidebarSubmit: "Nous contacter",
 
     // === HERO ===
-    heroTitle: "Sécurité <span class=\"block\">Performance</span>",
+    heroTitle: "Gestion Institutionnelle de Fonds en Crypto-actifs",
     heroTagline: "L'investissement fiable dans l'univers des crypto-actifs",
 
     // === FUNDS SECTION ===
@@ -211,7 +211,7 @@ const translations = {
     sidebarSubmit: "Contact Us",
 
     // === HERO ===
-    heroTitle: "Security <span class=\"block\">Performance</span>",
+    heroTitle: "Institutional Crypto Asset Fund Management",
     heroTagline: "Reliable investment in the crypto-asset universe",
 
     // === FUNDS SECTION ===
