@@ -1,5 +1,8 @@
-# Agents IA — accès explicitement autorisé
+# AI crawlers — explicit allow
 User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
 Allow: /
 
 User-agent: Google-Extended
@@ -11,19 +14,8 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
+# All other crawlers — block only sensitive paths
 User-agent: *
-Disallow: /
-
-# Pages autorisées à l'indexation
-Allow: /
-Allow: /index.html
-Allow: /blog/
-Allow: /privacy-policy.html
-
-# Assets nécessaires au rendu
-Allow: /assets/
-
-# Exclusions explicites
 Disallow: /factsheets/
 Disallow: /ressources/
 Disallow: /validation.html
