@@ -11,6 +11,9 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: CCBot
+Allow: /
+
 User-agent: *
 Disallow: /
 
