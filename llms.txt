@@ -48,6 +48,23 @@ SparkCore Investment OÜ is an alternative investment fund manager incorporated 
 
 SparkCore Investment OÜ offers a white-label solution allowing third-party partners to distribute managed funds under their own brand, within the applicable EFSA/EFIU regulatory framework.
 
+## Team
+
+### Paul-Antoine PONS
+- Role: Managing Partner
+- Background: Over 7 years of experience in financial markets and crypto-assets. Guided several high net worth individuals in their investments. Founded SparkCore Investment OÜ.
+- LinkedIn: https://www.linkedin.com/in/paul-antoine-pons-523aa919a/
+
+### Olivier SAYEGH
+- Role: Managing Partner
+- Background: Active in trading for over twenty years, began in equity markets before turning to crypto-assets in 2017. Co-founder of DSM, combining technical analysis and innovative strategies.
+- LinkedIn: https://www.linkedin.com/in/olivier-sayegh-5b89b3135/
+
+### Alexandre VINAL
+- Role: Managing Partner
+- Background: Software engineer, investing in crypto-assets since 2014. Founder of the Cointips YouTube channel (2017), co-founder of DSM (2020), leads a private community of crypto-asset investors.
+- LinkedIn: https://www.linkedin.com/in/alexandrevinal/
+
 ## Contacts & Resources
 
 - Website: https://sparkcore.fund
@@ -57,3 +74,8 @@ SparkCore Investment OÜ offers a white-label solution allowing third-party part
 - Contact: contact@sparkcore.fund
 - EFSA registry: https://www.fi.ee/en/guides/fund-management-companies/investment-market/small-fund-managers-without-activity-licence/sparkcoreinvestment-ou
 - EFIU licence: https://mtr.ttja.ee/taotluse_tulemus/609065
+- Full content index (blog articles & resources): https://sparkcore.fund/llms-full.txt
+
+## License
+
+License: RSL 1.0

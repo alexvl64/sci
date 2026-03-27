@@ -1,0 +1,34 @@
+# SparkCore Investment OÜ — Full Content Index
+
+> Complete index of all SparkCore blog articles and resources.
+
+## Blog Articles
+
+- [What Is a Crypto AIFM](https://sparkcore.fund/blog/what-is-a-crypto-aifm): Legal definition, regulatory functions, and investor protections of an AIFM operating in crypto-asset markets under AIFMD.
+- [Crypto Fund vs ETF](https://sparkcore.fund/blog/crypto-fund-vs-etf): Structural comparison of regulated crypto alternative investment funds and exchange-traded products for institutional allocators.
+- [Crypto Fund Compliance Guide](https://sparkcore.fund/blog/crypto-fund-compliance-guide): Operational and regulatory compliance framework for crypto fund managers covering AML, custody, valuation, reporting, and regulator-facing controls.
+- [What an Alternative Investment Fund Platform Does](https://sparkcore.fund/blog/what-an-alternative-investment-fund-platform-does): How an AIF platform supports regulated crypto funds with compliance infrastructure, custody access, and launch operations.
+- [White Label Crypto Fund Platform](https://sparkcore.fund/blog/white-label-crypto-fund-platform): How a white-label crypto fund platform enables third-party managers to launch regulated funds with compliance, banking, and reporting in place.
+- [How White Label Funds Launch in Crypto](https://sparkcore.fund/blog/how-white-label-funds-launch-in-crypto): End-to-end walkthrough of how white-label funds are structured, licensed, and operationalised in the crypto-asset space.
+- [Low Volatility Crypto Strategy](https://sparkcore.fund/blog/low-volatility-crypto-strategy): How regulated funds target steadier returns in crypto markets through hedging, arbitrage, and disciplined risk controls.
+- [Crypto Arbitrage Investment Fund](https://sparkcore.fund/blog/crypto-arbitrage-investment-fund): Market-neutral exposure through controlled arbitrage execution, risk management, and institutional fund structure in crypto markets.
+- [What a Market Neutral Crypto Fund Does](https://sparkcore.fund/blog/what-a-market-neutral-crypto-fund-does): How market-neutral crypto funds target returns with limited market beta using hedging, arbitrage, and disciplined risk management.
+- [Bitcoin Outperformance Strategy Fund](https://sparkcore.fund/blog/bitcoin-outperformance-strategy-fund): How an actively managed fund targets risk-adjusted outperformance relative to Bitcoin within a regulated institutional structure.
+- [What an Institutional Crypto Fund Manager Does](https://sparkcore.fund/blog/what-an-institutional-crypto-fund-manager-does): Regulatory structure, portfolio management responsibilities, and investor due diligence criteria for institutional crypto fund managers.
+- [Crypto Fund for Qualified Investors](https://sparkcore.fund/blog/crypto-fund-for-qualified-investors): How regulated crypto funds provide qualified investors with structured access, risk controls, and reporting beyond direct token ownership.
+- [Estonian AIFM Crypto Fund](https://sparkcore.fund/blog/estonian-aifm-crypto-fund): How Estonia's AIFMD small fund manager regime supports regulated crypto fund structures for qualified investors.
+- [Regulated Crypto Investment Fund](https://sparkcore.fund/blog/regulated-crypto-investment-fund): What regulated status changes for crypto fund investors: oversight, risk controls, and institutional-grade fund structure.
+- [Regulated Crypto Fund Manager in Estonia](https://sparkcore.fund/blog/regulated-crypto-fund-manager-estonia): Detailed overview of operating as a regulated crypto fund manager under the AIFM framework supervised by Finantsinspektsioon.
+- [How to Launch a Crypto Fund in Estonia](https://sparkcore.fund/blog/how-to-launch-a-crypto-fund-estonia): Step-by-step regulatory and operational guide for establishing a crypto fund under Estonia's AIFMD small fund manager regime.
+- [Delta Neutral & Beta Neutral Crypto Strategies](https://sparkcore.fund/blog/delta-neutral-crypto-strategies-explained): How market-neutral, long/short, and quantitative approaches generate uncorrelated returns in digital asset portfolios.
+- [White-Label Crypto Fund Manager Services](https://sparkcore.fund/blog/white-label-crypto-fund-manager-services): Regulatory structure, AIFM architecture, and operational scope of white-label crypto fund manager services.
+
+## Resources
+
+- [Dynamic Trends Factsheet](https://sparkcore.fund/factsheets/dynamic-trends): Fund documentation for the Dynamic Trends fund — directional crypto strategy targeting Bitcoin outperformance.
+- [CryptoVision Factsheet](https://sparkcore.fund/factsheets/cryptovision): Fund documentation for the CryptoVision fund — algorithmic defensive approach with controlled volatility.
+- [Privacy Policy](https://sparkcore.fund/privacy-policy): GDPR and data protection policy for SparkCore Investment OÜ.
+
+## License
+
+License: RSL 1.0

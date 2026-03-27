@@ -41,7 +41,7 @@ const translations = {
     sidebarSubmit: "Nous contacter",
 
     // === HERO ===
-    heroTitle: "Sécurité <span class=\"block\">Performance</span>",
+    heroTitle: "Gestion Institutionnelle <span class=\"block\">de Fonds en Crypto-actifs</span>",
     heroTagline: "L'investissement fiable dans l'univers des crypto-actifs",
 
     // === FUNDS SECTION ===
@@ -148,6 +148,7 @@ const translations = {
     footerRegText: "Société de gestion spécialisée dans les crypto-actifs, enregistrée en Estonie. Supervisée par la Finantsinspektsioon :",
     footerLicenceLabel: "Licence :",
     footerLicenceLink: "EFIU (Institution Financière)",
+    footerAddress: "N° d'enregistrement : 16265864 — Männimäe 1, Pudisoo, 74626 comté de Harju, Estonie",
     footerDisclaimerLabel: "Avertissement :",
     footerWarning: "Les performances passées ne garantissent pas les performances futures. Les crypto-actifs présentent un risque élevé, incluant un risque de perte totale. Ce site et les graphiques de performance sont fournis à titre informatif uniquement et ne constituent pas une offre d'investissement. L'accès aux stratégies est réservé aux investisseurs qualifiés ou professionnels. Veuillez évaluer votre situation personnelle et obtenir un avis indépendant avant d'investir.",
     footerPrivacyLink: "Politique de confidentialité",
@@ -211,7 +212,7 @@ const translations = {
     sidebarSubmit: "Contact Us",
 
     // === HERO ===
-    heroTitle: "Security <span class=\"block\">Performance</span>",
+    heroTitle: "Institutional Crypto Asset <span class=\"block\">Fund Management</span>",
     heroTagline: "Reliable investment in the crypto-asset universe",
 
     // === FUNDS SECTION ===
@@ -318,6 +319,7 @@ const translations = {
     footerRegText: "Asset management company specialising in crypto-assets, registered in Estonia. Supervised by Finantsinspektsioon:",
     footerLicenceLabel: "Licence:",
     footerLicenceLink: "EFIU (Financial Institution)",
+    footerAddress: "Reg. No. 16265864 — Männimäe 1, Pudisoo, 74626 Harju County, Estonia",
     footerDisclaimerLabel: "Disclaimer:",
     footerWarning: "Past performance does not guarantee future results. Crypto-assets carry a high level of risk, including the risk of total loss. This website and performance charts are provided for informational purposes only and do not constitute an investment offer. Access to the strategies is reserved for qualified or professional investors. Please assess your personal situation and seek independent advice before investing.",
     footerPrivacyLink: "Privacy Policy",

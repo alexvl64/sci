@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://www.google.com" crossorigin>
     <script defer src="/assets/js/analytics.js"></script>
     <title>SparkCore — Gestionnaire de fonds crypto réglementé | Estonie</title>
     <!-- Balises meta principales -->
@@ -39,19 +41,20 @@
 
     <!-- style css -->
     <link rel="preload" href="../assets/css/style.css?v=1.4" as="style">
+    <link rel="preload" as="image" href="/assets/images/webp/hero-image.webp" fetchpriority="high">
     <link rel="stylesheet" href="../assets/css/style.css?v=1.4" />
     <!-- aos css -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../assets/css/aos.min.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 
     <link rel="stylesheet" href="../assets/css/tailwind.min.css?v=1.0" />
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts" defer></script>
+    <script src="../assets/js/aos.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <!-- Cronitor RUM -->
     <script async src="https://rum.cronitor.io/script.js"></script>
-    <script src="../assets/js/cronitor.js"></script>
+    <script src="/assets/js/cronitor.js" defer></script>
 
     <script type="application/ld+json">
     {
@@ -92,8 +95,7 @@
           ><img
             class="md:w-[209px] md:h-10 w-[125px] h-6"
             src="/assets/images/svg/logo.svg"
-            alt="SparkCore Investment OÜ"
-        /></a>
+            alt="SparkCore Investment OÜ" width="210" height="40"></a>
         <div class="flex item-center gap-7">
           <button
             aria-label="sidebar-btn"
@@ -117,8 +119,7 @@
           ><img
             class="w-[125px] sm:w-[167px] sm:h-8"
             src="/assets/images/svg/logo.svg"
-            alt="SparkCore Investment OÜ"
-        /></a>
+            alt="SparkCore Investment OÜ" width="210" height="40"></a>
         <button aria-label="close-sidebar" id="close-sidebar">
           <svg
             width="16"
@@ -266,8 +267,7 @@
                   id="select-arrow"
                   class="size-5"
                   src="/assets/images/svg/dropdown-arrow.svg"
-                  alt="arrow"
-                />
+                  alt="arrow" width="24" height="24">
               </div>
               <ul
                 id="dropdown-options"
@@ -363,8 +363,7 @@
         <img
           src="../assets/images/webp/hero-graph-img.webp"
           alt="hero graph image"
-          class="w-full max-2xl:h-[363px] max-custom-xs:h-[200px]"
-        />
+          class="w-full max-2xl:h-[363px] max-custom-xs:h-[200px]" width="1440" height="852">
       </div>
       <div
         class="max-w-[1440px] mx-auto flex justify-between md:gap-6 sm:flex-row flex-col overflow-hidden 2xl:h-full"
@@ -375,7 +374,7 @@
         >
           <div class="relative">
             <h1
-              class="md:!leading-140 !leading-120 font-funnel-display xl:text-custom-6xl lg:text-6xl md:text-5xl text-custom-5xl text-white relative z-[3]"
+              class="md:!leading-140 !leading-120 font-funnel-display md:text-[50px] text-custom-5xl text-white relative z-[3]"
               data-i18n-html="heroTitle"
             >
               Security <span class="block">Performance</span>
@@ -399,8 +398,7 @@
               <img
                 src="../assets/images/webp/hero-graph-img.webp"
                 alt="hero graph image"
-                class="w-full h-[363px] max-custom-xs:h-[200px]"
-              />
+                class="w-full h-[363px] max-custom-xs:h-[200px]" width="1440" height="852">
             </div>
           </div>
           <a
@@ -411,8 +409,7 @@
             <img
               class="size-4"
               src="/assets/images/svg/hero-arrow.svg"
-              alt="arrow"
-            />
+              alt="arrow" width="14" height="18">
           </a>
         </div>
         <div
@@ -425,14 +422,12 @@
             <img
               src="../assets/images/webp/hero-sec-vector.webp"
               alt="hero section vector"
-              class="w-full h-full"
-            />
+              class="w-full h-full" width="630" height="634">
           </div>
           <img
             class="w-full xl:h-[800px] sm:h-full h-[400px] md:h-[550px] object-cover z-[1] 2xl:h-full"
             src="/assets/images/webp/hero-image.webp"
-            alt="hero image"
-          />
+            alt="hero image" width="1440" height="1600" fetchpriority="high" loading="eager">
         </div>
       </div>
     </section>
@@ -664,8 +659,7 @@
               <img
                 src="../assets/images/webp/team-member-first.webp"
                 alt="Photo of Paul-Antoine PONS"
-                class="w-full h-full object-cover"
-              />
+                class="w-full h-full object-cover" width="832" height="800">
             </div>
             <p
               class="text-custom-4xl font-funnel-display leading-140 text-darkGray mt-4 md:mb-1 mb-3"
@@ -693,8 +687,7 @@
               <img
                 src="../assets/images/svg/linkedin.svg"
                 alt="LinkedIn"
-                class="sm:w-4 sm:h-[19px] w-6 h-6"
-              />
+                class="sm:w-4 sm:h-[19px] w-6 h-6" width="16" height="17">
             </a>
           </div>
           <div
@@ -708,8 +701,7 @@
               <img
                 src="../assets/images/webp/team-member-second.webp"
                 alt="Photo of Olivier SAYEGH"
-                class="w-full h-full object-cover"
-              />
+                class="w-full h-full object-cover" width="832" height="800">
             </div>
             <p
               class="text-custom-4xl font-funnel-display leading-140 text-darkGray mt-4 md:mb-1 mb-3"
@@ -737,8 +729,7 @@
               <img
                 src="../assets/images/svg/linkedin.svg"
                 alt="LinkedIn"
-                class="sm:w-4 sm:h-[19px] w-6 h-6"
-              />
+                class="sm:w-4 sm:h-[19px] w-6 h-6" width="16" height="17">
             </a>
           </div>
           <div
@@ -752,8 +743,7 @@
               <img
                 src="../assets/images/webp/team-member-third.webp"
                 alt="Photo of Alexandre VINAL"
-                class="w-full h-full object-cover"
-              />
+                class="w-full h-full object-cover" width="832" height="800">
             </div>
             <p
               class="text-custom-4xl font-funnel-display leading-140 text-darkGray mt-4 md:mb-1 mb-3"
@@ -782,8 +772,7 @@
                 <img
                   src="../assets/images/svg/linkedin.svg"
                   alt="LinkedIn"
-                  class="sm:w-4 sm:h-[19px] w-6 h-6"
-                />
+                  class="sm:w-4 sm:h-[19px] w-6 h-6" width="16" height="17">
               </a>
               <a
                 rel="noopener noreferrer"
@@ -794,8 +783,7 @@
                 <img
                   src="../assets/images/svg/youtube.svg"
                   alt="YouTube"
-                  class="sm:w-[19px] w-7 sm:h-[14px] h-5"
-                />
+                  class="sm:w-[19px] w-7 sm:h-[14px] h-5" width="20" height="14">
               </a>
             </div>
           </div>
@@ -817,14 +805,12 @@
           <img
             src="../assets/images/webp/blur-box.webp"
             alt="blur box"
-            class="w-full h-full"
-          />
+            class="w-full h-full" width="426" height="606">
         </div>
         <img
           src="../assets/images/webp/contact-us-img.webp"
           alt="graph image"
-          class="absolute bottom-0 end-0 max-w-[700px] lg:h-[305px] sm:h-[250px] h-[190px] z-[1]"
-        />
+          class="absolute bottom-0 end-0 max-w-[700px] lg:h-[305px] sm:h-[250px] h-[190px] z-[1]" width="1382" height="476">
         <div class="flex flex-col items-start justify-start relative z-[3]">
           <h2
             class="md:text-5xl text-custom-5xl md:leading-140 leading-120 text-white font-funnel-display"
@@ -887,8 +873,7 @@
             <img
               src="../assets/images/webp/invest-in-us.webp"
               alt="invest in us image"
-              class="w-full h-full object-cover"
-            />
+              class="w-full h-full object-cover" width="1392" height="1600">
           </div>
           <div
             class="bg-cream xl:p-10 lg:p-8 md:p-6 py-8 px-6 flex flex-col items-start justify-between lg:max-w-[616px] w-full"
@@ -922,8 +907,7 @@
                   <img
                     src="../assets/images/svg/invest-svg-1.svg"
                     alt=""
-                    class="w-full h-full"
-                  />
+                    class="w-full h-full" width="32" height="32">
                 </span>
                 <p
                   class="font-funnel-display text-xl leading-140 text-darkGray"
@@ -941,8 +925,7 @@
                   <img
                     src="../assets/images/svg/invest-svg-2.svg"
                     alt=""
-                    class="w-full h-full"
-                  />
+                    class="w-full h-full" width="32" height="32">
                 </span>
                 <p
                   class="font-funnel-display text-xl leading-140 text-darkGray"
@@ -960,8 +943,7 @@
                   <img
                     src="../assets/images/svg/invest-svg-3.svg"
                     alt=""
-                    class="w-full h-full"
-                  />
+                    class="w-full h-full" width="32" height="32">
                 </span>
                 <p
                   class="font-funnel-display text-xl leading-140 text-darkGray"
@@ -979,8 +961,7 @@
                   <img
                     src="../assets/images/svg/invest-svg-4.svg"
                     alt=""
-                    class="w-full h-full"
-                  />
+                    class="w-full h-full" width="32" height="32">
                 </span>
                 <p
                   class="font-funnel-display text-xl leading-140 text-darkGray"
@@ -1148,8 +1129,7 @@
               <img
                 class="w-full h-full"
                 src="/assets/images/svg/logo.svg"
-                alt="SparkCore Investment OÜ"
-              />
+                alt="SparkCore Investment OÜ" width="210" height="40">
             </a>
             <div class="flex items-center gap-4">
               <div class="lang-toggle max-sm:hidden" role="group" aria-label="Language selector" id="lang-toggle-footer">
@@ -1165,8 +1145,7 @@
                 <img
                   src="../assets/images/svg/linkedin.svg"
                   alt="LinkedIn"
-                  class="w-4 h-[19px]"
-                />
+                  class="w-4 h-[19px]" width="16" height="17">
               </a>
             </div>
           </div>
@@ -1214,6 +1193,10 @@
               </a>
             </p>
           </div>
+          <p class="font-inter font-normal text-base sm:text-sm leading-140 text-steelBlue custom-xs:mt-4 mt-6">
+            <span class="font-inter font-normal leading-140 text-darkGray" data-i18n="footerAddress">Reg. No. 16265864 — Männimäe 1, Pudisoo, 74626 Harju County, Estonia</span>
+            — <a rel="noopener noreferrer" href="https://search.gleif.org/#/record/8945003BBN0RVNNB0S84" target="_blank" class="underline underline-offset-2">LEI: 8945003BBN0RVNNB0S84</a>
+          </p>
           <p
             class="font-inter font-normal text-base sm:text-sm leading-140 text-steelBlue custom-xs:mt-4 mt-6"
           >
@@ -1247,8 +1230,7 @@
               <img
                 src="../assets/images/svg/linkedin.svg"
                 alt="LinkedIn"
-                class="size-6"
-              />
+                class="size-6" width="16" height="17">
             </a>
           </div>
         </div>
@@ -1263,8 +1245,7 @@
       <img
         class="back_top_img"
         src="../assets/images/svg/back-to-top.svg"
-        alt="back-top"
-      />
+        alt="back-top" width="50" height="50">
     </div>
 
     <script src="../assets/js/translations.js"></script>
