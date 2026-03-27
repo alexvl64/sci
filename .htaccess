@@ -1,0 +1,30 @@
+<IfModule mod_headers.c>
+
+  # Content Security Policy
+  Header always set Content-Security-Policy "\
+    default-src 'none'; \
+    script-src 'self' cdn.jsdelivr.net unpkg.com www.google.com www.gstatic.com rum.cronitor.io www.googletagmanager.com; \
+    style-src 'self' cdn.jsdelivr.net unpkg.com 'unsafe-inline'; \
+    img-src 'self' data: www.google-analytics.com www.googletagmanager.com www.gstatic.com; \
+    font-src 'self'; \
+    connect-src 'self' www.google-analytics.com analytics.google.com www.googletagmanager.com rum.cronitor.io formcarry.com docs.google.com; \
+    frame-src www.google.com; \
+    object-src 'none'; \
+    base-uri 'self'; \
+    form-action 'self' formcarry.com; \
+    upgrade-insecure-requests \
+  "
+
+  # Prevent MIME-type sniffing
+  Header always set X-Content-Type-Options "nosniff"
+
+  # Prevent clickjacking
+  Header always set X-Frame-Options "SAMEORIGIN"
+
+  # Referrer policy
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+  # Permissions policy — disable unused browser features
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()"
+
+</IfModule>

@@ -82,16 +82,7 @@
   </head>
 
   <body>
-    <script>
-    (function(){
-      if (/googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot/i.test(navigator.userAgent || '')) return;
-      try {
-        var saved = localStorage.getItem('sc_lang');
-        if (saved === 'en') { window.location.replace('/'); return; }
-        localStorage.setItem('sc_lang', 'fr');
-      } catch(e) {}
-    })();
-    </script>
+    <script src="/assets/js/lang-redirect-fr.js"></script>
     <!-- ========= HEADER ======= -->
     <header class="bg-white sticky top-0 z-10 drop-shadow-lg">
       <nav
