@@ -56,9 +56,9 @@
       };
     }
     return {
-      title: "Your privacy matters",
-      text: "We use analytics cookies to understand site usage and improve the experience. You can accept or decline.",
-      accept: "Accept",
+      title: "",
+      text: "We use essential cookies for a personalised experience. Learn more in our",
+      accept: "Accept all",
       reject: "Decline",
       privacy: "Privacy Policy"
     };
