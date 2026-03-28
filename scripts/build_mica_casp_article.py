@@ -168,7 +168,7 @@ def main():
     hero_html = ""
     if cover.startswith("http") or cover.startswith("/"):
         hero_html = (
-            f'<figure class="my-8"><img src="{html_escape_attr(cover)}" alt="{html_escape_attr(alt_c)}" '
+            f'<figure class="mt-6 mb-12"><img src="{html_escape_attr(cover)}" alt="{html_escape_attr(alt_c)}" '
             'class="w-full rounded-lg object-cover max-h-[420px]" loading="lazy" width="1260" height="750" decoding="async" /></figure>\n'
         )
     raw = re.sub(r"\n!\[[^\]]*\]\([^\)]+\)\s*\n", "\n\n", raw, count=1)
