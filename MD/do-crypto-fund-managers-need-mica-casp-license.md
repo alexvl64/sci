@@ -1,9 +1,9 @@
 ---
 title: "Do Crypto Fund Managers Need a MiCA CASP License?"
 description: "MiCA's CASP framework applies since Dec 2024. Authorized AIFMs use Article 60 to avoid full licensing. Sub-threshold managers must apply for CASP authorization. Full breakdown."
-coverImage: "https://images.pexels.com/photos/11682403/pexels-photo-11682403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+coverImage: "/assets/images/jpeg/mica-casp-hero.jpeg"
 coverImageAlt: "The European Parliament building in Strasbourg, France — where the MiCA regulation was adopted in April 2023, reshaping crypto licensing across the EU."
-ogImage: "https://images.pexels.com/photos/11682403/pexels-photo-11682403.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+ogImage: "https://sparkcore.fund/assets/images/jpeg/mica-casp-hero.jpeg"
 date: "2026-03-28"
 lastUpdated: "2026-03-28"
 author: ""

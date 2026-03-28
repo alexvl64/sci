@@ -135,7 +135,9 @@ def main():
     desc = front.get("description", "")
     date_pub = front.get("date", "2026-03-28").strip('"')
     og_image = front.get("ogImage", "https://sparkcore.fund/meta-image.webp")
-    if not og_image.startswith("http"):
+    if og_image.startswith("/"):
+        og_image = "https://sparkcore.fund" + og_image.split("?")[0]
+    elif not og_image.startswith("http"):
         og_image = "https://sparkcore.fund/meta-image.webp"
     canonical = f"https://sparkcore.fund/blog/{SLUG}"
     title_short = "MiCA CASP License for Crypto Fund Managers?"
@@ -164,10 +166,10 @@ def main():
     cover = front.get("coverImage", "").strip().strip('"').strip("'")
     alt_c = front.get("coverImageAlt", "").strip().strip('"').strip("'") or "Article illustration"
     hero_html = ""
-    if cover.startswith("http"):
+    if cover.startswith("http") or cover.startswith("/"):
         hero_html = (
             f'<figure class="my-8"><img src="{html_escape_attr(cover)}" alt="{html_escape_attr(alt_c)}" '
-            'class="w-full rounded-lg object-cover max-h-[420px]" loading="lazy" width="1260" height="750" /></figure>\n'
+            'class="w-full rounded-lg object-cover max-h-[420px]" loading="lazy" width="1260" height="750" decoding="async" /></figure>\n'
         )
     raw = re.sub(r"\n!\[[^\]]*\]\([^\)]+\)\s*\n", "\n\n", raw, count=1)
 
