@@ -48,11 +48,11 @@
     var isFrench = (document.documentElement.lang || "").toLowerCase().indexOf("fr") === 0;
     if (isFrench) {
       return {
-        title: "Respect de votre vie privee",
-        text: "Nous utilisons des cookies de mesure d'audience pour ameliorer le site. Vous pouvez accepter ou refuser.",
-        accept: "Accepter",
+        title: "",
+        text: "Nous utilisons des cookies essentiels pour une exp\u00e9rience personnalis\u00e9e. En savoir plus dans notre",
+        accept: "Tout accepter",
         reject: "Refuser",
-        privacy: "Politique de confidentialite"
+        privacy: "Politique de confidentialit\u00e9"
       };
     }
     return {
@@ -90,7 +90,7 @@
     banner.style.zIndex = "99999";
     banner.style.fontFamily = "Arial, sans-serif";
     banner.innerHTML =
-      '<div style="font-weight:600;margin-bottom:6px;">' + labels.title + "</div>" +
+      (labels.title ? '<div style="font-weight:600;margin-bottom:6px;">' + labels.title + "</div>" : "") +
       '<div style="font-size:14px;line-height:1.45;margin-bottom:12px;">' + labels.text +
       ' <a href="/privacy-policy" style="color:#DBD1BC;text-decoration:underline;">' + labels.privacy + "</a>.</div>" +
       '<div style="display:flex;gap:8px;flex-wrap:wrap;">' +
