@@ -6,9 +6,9 @@
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="preconnect" href="https://www.google.com" crossorigin>
     <script defer src="/assets/js/analytics.js"></script>
-    <title>SparkCore Investment — Regulated Crypto-Asset Fund Manager | Estonia</title>
+    <title>SparkCore — Regulated Crypto Fund Manager | Estonia</title>
     <!-- Primary Meta Tags -->
-    <meta name="description" content="SparkCore Investment OÜ is a regulated AIFM in Estonia, specialising in crypto-asset alternative investment funds. Supervised by Finantsinspektsioon. For institutional and qualified investors." />
+    <meta name="description" content="SparkCore Investment OÜ — regulated AIFM in Estonia. Crypto-asset alternative investment funds, supervised by Finantsinspektsioon. For qualified investors." />
     <meta name="robots" content="index, follow" />
     <meta name="author" content="SparkCore Investment OÜ" />
 
@@ -21,15 +21,15 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://sparkcore.fund/" />
-    <meta property="og:title" content="SparkCore Investment — Regulated Crypto-Asset Fund Manager" />
-    <meta property="og:description" content="SparkCore Investment OÜ is a regulated AIFM in Estonia, specialising in crypto-asset alternative investment funds. Supervised by Finantsinspektsioon. For institutional and qualified investors." />
+    <meta property="og:title" content="SparkCore — Regulated Crypto Fund Manager | Estonia" />
+    <meta property="og:description" content="SparkCore Investment OÜ — regulated AIFM in Estonia. Crypto-asset alternative investment funds, supervised by Finantsinspektsioon. For qualified investors." />
     <meta property="og:image" content="https://sparkcore.fund/meta-image.webp" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://sparkcore.fund/" />
-    <meta property="twitter:title" content="SparkCore Investment — Regulated Crypto-Asset Fund Manager" />
-    <meta property="twitter:description" content="SparkCore Investment OÜ is a regulated AIFM in Estonia, specialising in crypto-asset alternative investment funds. Supervised by Finantsinspektsioon. For institutional and qualified investors." />
+    <meta property="twitter:title" content="SparkCore — Regulated Crypto Fund Manager | Estonia" />
+    <meta property="twitter:description" content="SparkCore Investment OÜ — regulated AIFM in Estonia. Crypto-asset alternative investment funds, supervised by Finantsinspektsioon. For qualified investors." />
     <meta property="twitter:image" content="https://sparkcore.fund/meta-image.webp" />
 
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -64,7 +64,7 @@
           "@type": "Organization",
           "name": "SparkCore Investment OÜ",
           "url": "https://sparkcore.fund/",
-          "logo": "https://sparkcore.fund/assets/images/svg/logo.svg",
+          "logo": "https://sparkcore.fund/assets/images/png/favicon-192x192.png",
           "description": "Regulated Alternative Investment Fund Manager (AIFM) specialising in crypto-assets, registered in Estonia and supervised by Finantsinspektsioon.",
           "sameAs": [
             "https://www.linkedin.com/company/sparkcorefund/"
@@ -74,9 +74,9 @@
           "@type": "WebPage",
           "@id": "https://sparkcore.fund/",
           "url": "https://sparkcore.fund/",
-          "name": "SparkCore Investment — Regulated Crypto-Asset Fund Manager | Estonia",
+          "name": "SparkCore — Regulated Crypto Fund Manager | Estonia",
           "description": "SparkCore Investment OÜ is a regulated AIFM based in Estonia specialising in crypto-asset alternative investment funds.",
-          "inLanguage": ["en", "fr"]
+          "inLanguage": "en"
         },
         {
           "@type": "FinancialService",
@@ -90,6 +90,34 @@
             "name": "Finantsinspektsioon (EFSA)",
             "url": "https://www.fi.ee/"
           }
+        }
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Site Navigation",
+      "itemListElement": [
+        {
+          "@type": "SiteNavigationElement",
+          "position": 1,
+          "name": "Home",
+          "url": "https://sparkcore.fund/"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 2,
+          "name": "Blog",
+          "url": "https://sparkcore.fund/blog/"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 3,
+          "name": "Privacy Policy",
+          "url": "https://sparkcore.fund/privacy-policy"
         }
       ]
     }
@@ -139,21 +167,7 @@
   </head>
 
   <body>
-    <script>
-    (function(){
-      var path = (window.location.pathname || '/').replace(/\/$/, '') || '/';
-      if (path !== '/' && path !== '/index.html') return;
-      if (/googlebot|bingbot|slurp|duckduckbot|baiduspider|yandexbot/i.test(navigator.userAgent || '')) return;
-      try {
-        var saved = localStorage.getItem('sc_lang');
-        if (saved === 'fr') { window.location.replace('/fr/'); return; }
-        if (!saved && navigator.language && navigator.language.toLowerCase().indexOf('fr') === 0) {
-          localStorage.setItem('sc_lang', 'fr');
-          window.location.replace('/fr/');
-        }
-      } catch(e) {}
-    })();
-    </script>
+    <script src="/assets/js/lang-redirect-en.js"></script>
     <!-- ========= HEADER ======= -->
     <header class="bg-white sticky top-0 z-10 drop-shadow-lg">
       <nav
@@ -974,8 +988,9 @@
                 >
                   <img
                     src="./assets/images/svg/invest-svg-1.svg"
-                    alt=""
-                    class="w-full h-full" width="32" height="32">
+                    alt="Step 1: Request information"
+                    class="w-full h-full"
+                  />
                 </span>
                 <p
                   class="font-funnel-display text-xl leading-140 text-darkGray"
@@ -992,8 +1007,9 @@
                 >
                   <img
                     src="./assets/images/svg/invest-svg-2.svg"
-                    alt=""
-                    class="w-full h-full" width="32" height="32">
+                    alt="Step 2: We will contact you with further details"
+                    class="w-full h-full"
+                  />
                 </span>
                 <p
                   class="font-funnel-display text-xl leading-140 text-darkGray"
@@ -1010,8 +1026,9 @@
                 >
                   <img
                     src="./assets/images/svg/invest-svg-3.svg"
-                    alt=""
-                    class="w-full h-full" width="32" height="32">
+                    alt="Step 3: Sign the required documents"
+                    class="w-full h-full"
+                  />
                 </span>
                 <p
                   class="font-funnel-display text-xl leading-140 text-darkGray"
@@ -1028,8 +1045,9 @@
                 >
                   <img
                     src="./assets/images/svg/invest-svg-4.svg"
-                    alt=""
-                    class="w-full h-full" width="32" height="32">
+                    alt="Step 4: Become an investor"
+                    class="w-full h-full"
+                  />
                 </span>
                 <p
                   class="font-funnel-display text-xl leading-140 text-darkGray"
