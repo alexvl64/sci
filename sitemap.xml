@@ -58,18 +58,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://sparkcore.fund/blog/how-white-label-funds-launch-in-crypto</loc>
-    <lastmod>2026-03-19</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://sparkcore.fund/blog/low-volatility-crypto-strategy</loc>
-    <lastmod>2026-03-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+
   <url>
     <loc>https://sparkcore.fund/blog/crypto-arbitrage-investment-fund</loc>
     <lastmod>2026-03-17</lastmod>
@@ -100,12 +89,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://sparkcore.fund/blog/estonian-aifm-crypto-fund</loc>
-    <lastmod>2026-03-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+
   <url>
     <loc>https://sparkcore.fund/blog/regulated-crypto-investment-fund</loc>
     <lastmod>2026-03-11</lastmod>
