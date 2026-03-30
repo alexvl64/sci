@@ -22,6 +22,143 @@ Context and configuration reference for Claude Code sessions on the `alexvl64/sc
 
 ---
 
+## Files intentionally excluded from git
+
+The following files are gitignored and must never be committed or pushed:
+
+| File | Reason |
+|---|---|
+| `.htaccess` | Managed locally — not deployed via git |
+| `CLAUDE.md` | Local reference only |
+| `MD/` | Source markdown files — not deployed |
+
+---
+
+## Apache / OVH server configuration (.htaccess)
+
+The `.htaccess` is **gitignored** — it lives only on the local machine and on the OVH server (managed manually). Do not commit it.
+
+Current configuration:
+
+```apache
+# ============================================================
+# .htaccess — sparkcore.fund
+# ============================================================
+
+Options -Indexes
+
+# ----------------------------------------------------------------
+# Moteur de réécriture
+# ----------------------------------------------------------------
+RewriteEngine On
+
+# ----------------------------------------------------------------
+# HTTP → HTTPS + www → non-www
+# COMMENTÉ pour les tests sur le domaine temporaire OVH
+# À décommenter avant la bascule DNS vers sparkcore.fund
+# ----------------------------------------------------------------
+ RewriteCond %{HTTPS} off [OR]
+ RewriteCond %{HTTP_HOST} ^www\. [NC]
+ RewriteRule ^ https://sparkcore.fund%{REQUEST_URI} [R=301,L]
+
+# ----------------------------------------------------------------
+# Headers de sécurité
+# ----------------------------------------------------------------
+<IfModule mod_headers.c>
+    Header always set X-Frame-Options "SAMEORIGIN"
+    Header always set X-Content-Type-Options "nosniff"
+    Header always set Referrer-Policy "strict-origin-when-cross-origin"
+    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    Header always set Content-Security-Policy "default-src 'none'; script-src 'self' cdn.jsdelivr.net unpkg.com www.google.com www.gstatic.com rum.cronitor.io www.googletagmanager.com; style-src 'self' cdn.jsdelivr.net unpkg.com 'unsafe-inline'; img-src 'self' data: www.google-analytics.com www.googletagmanager.com www.gstatic.com; font-src 'self'; connect-src 'self' www.google-analytics.com analytics.google.com www.googletagmanager.com rum.cronitor.io formcarry.com docs.google.com; frame-src www.google.com; object-src 'none'; base-uri 'self'; form-action 'self' formcarry.com; upgrade-insecure-requests"
+</IfModule>
+
+# ----------------------------------------------------------------
+# Cache des assets statiques
+# ----------------------------------------------------------------
+<IfModule mod_headers.c>
+    <FilesMatch "\.(css|js|webp|png|svg|ico|woff2?|ttf|eot|jpg|jpeg|gif|json|xml|txt)$">
+        Header set Cache-Control "public, no-transform"
+    </FilesMatch>
+</IfModule>
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 30 days"
+    ExpiresByType application/javascript "access plus 30 days"
+    ExpiresByType image/webp "access plus 30 days"
+    ExpiresByType image/png "access plus 30 days"
+    ExpiresByType image/svg+xml "access plus 30 days"
+    ExpiresByType image/x-icon "access plus 30 days"
+    ExpiresByType font/woff2 "access plus 30 days"
+    ExpiresByType font/woff "access plus 30 days"
+    ExpiresByType font/ttf "access plus 30 days"
+    ExpiresByType application/vnd.ms-fontobject "access plus 30 days"
+    ExpiresByType image/jpeg "access plus 30 days"
+    ExpiresByType image/gif "access plus 30 days"
+    ExpiresByType application/json "access plus 30 days"
+    ExpiresByType application/xml "access plus 30 days"
+    ExpiresByType text/xml "access plus 30 days"
+    ExpiresByType text/plain "access plus 30 days"
+</IfModule>
+
+# ----------------------------------------------------------------
+# Blocage des fichiers cachés (.git, .env, etc.)
+# ----------------------------------------------------------------
+RewriteCond %{REQUEST_URI} (^|/)\. [NC]
+RewriteRule ^ - [R=404,L]
+RewriteRule ^\..* - [R=404,L]
+
+# ----------------------------------------------------------------
+# Blocage des fichiers PHP
+# ----------------------------------------------------------------
+RewriteCond %{REQUEST_URI} \.php$ [NC]
+RewriteRule ^ - [F,L]
+RewriteRule ^.*\.php$ - [F,L]
+
+# ----------------------------------------------------------------
+# Blocage des PDF sensibles (accès direct interdit)
+# ----------------------------------------------------------------
+RewriteCond %{REQUEST_URI} ^/ressources/instruction_depot.*\.pdf$ [NC]
+RewriteRule ^ - [F,L]
+RewriteRule ^ressources/instruction_depot.*\.pdf$ - [F,L]
+RewriteRule ^resources/instruction_depot.*\.pdf$ - [F,L]
+
+# ----------------------------------------------------------------
+# Try-files (équivalent Nginx try_files $uri $uri/ $uri.html =404)
+# ----------------------------------------------------------------
+DirectoryIndex index.html
+
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} /$
+RewriteRule ^ - [L]
+
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} !/$
+RewriteRule ^(.+)$ $1/ [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^(.+)$ $1.html [L]
+
+RewriteRule ^ - [R=404,L]
+
+# ----------------------------------------------------------------
+# Pages d'erreur personnalisées
+# ----------------------------------------------------------------
+ErrorDocument 403 /403.html
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html
+ErrorDocument 502 /500.html
+ErrorDocument 503 /500.html
+ErrorDocument 504 /500.html
+```
+
+---
+
 ## Cloudflare configuration
 
 All settings below are live on the `sparkcore.fund` zone.
@@ -65,14 +202,6 @@ default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://www.googl
 |---|---|
 | HTTP/3 (QUIC) | Not available — free plan only |
 | HTTP/2 | ✅ enabled by Cloudflare automatically |
-
----
-
-## .htaccess (OVH)
-
-The `.htaccess` lives **outside the `www/` directory** on the OVH server — it is not in this repo. Do not create or commit a `.htaccess` file here.
-
-Any server-level header changes (e.g. additional security headers) must be applied manually to the OVH `.htaccess`.
 
 ---
 
