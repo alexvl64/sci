@@ -171,9 +171,9 @@ All settings below are live on the `sparkcore.fund` zone.
 
 | Parameter | Value |
 |---|---|
-| Browser Cache TTL | **Respect Existing Headers** |
+| Browser Cache TTL | **1 year** |
 
-> This allows the `max-age=31536000, immutable` headers set in `.htaccess` to reach the browser. Do NOT set a fixed TTL here or Cloudflare will override the origin headers.
+> Set to 1 year. Cloudflare instructs browsers to cache static assets (CSS, JS, images, fonts) for 1 year. HTML is not cached by Cloudflare on the free plan by default, so pages remain always fresh.
 
 ### SSL/TLS → Edge Certificates — HSTS
 
