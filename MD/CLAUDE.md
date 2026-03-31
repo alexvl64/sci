@@ -64,16 +64,16 @@ RewriteEngine On
 # ----------------------------------------------------------------
 # Headers de sécurité
 # ----------------------------------------------------------------
+
 <IfModule mod_headers.c>
     Header always set X-Frame-Options "SAMEORIGIN"
     Header always set X-Content-Type-Options "nosniff"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
-    Header always set Content-Security-Policy "default-src 'none'; script-src 'self' cdn.jsdelivr.net unpkg.com www.google.com www.gstatic.com rum.cronitor.io www.googletagmanager.com; style-src 'self' cdn.jsdelivr.net unpkg.com 'unsafe-inline'; img-src 'self' data: www.google-analytics.com www.googletagmanager.com www.gstatic.com; font-src 'self'; connect-src 'self' www.google-analytics.com analytics.google.com www.googletagmanager.com rum.cronitor.io formcarry.com docs.google.com; frame-src www.google.com; object-src 'none'; base-uri 'self'; form-action 'self' formcarry.com; upgrade-insecure-requests"
 </IfModule>
 
 # ----------------------------------------------------------------
-# Cache des assets statiques
+# Cache des assets statiques (équivalent Nginx)
 # ----------------------------------------------------------------
 <IfModule mod_headers.c>
     <FilesMatch "\.(css|js|webp|png|svg|ico|woff2?|ttf|eot|jpg|jpeg|gif)$">
@@ -113,7 +113,9 @@ RewriteRule ^ - [R=404,L]
 RewriteRule ^\..* - [R=404,L]
 
 # ----------------------------------------------------------------
-# Blocage des fichiers PHP
+# Blocage des fichiers PHP (inaccessible en statique)
+# Important : OVH n'autorise pas toujours `<FilesMatch>` en `.htaccess`.
+# On bloque donc aussi via `mod_rewrite` pour fiabiliser.
 # ----------------------------------------------------------------
 RewriteCond %{REQUEST_URI} \.php$ [NC]
 RewriteRule ^ - [F,L]
@@ -128,26 +130,31 @@ RewriteRule ^ressources/instruction_depot.*\.pdf$ - [F,L]
 RewriteRule ^resources/instruction_depot.*\.pdf$ - [F,L]
 
 # ----------------------------------------------------------------
-# Try-files (équivalent Nginx try_files $uri $uri/ $uri.html =404)
+# Equivalent Nginx try_files $uri $uri/ $uri.html =404;
 # ----------------------------------------------------------------
 DirectoryIndex index.html
 
+# 1) Si un fichier existe, Apache le sert directement
 RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule ^ - [L]
 
+# 2) Si c'est un dossier et que l'URL finit déjà par '/', Apache le sert directement
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteCond %{REQUEST_URI} /$
 RewriteRule ^ - [L]
 
+# 3) Si c'est un dossier mais que l'URL n'a pas de '/', on ajoute un '/' en réécriture interne
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteCond %{REQUEST_URI} !/$
 RewriteRule ^(.+)$ $1/ [L]
 
+# 2) Sinon, si un fichier *.html existe, on le sert
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.+)$ $1.html [L]
 
+# 3) Sinon 404
 RewriteRule ^ - [R=404,L]
 
 # ----------------------------------------------------------------
