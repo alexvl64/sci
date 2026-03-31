@@ -52,7 +52,7 @@
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"></noscript>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts" defer></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
 
     <!-- Cronitor RUM -->
     <script async src="https://rum.cronitor.io/script.js"></script>
@@ -182,7 +182,7 @@
             alt="SparkCore Investment OÜ" width="210" height="40"></a>
         <div class="flex item-center gap-7">
           <button
-            aria-label="sidebar-btn"
+            aria-label="Contact Us"
             class="open-sidebar font-inter font-normal md:h-[54px] md:px-6 md:py-4 px-4 py-3 h-11 rounded text-sm md:text-base bg-darkGray text-white !leading-140 hover:bg-transparent hover:text-darkGray border border-transparent hover:border-darkGray duration-300 flex items-center justify-center"
             data-i18n="navContact"
           >
@@ -191,6 +191,7 @@
         </div>
       </nav>
     </header>
+    <main>
     <!-- ======= FORM SIDEBAR ======== -->
     <div
       id="form-sidebar"
@@ -247,7 +248,7 @@
                   type="text"
                   placeholder="Your first name"
                   data-i18n-placeholder="sidebarFirstNamePlaceholder"
-                  class="w-full sm:p-4 p-5 sm:h-[54px] h-[62px] border border-paleBlue rounded placeholder:text-softBlueGray placeholder:text-base placeholder:font-inter font-inter text-softBlueGray focus:none outline-none"
+                  class="w-full sm:p-4 p-5 sm:h-[54px] h-[62px] border border-paleBlue rounded placeholder:text-accessiblePlaceholder placeholder:text-base placeholder:font-inter font-inter text-softBlueGray focus:none outline-none"
                 />
                 <div
                   id="prenom-error"
@@ -273,7 +274,7 @@
                   type="text"
                   placeholder="Your last name"
                   data-i18n-placeholder="sidebarLastNamePlaceholder"
-                  class="w-full sm:p-4 p-5 sm:h-[54px] h-[62px] border border-paleBlue rounded placeholder:text-softBlueGray placeholder:text-base placeholder:font-inter font-inter text-softBlueGray focus:none outline-none"
+                  class="w-full sm:p-4 p-5 sm:h-[54px] h-[62px] border border-paleBlue rounded placeholder:text-accessiblePlaceholder placeholder:text-base placeholder:font-inter font-inter text-softBlueGray focus:none outline-none"
                 />
                 <div
                   id="nom-error"
@@ -302,7 +303,7 @@
                   min="0"
                   placeholder="Your phone number"
                   data-i18n-placeholder="sidebarPhonePlaceholder"
-                  class="w-full sm:p-4 p-5 sm:h-[52px] h-[62px] border border-paleBlue rounded placeholder:text-softBlueGray placeholder:text-base placeholder:font-inter font-inter text-softBlueGray focus:none outline-none"
+                  class="w-full sm:p-4 p-5 sm:h-[52px] h-[62px] border border-paleBlue rounded placeholder:text-accessiblePlaceholder placeholder:text-base placeholder:font-inter font-inter text-softBlueGray focus:none outline-none"
                 />
               </div>
             </div>
@@ -320,7 +321,7 @@
                   type="email"
                   placeholder="Your email address"
                   data-i18n-placeholder="sidebarEmailPlaceholder"
-                  class="w-full sm:p-4 p-5 sm:h-[52px] h-[62px] border border-paleBlue rounded placeholder:text-softBlueGray placeholder:text-base placeholder:font-inter font-inter text-softBlueGray focus:none outline-none"
+                  class="w-full sm:p-4 p-5 sm:h-[52px] h-[62px] border border-paleBlue rounded placeholder:text-accessiblePlaceholder placeholder:text-base placeholder:font-inter font-inter text-softBlueGray focus:none outline-none"
                 />
                 <div
                   id="email-error"
@@ -427,7 +428,7 @@
           data-sitekey="6LfBQ5cqAAAAAPsKoG9zx6j49Xz--3N5mZeEgL96"
         ></div>
           <button
-            aria-label="form-submit"
+            aria-label="Contact Us"
             type="submit"
             class="sm:mt-8 mt-12 mb-5 font-inter font-normal h-[54px] sm:px-6 sm:py-4 px-4 py-3 rounded text-base bg-cream text-darkGray !leading-140 hover:bg-transparent hover:text-cream border border-transparent hover:border-cream duration-300 max-sm:w-full"
             data-i18n="sidebarSubmit"
@@ -449,7 +450,7 @@
           srcset="./assets/images/webp/hero-graph-img-768.webp 768w, ./assets/images/webp/hero-graph-img.webp 1440w"
           sizes="(max-width: 768px) 768px, 1440px"
           alt="hero graph image"
-          class="w-full max-2xl:h-[363px] max-custom-xs:h-[200px]" width="1440" height="852">
+          class="w-full max-2xl:h-[363px] max-custom-xs:h-[200px] object-cover" width="1440" height="852">
       </div>
       <div
         class="max-w-[1440px] mx-auto flex justify-between md:gap-6 sm:flex-row flex-col overflow-hidden 2xl:h-full"
@@ -472,7 +473,7 @@
               Reliable investment in the crypto-asset universe
             </p>
             <button
-              aria-label="nous-contacter"
+              aria-label="Contact Us"
               class="open-sidebar mt-8 font-inter font-normal h-[52px] md:h-[54px] md:px-6 py-3.5 md:py-4 px-4 rounded text-sm md:text-base relative z-[3] bg-cream text-darkGray !leading-140 hover:bg-transparent hover:text-cream border border-transparent hover:border-cream duration-300 max-[500px]:w-full flex items-center justify-center"
               data-i18n="navContact"
             >
@@ -486,7 +487,7 @@
                 srcset="./assets/images/webp/hero-graph-img-768.webp 768w, ./assets/images/webp/hero-graph-img.webp 1440w"
                 sizes="(max-width: 768px) 768px, 1440px"
                 alt="hero graph image"
-                class="w-full h-[363px] max-custom-xs:h-[200px]" width="1440" height="852">
+                class="w-full h-[363px] max-custom-xs:h-[200px] object-cover" width="1440" height="852">
             </div>
           </div>
           <a
@@ -900,7 +901,7 @@
         <img
           src="./assets/images/webp/contact-us-img.webp"
           alt="graph image"
-          class="absolute bottom-0 end-0 max-w-[700px] lg:h-[305px] sm:h-[250px] h-[190px] z-[1]" width="1382" height="476">
+          class="absolute bottom-0 end-0 max-w-[700px] lg:h-[305px] sm:h-[250px] h-[190px] z-[1] object-cover" width="1382" height="476">
         <div class="flex flex-col items-start justify-start relative z-[3]">
           <h2
             class="md:text-5xl text-custom-5xl md:leading-140 leading-120 text-white font-funnel-display"
@@ -937,7 +938,6 @@
               </p>
             </div>
             <button
-              aria-label="subscribeButton"
               id="subscribeButton"
               class="px-6 md:h-[60px] h-[54px] flex items-center justify-center py-[19px] hover:bg-transparent hover:border-white hover:text-white transition-all duration-300 border border-transparent bg-white font-inter font-normal text-base leading-140 rounded-[4px] max-custom-xs:w-full"
               data-i18n="subscribeButton"
@@ -1065,7 +1065,7 @@
                 </p>
               </div>
               <button
-                aria-label="nous-contacter"
+                aria-label="Contact Us"
                 class="open-sidebar px-6 h-[54px] py-4 bg-darkGray flex items-center justify-center hover:bg-transparent hover:border-darkGray hover:text-darkGray transition-all duration-300 border border-transparent font-inter text-white font-normal text-base leading-140 rounded-[4px] max-sm:w-full"
                 data-i18n="navContact"
               >
@@ -1140,7 +1140,7 @@
             </div>
             <div class="mt-8">
               <button
-                aria-label="nous-contacter"
+                aria-label="Contact Us"
                 class="open-sidebar font-inter font-normal h-[54px] px-6 py-4 rounded text-base bg-cream text-darkGray !leading-140 hover:bg-transparent hover:text-cream border border-transparent hover:border-cream duration-300 flex items-center justify-center"
                 data-i18n="navContact"
               >
@@ -1210,6 +1210,7 @@
       </div>
     </section>
 
+    </main>
     <!-- ======== FOOTER ======== -->
     <footer>
       <div class="py-8 sm:py-12 lg:py-16 sm:border-t sm:border-lightGray">
