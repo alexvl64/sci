@@ -64,41 +64,45 @@ RewriteEngine On
 # ----------------------------------------------------------------
 # Headers de sécurité
 # ----------------------------------------------------------------
+
 <IfModule mod_headers.c>
     Header always set X-Frame-Options "SAMEORIGIN"
     Header always set X-Content-Type-Options "nosniff"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
-    Header always set Content-Security-Policy "default-src 'none'; script-src 'self' cdn.jsdelivr.net unpkg.com www.google.com www.gstatic.com rum.cronitor.io www.googletagmanager.com; style-src 'self' cdn.jsdelivr.net unpkg.com 'unsafe-inline'; img-src 'self' data: www.google-analytics.com www.googletagmanager.com www.gstatic.com; font-src 'self'; connect-src 'self' www.google-analytics.com analytics.google.com www.googletagmanager.com rum.cronitor.io formcarry.com docs.google.com; frame-src www.google.com; object-src 'none'; base-uri 'self'; form-action 'self' formcarry.com; upgrade-insecure-requests"
 </IfModule>
 
 # ----------------------------------------------------------------
-# Cache des assets statiques
+# Cache des assets statiques (équivalent Nginx)
 # ----------------------------------------------------------------
 <IfModule mod_headers.c>
-    <FilesMatch "\.(css|js|webp|png|svg|ico|woff2?|ttf|eot|jpg|jpeg|gif|json|xml|txt)$">
-        Header set Cache-Control "public, no-transform"
+    <FilesMatch "\.(css|js|webp|png|svg|ico|woff2?|ttf|eot|jpg|jpeg|gif)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    <FilesMatch "\.(json|xml|txt|html)$">
+        Header set Cache-Control "public, max-age=3600"
     </FilesMatch>
 </IfModule>
 
 <IfModule mod_expires.c>
     ExpiresActive On
-    ExpiresByType text/css "access plus 30 days"
-    ExpiresByType application/javascript "access plus 30 days"
-    ExpiresByType image/webp "access plus 30 days"
-    ExpiresByType image/png "access plus 30 days"
-    ExpiresByType image/svg+xml "access plus 30 days"
-    ExpiresByType image/x-icon "access plus 30 days"
-    ExpiresByType font/woff2 "access plus 30 days"
-    ExpiresByType font/woff "access plus 30 days"
-    ExpiresByType font/ttf "access plus 30 days"
-    ExpiresByType application/vnd.ms-fontobject "access plus 30 days"
-    ExpiresByType image/jpeg "access plus 30 days"
-    ExpiresByType image/gif "access plus 30 days"
-    ExpiresByType application/json "access plus 30 days"
-    ExpiresByType application/xml "access plus 30 days"
-    ExpiresByType text/xml "access plus 30 days"
-    ExpiresByType text/plain "access plus 30 days"
+    ExpiresByType text/css                      "access plus 1 year"
+    ExpiresByType application/javascript        "access plus 1 year"
+    ExpiresByType image/webp                    "access plus 1 year"
+    ExpiresByType image/png                     "access plus 1 year"
+    ExpiresByType image/svg+xml                 "access plus 1 year"
+    ExpiresByType image/x-icon                  "access plus 1 year"
+    ExpiresByType font/woff2                    "access plus 1 year"
+    ExpiresByType font/woff                     "access plus 1 year"
+    ExpiresByType font/ttf                      "access plus 1 year"
+    ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+    ExpiresByType image/jpeg                    "access plus 1 year"
+    ExpiresByType image/gif                     "access plus 1 year"
+    ExpiresByType application/json              "access plus 1 year"
+    ExpiresByType application/xml               "access plus 1 year"
+    ExpiresByType text/xml                      "access plus 1 year"
+    ExpiresByType text/plain                    "access plus 1 year"
+    ExpiresByType text/html                     "access plus 1 hour"
 </IfModule>
 
 # ----------------------------------------------------------------
@@ -109,7 +113,9 @@ RewriteRule ^ - [R=404,L]
 RewriteRule ^\..* - [R=404,L]
 
 # ----------------------------------------------------------------
-# Blocage des fichiers PHP
+# Blocage des fichiers PHP (inaccessible en statique)
+# Important : OVH n'autorise pas toujours `<FilesMatch>` en `.htaccess`.
+# On bloque donc aussi via `mod_rewrite` pour fiabiliser.
 # ----------------------------------------------------------------
 RewriteCond %{REQUEST_URI} \.php$ [NC]
 RewriteRule ^ - [F,L]
@@ -124,26 +130,31 @@ RewriteRule ^ressources/instruction_depot.*\.pdf$ - [F,L]
 RewriteRule ^resources/instruction_depot.*\.pdf$ - [F,L]
 
 # ----------------------------------------------------------------
-# Try-files (équivalent Nginx try_files $uri $uri/ $uri.html =404)
+# Equivalent Nginx try_files $uri $uri/ $uri.html =404;
 # ----------------------------------------------------------------
 DirectoryIndex index.html
 
+# 1) Si un fichier existe, Apache le sert directement
 RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule ^ - [L]
 
+# 2) Si c'est un dossier et que l'URL finit déjà par '/', Apache le sert directement
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteCond %{REQUEST_URI} /$
 RewriteRule ^ - [L]
 
+# 3) Si c'est un dossier mais que l'URL n'a pas de '/', on ajoute un '/' en réécriture interne
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteCond %{REQUEST_URI} !/$
 RewriteRule ^(.+)$ $1/ [L]
 
+# 2) Sinon, si un fichier *.html existe, on le sert
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.html -f
 RewriteRule ^(.+)$ $1.html [L]
 
+# 3) Sinon 404
 RewriteRule ^ - [R=404,L]
 
 # ----------------------------------------------------------------
@@ -162,6 +173,14 @@ ErrorDocument 504 /500.html
 ## Cloudflare configuration
 
 All settings below are live on the `sparkcore.fund` zone.
+
+### Caching → Configuration
+
+| Parameter | Value |
+|---|---|
+| Browser Cache TTL | **1 year** |
+
+> Set to 1 year. Cloudflare instructs browsers to cache static assets (CSS, JS, images, fonts) for 1 year. HTML is not cached by Cloudflare on the free plan by default, so pages remain always fresh.
 
 ### SSL/TLS → Edge Certificates — HSTS
 

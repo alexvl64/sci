@@ -41,15 +41,17 @@
 
     <!-- style css -->
     <link rel="preload" href="./assets/css/style.css?v=1.4" as="style">
+    <link rel="preload" href="./assets/css/tailwind.min.css?v=1.0" as="style">
     <link rel="preload" as="image" href="/assets/images/webp/hero-image.webp" fetchpriority="high">
     <link rel="stylesheet" href="./assets/css/style.css?v=1.4" />
-    <!-- aos css -->
-    <link rel="stylesheet" href="./assets/css/aos.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-
     <link rel="stylesheet" href="./assets/css/tailwind.min.css?v=1.0" />
+    <!-- aos css — non-critical, loaded async -->
+    <link rel="preload" href="./assets/css/aos.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="./assets/css/aos.min.css"></noscript>
+    <!-- toastify css — non-critical, loaded async -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"></noscript>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts" defer></script>
-    <script src="./assets/js/aos.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <!-- Cronitor RUM -->
@@ -1341,6 +1343,7 @@
     </div>
 
     <script src="./assets/js/translations.js"></script>
+    <script src="./assets/js/aos.min.js"></script>
     <script src="./assets/js/main.js"></script>
     <script src="./assets/js/index.js?v=2.6"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
