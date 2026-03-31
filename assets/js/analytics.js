@@ -1,6 +1,6 @@
 (function () {
   // Replace with your GA4 Measurement ID (example: G-XXXXXXXXXX)
-  var GA_MEASUREMENT_ID = "G-7DXMS5D9TF";
+  var GA_MEASUREMENT_ID = "G-J80NVPQNVZ";
   var CONSENT_STORAGE_KEY = "sc_cookie_consent_v1";
 
   // Skip loading in local previews and when ID is not configured.
