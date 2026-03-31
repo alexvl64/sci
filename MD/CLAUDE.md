@@ -76,29 +76,33 @@ RewriteEngine On
 # Cache des assets statiques
 # ----------------------------------------------------------------
 <IfModule mod_headers.c>
-    <FilesMatch "\.(css|js|webp|png|svg|ico|woff2?|ttf|eot|jpg|jpeg|gif|json|xml|txt)$">
-        Header set Cache-Control "public, no-transform"
+    <FilesMatch "\.(css|js|webp|png|svg|ico|woff2?|ttf|eot|jpg|jpeg|gif)$">
+        Header set Cache-Control "public, max-age=31536000, immutable"
+    </FilesMatch>
+    <FilesMatch "\.(json|xml|txt|html)$">
+        Header set Cache-Control "public, max-age=3600"
     </FilesMatch>
 </IfModule>
 
 <IfModule mod_expires.c>
     ExpiresActive On
-    ExpiresByType text/css "access plus 30 days"
-    ExpiresByType application/javascript "access plus 30 days"
-    ExpiresByType image/webp "access plus 30 days"
-    ExpiresByType image/png "access plus 30 days"
-    ExpiresByType image/svg+xml "access plus 30 days"
-    ExpiresByType image/x-icon "access plus 30 days"
-    ExpiresByType font/woff2 "access plus 30 days"
-    ExpiresByType font/woff "access plus 30 days"
-    ExpiresByType font/ttf "access plus 30 days"
-    ExpiresByType application/vnd.ms-fontobject "access plus 30 days"
-    ExpiresByType image/jpeg "access plus 30 days"
-    ExpiresByType image/gif "access plus 30 days"
-    ExpiresByType application/json "access plus 30 days"
-    ExpiresByType application/xml "access plus 30 days"
-    ExpiresByType text/xml "access plus 30 days"
-    ExpiresByType text/plain "access plus 30 days"
+    ExpiresByType text/css                      "access plus 1 year"
+    ExpiresByType application/javascript        "access plus 1 year"
+    ExpiresByType image/webp                    "access plus 1 year"
+    ExpiresByType image/png                     "access plus 1 year"
+    ExpiresByType image/svg+xml                 "access plus 1 year"
+    ExpiresByType image/x-icon                  "access plus 1 year"
+    ExpiresByType font/woff2                    "access plus 1 year"
+    ExpiresByType font/woff                     "access plus 1 year"
+    ExpiresByType font/ttf                      "access plus 1 year"
+    ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
+    ExpiresByType image/jpeg                    "access plus 1 year"
+    ExpiresByType image/gif                     "access plus 1 year"
+    ExpiresByType application/json              "access plus 1 year"
+    ExpiresByType application/xml               "access plus 1 year"
+    ExpiresByType text/xml                      "access plus 1 year"
+    ExpiresByType text/plain                    "access plus 1 year"
+    ExpiresByType text/html                     "access plus 1 hour"
 </IfModule>
 
 # ----------------------------------------------------------------
@@ -162,6 +166,14 @@ ErrorDocument 504 /500.html
 ## Cloudflare configuration
 
 All settings below are live on the `sparkcore.fund` zone.
+
+### Caching → Configuration
+
+| Parameter | Value |
+|---|---|
+| Browser Cache TTL | **Respect Existing Headers** |
+
+> This allows the `max-age=31536000, immutable` headers set in `.htaccess` to reach the browser. Do NOT set a fixed TTL here or Cloudflare will override the origin headers.
 
 ### SSL/TLS → Edge Certificates — HSTS
 
