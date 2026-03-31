@@ -65,9 +65,22 @@ const openSidebarButtons = document.querySelectorAll(".open-sidebar");
 const closeSidebarButton = document.getElementById("close-sidebar");
 const sidebar = document.getElementById("form-sidebar");
 
+// Lazy-load reCAPTCHA only on first sidebar open
+let recaptchaLoaded = false;
+function loadRecaptcha() {
+  if (recaptchaLoaded) return;
+  recaptchaLoaded = true;
+  var script = document.createElement("script");
+  script.src = "https://www.google.com/recaptcha/api.js";
+  script.async = true;
+  script.defer = true;
+  document.head.appendChild(script);
+}
+
 // Open the sidebar for each button
 openSidebarButtons.forEach((button) => {
   button.addEventListener("click", () => {
+    loadRecaptcha();
     sidebar.classList.remove("-right-full");
     sidebar.classList.add("right-0");
     document.body.classList.add("overflow-hidden");

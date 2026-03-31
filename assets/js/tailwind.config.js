@@ -20,6 +20,7 @@ module.exports = {
         mediumGray: "#465467",
         steelBlue: "#667085",
         softBlueGray: "#98A2B3",
+        accessiblePlaceholder: "#6b7280",
         cream: "#DBD1BC",
         charcoal: "#545047",
         charcoalBlue: "#334054",
