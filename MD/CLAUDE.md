@@ -251,12 +251,14 @@ Toujours procéder par étapes successives avec des remplacements ciblés (`str_
 ### Workflow obligatoire
 
 **0. Lecture du template de référence**
-Avant toute génération, lire un article HTML existant du repo (ex. `blog/regulated-crypto-fund-manager-estonia.html`).
+Avant toute génération, lire **obligatoirement** `blog/do-crypto-fund-managers-need-mica-casp-license.html` comme article de référence (ou `blog/bitcoin-outperformance-strategy-fund.html` en secours).
 Extraire et mémoriser :
 - Le `<head>` complet (meta, CSS, fonts, scripts)
 - La structure `<nav>`
 - Les classes CSS des conteneurs d'article (`font-inter`, `font-funnel-display`, etc.)
 - Le footer et le disclaimer
+
+> ⚠️ **Ne jamais écrire le footer de mémoire.** Copier littéralement le bloc `<footer>…</footer>` depuis l'article de référence. Le footer correct contient exactement : logo (sans LinkedIn), `@<span id="year">`, séparateur `bg-paleBlue`, [FSA link] + [Licence: EFIU] dans le même `flex gap-3` **sans séparateur `&mdash;` entre eux**, puis Reg. No./LEI, Disclaimer, Privacy Policy. Pas de LinkedIn, pas de Terms of Use.
 
 **Étape A — Squelette**
 Créer `blog/<slug>.html` avec :
@@ -329,6 +331,8 @@ Encapsuler dans :
 - ❌ Omettre l'image hero (`<figure class="mt-6 mb-12">`)
 - ❌ Omettre le bloc Key Takeaways (`border-l-4 border-steelBlue bg-[#F9FAFB]`)
 - ❌ Créer des SVGs avec fond clair (`fill="#f9fafb"`) — toujours fond sombre (`fill="#0f1117"`) dans `<figure class="... rounded-lg bg-[#0f172a] p-4 sm:p-6 overflow-x-auto">`
+- ❌ Écrire le footer de mémoire — toujours copier depuis `blog/do-crypto-fund-managers-need-mica-casp-license.html`
+- ❌ Ajouter LinkedIn, Terms of Use, ou des séparateurs `&mdash;` dans le footer
 
 ---
 
