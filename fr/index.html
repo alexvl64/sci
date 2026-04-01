@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
-    <link rel="preconnect" href="https://www.google.com" crossorigin>
+    <link rel="preconnect" href="https://challenges.cloudflare.com" crossorigin>
     <script defer src="/assets/js/analytics.js"></script>
     <title>SparkCore — Gestionnaire de fonds crypto réglementé | Estonie</title>
     <!-- Balises meta principales -->
@@ -50,7 +50,6 @@
     <link rel="stylesheet" href="../assets/css/tailwind.min.css?v=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/apexcharts" defer></script>
     <script src="../assets/js/aos.min.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
     <!-- Cronitor RUM -->
     <script async src="https://rum.cronitor.io/script.js"></script>
@@ -338,10 +337,9 @@
             data-i18n="sidebarFieldRequired"
             >Please fill in this required field.</span
           >
-          <div
-          class="g-recaptcha recaptcha-box mt-4"
-          data-sitekey="6LfBQ5cqAAAAAPsKoG9zx6j49Xz--3N5mZeEgL96"
-        ></div>
+          <!-- Honeypot anti-spam -->
+          <input type="text" name="website" id="honeypot" autocomplete="off" tabindex="-1" aria-hidden="true" style="display:none;position:absolute;left:-9999px;">
+          <div id="cf-turnstile" class="cf-turnstile mt-4" data-sitekey="0x4AAAAAACy5d4Ot-ahI-r9S" data-theme="light"></div>
           <button
             aria-label="form-submit"
             type="submit"

@@ -1,70 +1,27 @@
 <?php
-error_reporting(E_ALL); // Report all errors
-ini_set('display_errors', '1'); // Display errors on the screen
+// ============================================================
+// form_send.php — SparkCore Investment contact form handler
+// ============================================================
 
+header('Content-Type: application/json');
 
-// L'URL cible vers laquelle les requêtes sont redirigées
-$targetUrl = "https://app.sparkcore-investment.com/prospect/widget/create/hP30R4dl4427m";
-
-// Capturer la méthode HTTP
-$method = $_SERVER['REQUEST_METHOD'];
-
-// Capturer les en-têtes
-$headers = [];
-foreach (getallheaders() as $key => $value) {
-    $headers[] = "$key: $value";
-}
-
-// Capturer le corps de la requête (le cas échéant)
-$body = file_get_contents('php://input');
-
-// Initialiser cURL
-$ch = curl_init($targetUrl);
-
-// Définir les options de cURL
-curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method); // Définir la méthode HTTP (GET, POST, PUT, etc.)
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);   // Retourner la réponse au lieu de l'afficher directement
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);   // Transférer les en-têtes
-
-if ($method !== 'GET') {
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $body);  // Joindre le corps de la requête pour les requêtes non GET
-}
-
-// Exécuter la requête
-$response = curl_exec($ch);
-$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
-
-// Vérifier les erreurs cURL
-if (curl_errno($ch)) {
-    #http_response_code(500);
-    header('Content-Type: application/json');
-    echo json_encode([
-        'error' => 'Erreur cURL : ' . curl_error($ch),
-    ]);
+// Only accept POST
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    echo json_encode(['error' => 'Method Not Allowed']);
     exit;
 }
 
-// Fermer cURL
-curl_close($ch);
-
-// Définir le code de statut HTTP en fonction de la réponse
-#http_response_code($httpCode);
-
-// Vérifier si la réponse est du JSON
-if (json_decode($response) === null && json_last_error() !== JSON_ERROR_NONE) {
-#    http_response_code(500);
-    header('Content-Type: application/json');
-    echo json_encode([
-        'error' => 'La réponse reçue n\'est pas un JSON valide',
-        'raw_response' => $response,
-    ]);
+// --- Honeypot check ---
+$honeypot = $_POST['website'] ?? '';
+if ($honeypot !== '') {
+    // Silent reject — don't reveal to bots that they were caught
+    echo json_encode(['status' => 'success']);
     exit;
 }
 
-// Chemin vers la base de données SQLite
+// --- Rate limiting (SQLite) ---
 $dbPath = __DIR__ . '/request_limit.db';
-#die('test');
-// Créer la base de données et la table si elles n'existent pas
 $db = new SQLite3($dbPath);
 $db->exec("CREATE TABLE IF NOT EXISTS request_limits (
     ip TEXT PRIMARY KEY,
@@ -72,53 +29,102 @@ $db->exec("CREATE TABLE IF NOT EXISTS request_limits (
     last_request_time INTEGER
 )");
 
-// Obtenir l'adresse IP du client
-$ip = $_SERVER['REMOTE_ADDR'];
+$ip = $_SERVER['REMOTE_ADDR'] ?? '0.0.0.0';
+$currentTime = time();
 
-// Vérifier le nombre de requêtes pour cette IP
 $stmt = $db->prepare("SELECT request_count, last_request_time FROM request_limits WHERE ip = :ip");
 $stmt->bindValue(':ip', $ip, SQLITE3_TEXT);
 $result = $stmt->execute();
 $row = $result->fetchArray(SQLITE3_ASSOC);
 
-$currentTime = time();
-$limitReached = false;
-
 if ($row) {
     $requestCount = $row['request_count'];
     $lastRequestTime = $row['last_request_time'];
 
-    // Réinitialiser le compteur si la dernière requête date de plus d'une heure
+    // Reset counter if last request was over 1 hour ago
     if ($currentTime - $lastRequestTime > 3600) {
         $requestCount = 0;
     }
 
     if ($requestCount >= 3) {
-        $limitReached = true;
-    } else {
-        // Incrémenter le compteur de requêtes
-        $requestCount++;
-        $stmt = $db->prepare("UPDATE request_limits SET request_count = :request_count, last_request_time = :last_request_time WHERE ip = :ip");
-        $stmt->bindValue(':request_count', $requestCount, SQLITE3_INTEGER);
-        $stmt->bindValue(':last_request_time', $currentTime, SQLITE3_INTEGER);
-        $stmt->bindValue(':ip', $ip, SQLITE3_TEXT);
-        $stmt->execute();
+        http_response_code(429);
+        echo json_encode(['error' => 'Limit Reached']);
+        exit;
     }
-} else {
-    // Ajouter une nouvelle entrée pour cette IP
-    $stmt = $db->prepare("INSERT INTO request_limits (ip, request_count, last_request_time) VALUES (:ip, 1, :last_request_time)");
+
+    $requestCount++;
+    $stmt = $db->prepare("UPDATE request_limits SET request_count = :rc, last_request_time = :lrt WHERE ip = :ip");
+    $stmt->bindValue(':rc', $requestCount, SQLITE3_INTEGER);
+    $stmt->bindValue(':lrt', $currentTime, SQLITE3_INTEGER);
     $stmt->bindValue(':ip', $ip, SQLITE3_TEXT);
-    $stmt->bindValue(':last_request_time', $currentTime, SQLITE3_INTEGER);
+    $stmt->execute();
+} else {
+    $stmt = $db->prepare("INSERT INTO request_limits (ip, request_count, last_request_time) VALUES (:ip, 1, :lrt)");
+    $stmt->bindValue(':ip', $ip, SQLITE3_TEXT);
+    $stmt->bindValue(':lrt', $currentTime, SQLITE3_INTEGER);
     $stmt->execute();
 }
 
-if ($limitReached) {
-    http_response_code(429);
-    header('Content-Type: application/json');
-    echo json_encode(['error' => 'Limit Reached']);
+// --- Cloudflare Turnstile verification ---
+require_once __DIR__ . '/form_config.php';
+
+$token = $_POST['cf-turnstile-response'] ?? '';
+if (!$token) {
+    http_response_code(400);
+    echo json_encode(['error' => 'Missing Turnstile token']);
     exit;
 }
 
-// Retourner la réponse de l'URL cible
-header('Content-Type: application/json'); // Supposons que la réponse est au format JSON
+$ch = curl_init('https://challenges.cloudflare.com/turnstile/v0/siteverify');
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query([
+    'secret'   => TURNSTILE_SECRET_KEY,
+    'response' => $token,
+    'remoteip' => $ip,
+]));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_TIMEOUT, 10);
+$verifyRaw = curl_exec($ch);
+$verifyErr = curl_errno($ch);
+curl_close($ch);
+
+if ($verifyErr || !$verifyRaw) {
+    http_response_code(502);
+    echo json_encode(['error' => 'Turnstile verification unavailable']);
+    exit;
+}
+
+$verify = json_decode($verifyRaw, true);
+if (!$verify || empty($verify['success'])) {
+    http_response_code(400);
+    echo json_encode(['error' => 'Turnstile verification failed']);
+    exit;
+}
+
+// --- Forward to Formcarry ---
+$ch = curl_init('https://formcarry.com/s/oHdZL-AalnM');
+curl_setopt($ch, CURLOPT_POST, true);
+curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query([
+    'prenom'          => $_POST['prenom'] ?? '',
+    'nom'             => $_POST['nom'] ?? '',
+    'telephone'       => $_POST['telephone'] ?? 'Non renseigné',
+    'email'           => $_POST['email'] ?? '',
+    'source'          => $_POST['source'] ?? '',
+    'source_tracking' => $_POST['source_tracking'] ?? '',
+]));
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+curl_setopt($ch, CURLOPT_TIMEOUT, 15);
+curl_setopt($ch, CURLOPT_HTTPHEADER, ['Accept: application/json']);
+$response = curl_exec($ch);
+$httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+$curlErr  = curl_errno($ch);
+curl_close($ch);
+
+if ($curlErr || !$response) {
+    http_response_code(502);
+    echo json_encode(['error' => 'Network error']);
+    exit;
+}
+
+http_response_code($httpCode);
 echo $response;
