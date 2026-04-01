@@ -2,5 +2,4 @@ node_modules/
 MD/
 CLAUDE.md
 .htaccess
-form_config.php
 request_limit.db
