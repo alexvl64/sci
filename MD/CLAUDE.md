@@ -233,3 +233,93 @@ default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://www.googl
 - External link class: `class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200" target="_blank" rel="noopener noreferrer"`
 - Internal link class: `class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200"`
 - Author: Alexandre VINAL — `https://www.linkedin.com/in/alexandrevinal/`
+
+---
+
+# Instructions pour Claude Code — SparkCore / site statique
+
+## Conversion Markdown → HTML (skill md-to-html)
+
+### Rôle
+Convertir un article Markdown en page HTML statique cohérente avec le site existant. La structure, les classes CSS, le `<head>`, la nav, le footer et le disclaimer doivent être copiés à l'identique depuis un article HTML de référence du repo. Seuls le contenu, le titre, la description, le canonical, les OG tags et le JSON-LD changent.
+
+### Règle fondamentale : jamais de sortie HTML complète en un seul bloc
+Toujours procéder par étapes successives avec des remplacements ciblés (`str_replace_editor` ou `write_file` partiel). Cela évite de saturer le contexte et permet de valider à chaque étape.
+
+---
+
+### Workflow obligatoire
+
+**0. Lecture du template de référence**
+Avant toute génération, lire un article HTML existant du repo (ex. `blog/regulated-crypto-fund-manager-estonia.html`).
+Extraire et mémoriser :
+- Le `<head>` complet (meta, CSS, fonts, scripts)
+- La structure `<nav>`
+- Les classes CSS des conteneurs d'article (`font-inter`, `font-funnel-display`, etc.)
+- Le footer et le disclaimer
+
+**Étape A — Squelette**
+Créer `blog/<slug>.html` avec :
+- `<!DOCTYPE html>` → `</head>` (copié du template)
+- `<nav>` (copié du template)
+- `<article>` avec titre, meta-ligne, hero, puis marqueurs :
+  - `<!-- BODY_PART_1 -->`
+  - `<!-- BODY_PART_2 -->`
+  - `<!-- BODY_PART_3 -->`
+- Footer + disclaimer (copiés du template)
+
+Valider que le fichier s'ouvre avant de continuer.
+
+**Étape B — Remplacement BODY_PART_1**
+Remplacer `<!-- BODY_PART_1 -->` par le HTML de la première section (intro, H2/H3, paragraphes, tableaux, listes). Ne pas toucher au head ni au footer.
+
+**Étape C — Remplacement BODY_PART_2**
+Idem pour `<!-- BODY_PART_2 -->` (sections suivantes, SVG, tableaux longs).
+
+**Étape D — Remplacement BODY_PART_3**
+Idem pour `<!-- BODY_PART_3 -->` (FAQ, conclusion, sources).
+
+**Validation finale**
+```bash
+grep -n "BODY_PART" blog/<slug>.html
+# Doit retourner 0 ligne
+```
+
+---
+
+### Règles de conversion du contenu
+
+**Classes CSS**
+Reprendre exactement les classes des autres articles du repo. Ne pas inventer de classes.
+
+**Placeholders `[INTERNAL-LINK: …]`**
+- Ne jamais laisser le texte brut dans le HTML final.
+- Rechercher l'URL réelle : `grep -r "keyword" blog/`
+- Remplacer par `<a href="/blog/slug.html">texte ancre</a>`
+
+**SVG sur fond sombre**
+Encapsuler dans :
+```html
+<div class="rounded-lg bg-[#0f172a] p-4">
+  <!-- SVG ici -->
+</div>
+```
+
+**Métadonnées à mettre à jour**
+- `<title>`, `<meta name="description">`, `<link rel="canonical">`
+- OG tags : `og:title`, `og:description`, `og:url`, `og:image`
+- JSON-LD `Article` : `headline`, `description`, `url`, `datePublished`, `dateModified`, `author`
+
+---
+
+### Ce qu'il ne faut pas faire
+- ❌ Sortir l'intégralité du HTML en une seule réponse
+- ❌ Réécrire le markdown en prose libre
+- ❌ Inventer des classes CSS absentes du repo
+- ❌ Laisser des placeholders `[INTERNAL-LINK: …]` non résolus
+- ❌ Modifier le head, la nav ou le footer entre les étapes B/C/D
+
+---
+
+### Livrable attendu
+`blog/<slug>.html` cohérent avec le site, sans placeholders résiduels, avec métadonnées SEO complètes, produit en 4 étapes max.
