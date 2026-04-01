@@ -25,7 +25,6 @@ Disallow: /validation.html
 Disallow: /404.html
 Disallow: /403.html
 Disallow: /500.html
-Disallow: /form_send.php
 Disallow: /proxy.php
 Disallow: /secure_pdf.php
 
