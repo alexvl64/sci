@@ -65,13 +65,13 @@ const openSidebarButtons = document.querySelectorAll(".open-sidebar");
 const closeSidebarButton = document.getElementById("close-sidebar");
 const sidebar = document.getElementById("form-sidebar");
 
-// Lazy-load reCAPTCHA only on first sidebar open
-let recaptchaLoaded = false;
-function loadRecaptcha() {
-  if (recaptchaLoaded) return;
-  recaptchaLoaded = true;
+// Lazy-load Turnstile only on first sidebar open
+let turnstileLoaded = false;
+function loadTurnstile() {
+  if (turnstileLoaded) return;
+  turnstileLoaded = true;
   var script = document.createElement("script");
-  script.src = "https://www.google.com/recaptcha/api.js";
+  script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
   script.async = true;
   script.defer = true;
   document.head.appendChild(script);
@@ -80,7 +80,7 @@ function loadRecaptcha() {
 // Open the sidebar for each button
 openSidebarButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    loadRecaptcha();
+    loadTurnstile();
     sidebar.classList.remove("-right-full");
     sidebar.classList.add("right-0");
     document.body.classList.add("overflow-hidden");
@@ -205,9 +205,15 @@ form.addEventListener("submit", async (event) => {
     return;
   }
 
-  // Récupérez le token reCAPTCHA
-  const recaptchaToken = grecaptcha.getResponse();
-  if (!recaptchaToken) {
+  // Honeypot check (côté client)
+  const honeypot = document.getElementById("honeypot");
+  if (honeypot && honeypot.value) {
+    return;
+  }
+
+  // Récupérer le token Turnstile
+  const turnstileToken = turnstile.getResponse("#cf-turnstile");
+  if (!turnstileToken) {
     Toastify({
       text: currentTranslations.recaptchaError,
       duration: 5000,
@@ -227,7 +233,7 @@ form.addEventListener("submit", async (event) => {
   formData.append("email", email);
   formData.append("source", source);
   formData.append("source_tracking", sourceTracking);
-  formData.append("g-recaptcha-response", recaptchaToken);
+  formData.append("cf-turnstile-response", turnstileToken);
 
   // Désactivez le bouton pour éviter les doubles soumissions
   const submitButton = event.target.querySelector("[type='submit']");
@@ -235,14 +241,25 @@ form.addEventListener("submit", async (event) => {
   submitButton.textContent = currentTranslations.formSubmitLoading;
 
   try {
-    // Envoi via Formcarry
-    const response = await fetch("https://formcarry.com/s/oHdZL-AalnM", {
+    const response = await fetch("/form_send.php", {
       method: "POST",
       body: formData,
       headers: {
         Accept: "application/json",
       },
     });
+
+    if (response.status === 429) {
+      Toastify({
+        text: currentTranslations.formSubmitError,
+        duration: 5000,
+        gravity: "bottom",
+        position: "right",
+        avatar: "/assets/images/svg/error-icon.svg",
+        stopOnFocus: true,
+      }).showToast();
+      return;
+    }
 
     if (!response.ok) {
       throw new Error(`HTTP Error: ${response.status}`);
@@ -252,7 +269,7 @@ form.addEventListener("submit", async (event) => {
 
     if (data.status === "success") {
       form.reset();
-      grecaptcha.reset();
+      turnstile.reset("#cf-turnstile");
 
       // Masquer la sidebar
       sidebar.classList.remove("right-0");
