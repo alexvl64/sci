@@ -241,25 +241,13 @@ form.addEventListener("submit", async (event) => {
   submitButton.textContent = currentTranslations.formSubmitLoading;
 
   try {
-    const response = await fetch("/form_send.php", {
+    const response = await fetch("https://formcarry.com/s/oHdZL-AalnM", {
       method: "POST",
       body: formData,
       headers: {
         Accept: "application/json",
       },
     });
-
-    if (response.status === 429) {
-      Toastify({
-        text: currentTranslations.formSubmitError,
-        duration: 5000,
-        gravity: "bottom",
-        position: "right",
-        avatar: "/assets/images/svg/error-icon.svg",
-        stopOnFocus: true,
-      }).showToast();
-      return;
-    }
 
     if (!response.ok) {
       throw new Error(`HTTP Error: ${response.status}`);
