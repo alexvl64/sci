@@ -4,8 +4,8 @@ description: "55% of hedge funds now hold crypto assets. Sub-threshold AIFM regi
 coverImage: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&h=630&fit=crop&q=80"
 coverImageAlt: "Financial compliance documents and legal paperwork representing European fund regulation"
 ogImage: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&h=630&fit=crop&q=80"
-date: "2026-03-28"
-lastUpdated: "2026-03-28"
+date: "2026-04-07"
+lastUpdated: "2026-04-07"
 author: ""
 tags: ["AIFMD", "crypto fund", "sub-threshold AIFM", "Estonia", "alternative investment fund", "MiCA", "digital assets"]
 ---

@@ -4,6 +4,7 @@
 
 ## Blog Articles
 
+- [Sub-Threshold AIFM for Crypto: Thresholds, Benefits, and the Estonia Option](https://sparkcore.fund/blog/sub-threshold-aifm-crypto-estonia): AIFMD Article 3(2) AUM thresholds, Estonia registration timeline and costs, comparison with full AIFMD authorization, and MiCA boundaries for crypto fund managers.
 - [What Is a Crypto AIFM](https://sparkcore.fund/blog/what-is-a-crypto-aifm): Legal definition, regulatory functions, and investor protections of an AIFM operating in crypto-asset markets under AIFMD.
 - [Crypto Fund vs ETF](https://sparkcore.fund/blog/crypto-fund-vs-etf): Structural comparison of regulated crypto alternative investment funds and exchange-traded products for institutional allocators.
 - [Crypto Fund Compliance Guide](https://sparkcore.fund/blog/crypto-fund-compliance-guide): Operational and regulatory compliance framework for crypto fund managers covering AML, custody, valuation, reporting, and regulator-facing controls.
