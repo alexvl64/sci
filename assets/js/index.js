@@ -262,6 +262,7 @@ form.addEventListener("submit", async (event) => {
       // Masquer la sidebar
       sidebar.classList.remove("right-0");
       sidebar.classList.add("-right-full");
+      document.body.classList.remove("overflow-hidden");
 
       Toastify({
         text: currentTranslations.formSubmitSuccess,
