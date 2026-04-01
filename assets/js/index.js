@@ -65,22 +65,11 @@ const openSidebarButtons = document.querySelectorAll(".open-sidebar");
 const closeSidebarButton = document.getElementById("close-sidebar");
 const sidebar = document.getElementById("form-sidebar");
 
-// Lazy-load Turnstile only on first sidebar open
-let turnstileLoaded = false;
-function loadTurnstile() {
-  if (turnstileLoaded) return;
-  turnstileLoaded = true;
-  var script = document.createElement("script");
-  script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js";
-  script.async = true;
-  script.defer = true;
-  document.head.appendChild(script);
-}
+// Turnstile script is loaded in <head> (needed for newsletter widget on page load)
 
 // Open the sidebar for each button
 openSidebarButtons.forEach((button) => {
   button.addEventListener("click", () => {
-    loadTurnstile();
     sidebar.classList.remove("-right-full");
     sidebar.classList.add("right-0");
     document.body.classList.add("overflow-hidden");
@@ -366,6 +355,18 @@ document.addEventListener("DOMContentLoaded", () => {
     errorText.classList.add("hidden");
     emailInput.classList.remove("border-red-500");
 
+    // Honeypot check
+    const honeypotNewsletter = document.getElementById("honeypot-newsletter");
+    if (honeypotNewsletter && honeypotNewsletter.value) {
+      return;
+    }
+
+    // Turnstile check
+    const turnstileToken = turnstile.getResponse("#cf-turnstile-newsletter");
+    if (!turnstileToken) {
+      return;
+    }
+
     subscribeButton.disabled = true;
     subscribeButton.textContent = currentTranslations.subscribeLoading;
 
@@ -373,6 +374,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const formData = new FormData();
     formData.append("email", emailValue);
     formData.append("source_tracking", sourceTracking);
+    formData.append("cf-turnstile-response", turnstileToken);
 
     try {
       const response = await fetch("https://formcarry.com/s/_xD89dyxiXb", {
@@ -391,6 +393,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (data.status === "success") {
         emailInput.value = "";
+        turnstile.reset("#cf-turnstile-newsletter");
 
         Toastify({
           text: currentTranslations.subscribeSuccess,
