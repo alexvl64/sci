@@ -262,11 +262,19 @@ Extraire et mémoriser :
 Créer `blog/<slug>.html` avec :
 - `<!DOCTYPE html>` → `</head>` (copié du template)
 - `<nav>` (copié du template)
-- `<article>` avec titre, meta-ligne, hero, puis marqueurs :
-  - `<!-- BODY_PART_1 -->`
-  - `<!-- BODY_PART_2 -->`
-  - `<!-- BODY_PART_3 -->`
+- `<article>` avec titre, meta-ligne, puis **obligatoirement dans cet ordre** :
+  1. Paragraphes d'introduction
+  2. **Image hero** : `<figure class="mt-6 mb-12"><img src="..." alt="..." class="w-full rounded-lg object-cover max-h-[420px]" loading="lazy" width="1260" height="750" decoding="async" /></figure>`
+  3. **Bloc Key Takeaways** : `<div class="border-l-4 border-steelBlue bg-[#F9FAFB] pl-5 py-4 pr-4 mb-8 rounded-r-lg"><p class="font-inter text-sm font-semibold text-darkGray mb-3">Key takeaways</p><ul class="font-inter text-base text-mediumGray leading-160 list-disc pl-5 space-y-2">...</ul></div>`
+  4. Marqueurs de contenu :
+     - `<!-- BODY_PART_1 -->`
+     - `<!-- BODY_PART_2 -->`
+     - `<!-- BODY_PART_3 -->`
 - Footer + disclaimer (copiés du template)
+
+> **Image hero** : utiliser l'URL de `coverImage` du frontmatter MD si disponible, sinon une URL Unsplash pertinente (`https://images.unsplash.com/photo-XXXX?w=1260&h=750&fit=crop&q=80`). Ne jamais omettre l'image hero.
+>
+> **Key Takeaways** : reprendre les bullets du bloc `> **Key Takeaways**` du MD source. Ne jamais omettre ce bloc.
 
 Valider que le fichier s'ouvre avant de continuer.
 
@@ -318,6 +326,9 @@ Encapsuler dans :
 - ❌ Inventer des classes CSS absentes du repo
 - ❌ Laisser des placeholders `[INTERNAL-LINK: …]` non résolus
 - ❌ Modifier le head, la nav ou le footer entre les étapes B/C/D
+- ❌ Omettre l'image hero (`<figure class="mt-6 mb-12">`)
+- ❌ Omettre le bloc Key Takeaways (`border-l-4 border-steelBlue bg-[#F9FAFB]`)
+- ❌ Créer des SVGs avec fond clair (`fill="#f9fafb"`) — toujours fond sombre (`fill="#0f1117"`) dans `<figure class="... rounded-lg bg-[#0f172a] p-4 sm:p-6 overflow-x-auto">`
 
 ---
 
