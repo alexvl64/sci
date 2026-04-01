@@ -4,4 +4,4 @@
 // Copier en form_config.php et renseigner la vraie secret key.
 // ============================================================
 
-define('TURNSTILE_SECRET_KEY', 'YOUR_TURNSTILE_SECRET_KEY_HERE');
+define('TURNSTILE_SECRET_KEY', '0x4AAAAAACy5d8wNWaVnVMuea4IKtJwL1QA');
