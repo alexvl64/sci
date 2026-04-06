@@ -11,6 +11,7 @@ const T = {
     bookingSubtitle: 'Schedule a call with our team to discuss our crypto-asset investment strategies, the investment process, and how our funds can align with your goals.',
     valDisclaimer: '<strong>Disclaimer:</strong> This page is provided for informational purposes only and does not constitute an investment offer. SparkCore Investment OÜ is registered and supervised by the Finantsinspektsioon (Estonia).',
     ftrCompany: 'SparkCore Investment OÜ · Reg. No. 16265864',
+    ftrAddress: 'Männimäe 1, Pudisoo, 74626 Harju County, Estonia',
     ftrPrivacy: 'Privacy Policy',
   },
   fr: {
@@ -19,7 +20,8 @@ const T = {
     bookingTitle: 'Planifier un Appel Découverte',
     bookingSubtitle: 'Échangez avec notre équipe sur nos stratégies d\'investissement en crypto-actifs, le processus d\'investissement et comment nos fonds peuvent s\'aligner sur vos objectifs.',
     valDisclaimer: '<strong>Avertissement :</strong> Cette page est fournie à titre informatif uniquement et ne constitue pas une offre d\'investissement. SparkCore Investment OÜ est enregistrée et supervisée par la Finantsinspektsioon (Estonie).',
-    ftrCompany: 'SparkCore Investment OÜ · Reg. No. 16265864',
+    ftrCompany: 'SparkCore Investment OÜ · N° d\'enregistrement 16265864',
+    ftrAddress: 'Männimäe 1, Pudisoo, 74626 Comté de Harju, Estonie',
     ftrPrivacy: 'Politique de confidentialité',
   }
 };
@@ -50,6 +52,7 @@ function applyLang(lang) {
   s('booking-subtitle', t.bookingSubtitle);
   h('val-disclaimer', t.valDisclaimer);
   s('ftr-company', t.ftrCompany);
+  s('ftr-address', t.ftrAddress);
   s('ftr-privacy', t.ftrPrivacy);
 
   document.getElementById('btn-en').classList.toggle('active', lang === 'en');
