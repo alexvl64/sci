@@ -65,7 +65,7 @@ function setLang(lang) {
   currentLang = lang;
   try { localStorage.setItem('sc_booking_lang', lang); } catch (e) {}
   applyLang(lang);
-  loadCalEmbed(lang);
+  window.location.reload();
 }
 
 (function initLang() {
