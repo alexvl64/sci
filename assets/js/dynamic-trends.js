@@ -431,8 +431,8 @@ fetchJsonData();
 Cal("init", { origin: "https://app.cal.eu" });
 Cal("ui", {
   theme: "light",
-  styles: {
-    branding: { brandColor: "#0E1117" }
+  cssVarsPerTheme: {
+    light: { "cal-brand": "#0E1117" }
   }
 });
 
