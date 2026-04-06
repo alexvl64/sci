@@ -1,5 +1,5 @@
 node_modules/
 MD/
-CLAUDE.md
+!MD/CLAUDE.md
 .htaccess
 request_limit.db
