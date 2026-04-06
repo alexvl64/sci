@@ -65,7 +65,8 @@ const T = {
     thYtd:'YTD',
     valPerfNote:'Past performance does not guarantee future results. Gross of fees.',
     valDisclaimer:'<strong>Disclaimer:</strong> Past performance is neither a reliable indicator nor a guarantee of future performance. Crypto-assets carry a high level of risk including the risk of total loss of capital. This document is provided for informational purposes only and does not constitute an investment offer. The strategy is reserved for qualified or professional investors. SparkCore.investment OÜ is registered and supervised by the Finantsinspektsioon (Estonia).',
-    ftrCompany:'SparkCore.investment OÜ · Estonia',
+    ftrCompany:'SparkCore Investment OÜ · Reg. No. 16265864',
+    ftrAddress:'Männimäe 1, Pudisoo, 74626 Harju County, Estonia',
     ftrPrivacy:'Privacy Policy',
   },
   fr: {
@@ -134,7 +135,8 @@ const T = {
     thYtd:'YTD',
     valPerfNote:'Les performances passées ne garantissent pas les performances futures. Brut de frais.',
     valDisclaimer:'<strong>Avertissement :</strong> Les performances passées ne constituent ni un indicateur fiable ni une garantie des performances futures. Les crypto-actifs présentent un risque élevé incluant un risque de perte totale du capital. Ce document est fourni à titre informatif uniquement et ne constitue pas une offre d\'investissement. La stratégie est réservée aux investisseurs qualifiés ou professionnels. SparkCore.investment OÜ est enregistrée et supervisée par la Finantsinspektsioon (Estonie).',
-    ftrCompany:'SparkCore.investment OÜ · Estonie',
+    ftrCompany:'SparkCore Investment OÜ · N° d\'enregistrement 16265864',
+    ftrAddress:'Männimäe 1, Pudisoo, 74626 Comté de Harju, Estonie',
     ftrPrivacy:'Politique de confidentialité',
   }
 };
@@ -340,7 +342,7 @@ function applyLang(lang) {
   s('th-jul', t.thJul); s('th-aug', t.thAug); s('th-sep', t.thSep); s('th-oct', t.thOct); s('th-nov', t.thNov); s('th-dec', t.thDec);
   s('th-ytd', t.thYtd);
   s('val-perf-note', t.valPerfNote); h('val-disclaimer', t.valDisclaimer);
-  s('ftr-company', t.ftrCompany); s('ftr-privacy', t.ftrPrivacy);
+  s('ftr-company', t.ftrCompany); s('ftr-address', t.ftrAddress); s('ftr-privacy', t.ftrPrivacy);
   document.getElementById('btn-en').classList.toggle('active', lang==='en');
   document.getElementById('btn-en').setAttribute('aria-pressed', lang==='en');
   document.getElementById('btn-fr').classList.toggle('active', lang==='fr');
