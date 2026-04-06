@@ -34,8 +34,8 @@ function applyLang(lang) {
   document.documentElement.lang = t.htmlLang;
 
   document.title = lang === 'fr'
-    ? 'Planifier un Appel — SparkCore Investment'
-    : 'Book a Call — SparkCore Investment';
+    ? 'Appel Découverte — SparkCore Investment'
+    : 'Discovery Call — SparkCore Investment';
 
   const metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc) {
@@ -65,6 +65,7 @@ function setLang(lang) {
   currentLang = lang;
   try { localStorage.setItem('sc_booking_lang', lang); } catch (e) {}
   applyLang(lang);
+  loadCalEmbed(lang);
 }
 
 (function initLang() {
@@ -106,18 +107,24 @@ function setLang(lang) {
 
 Cal("init", { origin: CAL_ORIGIN });
 
-Cal("inline", {
-  elementOrSelector: "#cal-embed",
-  calLink: CAL_LINK,
-  config: {
-    layout: "month_view",
-    theme: "light"
-  }
-});
+function loadCalEmbed(lang) {
+  const container = document.getElementById("cal-embed");
+  container.innerHTML = "";
+  Cal("inline", {
+    elementOrSelector: "#cal-embed",
+    calLink: CAL_LINK,
+    config: {
+      layout: "month_view",
+      theme: "light",
+      locale: lang
+    }
+  });
+  Cal("ui", {
+    theme: "light",
+    cssVarsPerTheme: {
+      light: { "cal-brand": "#0E1117" }
+    }
+  });
+}
 
-Cal("ui", {
-  theme: "light",
-  cssVarsPerTheme: {
-    light: { "cal-brand": "#0E1117" }
-  }
-});
+loadCalEmbed(currentLang);
