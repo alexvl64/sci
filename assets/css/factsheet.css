@@ -16,7 +16,7 @@ html,body { min-height:100%; font-family:'Inter',sans-serif; background:var(--wh
 .lang-btn+.lang-btn { border-left:1px solid var(--paleBlue); }
 .lang-btn.active { background:var(--darkGray); color:var(--white); }
 .lang-btn:hover:not(.active) { background:var(--lightGray); color:var(--darkGray); }
-.btn-contact { display:inline-block; background:var(--cream); color:var(--darkGray); font-family:'Inter',sans-serif; font-size:14px; font-weight:500; padding:9px 22px; border-radius:4px; text-decoration:none; border:1px solid transparent; transition:background .25s,color .25s,border-color .25s; white-space:nowrap; }
+.btn-contact { display:inline-block; background:var(--cream); color:var(--darkGray); font-family:'Inter',sans-serif; font-size:14px; font-weight:500; padding:9px 22px; border-radius:4px; text-decoration:none; border:1px solid transparent; transition:background .25s,color .25s,border-color .25s; white-space:nowrap; cursor:pointer; }
 .btn-contact:hover { background:transparent; color:var(--darkGray); border-color:var(--darkGray); }
 .main { display:grid; grid-template-columns:360px 1fr; gap:18px; padding:14px 0; flex:1; align-items:start; }
 .col { display:flex; flex-direction:column; gap:10px; }
