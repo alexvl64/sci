@@ -65,7 +65,6 @@ function setLang(lang) {
   currentLang = lang;
   try { localStorage.setItem('sc_booking_lang', lang); } catch (e) {}
   applyLang(lang);
-  window.location.reload();
 }
 
 (function initLang() {
@@ -107,24 +106,18 @@ function setLang(lang) {
 
 Cal("init", { origin: CAL_ORIGIN });
 
-function loadCalEmbed(lang) {
-  const container = document.getElementById("cal-embed");
-  container.innerHTML = "";
-  Cal("inline", {
-    elementOrSelector: "#cal-embed",
-    calLink: CAL_LINK,
-    config: {
-      layout: "month_view",
-      theme: "light",
-      locale: lang
-    }
-  });
-  Cal("ui", {
-    theme: "light",
-    cssVarsPerTheme: {
-      light: { "cal-brand": "#0E1117" }
-    }
-  });
-}
+Cal("inline", {
+  elementOrSelector: "#cal-embed",
+  calLink: CAL_LINK,
+  config: {
+    layout: "month_view",
+    theme: "light"
+  }
+});
 
-loadCalEmbed(currentLang);
+Cal("ui", {
+  theme: "light",
+  cssVarsPerTheme: {
+    light: { "cal-brand": "#0E1117" }
+  }
+});
