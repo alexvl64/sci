@@ -8,7 +8,7 @@ const T = {
     htmlLang: 'en',
     hdrTitle: 'Discovery Call',
     bookingTitle: 'Book a Discovery Call',
-    bookingSubtitle: 'Schedule a call with our team to discuss our crypto-asset investment strategies, the investment process, and how our funds can align with your goals.',
+    bookingSubtitle: '<p>Book a call to discuss the opportunity to invest in SparkCore Investment funds, a regulated alternative investment fund manager in Europe offering advanced investment strategies on crypto-assets.</p><p>During this call, we will cover:</p><ul><li>Our fund strategies (Dynamic Trends &amp; CryptoVision)</li><li>The investment process and entry conditions</li><li>Our approach adapted to market conditions</li></ul><p>Whether you are already familiar with crypto-assets or want to learn more, this conversation will allow you to ask any questions and explore how our approach can align with your investment goals.</p>',
     valDisclaimer: '<strong>Disclaimer:</strong> This page is provided for informational purposes only and does not constitute an investment offer. SparkCore Investment OÜ is registered and supervised by the Finantsinspektsioon (Estonia).',
     ftrCompany: 'SparkCore Investment OÜ · Reg. No. 16265864',
     ftrAddress: 'Männimäe 1, Pudisoo, 74626 Harju County, Estonia',
@@ -18,7 +18,7 @@ const T = {
     htmlLang: 'fr',
     hdrTitle: 'Appel Découverte',
     bookingTitle: 'Planifier un Appel Découverte',
-    bookingSubtitle: 'Échangez avec notre équipe sur nos stratégies d\'investissement en crypto-actifs, le processus d\'investissement et comment nos fonds peuvent s\'aligner sur vos objectifs.',
+    bookingSubtitle: '<p>Prenez rendez-vous pour discuter de l\'opportunité d\'investir dans les fonds SparkCore Investment, gestionnaire de fonds alternatifs réglementé en Europe, offrant des stratégies d\'investissement avancées sur les crypto-actifs.</p><p>Lors de cet appel, nous aborderons :</p><ul><li>Les stratégies de nos fonds (Dynamic Trends &amp; CryptoVision)</li><li>Le processus d\'investissement et les conditions d\'entrée</li><li>Notre approche adaptée aux conditions du marché</li></ul><p>Que vous soyez déjà familiarisé avec les crypto-actifs ou que vous souhaitiez en savoir plus, cet échange vous permettra de poser toutes vos questions et d\'explorer comment notre approche peut s\'aligner sur vos objectifs d\'investissement.</p>',
     valDisclaimer: '<strong>Avertissement :</strong> Cette page est fournie à titre informatif uniquement et ne constitue pas une offre d\'investissement. SparkCore Investment OÜ est enregistrée et supervisée par la Finantsinspektsioon (Estonie).',
     ftrCompany: 'SparkCore Investment OÜ · N° d\'enregistrement 16265864',
     ftrAddress: 'Männimäe 1, Pudisoo, 74626 Comté de Harju, Estonie',
@@ -49,7 +49,7 @@ function applyLang(lang) {
 
   s('hdr-title', t.hdrTitle);
   s('booking-title', t.bookingTitle);
-  s('booking-subtitle', t.bookingSubtitle);
+  h('booking-subtitle', t.bookingSubtitle);
   h('val-disclaimer', t.valDisclaimer);
   s('ftr-company', t.ftrCompany);
   s('ftr-address', t.ftrAddress);
