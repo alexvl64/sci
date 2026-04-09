@@ -92,7 +92,7 @@ const translations = {
     teamRolePA: "Associés gérants",
     teamRoleOlivier: "Associés gérants",
     teamRoleAlex: "Associés gérants",
-    teamBioPA: "Avec plus de 7 ans d'expérience sur les marchés financiers et dans les crypto-actifs, Paul-Antoine a accompagné plusieurs high net worth individuals dans leurs investissements. Il a fondé SparkCore Fund Management (SparkCore Investment OÜ), un gestionnaire de fonds d'investissement alternatifs réglementé.",
+    teamBioPA: "Avec plus de 7 ans d'expérience sur les marchés financiers et dans les crypto-actifs, Paul-Antoine a accompagné plusieurs high net worth individuals dans leurs investissements. Il a fondé SparkCore Fund Management (SparkCore.investment OÜ), un gestionnaire de fonds d'investissement alternatifs réglementé.",
     teamBioOlivier: "Actif dans le trading depuis plus de vingt ans, Olivier a commencé sur les marchés actions avant de se tourner vers les crypto-actifs en 2017. Cofondateur de DSM, il utilise une méthodologie combinant analyse technique et stratégies innovantes pour optimiser les performances des portefeuilles.",
     teamBioAlex: "Ingénieur en informatique, Alexandre investit dans les crypto-actifs depuis 2014. Fondateur de la chaîne YouTube Cointips en 2017 et co-fondateur de DSM en 2020, il dirige également une communauté privée d'investisseurs en crypto-actifs.",
 
@@ -144,7 +144,7 @@ const translations = {
     wlReg4: "Conforme AML 5 / AML 6 — SparkCore comme représentant réglementaire officiel",
 
     // === FOOTER ===
-    footerCopyright: " SparkCore Investment OÜ — Tous droits réservés.",
+    footerCopyright: " SparkCore.investment OÜ — Tous droits réservés.",
     footerRegText: "Société de gestion spécialisée dans les crypto-actifs, enregistrée en Estonie. Supervisée par la Finantsinspektsioon :",
     footerLicenceLabel: "Licence :",
     footerLicenceLink: "EFIU (Institution Financière)",
@@ -263,7 +263,7 @@ const translations = {
     teamRolePA: "Managing Partner",
     teamRoleOlivier: "Managing Partner",
     teamRoleAlex: "Managing Partner",
-    teamBioPA: "With over 7 years of experience in financial markets and crypto-assets, Paul-Antoine has guided several high net worth individuals in their investments. He founded SparkCore Fund Management (SparkCore Investment OÜ), a regulated alternative investment fund manager.",
+    teamBioPA: "With over 7 years of experience in financial markets and crypto-assets, Paul-Antoine has guided several high net worth individuals in their investments. He founded SparkCore Fund Management (SparkCore.investment OÜ), a regulated alternative investment fund manager.",
     teamBioOlivier: "Active in trading for over twenty years, Olivier began in equity markets before turning to crypto-assets in 2017. Co-founder of DSM, he applies a methodology combining technical analysis and innovative strategies to optimise portfolio performance.",
     teamBioAlex: "Software engineer, Alexandre has invested in crypto-assets since 2014. Founder of the Cointips YouTube channel in 2017 and co-founder of DSM in 2020, he also leads a private community of crypto-asset investors.",
 
@@ -315,7 +315,7 @@ const translations = {
     wlReg4: "AML 5 / AML 6 compliant — SparkCore as official regulatory representative",
 
     // === FOOTER ===
-    footerCopyright: " SparkCore Investment OÜ — All rights reserved.",
+    footerCopyright: " SparkCore.investment OÜ — All rights reserved.",
     footerRegText: "Asset management company specialising in crypto-assets, registered in Estonia. Supervised by Finantsinspektsioon:",
     footerLicenceLabel: "Licence:",
     footerLicenceLink: "EFIU (Financial Institution)",

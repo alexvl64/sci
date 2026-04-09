@@ -9,7 +9,7 @@ Context and configuration reference for Claude Code sessions on the `alexvl64/sc
 - **Site:** sparkcore.fund — static HTML/CSS/JS, bilingual EN/FR
 - **Hosting:** Apache/OVH, behind Cloudflare CDN
 - **Stack:** Tailwind CSS (local build, `tailwind.min.css?v=1.0`), custom CSS (`style.css?v=1.4`), vanilla JS
-- **Entity:** SparkCore Investment OÜ — regulated AIFM (small fund manager), supervised by Finantsinspektsioon (Estonia)
+- **Entity:** SparkCore.investment OÜ — regulated AIFM (small fund manager), supervised by Finantsinspektsioon (Estonia)
 
 ---
 

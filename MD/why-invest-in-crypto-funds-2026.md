@@ -33,7 +33,7 @@ The question institutional allocators are asking in 2026 is no longer whether to
 
 The managed fund route offers protections that a direct exchange account or a passive ETF cannot: audited NAV, AIFMD-compliant depositary oversight, segregated custody under regulated custodians, and MiCA whitepaper disclosures. For allocators with compliance gatekeepers, those features are not optional extras. They're the baseline.
 
-This article sets out the seven strongest evidence-based reasons to consider a crypto fund allocation in 2026, drawn from institutional research and verified public data sources. It is published by SparkCore Investment OÜ, an Estonian-registered AIFM operating under EU regulatory frameworks.
+This article sets out the seven strongest evidence-based reasons to consider a crypto fund allocation in 2026, drawn from institutional research and verified public data sources. It is published by SparkCore.investment OÜ, an Estonian-registered AIFM operating under EU regulatory frameworks.
 
 ---
 

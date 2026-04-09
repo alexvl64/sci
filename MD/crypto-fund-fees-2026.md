@@ -31,7 +31,7 @@ twitter_image: image-placeholder-hero-fees.jpg
 
 Fee transparency has become a standard item in institutional crypto due diligence. As allocations from family offices, pension funds, and sovereign wealth funds accelerate into digital assets, investors apply the same fee scrutiny to crypto funds that they apply to any alternatives mandate. The data tells a clearer story than most market commentary acknowledges.
 
-This article presents current benchmarks, historical trends, and the structural context behind crypto fund fees in 2026, drawing on research from PwC/AIMA, bfinance, Crypto Insights Group, and the 21e6 Capital fund database. It is produced by SparkCore Investment OÜ, an EU-regulated AIFM operating under Estonian AIFM authorisation.
+This article presents current benchmarks, historical trends, and the structural context behind crypto fund fees in 2026, drawing on research from PwC/AIMA, bfinance, Crypto Insights Group, and the 21e6 Capital fund database. It is produced by SparkCore.investment OÜ, an EU-regulated AIFM operating under Estonian AIFM authorisation.
 
 ---
 
@@ -289,4 +289,4 @@ High-water marks are standard at 92% of hedge funds. Hurdle rates are the except
 
 ---
 
-*SparkCore Investment OÜ is an Estonian-registered Alternative Investment Fund Manager (AIFM) authorised under EU law. All content is informational only and does not constitute investment advice.*
+*SparkCore.investment OÜ is an Estonian-registered Alternative Investment Fund Manager (AIFM) authorised under EU law. All content is informational only and does not constitute investment advice.*
