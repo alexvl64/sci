@@ -9,8 +9,8 @@ const T = {
     hdrTitle: 'Discovery Call',
     bookingTitle: 'Book a Discovery Call',
     bookingSubtitle: 'Schedule a call with our team to discuss our crypto-asset investment strategies, the investment process, and how our funds can align with your goals.',
-    valDisclaimer: '<strong>Disclaimer:</strong> This page is provided for informational purposes only and does not constitute an investment offer. SparkCore Investment OÜ is registered and supervised by the Finantsinspektsioon (Estonia).',
-    ftrCompany: 'SparkCore Investment OÜ · Reg. No. 16265864',
+    valDisclaimer: '<strong>Disclaimer:</strong> This page is provided for informational purposes only and does not constitute an investment offer. SparkCore.investment OÜ is registered and supervised by the Finantsinspektsioon (Estonia).',
+    ftrCompany: 'SparkCore.investment OÜ · Reg. No. 16265864',
     ftrAddress: 'Männimäe 1, Pudisoo, 74626 Harju County, Estonia',
     ftrPrivacy: 'Privacy Policy',
   },
@@ -19,8 +19,8 @@ const T = {
     hdrTitle: 'Appel Découverte',
     bookingTitle: 'Planifier un Appel Découverte',
     bookingSubtitle: 'Échangez avec notre équipe sur nos stratégies d\'investissement en crypto-actifs, le processus d\'investissement et comment nos fonds peuvent s\'aligner sur vos objectifs.',
-    valDisclaimer: '<strong>Avertissement :</strong> Cette page est fournie à titre informatif uniquement et ne constitue pas une offre d\'investissement. SparkCore Investment OÜ est enregistrée et supervisée par la Finantsinspektsioon (Estonie).',
-    ftrCompany: 'SparkCore Investment OÜ · N° d\'enregistrement 16265864',
+    valDisclaimer: '<strong>Avertissement :</strong> Cette page est fournie à titre informatif uniquement et ne constitue pas une offre d\'investissement. SparkCore.investment OÜ est enregistrée et supervisée par la Finantsinspektsioon (Estonie).',
+    ftrCompany: 'SparkCore.investment OÜ · N° d\'enregistrement 16265864',
     ftrAddress: 'Männimäe 1, Pudisoo, 74626 Comté de Harju, Estonie',
     ftrPrivacy: 'Politique de confidentialité',
   }
@@ -34,14 +34,14 @@ function applyLang(lang) {
   document.documentElement.lang = t.htmlLang;
 
   document.title = lang === 'fr'
-    ? 'Appel Découverte — SparkCore Investment'
-    : 'Discovery Call — SparkCore Investment';
+    ? 'Appel Découverte — SparkCore Fund Management'
+    : 'Discovery Call — SparkCore Fund Management';
 
   const metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc) {
     metaDesc.content = lang === 'fr'
-      ? 'Planifiez un appel découverte avec SparkCore Investment OÜ pour échanger sur nos fonds d\'investissement en crypto-actifs réglementés.'
-      : 'Schedule a discovery call with SparkCore Investment OÜ to discuss our regulated crypto-asset investment funds and strategies.';
+      ? 'Planifiez un appel découverte avec SparkCore Fund Management pour échanger sur nos fonds d\'investissement en crypto-actifs réglementés.'
+      : 'Schedule a discovery call with SparkCore Fund Management to discuss our regulated crypto-asset investment funds and strategies.';
   }
 
   const s = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };

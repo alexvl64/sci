@@ -1,4 +1,4 @@
-# SparkCore Investment OÜ — Full Content Index
+# SparkCore Fund Management — Full Content Index
 
 > Complete index of all SparkCore blog articles and resources.
 
@@ -28,7 +28,7 @@
 
 - [Dynamic Trends Factsheet](https://sparkcore.fund/factsheets/dynamic-trends): Fund documentation for the Dynamic Trends fund — directional crypto strategy targeting Bitcoin outperformance.
 - [CryptoVision Factsheet](https://sparkcore.fund/factsheets/cryptovision): Fund documentation for the CryptoVision fund — algorithmic defensive approach with controlled volatility.
-- [Privacy Policy](https://sparkcore.fund/privacy-policy): GDPR and data protection policy for SparkCore Investment OÜ.
+- [Privacy Policy](https://sparkcore.fund/privacy-policy): GDPR and data protection policy for SparkCore Fund Management (SparkCore.investment OÜ).
 
 ## License
 

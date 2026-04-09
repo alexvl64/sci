@@ -44,7 +44,7 @@ const T = {
     lblRole2:'Manager · Tech & Systems',
     valBio2:'Software engineer. Crypto investor since 2014. Founder Cointips, co-founder DSM.',
     lblRole3:'Manager · Structuring',
-    valBio3:'7+ years in financial markets & crypto-assets. Founder of SparkCore.investment OÜ.',
+    valBio3:'7+ years in financial markets & crypto-assets. Founder of SparkCore Fund Management (SparkCore.investment OÜ).',
     lblStratTitle:'Strategy Overview',
     valStratIntro:'<strong>Dynamic Trends</strong> is an active directional strategy designed to capture the major bull trends in the crypto-asset market, while limiting the impact of corrective phases. It relies on a two-block architecture combining a directional Bitcoin exposure and a defensive algorithmic engine, continuously adjusted to market conditions.',
     lblOffensiveTag:'Offensive block · 50% AUM',
@@ -64,7 +64,7 @@ const T = {
     thYtd:'YTD',
     valPerfNote:'Past performance does not guarantee future results.',
     valDisclaimer:'<strong>Disclaimer:</strong> Past performance is neither a reliable indicator nor a guarantee of future performance. Crypto-assets carry a high level of risk including the risk of total loss of capital. This document is provided for informational purposes only and does not constitute an investment offer. The strategy is reserved for qualified or professional investors. SparkCore.investment OÜ is registered and supervised by the Finantsinspektsioon (Estonia).',
-    ftrCompany:'SparkCore Investment OÜ · Reg. No. 16265864',
+    ftrCompany:'SparkCore.investment OÜ · Reg. No. 16265864',
     ftrAddress:'Männimäe 1, Pudisoo, 74626 Harju County, Estonia',
     ftrPrivacy:'Privacy Policy',
   },
@@ -113,7 +113,7 @@ const T = {
     lblRole2:'Gérant · Tech & Systèmes',
     valBio2:'Ingénieur informatique. Investisseur crypto depuis 2014. Fondateur Cointips, co-fondateur DSM.',
     lblRole3:'Gérant · Structuration',
-    valBio3:'+7 ans marchés financiers & crypto-actifs. Fondateur de SparkCore.investment OÜ.',
+    valBio3:'+7 ans marchés financiers & crypto-actifs. Fondateur de SparkCore Fund Management (SparkCore.investment OÜ).',
     lblStratTitle:'Aperçu de la stratégie',
     valStratIntro:'<strong>Dynamic Trends</strong> est une stratégie directionnelle active conçue pour capter les grandes tendances haussières du marché des crypto-actifs, tout en limitant l\'impact des phases correctives. Elle repose sur une architecture bi-bloc combinant une exposition directionnelle au Bitcoin et un moteur algorithmique défensif, réajustée en continu selon les conditions de marché.',
     lblOffensiveTag:'Bloc offensif · 50% AUM',
@@ -133,7 +133,7 @@ const T = {
     thYtd:'YTD',
     valPerfNote:'Les performances passées ne garantissent pas les performances futures.',
     valDisclaimer:'<strong>Avertissement :</strong> Les performances passées ne constituent ni un indicateur fiable ni une garantie des performances futures. Les crypto-actifs présentent un risque élevé incluant un risque de perte totale du capital. Ce document est fourni à titre informatif uniquement et ne constitue pas une offre d\'investissement. La stratégie est réservée aux investisseurs qualifiés ou professionnels. SparkCore.investment OÜ est enregistrée et supervisée par la Finantsinspektsioon (Estonie).',
-    ftrCompany:'SparkCore Investment OÜ · N° d\'enregistrement 16265864',
+    ftrCompany:'SparkCore.investment OÜ · N° d\'enregistrement 16265864',
     ftrAddress:'Männimäe 1, Pudisoo, 74626 Comté de Harju, Estonie',
     ftrPrivacy:'Politique de confidentialité',
   }
@@ -292,12 +292,12 @@ function applyLang(lang) {
   const metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc) {
     metaDesc.content = lang === 'fr'
-      ? 'Dynamic Trends est un fonds d\'investissement alternatif crypto réglementé (FIA Estonie) géré par SparkCore Investment OÜ. Stratégie directionnelle active, liquidité trimestrielle, minimum 50 000 €. Supervisé par la Finantsinspektsioon.'
-      : 'Dynamic Trends is a regulated crypto-asset alternative investment fund (AIF Estonia) managed by SparkCore Investment OÜ. Discretionary & systematic strategy, quarterly liquidity, 50 000 € minimum. Supervised by Finantsinspektsioon.';
+      ? 'Dynamic Trends est un fonds d\'investissement alternatif crypto réglementé (FIA Estonie) géré par SparkCore Fund Management. Stratégie directionnelle active, liquidité trimestrielle, minimum 50 000 €. Supervisé par la Finantsinspektsioon.'
+      : 'Dynamic Trends is a regulated crypto-asset alternative investment fund (AIF Estonia) managed by SparkCore Fund Management. Discretionary & systematic strategy, quarterly liquidity, 50 000 € minimum. Supervised by Finantsinspektsioon.';
   }
   document.title = lang === 'fr'
-    ? 'Dynamic Trends – Factsheet Fonds Crypto | SparkCore Investment'
-    : 'Dynamic Trends – Crypto Fund Factsheet | SparkCore Investment';
+    ? 'Dynamic Trends – Factsheet Fonds Crypto | SparkCore Fund Management'
+    : 'Dynamic Trends – Crypto Fund Factsheet | SparkCore Fund Management';
 
   const s = (id, v) => { const el = document.getElementById(id); if(el) el.textContent = v; };
   const h = (id, v) => { const el = document.getElementById(id); if(el) el.innerHTML = v; };
