@@ -102,7 +102,7 @@ const translations = {
     newsletterPlaceholder: "Votre e-mail",
     newsletterButton: "S'abonner",
     newsletterError: "Veuillez entrer une adresse e-mail valide.",
-    newsletterConsent: "En vous abonnant, vous consentez à recevoir notre newsletter mensuelle. Aucune donnée n'est transmise à des tiers. Vous pouvez vous désabonner à tout moment. <a href=\"/privacy-policy.html\" class=\"underline underline-offset-2 hover:text-white transition-colors duration-200\">Politique de confidentialité</a>.",
+    newsletterConsent: "En vous abonnant, vous consentez à recevoir notre newsletter mensuelle. Aucune donnée n'est transmise à des tiers. Vous pouvez vous désabonner à tout moment. <a href=\"/privacy-policy\" class=\"underline underline-offset-2 hover:text-white transition-colors duration-200\">Politique de confidentialité</a>.",
     newsletterConsentLink: "Politique de confidentialité",
 
     // === INVEST SECTION ===
@@ -273,7 +273,7 @@ const translations = {
     newsletterPlaceholder: "Your email",
     newsletterButton: "Subscribe",
     newsletterError: "Please enter a valid email address.",
-    newsletterConsent: "By subscribing, you consent to receiving our monthly newsletter. No data is shared with third parties. You may unsubscribe at any time. <a href=\"/privacy-policy.html\" class=\"underline underline-offset-2 hover:text-white transition-colors duration-200\">Privacy Policy</a>.",
+    newsletterConsent: "By subscribing, you consent to receiving our monthly newsletter. No data is shared with third parties. You may unsubscribe at any time. <a href=\"/privacy-policy\" class=\"underline underline-offset-2 hover:text-white transition-colors duration-200\">Privacy Policy</a>.",
     newsletterConsentLink: "Privacy Policy",
 
     // === INVEST SECTION ===
@@ -343,9 +343,21 @@ const translations = {
 };
 
 // Language detection — runs immediately so currentLang is available for main.js
+// Order of precedence:
+//   1. URL path (authoritative — /fr/* is always French, everything else English)
+//   2. localStorage (explicit user choice on a previous visit)
+//   3. navigator.language (first-time visitor fallback)
+// Rationale: the URL must take precedence so that crawlers (Googlebot, AI bots,
+// social previewers) rendering /fr/ always get French content, regardless of
+// their default navigator.language or lack of localStorage.
 var currentLang = (function() {
+  var path = (window.location.pathname || '/').toLowerCase();
+  if (path === '/fr' || path.indexOf('/fr/') === 0) return 'fr';
+
   var saved = null;
   try { saved = localStorage.getItem('sc_lang'); } catch(e){}
+  if (saved === 'fr' || saved === 'en') return saved;
+
   var browser = (navigator.language || navigator.userLanguage || '').toLowerCase();
-  return saved || (browser.startsWith('fr') ? 'fr' : 'en');
+  return browser.indexOf('fr') === 0 ? 'fr' : 'en';
 })();

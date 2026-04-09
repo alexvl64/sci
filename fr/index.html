@@ -77,6 +77,25 @@
           "name": "SparkCore — Gestionnaire de fonds crypto réglementé | Estonie",
           "description": "SparkCore Investment OÜ est un AIFM réglementé basé en Estonie et spécialisé dans les fonds d'investissement en crypto-actifs.",
           "inLanguage": "fr"
+        },
+        {
+          "@type": "FinancialService",
+          "name": "SparkCore Investment OÜ",
+          "description": "Gestionnaire de fonds d'investissement alternatifs (AIFM) réglementé, spécialisé dans les fonds d'investissement en crypto-actifs. Gestion de fonds d'investissement alternatifs.",
+          "url": "https://sparkcore.fund/fr/",
+          "areaServed": "EU",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Männimäe 1, Pudisoo",
+            "addressLocality": "Comté de Harju",
+            "postalCode": "74626",
+            "addressCountry": "EE"
+          },
+          "memberOf": {
+            "@type": "GovernmentOrganization",
+            "name": "Finantsinspektsioon (EFSA)",
+            "url": "https://www.fi.ee/"
+          }
         }
       ]
     }
@@ -102,7 +121,7 @@
             class="open-sidebar font-inter font-normal md:h-[54px] md:px-6 md:py-4 px-4 py-3 h-11 rounded text-sm md:text-base bg-darkGray text-white !leading-140 hover:bg-transparent hover:text-darkGray border border-transparent hover:border-darkGray duration-300 flex items-center justify-center"
             data-i18n="navContact"
           >
-            Contact Us
+            Nous contacter
           </button>
         </div>
       </nav>
@@ -145,7 +164,7 @@
           class="font-funnel-display lg:text-custom-4xl md:text-3xl text-custom-3xl text-darkGray md:!leading-140 !leading-120 md:mb-8 mb-12"
           data-i18n="sidebarTitle"
         >
-          Learn more about SparkCore?
+          En savoir plus sur SparkCore ?
         </h2>
         <form id="contact-form">
           <div class="w-full flex gap-4 sm:flex-row flex-col">
@@ -155,13 +174,13 @@
                 class="text-base !leading-140 text-darkGray font-normal font-inter"
                 data-i18n="sidebarFirstName"
               >
-                First name *
+                Prénom *
               </label>
               <div class="flex flex-col items-start justify-center">
                 <input
                   id="prenom"
                   type="text"
-                  placeholder="Your first name"
+                  placeholder="Votre prénom"
                   data-i18n-placeholder="sidebarFirstNamePlaceholder"
                   class="w-full sm:p-4 p-5 sm:h-[54px] h-[62px] border border-paleBlue rounded placeholder:text-softBlueGray placeholder:text-base placeholder:font-inter font-inter text-softBlueGray focus:none outline-none"
                 />
@@ -171,7 +190,7 @@
                   style="display: none"
                   data-i18n="sidebarFieldRequired"
                 >
-                  Please fill in this required field.
+                  Veuillez remplir ce champ obligatoire.
                 </div>
               </div>
             </div>
@@ -181,13 +200,13 @@
                 class="text-base !leading-140 text-darkGray font-normal font-inter"
                 data-i18n="sidebarLastName"
               >
-                Last name *
+                Nom *
               </label>
               <div class="flex flex-col items-start justify-center">
                 <input
                   id="nom"
                   type="text"
-                  placeholder="Your last name"
+                  placeholder="Votre nom"
                   data-i18n-placeholder="sidebarLastNamePlaceholder"
                   class="w-full sm:p-4 p-5 sm:h-[54px] h-[62px] border border-paleBlue rounded placeholder:text-softBlueGray placeholder:text-base placeholder:font-inter font-inter text-softBlueGray focus:none outline-none"
                 />
@@ -197,7 +216,7 @@
                   style="display: none"
                   data-i18n="sidebarFieldRequired"
                 >
-                  Please fill in this required field.
+                  Veuillez remplir ce champ obligatoire.
                 </div>
               </div>
             </div>
@@ -209,14 +228,14 @@
                 class="text-base !leading-140 text-darkGray font-normal font-inter"
                 data-i18n="sidebarPhone"
               >
-                Phone
+                Téléphone
               </label>
               <div class="flex flex-col items-start justify-center">
                 <input
                   id="telephone"
                   type="number"
                   min="0"
-                  placeholder="Your phone number"
+                  placeholder="Votre numéro de téléphone"
                   data-i18n-placeholder="sidebarPhonePlaceholder"
                   class="w-full sm:p-4 p-5 sm:h-[52px] h-[62px] border border-paleBlue rounded placeholder:text-softBlueGray placeholder:text-base placeholder:font-inter font-inter text-softBlueGray focus:none outline-none"
                 />
@@ -228,13 +247,13 @@
                 class="text-base !leading-140 text-darkGray font-normal font-inter"
                 data-i18n="sidebarEmail"
               >
-                Email address *
+                Adresse e-mail *
               </label>
               <div class="flex flex-col items-start justify-center">
                 <input
                   id="email"
                   type="email"
-                  placeholder="Your email address"
+                  placeholder="Votre adresse e-mail"
                   data-i18n-placeholder="sidebarEmailPlaceholder"
                   class="w-full sm:p-4 p-5 sm:h-[52px] h-[62px] border border-paleBlue rounded placeholder:text-softBlueGray placeholder:text-base placeholder:font-inter font-inter text-softBlueGray focus:none outline-none"
                 />
@@ -244,7 +263,7 @@
                   style="display: none"
                   data-i18n="sidebarFieldRequired"
                 >
-                  Please fill in this required field.
+                  Veuillez remplir ce champ obligatoire.
                 </div>
               </div>
             </div>
@@ -255,14 +274,14 @@
               class="text-base !leading-140 text-darkGray font-normal font-inter"
               data-i18n="sidebarHowKnow"
             >
-              How did you hear about us? *
+              Comment nous avez-vous connu ? *
             </label>
             <div class="custom-select relative">
               <div
                 id="select-input"
                 class="cursor-pointer w-full sm:p-4 p-5 sm:h-[56px] h-[62px] border border-paleBlue rounded font-inter text-softBlueGray flex justify-between"
               >
-                <p data-i18n="sidebarSelectPlaceholder">Select an option</p>
+                <p data-i18n="sidebarSelectPlaceholder">Choisissez une option</p>
                 <img
                   id="select-arrow"
                   class="size-5"
@@ -278,56 +297,56 @@
                   data-value="communauté-cointips"
                   data-i18n="sidebarOpt1"
                 >
-                  Alexandre VINAL's community (Cointips)
+                  Communauté d'Alexandre VINAL (Cointips)
                 </li>
                 <li
                   class="px-4 py-2 cursor-pointer hover:bg-lightGray"
                   data-value="anciens-clients-dsm"
                   data-i18n="sidebarOpt2"
                 >
-                  DSM (past or current clients)
+                  DSM (anciens clients ou clients)
                 </li>
                 <li
                   class="px-4 py-2 cursor-pointer hover:bg-lightGray"
                   data-value="communauté-paul-antoine"
                   data-i18n="sidebarOpt3"
                 >
-                  Paul-Antoine PONS's community
+                  Communauté de Paul-Antoine PONS
                 </li>
                 <li
                   class="px-4 py-2 cursor-pointer hover:bg-lightGray"
                   data-value="recherche-en-ligne"
                   data-i18n="sidebarOpt4"
                 >
-                  Online search
+                  Recherche en ligne
                 </li>
                 <li
                   class="px-4 py-2 cursor-pointer hover:bg-lightGray"
                   data-value="reseaux-sociaux"
                   data-i18n="sidebarOpt5"
                 >
-                  Social media (LinkedIn, etc.)
+                  Réseaux sociaux (LinkedIn, etc.)
                 </li>
                 <li
                   class="px-4 py-2 cursor-pointer hover:bg-lightGray"
                   data-value="recommendation-proche"
                   data-i18n="sidebarOpt6"
                 >
-                  Referral by a contact
+                  Recommandation d'un proche
                 </li>
                 <li
                   class="px-4 py-2 cursor-pointer hover:bg-lightGray"
                   data-value="evenements-conferences"
                   data-i18n="sidebarOpt7"
                 >
-                  Events or conferences
+                  Événements ou conférences
                 </li>
                 <li
                   class="px-4 py-2 cursor-pointer hover:bg-lightGray"
                   data-value="autre"
                   data-i18n="sidebarOpt8"
                 >
-                  Other
+                  Autre
                 </li>
               </ul>
             </div>
@@ -336,7 +355,7 @@
             id="select-error"
             class="text-red-500 text-sm font-funnel-display mt-1 hidden"
             data-i18n="sidebarFieldRequired"
-            >Please fill in this required field.</span
+            >Veuillez remplir ce champ obligatoire.</span
           >
           <!-- Honeypot anti-spam -->
           <input type="text" name="website" id="honeypot" autocomplete="off" tabindex="-1" aria-hidden="true" style="display:none;position:absolute;left:-9999px;">
@@ -347,7 +366,7 @@
             class="sm:mt-8 mt-12 mb-5 font-inter font-normal h-[54px] sm:px-6 sm:py-4 px-4 py-3 rounded text-base bg-cream text-darkGray !leading-140 hover:bg-transparent hover:text-cream border border-transparent hover:border-cream duration-300 max-sm:w-full"
             data-i18n="sidebarSubmit"
           >
-            Contact Us
+            Nous contacter
           </button>
         </form>
       </div>
@@ -376,20 +395,20 @@
               class="md:!leading-140 !leading-120 font-funnel-display md:text-[50px] text-custom-5xl text-white relative z-[3]"
               data-i18n-html="heroTitle"
             >
-              Security <span class="block">Performance</span>
+              Gestion Institutionnelle <span class="block">de Fonds en Crypto-actifs</span>
             </h1>
             <p
               class="max-w-[550px] font-inter md:text-xl text-lg md:mt-6 mt-4 text-lightBlue md:!leading-140 !leading-160 relative z-[3]"
               data-i18n="heroTagline"
             >
-              Reliable investment in the crypto-asset universe
+              L'investissement fiable dans l'univers des crypto-actifs
             </p>
             <button
               aria-label="nous-contacter"
               class="open-sidebar mt-8 font-inter font-normal h-[52px] md:h-[54px] md:px-6 py-3.5 md:py-4 px-4 rounded text-sm md:text-base relative z-[3] bg-cream text-darkGray !leading-140 hover:bg-transparent hover:text-cream border border-transparent hover:border-cream duration-300 max-[500px]:w-full flex items-center justify-center"
               data-i18n="navContact"
             >
-              Contact Us
+              Nous contacter
             </button>
             <div
               class="absolute xl:top-[103%] top-[32%] max-custom-xs:top-[85%] max-custom-xs:-right-[40px] w-[730px] max-sm:w-full max-custom-xs:h-[200px] left-[-40px] 2xl:hidden"
@@ -439,11 +458,11 @@
         class="text-custom-5xl sm:text-5xl lg:text-custom-6xl text-darkGray leading-120 md:leading-140 font-funnel-display"
         data-i18n="fundsTitle"
       >
-        Our crypto investment funds
+        Nos fonds d'investissement crypto
       </h2>
       <div class="py-6 sm:py-8 lg:py-10">
         <p class="font-inter text-lg sm:text-xl text-steelBlue leading-160 md:!leading-140 max-w-[820px]" data-i18n-html="fundsParagraph">
-          Three complementary funds — <span class="text-darkGray font-medium">Dynamic Trends, CryptoVision and Equinoxe</span> — designed for different risk profiles within a regulated institutional management framework.
+          Trois fonds complémentaires — <span class="text-darkGray font-medium">Dynamic Trends, CryptoVision et Equinoxe</span> — conçus pour répondre à différents profils de risque dans un cadre de gestion institutionnel et réglementé.
         </p>
       </div>
     </div>
@@ -457,7 +476,7 @@
           <!-- Header card — noir profond -->
           <div class="bg-[#0E1117] px-6 py-6 flex items-start justify-between">
             <div>
-              <p class="font-inter text-xs font-medium text-[#DBD1BC] uppercase tracking-widest mb-2" data-i18n="dtRisk">High (controlled) risk</p>
+              <p class="font-inter text-xs font-medium text-[#DBD1BC] uppercase tracking-widest mb-2" data-i18n="dtRisk">Risque élevé (maîtrisé)</p>
               <h3 class="font-funnel-display text-2xl text-white leading-tight">Dynamic Trends</h3>
             </div>
             <div class="flex gap-[3px] items-center mt-1">
@@ -470,29 +489,29 @@
           </div>
           <!-- Body -->
           <div class="bg-[#1C2029] flex flex-col flex-1 px-6 py-6 border border-[#2A2F3A]">
-            <p class="font-inter text-xs text-[#8A9BA8] uppercase tracking-widest font-medium mb-1" data-i18n="dtPitch">Summary</p>
+            <p class="font-inter text-xs text-[#8A9BA8] uppercase tracking-widest font-medium mb-1" data-i18n="dtPitch">Synthèse</p>
             <p class="font-funnel-display text-lg text-white leading-tight mb-4" data-i18n="dtPitchText">
-              A directional strategy optimised to outperform Bitcoin.
+              Une stratégie directionnelle optimisée pour surperformer le Bitcoin.
             </p>
             <div class="w-full h-px bg-[#2A2F3A] mb-4"></div>
-            <p class="font-inter text-xs text-[#8A9BA8] uppercase tracking-widest font-medium mb-1" data-i18n="dtObjective">Objective</p>
+            <p class="font-inter text-xs text-[#8A9BA8] uppercase tracking-widest font-medium mb-1" data-i18n="dtObjective">Objectif</p>
             <p class="font-inter text-base text-[#ADBDCA] leading-160 mb-4 text-justify" data-i18n="dtObjectiveText">
-              Outperform Bitcoin over the medium / long term by capturing major bull trends while limiting corrective phases.
+              Surperformer le Bitcoin sur le moyen / long terme en captant les grandes tendances haussières tout en limitant les phases correctives.
             </p>
             <div class="w-full h-px bg-[#2A2F3A] mb-4"></div>
             <div class="mb-3">
               <div class="flex items-center justify-between mb-1">
-                <p class="font-inter text-xs text-[#DBD1BC] uppercase tracking-widest font-medium" data-i18n="dtOffensiveBlock">Offensive Block</p>
+                <p class="font-inter text-xs text-[#DBD1BC] uppercase tracking-widest font-medium" data-i18n="dtOffensiveBlock">Bloc Offensif</p>
                 <span class="font-inter text-xs font-semibold text-[#DBD1BC] border border-[#2A2F3A] px-2 py-0.5">50 % AUM</span>
               </div>
-              <p class="font-inter text-sm text-[#8A9BA8] leading-160 text-justify" data-i18n="dtOffensiveBlockText">Primary block — directional Bitcoin exposure with moderate leverage (max 2x), strictly controlled.</p>
+              <p class="font-inter text-sm text-[#8A9BA8] leading-160 text-justify" data-i18n="dtOffensiveBlockText">Bloc principal — exposition directionnelle Bitcoin avec levier modéré (max 2x), strictement encadré.</p>
             </div>
             <div class="mb-4">
               <div class="flex items-center justify-between mb-1">
-                <p class="font-inter text-xs text-[#DBD1BC] uppercase tracking-widest font-medium" data-i18n="dtDefensiveBlock">Defensive Block</p>
+                <p class="font-inter text-xs text-[#DBD1BC] uppercase tracking-widest font-medium" data-i18n="dtDefensiveBlock">Bloc Défensif</p>
                 <span class="font-inter text-xs font-semibold text-[#DBD1BC] border border-[#2A2F3A] px-2 py-0.5">50 % AUM</span>
               </div>
-              <p class="font-inter text-sm text-[#8A9BA8] leading-160 text-justify" data-i18n="dtDefensiveBlockText">Secondary block — neutral strategies, systemic arbitrage, quantitative models with controlled drawdown.</p>
+              <p class="font-inter text-sm text-[#8A9BA8] leading-160 text-justify" data-i18n="dtDefensiveBlockText">Bloc minoritaire — stratégies neutres, arbitrages systémiques, modèles quantitatifs à drawdown contrôlé.</p>
             </div>
             <div class="w-full h-px bg-[#2A2F3A] mb-4"></div>
             <div class="mt-auto">
@@ -500,7 +519,7 @@
                 class="open-sidebar font-inter text-sm text-[#DBD1BC] underline underline-offset-2 hover:text-white duration-200 cursor-pointer bg-transparent border-none p-0"
                 data-i18n="dtFactsheet"
               >
-                Request the Factsheet →
+                Demander la factsheet →
               </button>
             </div>
           </div>
@@ -511,7 +530,7 @@
           <!-- Header card — marron chaud -->
           <div class="bg-[#3D3527] px-6 py-6 flex items-start justify-between">
             <div>
-              <p class="font-inter text-xs font-medium text-[#DBD1BC] uppercase tracking-widest mb-2" data-i18n="cvRisk">Moderate risk</p>
+              <p class="font-inter text-xs font-medium text-[#DBD1BC] uppercase tracking-widest mb-2" data-i18n="cvRisk">Risque modéré</p>
               <h3 class="font-funnel-display text-2xl text-white leading-tight">CryptoVision</h3>
             </div>
             <div class="flex gap-[3px] items-center mt-1">
@@ -524,29 +543,29 @@
           </div>
           <!-- Body — fond beige/crème chaud -->
           <div class="bg-[#F5F0E8] flex flex-col flex-1 px-6 py-6 border border-[#E0D8CC]">
-            <p class="font-inter text-xs text-[#7A6E5E] uppercase tracking-widest font-medium mb-1" data-i18n="cvPitch">Summary</p>
+            <p class="font-inter text-xs text-[#7A6E5E] uppercase tracking-widest font-medium mb-1" data-i18n="cvPitch">Synthèse</p>
             <p class="font-funnel-display text-lg text-[#3D3527] leading-tight mb-4" data-i18n="cvPitchText">
-              A defensive, disciplined strategy on major crypto-assets.
+              Une stratégie défensive et disciplinée sur les crypto-actifs majeurs.
             </p>
             <div class="w-full h-px bg-[#E0D8CC] mb-4"></div>
-            <p class="font-inter text-xs text-[#7A6E5E] uppercase tracking-widest font-medium mb-1" data-i18n="cvObjective">Objective</p>
+            <p class="font-inter text-xs text-[#7A6E5E] uppercase tracking-widest font-medium mb-1" data-i18n="cvObjective">Objectif</p>
             <p class="font-inter text-base text-[#5A5040] leading-160 mb-4 text-justify" data-i18n="cvObjectiveText">
-              Deliver consistent performance with controlled volatility and limited drawdown, including during market instability.
+              Offrir une performance régulière avec une volatilité maîtrisée et un drawdown limité, même lors des phases d'instabilité du marché.
             </p>
             <div class="w-full h-px bg-[#E0D8CC] mb-4"></div>
             <div class="mb-3">
               <div class="flex items-center justify-between mb-1">
-                <p class="font-inter text-xs text-[#7A6E5E] uppercase tracking-widest font-medium" data-i18n="cvDefensiveBlock">Defensive Block</p>
+                <p class="font-inter text-xs text-[#7A6E5E] uppercase tracking-widest font-medium" data-i18n="cvDefensiveBlock">Bloc Défensif</p>
                 <span class="font-inter text-xs font-semibold text-[#3D3527] bg-white border border-[#E0D8CC] px-2 py-0.5">70 % AUM</span>
               </div>
-              <p class="font-inter text-sm text-[#5A5040] leading-160 text-justify" data-i18n="cvDefensiveBlockText">Primary block — market-neutral strategies, systemic arbitrage, quantitative models. No directional leverage.</p>
+              <p class="font-inter text-sm text-[#5A5040] leading-160 text-justify" data-i18n="cvDefensiveBlockText">Bloc principal — stratégies neutres au marché, arbitrages systémiques, modèles quantitatifs. Aucun effet de levier directionnel.</p>
             </div>
             <div class="mb-4">
               <div class="flex items-center justify-between mb-1">
-                <p class="font-inter text-xs text-[#7A6E5E] uppercase tracking-widest font-medium" data-i18n="cvOffensiveBlock">Offensive Block</p>
+                <p class="font-inter text-xs text-[#7A6E5E] uppercase tracking-widest font-medium" data-i18n="cvOffensiveBlock">Bloc Offensif</p>
                 <span class="font-inter text-xs font-semibold text-[#3D3527] bg-white border border-[#E0D8CC] px-2 py-0.5">30 % AUM</span>
               </div>
-              <p class="font-inter text-sm text-[#5A5040] leading-160 text-justify" data-i18n="cvOffensiveBlockText">Secondary block — dynamic exposure to Bitcoin, Ethereum and liquid crypto-assets. Moderate leverage, strictly controlled.</p>
+              <p class="font-inter text-sm text-[#5A5040] leading-160 text-justify" data-i18n="cvOffensiveBlockText">Bloc minoritaire — exposition dynamique sur Bitcoin, Ethereum et crypto-actifs liquides. Levier modéré, strictement encadré.</p>
             </div>
             <div class="w-full h-px bg-[#E0D8CC] mb-4"></div>
             <div class="mt-auto">
@@ -554,7 +573,7 @@
                 class="open-sidebar font-inter text-sm text-[#3D3527] underline underline-offset-2 hover:text-[#7A6E5E] duration-200 cursor-pointer bg-transparent border-none p-0"
                 data-i18n="cvFactsheet"
               >
-                Request the Factsheet →
+                Demander la factsheet →
               </button>
             </div>
           </div>
@@ -565,7 +584,7 @@
           <!-- Header card — gris acier -->
           <div class="bg-[#4A5568] px-6 py-6 flex items-start justify-between">
             <div>
-              <p class="font-inter text-xs font-medium text-[#CBD5E0] uppercase tracking-widest mb-2" data-i18n="eqRisk">Low risk</p>
+              <p class="font-inter text-xs font-medium text-[#CBD5E0] uppercase tracking-widest mb-2" data-i18n="eqRisk">Risque faible</p>
               <h3 class="font-funnel-display text-2xl text-white leading-tight">Equinoxe</h3>
             </div>
             <div class="flex flex-col items-end gap-2">
@@ -576,19 +595,19 @@
                 <span class="w-[6px] h-[22px] bg-[#CBD5E0] opacity-30"></span>
                 <span class="w-[6px] h-[22px] bg-[#CBD5E0] opacity-30"></span>
               </div>
-              <span class="font-inter text-[10px] font-semibold text-white border border-[#CBD5E0] border-opacity-50 px-2 py-0.5 uppercase tracking-wide whitespace-nowrap" data-i18n="eqLaunch">Expected launch 2026</span>
+              <span class="font-inter text-[10px] font-semibold text-white border border-[#CBD5E0] border-opacity-50 px-2 py-0.5 uppercase tracking-wide whitespace-nowrap" data-i18n="eqLaunch">Lancement prévu en 2026</span>
             </div>
           </div>
           <!-- Body — gris clair froid -->
           <div class="bg-[#EDF2F7] flex flex-col flex-1 px-6 py-6 border border-[#CBD5E0]">
-            <p class="font-inter text-xs text-[#718096] uppercase tracking-widest font-medium mb-1" data-i18n="eqPitch">Summary</p>
+            <p class="font-inter text-xs text-[#718096] uppercase tracking-widest font-medium mb-1" data-i18n="eqPitch">Synthèse</p>
             <p class="font-funnel-display text-lg text-[#2D3748] leading-tight mb-4" data-i18n="eqPitchText">
-              Neutral strategy — steady returns, independent of market direction.
+              Stratégie neutre — rendement régulier, indépendant de la direction du marché.
             </p>
             <div class="w-full h-px bg-[#CBD5E0] mb-4"></div>
-            <p class="font-inter text-xs text-[#718096] uppercase tracking-widest font-medium mb-1" data-i18n="eqObjective">Objective</p>
+            <p class="font-inter text-xs text-[#718096] uppercase tracking-widest font-medium mb-1" data-i18n="eqObjective">Objectif</p>
             <p class="font-inter text-base text-[#4A5568] leading-160 mb-4 text-justify" data-i18n="eqObjectiveText">
-              Generate stable, low-volatility performance with no directional risk, regardless of market conditions.
+              Générer une performance stable et faiblement volatile, sans prise de risque directionnel, quel que soit le contexte de marché.
             </p>
             <div class="w-full h-px bg-[#CBD5E0] mb-4"></div>
             <div class="mb-3">
@@ -596,18 +615,18 @@
                 <p class="font-inter text-xs text-[#718096] uppercase tracking-widest font-medium">Delta Neutral</p>
                 <span class="font-inter text-xs font-semibold text-[#2D3748] bg-white border border-[#CBD5E0] px-2 py-0.5">40 % AUM</span>
               </div>
-              <p class="font-inter text-sm text-[#4A5568] leading-160 text-justify" data-i18n="eqDeltaNeutralText">Derivatives arbitrage — exploits spreads between spot and futures/funding rates. Net exposure near zero.</p>
+              <p class="font-inter text-sm text-[#4A5568] leading-160 text-justify" data-i18n="eqDeltaNeutralText">Arbitrage sur dérivés — exploite les écarts entre spot et futures/taux de financement. Exposition nette proche de zéro.</p>
             </div>
             <div class="mb-4">
               <div class="flex items-center justify-between mb-1">
                 <p class="font-inter text-xs text-[#718096] uppercase tracking-widest font-medium">Beta Neutral</p>
                 <span class="font-inter text-xs font-semibold text-[#2D3748] bg-white border border-[#CBD5E0] px-2 py-0.5">60 % AUM</span>
               </div>
-              <p class="font-inter text-sm text-[#4A5568] leading-160 text-justify" data-i18n="eqBetaNeutralText">Pairs trading & statistical arbitrage — long/short on correlated assets to capture convergence.</p>
+              <p class="font-inter text-sm text-[#4A5568] leading-160 text-justify" data-i18n="eqBetaNeutralText">Pairs trading & arbitrage statistique — long/short sur actifs corrélés pour profiter de leur convergence.</p>
             </div>
             <div class="w-full h-px bg-[#CBD5E0] mb-4"></div>
             <div class="mt-auto">
-              <p class="font-inter text-sm text-[#718096] italic" data-i18n="eqFactsheetNote">Factsheet available at fund launch.</p>
+              <p class="font-inter text-sm text-[#718096] italic" data-i18n="eqFactsheetNote">Factsheet disponible à l'ouverture du fonds.</p>
             </div>
           </div>
         </div>
@@ -621,7 +640,7 @@
           class="max-md:px-6 text-custom-5xl sm:text-5xl lg:text-custom-5xxl text-[#DBD1BC] leading-120 md:leading-140 font-funnel-display pb-6 sm:pb-11 lg:pb-16"
           data-i18n="perfTitle"
         >
-          Performance Evolution
+          Évolution de la performance
         </h2>
         <div id="data-container" class="px-6"></div>
         <div class="pt-chart-section">
@@ -630,7 +649,7 @@
             class="font-inter font-medium text-xs md:text-sm text-[#6B7B8D] max-md:px-6 -translate-y-1"
             data-i18n="perfDisclaimer"
           >
-            The Dynamic Trends fund has been operational since 1 August 2025. Prior performance data derives from real strategies executed on managed accounts, with no backtesting. Past performance does not guarantee future results.
+            Le fonds Dynamic Trends est opérationnel depuis le 1er août 2025. Les performances antérieures proviennent de stratégies réelles exécutées sur comptes gérés, sans aucun backtest. Les performances passées ne garantissent pas les performances futures.
           </p>
         </div>
       </div>
@@ -642,7 +661,7 @@
           class="md:!leading-140 !leading-120 font-funnel-display xl:text-custom-6xl lg:text-6xl md:text-5xl text-custom-5xl text-darkGray"
           data-i18n="teamTitle"
         >
-          Meet our team
+          Rencontrez notre équipe
         </h2>
         <div
           class="grid lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 lg:mt-10 mt-8 gap-8"
@@ -669,13 +688,13 @@
               class="font-inter font-medium text-lg sm:text-xl leading-140 text-steelBlue"
               data-i18n="teamRolePA"
             >
-              Managing Partner
+              Associés gérants
             </p>
             <p
               class="font-inter font-normal text-lg md:leading-140 leading-160 text-steelBlue my-4 text-justify"
               data-i18n="teamBioPA"
             >
-              With over 7 years of experience in financial markets and crypto-assets, Paul-Antoine has guided several high net worth individuals in their investments. He founded SparkCore.investment OÜ, a regulated alternative investment fund manager.
+              Avec plus de 7 ans d'expérience sur les marchés financiers et dans les crypto-actifs, Paul-Antoine a accompagné plusieurs high net worth individuals dans leurs investissements. Il a créé SparkCore.investment OÜ qui est un fonds d'investissement privé.
             </p>
             <a
               rel="noopener noreferrer"
@@ -711,13 +730,13 @@
               class="font-inter font-medium text-lg sm:text-xl leading-140 text-steelBlue"
               data-i18n="teamRoleOlivier"
             >
-              Managing Partner
+              Associés gérants
             </p>
             <p
               class="font-inter font-normal text-lg md:leading-140 leading-160 text-steelBlue my-4 text-justify"
               data-i18n="teamBioOlivier"
             >
-              Active in trading for over twenty years, Olivier began in equity markets before turning to crypto-assets in 2017. Co-founder of DSM, he applies a methodology combining technical analysis and innovative strategies to optimise portfolio performance.
+              Actif dans le trading depuis plus de vingt ans, Olivier a commencé sur les marchés actions avant de se tourner vers les crypto-actifs en 2017. Cofondateur de DSM, il utilise une méthodologie combinant analyse technique et stratégies innovantes pour optimiser les performances des portefeuilles.
             </p>
             <a
               rel="noopener noreferrer"
@@ -753,13 +772,13 @@
               class="font-inter font-medium sm:text-xl text-lg md:leading-140 leading-160 text-steelBlue"
               data-i18n="teamRoleAlex"
             >
-              Managing Partner
+              Associés gérants
             </p>
             <p
               class="font-inter font-normal text-lg leading-140 text-steelBlue my-4 xl:pr-1 text-justify"
               data-i18n="teamBioAlex"
             >
-              Software engineer, Alexandre has invested in crypto-assets since 2014. Founder of the Cointips YouTube channel in 2017 and co-founder of DSM in 2020, he also leads a private community of crypto-asset investors.
+              Ingénieur en informatique, Alexandre investit dans les crypto-actifs depuis 2014. Fondateur de la chaîne YouTube Cointips en 2017 et co-fondateur de DSM en 2020, il dirige également une communauté privée d'investisseurs en crypto-actifs.
             </p>
             <div class="flex item-center justify-start gap-3">
               <a
@@ -815,13 +834,13 @@
             class="md:text-5xl text-custom-5xl md:leading-140 leading-120 text-white font-funnel-display"
             data-i18n="newsletterTitle"
           >
-            Subscribe to our newsletter
+            Abonnez-vous à notre newsletter
           </h2>
           <p
             class="font-normal mt-3 mb-10 text-lightBlue md:text-xl text-lg md:leading-140 leading-160 font-inter"
             data-i18n="newsletterSubtitle"
           >
-            Receive in-depth monthly analysis of the crypto-asset market.
+            Recevez chaque mois une analyse approfondie du marché des crypto-actifs.
           </p>
           <div
             class="flex items-center justify-start custom-xs:flex-row max-custom-xs:flex-wrap flex-col custom-xs:gap-3 gap-5 w-full"
@@ -834,7 +853,7 @@
                 type="email"
                 autocomplete="off"
                 class="border text-xl h-[60px] leading-140 placeholder:text-softBlueGray text-softBlueGray font-funnel-display border-charcoalBlue bg-transparent p-4 rounded-[4px] custom-xs:max-w-[500px] w-full"
-                placeholder="Your email"
+                placeholder="Votre e-mail"
                 data-i18n-placeholder="newsletterPlaceholder"
               />
               <p
@@ -842,7 +861,7 @@
                 class="text-red-500 text-xs font-funnel-display mt-1 hidden absolute start-0 custom-xs:-bottom-6 -bottom-4"
                 data-i18n="newsletterError"
               >
-                Please enter a valid email address.
+                Veuillez entrer une adresse e-mail valide.
               </p>
             </div>
             <button
@@ -851,14 +870,14 @@
               class="px-6 md:h-[60px] h-[54px] flex items-center justify-center py-[19px] hover:bg-transparent hover:border-white hover:text-white transition-all duration-300 border border-transparent bg-white font-inter font-normal text-base leading-140 rounded-[4px] max-custom-xs:w-full"
               data-i18n="subscribeButton"
             >
-              Subscribe
+              S'abonner
             </button>
           </div>
           <!-- Honeypot anti-spam -->
           <input type="text" name="website" id="honeypot-newsletter" autocomplete="off" tabindex="-1" aria-hidden="true" style="display:none;position:absolute;left:-9999px;">
           <div id="cf-turnstile-newsletter" class="cf-turnstile" data-sitekey="0x4AAAAAACy5d4Ot-ahI-r9S" data-theme="dark" data-appearance="interaction-only"></div>
           <p class="font-inter text-xs text-[#8A9BA8] mt-8 leading-relaxed max-w-[500px]" data-i18n-html="newsletterConsent">
-            By subscribing, you consent to receiving our monthly newsletter. No data is shared with third parties. You may unsubscribe at any time. <a href="/privacy-policy" class="underline underline-offset-2 hover:text-white transition-colors duration-200">Privacy Policy</a>.
+            En vous abonnant, vous consentez à recevoir notre newsletter mensuelle. Aucune donnée n'est transmise à des tiers. Vous pouvez vous désabonner à tout moment. <a href="/privacy-policy" class="underline underline-offset-2 hover:text-white transition-colors duration-200">Politique de confidentialité</a>.
           </p>
         </div>
       </div>
@@ -887,14 +906,13 @@
                 class="md:text-5xl text-custom-5xl xl:leading-140 leading-110 text-charcoal font-funnel-display"
                 data-i18n="investTitle"
               >
-                Invest with us
+                Investissez avec nous
               </h2>
               <p
                 class="font-inter text-xl max-custom-xs:pe-2.5 leading-140 font-normal text-charcoal lg:mt-6 sm:mt-4 mt-6 xl:pr-1 text-justify"
                 data-i18n="investText"
               >
-                Investment in funds managed by SparkCore is reserved for experienced investors, institutional investors and family offices.
-                The minimum investment per investor is €50,000, in EUR, USD or regulated stablecoins.
+                L'investissement dans les fonds gérés par SparkCore est réservé aux investisseurs expérimentés, aux investisseurs institutionnels et aux family offices. Le capital minimum par investisseur est de 50 000 €, en EUR, USD ou stablecoins réglementés.
               </p>
             </div>
             <div
@@ -915,7 +933,7 @@
                   class="font-funnel-display text-xl leading-140 text-darkGray"
                   data-i18n="investStep1"
                 >
-                  Request information
+                  Demander des informations
                 </p>
               </div>
               <div
@@ -933,7 +951,7 @@
                   class="font-funnel-display text-xl leading-140 text-darkGray"
                   data-i18n="investStep2"
                 >
-                  We will contact you with further details
+                  Nous vous contacterons avec plus de détails
                 </p>
               </div>
               <div
@@ -951,7 +969,7 @@
                   class="font-funnel-display text-xl leading-140 text-darkGray"
                   data-i18n="investStep3"
                 >
-                  Sign the required documents
+                  Signer les documents nécessaires
                 </p>
               </div>
               <div
@@ -969,7 +987,7 @@
                   class="font-funnel-display text-xl leading-140 text-darkGray"
                   data-i18n="investStep4"
                 >
-                  Become an investor
+                  Devenez investisseur
                 </p>
               </div>
               <button
@@ -977,7 +995,7 @@
                 class="open-sidebar px-6 h-[54px] py-4 bg-darkGray flex items-center justify-center hover:bg-transparent hover:border-darkGray hover:text-darkGray transition-all duration-300 border border-transparent font-inter text-white font-normal text-base leading-140 rounded-[4px] max-sm:w-full"
                 data-i18n="navContact"
               >
-                Contact Us
+                Nous contacter
               </button>
             </div>
           </div>
@@ -991,13 +1009,13 @@
         <!-- Section header -->
         <div class="flex flex-col sm:flex-row sm:items-end sm:justify-between mb-8 sm:mb-12 gap-4">
           <div>
-            <p class="font-inter text-xs font-medium text-steelBlue uppercase tracking-widest mb-2" data-i18n="wlSubtitle">Services for managers</p>
+            <p class="font-inter text-xs font-medium text-steelBlue uppercase tracking-widest mb-2" data-i18n="wlSubtitle">Services aux gestionnaires</p>
             <h2 class="md:!leading-140 !leading-120 font-funnel-display xl:text-custom-6xl lg:text-6xl md:text-5xl text-custom-5xl text-darkGray" data-i18n="wlTitle">
-              White Label Solution
+              Solution Marque Blanche
             </h2>
           </div>
           <p class="font-inter text-base text-steelBlue leading-160 sm:max-w-[420px] text-justify" data-i18n="wlIntro">
-            SparkCore makes its regulated infrastructure available to enable third-party managers to launch their own alternative investment fund.
+            SparkCore met à disposition son infrastructure réglementée pour permettre à des gestionnaires tiers de lancer leur propre fonds d'investissement alternatif.
           </p>
         </div>
 
@@ -1007,41 +1025,41 @@
           <!-- LEFT — Description & CTA -->
           <div class="lg:w-[45%] w-full bg-darkGray p-8 xl:p-10 flex flex-col justify-between">
             <div>
-              <p class="font-inter text-xs font-medium text-[#DBD1BC] uppercase tracking-widest mb-4" data-i18n="wlWhatTitle">What SparkCore provides</p>
+              <p class="font-inter text-xs font-medium text-[#DBD1BC] uppercase tracking-widest mb-4" data-i18n="wlWhatTitle">Ce que SparkCore apporte</p>
               <ul class="flex flex-col gap-4">
                 <li class="flex items-start gap-3">
                   <span class="w-px h-4 bg-[#DBD1BC] mt-1.5 shrink-0" style="width:2px; min-width:2px;"></span>
                   <div>
-                    <p class="font-funnel-display text-base text-white leading-snug" data-i18n="wlItem1Title">Registered fund manager</p>
-                    <p class="font-inter text-sm text-[#8A9BA8] leading-160 mt-0.5 text-justify" data-i18n="wlItem1Desc">Registered with Finantsinspektsioon (EFSA) — supervised Small Fund Manager regime. Financial Institution licence issued by EFIU (KYC/AML).</p>
+                    <p class="font-funnel-display text-base text-white leading-snug" data-i18n="wlItem1Title">Gestionnaire de fonds enregistré</p>
+                    <p class="font-inter text-sm text-[#8A9BA8] leading-160 mt-0.5 text-justify" data-i18n="wlItem1Desc">Enregistré auprès de la Finantsinspektsioon (EFSA) — régime Small Fund Manager supervisé. Licence Institution Financière délivrée par l'EFIU (KYC/AML).</p>
                   </div>
                 </li>
                 <li class="flex items-start gap-3">
                   <span style="width:2px; min-width:2px;" class="h-4 bg-[#DBD1BC] mt-1.5 shrink-0"></span>
                   <div>
-                    <p class="font-funnel-display text-base text-white leading-snug" data-i18n="wlItem2Title">Full legal structuring</p>
-                    <p class="font-inter text-sm text-[#8A9BA8] leading-160 mt-0.5 text-justify" data-i18n="wlItem2Desc">Creation of the fund vehicle (usaldusfond), drafting of regulatory documents (Partnership Agreement, Subscription Agreement, Redemption Request).</p>
+                    <p class="font-funnel-display text-base text-white leading-snug" data-i18n="wlItem2Title">Structuration juridique complète</p>
+                    <p class="font-inter text-sm text-[#8A9BA8] leading-160 mt-0.5 text-justify" data-i18n="wlItem2Desc">Création du véhicule de fonds (usaldusfond), rédaction des documents réglementaires (Accord de partenariat, Contrat de souscription, Demande de rachat de parts).</p>
                   </div>
                 </li>
                 <li class="flex items-start gap-3">
                   <span style="width:2px; min-width:2px;" class="h-4 bg-[#DBD1BC] mt-1.5 shrink-0"></span>
                   <div>
-                    <p class="font-funnel-display text-base text-white leading-snug" data-i18n="wlItem3Title">Operational infrastructure</p>
-                    <p class="font-inter text-sm text-[#8A9BA8] leading-160 mt-0.5 text-justify" data-i18n="wlItem3Desc">Access to platforms (Binance, Kraken, OKX, ByBit), EUR/USD banking access — SEPA & SWIFT, multi-signature security, NAV/performance management software.</p>
+                    <p class="font-funnel-display text-base text-white leading-snug" data-i18n="wlItem3Title">Infrastructure opérationnelle</p>
+                    <p class="font-inter text-sm text-[#8A9BA8] leading-160 mt-0.5 text-justify" data-i18n="wlItem3Desc">Accès aux plateformes (Binance, Kraken, OKX, ByBit), accès bancaire EUR/USD — SEPA & SWIFT, sécurité multisignature, logiciel de gestion NAV/performance.</p>
                   </div>
                 </li>
                 <li class="flex items-start gap-3">
                   <span style="width:2px; min-width:2px;" class="h-4 bg-[#DBD1BC] mt-1.5 shrink-0"></span>
                   <div>
-                    <p class="font-funnel-display text-base text-white leading-snug" data-i18n="wlItem4Title">Accounting & reporting</p>
-                    <p class="font-inter text-sm text-[#8A9BA8] leading-160 mt-0.5 text-justify" data-i18n="wlItem4Desc">Accounting handled by a Big Four firm. Production and distribution of investor reporting. Regulatory reporting to EFSA and the Bank of Estonia. Automated fee and NAV calculation.</p>
+                    <p class="font-funnel-display text-base text-white leading-snug" data-i18n="wlItem4Title">Comptabilité & reporting</p>
+                    <p class="font-inter text-sm text-[#8A9BA8] leading-160 mt-0.5 text-justify" data-i18n="wlItem4Desc">Comptabilité assurée par un cabinet membre du Big Four. Production et envoi du reporting investisseurs. Reporting réglementaire EFSA et Banque Centrale d'Estonie. Calcul automatique des frais et de la NAV.</p>
                   </div>
                 </li>
                 <li class="flex items-start gap-3">
                   <span style="width:2px; min-width:2px;" class="h-4 bg-[#DBD1BC] mt-1.5 shrink-0"></span>
                   <div>
-                    <p class="font-funnel-display text-base text-white leading-snug" data-i18n="wlItem5Title">Favourable taxation</p>
-                    <p class="font-inter text-sm text-[#8A9BA8] leading-160 mt-0.5 text-justify" data-i18n="wlItem5Desc">No tax at fund level. No withholding tax on distributions to foreign investors.</p>
+                    <p class="font-funnel-display text-base text-white leading-snug" data-i18n="wlItem5Title">Fiscalité favorable</p>
+                    <p class="font-inter text-sm text-[#8A9BA8] leading-160 mt-0.5 text-justify" data-i18n="wlItem5Desc">Pas d'imposition au niveau du fonds. Aucune retenue à la source sur les distributions aux investisseurs étrangers.</p>
                   </div>
                 </li>
               </ul>
@@ -1052,7 +1070,7 @@
                 class="open-sidebar font-inter font-normal h-[54px] px-6 py-4 rounded text-base bg-cream text-darkGray !leading-140 hover:bg-transparent hover:text-cream border border-transparent hover:border-cream duration-300 flex items-center justify-center"
                 data-i18n="navContact"
               >
-                Contact Us
+                Nous contacter
               </button>
             </div>
           </div>
@@ -1064,51 +1082,51 @@
             <div class="border-b border-[#D0DAE3] px-8 xl:px-10 py-6 flex items-center gap-6">
               <div class="flex flex-col items-center justify-center border-2 border-darkGray w-[72px] h-[72px] shrink-0">
                 <span class="font-funnel-display text-4xl text-darkGray leading-none">30</span>
-                <span class="font-inter text-[10px] text-steelBlue leading-tight uppercase tracking-wide" data-i18n="wlDays">days</span>
+                <span class="font-inter text-[10px] text-steelBlue leading-tight uppercase tracking-wide" data-i18n="wlDays">jours</span>
               </div>
               <p class="font-inter text-sm text-mediumGray leading-160" data-i18n="wlDaysDesc">
-                From decision to fund opening for subscriptions. Some platforms may require additional time subject to their internal KYB procedures.
+                De la décision à l'ouverture du fonds aux souscriptions. Certaines plateformes peuvent nécessiter un délai supplémentaire selon leurs procédures KYB internes.
               </p>
             </div>
 
             <!-- What you manage -->
             <div class="border-b border-[#D0DAE3] px-8 xl:px-10 py-6">
-              <p class="font-inter text-xs font-medium text-steelBlue uppercase tracking-widest mb-4" data-i18n="wlYourTitle">What you manage</p>
+              <p class="font-inter text-xs font-medium text-steelBlue uppercase tracking-widest mb-4" data-i18n="wlYourTitle">Ce que vous gérez</p>
               <div class="grid sm:grid-cols-3 grid-cols-1 gap-4">
                 <div class="flex flex-col gap-1">
-                  <span class="font-funnel-display text-base text-darkGray" data-i18n="wlStrategy">Strategy</span>
-                  <p class="font-inter text-sm text-mediumGray leading-160" data-i18n="wlStrategyDesc">Definition and execution of the fund's investment policy.</p>
+                  <span class="font-funnel-display text-base text-darkGray" data-i18n="wlStrategy">Stratégie</span>
+                  <p class="font-inter text-sm text-mediumGray leading-160" data-i18n="wlStrategyDesc">Définition et exécution de la politique d'investissement du fonds.</p>
                 </div>
                 <div class="flex flex-col gap-1">
-                  <span class="font-funnel-display text-base text-darkGray" data-i18n="wlFundraising">Fundraising</span>
-                  <p class="font-inter text-sm text-mediumGray leading-160" data-i18n="wlFundraisingDesc">Investor relations and fund marketing.</p>
+                  <span class="font-funnel-display text-base text-darkGray" data-i18n="wlFundraising">Levée de fonds</span>
+                  <p class="font-inter text-sm text-mediumGray leading-160" data-i18n="wlFundraisingDesc">Relation investisseurs et commercialisation du fonds.</p>
                 </div>
                 <div class="flex flex-col gap-1">
-                  <span class="font-funnel-display text-base text-darkGray" data-i18n="wlCommentary">Management commentary</span>
-                  <p class="font-inter text-sm text-mediumGray leading-160" data-i18n="wlCommentaryDesc">You provide SparkCore with a periodic commentary integrated into the reporting sent to your investors.</p>
+                  <span class="font-funnel-display text-base text-darkGray" data-i18n="wlCommentary">Commentaire de gestion</span>
+                  <p class="font-inter text-sm text-mediumGray leading-160" data-i18n="wlCommentaryDesc">Vous fournissez à SparkCore un commentaire périodique intégré au reporting transmis à vos investisseurs.</p>
                 </div>
               </div>
             </div>
 
             <!-- Regulatory framework -->
             <div class="px-8 xl:px-10 py-6">
-              <p class="font-inter text-xs font-medium text-steelBlue uppercase tracking-widest mb-4" data-i18n="wlRegTitle">Regulatory framework</p>
+              <p class="font-inter text-xs font-medium text-steelBlue uppercase tracking-widest mb-4" data-i18n="wlRegTitle">Cadre réglementaire</p>
               <div class="grid sm:grid-cols-2 grid-cols-1 gap-3">
                 <div class="flex items-start gap-2 bg-white border border-[#D0DAE3] px-4 py-3">
                   <svg class="w-4 h-4 mt-0.5 shrink-0 text-darkGray" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <p class="font-inter text-sm text-mediumGray leading-160" data-i18n="wlReg1">AIF structured under Estonian law (usaldusfond)</p>
+                  <p class="font-inter text-sm text-mediumGray leading-160" data-i18n="wlReg1">FIA structuré sous droit estonien (usaldusfond)</p>
                 </div>
                 <div class="flex items-start gap-2 bg-white border border-[#D0DAE3] px-4 py-3">
                   <svg class="w-4 h-4 mt-0.5 shrink-0 text-darkGray" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <p class="font-inter text-sm text-mediumGray leading-160" data-i18n="wlReg2">Qualified/accredited investors (no limit), up to 149 retail investors per EU country</p>
+                  <p class="font-inter text-sm text-mediumGray leading-160" data-i18n="wlReg2">Investisseurs qualifiés / accrédités (sans limite) et jusqu'à 149 retail par pays UE</p>
                 </div>
                 <div class="flex items-start gap-2 bg-white border border-[#D0DAE3] px-4 py-3">
                   <svg class="w-4 h-4 mt-0.5 shrink-0 text-darkGray" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <p class="font-inter text-sm text-mediumGray leading-160" data-i18n="wlReg3">Dual MLRO system: internal (FIU-registered) + external crypto-specialist, in direct contact with investors.</p>
+                  <p class="font-inter text-sm text-mediumGray leading-160" data-i18n="wlReg3">Double dispositif MLRO : interne (enregistré FIU) + externe spécialisé crypto, en contact direct avec les investisseurs.</p>
                 </div>
                 <div class="flex items-start gap-2 bg-white border border-[#D0DAE3] px-4 py-3">
                   <svg class="w-4 h-4 mt-0.5 shrink-0 text-darkGray" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg>
-                  <p class="font-inter text-sm text-mediumGray leading-160" data-i18n="wlReg4">AML 5 / AML 6 compliant — SparkCore as official regulatory representative</p>
+                  <p class="font-inter text-sm text-mediumGray leading-160" data-i18n="wlReg4">Conforme AML 5 / AML 6 — SparkCore comme représentant réglementaire officiel</p>
                 </div>
               </div>
             </div>
@@ -1134,9 +1152,9 @@
                 alt="SparkCore Investment OÜ" width="210" height="40">
             </a>
             <div class="flex items-center gap-4">
-              <div class="lang-toggle max-sm:hidden" role="group" aria-label="Language selector" id="lang-toggle-footer">
-                <button class="lang-btn active" id="btn-en-footer" onclick="setLang('en')" aria-label="Switch to English" aria-pressed="true">EN</button>
-                <button class="lang-btn" id="btn-fr-footer" onclick="setLang('fr')" aria-label="Passer en français" aria-pressed="false">FR</button>
+              <div class="lang-toggle max-sm:hidden" role="group" aria-label="Sélecteur de langue" id="lang-toggle-footer">
+                <button class="lang-btn" id="btn-en-footer" onclick="setLang('en')" aria-label="Switch to English" aria-pressed="false">EN</button>
+                <button class="lang-btn active" id="btn-fr-footer" onclick="setLang('fr')" aria-label="Passer en français" aria-pressed="true">FR</button>
               </div>
               <a
                 rel="noopener noreferrer"
@@ -1154,7 +1172,7 @@
           <p
             class="font-inter font-normal sm:text-base text-lg text-steelBlue leading-140"
           >
-            @<span id="year"></span><span data-i18n="footerCopyright"> SparkCore.investment OÜ — All rights reserved.</span>
+            @<span id="year"></span><span data-i18n="footerCopyright"> SparkCore.investment OÜ — Tous droits réservés.</span>
           </p>
           <div class="w-full h-px bg-paleBlue custom-xs:my-4 my-6"></div>
           <div
@@ -1164,14 +1182,14 @@
               class="font-inter text-steelBlue text-base sm:text-sm leading-140"
             >
               <span class="font-inter font-normal leading-140 text-darkGray" data-i18n="footerRegText"
-                >Asset management company specialising in crypto-assets, registered in Estonia. Supervised by Finantsinspektsioon:</span
+                >Société de gestion spécialisée dans les crypto-actifs, enregistrée en Estonie. Supervisée par la Finantsinspektsioon :</span
               >
               <a
                 rel="noopener noreferrer"
                 href="https://www.fi.ee/en/guides/fund-management-companies/investment-market/small-fund-managers-without-activity-licence/sparkcoreinvestment-ou"
                 target="_blank"
                 class="underline underline-offset-2"
-                >Estonian Financial Supervisory Authority (Small Fund Manager)
+                >Autorité estonienne de supervision financière (Small Fund Manager)
               </a>
             </p>
             <p
@@ -1183,7 +1201,7 @@
               class="font-inter text-steelBlue text-base sm:text-sm leading-140"
             >
               <span class="font-inter font-normal leading-140 text-darkGray" data-i18n="footerLicenceLabel"
-                >Licence:</span
+                >Licence :</span
               >
               <a
                 rel="noopener noreferrer"
@@ -1191,37 +1209,33 @@
                 target="_blank"
                 class="underline underline-offset-2"
                 data-i18n="footerLicenceLink"
-                >EFIU (Financial Institution)
+                >EFIU (Institution Financière)
               </a>
             </p>
           </div>
           <p class="font-inter font-normal text-base sm:text-sm leading-140 text-steelBlue custom-xs:mt-4 mt-6">
-            <span class="font-inter font-normal leading-140 text-darkGray" data-i18n="footerAddress">Reg. No. 16265864 — Männimäe 1, Pudisoo, 74626 Harju County, Estonia</span>
+            <span class="font-inter font-normal leading-140 text-darkGray" data-i18n="footerAddress">N° d'enregistrement : 16265864 — Männimäe 1, Pudisoo, 74626 comté de Harju, Estonie</span>
             — <a rel="noopener noreferrer" href="https://search.gleif.org/#/record/8945003BBN0RVNNB0S84" target="_blank" class="underline underline-offset-2">LEI: 8945003BBN0RVNNB0S84</a>
           </p>
           <p
             class="font-inter font-normal text-base sm:text-sm leading-140 text-steelBlue custom-xs:mt-4 mt-6"
           >
-            <span class="text-darkGray" data-i18n="footerDisclaimerLabel">Disclaimer:</span>
-            <span data-i18n="footerWarning"> Past performance does not guarantee future results.
-            Crypto-assets carry a high level of risk, including the risk of total loss.
-            This website and performance charts are provided for informational purposes only and do not constitute an investment offer.
-            Access to the strategies is reserved for qualified or professional investors.
-            Please assess your personal situation and seek independent advice before investing.</span>
+            <span class="text-darkGray" data-i18n="footerDisclaimerLabel">Avertissement :</span>
+            <span data-i18n="footerWarning"> Les performances passées ne garantissent pas les performances futures. Les crypto-actifs présentent un risque élevé, incluant un risque de perte totale. Ce site et les graphiques de performance sont fournis à titre informatif uniquement et ne constituent pas une offre d'investissement. L'accès aux stratégies est réservé aux investisseurs qualifiés ou professionnels. Veuillez évaluer votre situation personnelle et obtenir un avis indépendant avant d'investir.</span>
           </p>
           <p class="font-inter font-normal text-sm leading-140 text-steelBlue custom-xs:mt-2 mt-3">
             <a rel="noopener noreferrer" href="/privacy-policy"
                class="underline underline-offset-2 hover:text-darkGray transition-colors duration-200"
-               data-i18n="footerPrivacyLink">Privacy Policy</a>
+               data-i18n="footerPrivacyLink">Politique de confidentialité</a>
             <span class="mx-2 text-paleBlue">|</span>
             <a rel="noopener noreferrer" href="/blog/"
                class="underline underline-offset-2 hover:text-darkGray transition-colors duration-200"
-               data-i18n="footerInsightsLink">Insights</a>
+               data-i18n="footerInsightsLink">Articles</a>
           </p>
           <div class="flex items-center gap-4 sm:hidden mt-6">
-            <div class="lang-toggle" role="group" aria-label="Language selector" id="lang-toggle-footer-mobile">
-              <button class="lang-btn active" id="btn-en-footer-mobile" onclick="setLang('en')" aria-label="Switch to English" aria-pressed="true">EN</button>
-              <button class="lang-btn" id="btn-fr-footer-mobile" onclick="setLang('fr')" aria-label="Passer en français" aria-pressed="false">FR</button>
+            <div class="lang-toggle" role="group" aria-label="Sélecteur de langue" id="lang-toggle-footer-mobile">
+              <button class="lang-btn" id="btn-en-footer-mobile" onclick="setLang('en')" aria-label="Switch to English" aria-pressed="false">EN</button>
+              <button class="lang-btn active" id="btn-fr-footer-mobile" onclick="setLang('fr')" aria-label="Passer en français" aria-pressed="true">FR</button>
             </div>
             <a
               rel="noopener noreferrer"
