@@ -34,14 +34,14 @@ function applyLang(lang) {
   document.documentElement.lang = t.htmlLang;
 
   document.title = lang === 'fr'
-    ? 'Appel Découverte — SparkCore Investment'
-    : 'Discovery Call — SparkCore Investment';
+    ? 'Appel Découverte — SparkCore Fund Management'
+    : 'Discovery Call — SparkCore Fund Management';
 
   const metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc) {
     metaDesc.content = lang === 'fr'
-      ? 'Planifiez un appel découverte avec SparkCore Investment OÜ pour échanger sur nos fonds d\'investissement en crypto-actifs réglementés.'
-      : 'Schedule a discovery call with SparkCore Investment OÜ to discuss our regulated crypto-asset investment funds and strategies.';
+      ? 'Planifiez un appel découverte avec SparkCore Fund Management pour échanger sur nos fonds d\'investissement en crypto-actifs réglementés.'
+      : 'Schedule a discovery call with SparkCore Fund Management to discuss our regulated crypto-asset investment funds and strategies.';
   }
 
   const s = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };

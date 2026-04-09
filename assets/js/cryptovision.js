@@ -45,7 +45,7 @@ const T = {
     lblRole2:'Manager · Tech & Systems',
     valBio2:'Software engineer. Crypto investor since 2014. Founder Cointips, co-founder DSM.',
     lblRole3:'Manager · Structuring',
-    valBio3:'7+ years in financial markets & crypto-assets. Founder of SparkCore.investment OÜ.',
+    valBio3:'7+ years in financial markets & crypto-assets. Founder of SparkCore Fund Management (SparkCore Investment OÜ).',
     lblStratTitle:'Strategy Overview',
     valStratIntro:'<strong>CryptoVision</strong> combines a robust defensive core with a dynamic directional block to deliver consistent returns with controlled volatility. The fund targets durable and resilient exposure to crypto-assets, including during phases of high market instability, with a maximum drawdown target of 15% following the April 2025 strategy update.',
     lblDefensiveTag:'Defensive block · 70% AUM',
@@ -64,7 +64,7 @@ const T = {
     thJul:'Jul', thAug:'Aug', thSep:'Sep', thOct:'Oct', thNov:'Nov', thDec:'Dec',
     thYtd:'YTD',
     valPerfNote:'Past performance does not guarantee future results. Gross of fees.',
-    valDisclaimer:'<strong>Disclaimer:</strong> Past performance is neither a reliable indicator nor a guarantee of future performance. Crypto-assets carry a high level of risk including the risk of total loss of capital. This document is provided for informational purposes only and does not constitute an investment offer. The strategy is reserved for qualified or professional investors. SparkCore.investment OÜ is registered and supervised by the Finantsinspektsioon (Estonia).',
+    valDisclaimer:'<strong>Disclaimer:</strong> Past performance is neither a reliable indicator nor a guarantee of future performance. Crypto-assets carry a high level of risk including the risk of total loss of capital. This document is provided for informational purposes only and does not constitute an investment offer. The strategy is reserved for qualified or professional investors. SparkCore Investment OÜ is registered and supervised by the Finantsinspektsioon (Estonia).',
     ftrCompany:'SparkCore Investment OÜ · Reg. No. 16265864',
     ftrAddress:'Männimäe 1, Pudisoo, 74626 Harju County, Estonia',
     ftrPrivacy:'Privacy Policy',
@@ -115,7 +115,7 @@ const T = {
     lblRole2:'Gérant · Tech & Systèmes',
     valBio2:'Ingénieur informatique. Investisseur crypto depuis 2014. Fondateur Cointips, co-fondateur DSM.',
     lblRole3:'Gérant · Structuration',
-    valBio3:'+7 ans marchés financiers & crypto-actifs. Fondateur de SparkCore.investment OÜ.',
+    valBio3:'+7 ans marchés financiers & crypto-actifs. Fondateur de SparkCore Fund Management (SparkCore Investment OÜ).',
     lblStratTitle:'Aperçu de la stratégie',
     valStratIntro:'<strong>CryptoVision</strong> combine un socle défensif robuste et un bloc directionnel dynamique afin d\'offrir une performance régulière avec une volatilité maîtrisée. Le fonds vise une exposition durable et résiliente aux crypto-actifs, même lors des phases de forte instabilité, avec un drawdown maximum ciblé à 15% depuis la mise à jour de stratégie d\'avril 2025.',
     lblDefensiveTag:'Bloc défensif · 70% AUM',
@@ -134,7 +134,7 @@ const T = {
     thJul:'Jul', thAug:'Aoû', thSep:'Sep', thOct:'Oct', thNov:'Nov', thDec:'Déc',
     thYtd:'YTD',
     valPerfNote:'Les performances passées ne garantissent pas les performances futures. Brut de frais.',
-    valDisclaimer:'<strong>Avertissement :</strong> Les performances passées ne constituent ni un indicateur fiable ni une garantie des performances futures. Les crypto-actifs présentent un risque élevé incluant un risque de perte totale du capital. Ce document est fourni à titre informatif uniquement et ne constitue pas une offre d\'investissement. La stratégie est réservée aux investisseurs qualifiés ou professionnels. SparkCore.investment OÜ est enregistrée et supervisée par la Finantsinspektsioon (Estonie).',
+    valDisclaimer:'<strong>Avertissement :</strong> Les performances passées ne constituent ni un indicateur fiable ni une garantie des performances futures. Les crypto-actifs présentent un risque élevé incluant un risque de perte totale du capital. Ce document est fourni à titre informatif uniquement et ne constitue pas une offre d\'investissement. La stratégie est réservée aux investisseurs qualifiés ou professionnels. SparkCore Investment OÜ est enregistrée et supervisée par la Finantsinspektsioon (Estonie).',
     ftrCompany:'SparkCore Investment OÜ · N° d\'enregistrement 16265864',
     ftrAddress:'Männimäe 1, Pudisoo, 74626 Comté de Harju, Estonie',
     ftrPrivacy:'Politique de confidentialité',
@@ -295,12 +295,12 @@ function applyLang(lang) {
   const metaDesc = document.querySelector('meta[name="description"]');
   if (metaDesc) {
     metaDesc.content = lang === 'fr'
-      ? 'CryptoVision est un fonds d\'investissement alternatif crypto réglementé (FIA Estonie) géré par SparkCore Investment OÜ. Stratégie défensive et systématique, liquidité trimestrielle, minimum 50 000 €. Supervisé par la Finantsinspektsioon.'
-      : 'CryptoVision is a regulated crypto-asset alternative investment fund (AIF Estonia) managed by SparkCore Investment OÜ. Defensive & systematic strategy, quarterly liquidity, 50 000 € minimum. Supervised by Finantsinspektsioon.';
+      ? 'CryptoVision est un fonds d\'investissement alternatif crypto réglementé (FIA Estonie) géré par SparkCore Fund Management. Stratégie défensive et systématique, liquidité trimestrielle, minimum 50 000 €. Supervisé par la Finantsinspektsioon.'
+      : 'CryptoVision is a regulated crypto-asset alternative investment fund (AIF Estonia) managed by SparkCore Fund Management. Defensive & systematic strategy, quarterly liquidity, 50 000 € minimum. Supervised by Finantsinspektsioon.';
   }
   document.title = lang === 'fr'
-    ? 'CryptoVision – Factsheet Fonds Crypto | SparkCore Investment'
-    : 'CryptoVision – Crypto Fund Factsheet | SparkCore Investment';
+    ? 'CryptoVision – Factsheet Fonds Crypto | SparkCore Fund Management'
+    : 'CryptoVision – Crypto Fund Factsheet | SparkCore Fund Management';
 
   const s = (id, v) => { const el = document.getElementById(id); if(el) el.textContent = v; };
   const h = (id, v) => { const el = document.getElementById(id); if(el) el.innerHTML = v; };

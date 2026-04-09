@@ -1,8 +1,8 @@
-# SparkCore Investment OÜ
+# SparkCore Fund Management
 
 > Registered alternative investment fund manager (AIFM) based in Estonia, specialising in crypto-assets.
 
-SparkCore Investment OÜ is an alternative investment fund manager incorporated in Estonia (registry no. 16265864), operating under the Small Fund Manager regime supervised by the Finantsinspektsioon (EFSA). The company manages funds invested in crypto-assets, targeting professional investors, institutional investors, and family offices. Accounting is handled by KPMG Estonia.
+SparkCore Fund Management (legal entity: SparkCore Investment OÜ) is an alternative investment fund manager incorporated in Estonia (registry no. 16265864), operating under the Small Fund Manager regime supervised by the Finantsinspektsioon (EFSA). The company manages funds invested in crypto-assets, targeting professional investors, institutional investors, and family offices. Accounting is handled by KPMG Estonia.
 
 ## Funds
 
@@ -46,13 +46,13 @@ SparkCore Investment OÜ is an alternative investment fund manager incorporated 
 
 ## White-Label Solution
 
-SparkCore Investment OÜ offers a white-label solution allowing third-party partners to distribute managed funds under their own brand, within the applicable EFSA/EFIU regulatory framework.
+SparkCore Fund Management offers a white-label solution allowing third-party partners to distribute managed funds under their own brand, within the applicable EFSA/EFIU regulatory framework.
 
 ## Team
 
 ### Paul-Antoine PONS
 - Role: Managing Partner
-- Background: Over 7 years of experience in financial markets and crypto-assets. Guided several high net worth individuals in their investments. Founded SparkCore Investment OÜ.
+- Background: Over 7 years of experience in financial markets and crypto-assets. Guided several high net worth individuals in their investments. Founded SparkCore Fund Management (SparkCore Investment OÜ).
 - LinkedIn: https://www.linkedin.com/in/paul-antoine-pons-523aa919a/
 
 ### Olivier SAYEGH
