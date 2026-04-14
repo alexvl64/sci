@@ -24,9 +24,16 @@
 
   <url>
     <loc>https://sparkcore.fund/blog/</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-04-21</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://sparkcore.fund/blog/le-vrai-cout-du-market-timing</loc>
+    <lastmod>2026-04-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
