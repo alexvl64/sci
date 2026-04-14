@@ -24,9 +24,16 @@
 
   <url>
     <loc>https://sparkcore.fund/blog/</loc>
-    <lastmod>2026-04-07</lastmod>
+    <lastmod>2026-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://sparkcore.fund/blog/estonia-luxembourg-malta-crypto-fund</loc>
+    <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
