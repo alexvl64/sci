@@ -1,2 +1,7 @@
 node_modules/
 request_limit.db
+form_config.php
+.env
+*.env
+*.key
+*.pem
