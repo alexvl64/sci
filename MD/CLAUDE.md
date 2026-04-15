@@ -88,11 +88,19 @@ Le token Turnstile (`cf-turnstile-response`) est joint au FormData. La validatio
 | **CSP `'unsafe-inline'`** | HIGH (60/100) | ✅ Conservé | Nécessaire pour le site statique sans Workers. À retirer si migration vers Cloudflare Workers. |
 | **Contrats `/ressources/contrats/` accessibles par URL directe** | CRITICAL (90/100) | ✅ Conservé | Modèle de menace assumé : URLs partagées uniquement par email, documents non-critiques, `X-Robots-Tag: noindex` empêche l'indexation. |
 
-### Actions encore en attente
+### Actions de remediation : aucune en attente
 
-- [ ] **Rotate la clé Turnstile** dans Cloudflare Dashboard (la clé exposée dans git history reste compromise tant que non tournée)
-- [ ] **Mettre à jour la nouvelle clé Turnstile dans FormCarry** (Settings → ton formulaire → Turnstile)
-- [ ] **Purger l'historique git** de `form_config.php` (procédure `git filter-repo` à exécuter en local)
+L'audit recommandait initialement :
+- ~~Rotate la clé Turnstile~~
+- ~~Mettre à jour la nouvelle clé dans FormCarry~~
+- ~~Purger l'historique git de `form_config.php`~~
+
+**Décision : non requis.** Le repo `alexvl64/sci` est **privé** sur GitHub. La clé Turnstile présente dans l'historique git de `form_config.php` n'est accessible qu'aux collaborateurs autorisés du repo. Combiné avec le fait que :
+- La clé permet uniquement la *validation* de tokens (pas la génération de faux tokens)
+- `form_config.php` n'a jamais été inclus en prod (code mort)
+- FormCarry gère sa propre validation Turnstile avec sa propre clé
+
+→ Le risque résiduel est négligeable. Aucune action requise.
 
 ---
 
