@@ -89,12 +89,21 @@ RewriteCond %{REQUEST_URI} !^/secure_pdf\.php$ [NC]
 RewriteRule ^.*\.php$ - [F,L]
 
 # ----------------------------------------------------------------
-# Blocage des PDF sensibles (accès direct interdit)
+# PDFs : pas d'indexation par les moteurs (défense en profondeur vs robots.txt)
 # ----------------------------------------------------------------
-RewriteCond %{REQUEST_URI} ^/ressources/instruction_depot.*\.pdf$ [NC]
+<IfModule mod_headers.c>
+    <FilesMatch "\.pdf$">
+        Header set X-Robots-Tag "noindex, nofollow, noarchive"
+    </FilesMatch>
+</IfModule>
+
+# ----------------------------------------------------------------
+# Blocage des instructions de dépôt (accès direct interdit — doivent passer par secure_pdf.php)
+# Couvre versions FR (instructions_depot_*) et EN (deposit_*)
+# ----------------------------------------------------------------
+RewriteCond %{REQUEST_URI} ^/ressources/(instructions_depot|deposit).*\.pdf$ [NC]
 RewriteRule ^ - [F,L]
-RewriteRule ^ressources/instruction_depot.*\.pdf$ - [F,L]
-RewriteRule ^resources/instruction_depot.*\.pdf$ - [F,L]
+RewriteRule ^ressources/(instructions_depot|deposit).*\.pdf$ - [F,L]
 
 # ----------------------------------------------------------------
 # Equivalent Nginx try_files $uri $uri/ $uri.html =404;
