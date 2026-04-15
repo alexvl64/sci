@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="/assets/js/analytics.js"></script>
+    <title>Stratégies d'Options pour Protéger un Portefeuille Actions : Mécaniques, Coûts et Limites | SparkCore</title>
+    <meta name="description" content="Protective put, collar (JHEQX), covered call (JEPI), put spread, tail risk hedging (Universa) et VIX calls : mécanique, coût réel et limites des 6 grandes stratégies de couverture par options." />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Alexandre VINAL" />
+
+    <link rel="canonical" href="https://sparkcore.fund/fr/blog/strategies-options-protection-portefeuille-actions" />
+    <link rel="alternate" hreflang="fr" href="https://sparkcore.fund/fr/blog/strategies-options-protection-portefeuille-actions" />
+    <link rel="alternate" hreflang="x-default" href="https://sparkcore.fund/fr/blog/strategies-options-protection-portefeuille-actions" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-04-15T00:00:00+00:00" />
+    <meta property="article:author" content="https://www.linkedin.com/in/alexandrevinal/" />
+    <meta property="og:url" content="https://sparkcore.fund/fr/blog/strategies-options-protection-portefeuille-actions" />
+    <meta property="og:title" content="Stratégies d'Options pour Protéger un Portefeuille Actions : Mécaniques, Coûts et Limites" />
+    <meta property="og:description" content="Protective put, collar (JHEQX), covered call (JEPI), put spread, tail risk hedging (Universa) et VIX calls : mécanique, coût réel et limites des 6 grandes stratégies de couverture par options." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1642790551116-18e150f248e3?w=1260&h=750&fit=crop&q=80" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://sparkcore.fund/fr/blog/strategies-options-protection-portefeuille-actions" />
+    <meta property="twitter:title" content="Stratégies d'Options pour Protéger un Portefeuille Actions : Mécaniques, Coûts et Limites" />
+    <meta property="twitter:description" content="Protective put, collar (JHEQX), covered call (JEPI), put spread, tail risk hedging (Universa) et VIX calls : mécanique, coût réel et limites des 6 grandes stratégies de couverture par options." />
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1642790551116-18e150f248e3?w=1260&h=750&fit=crop&q=80" />
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/png/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/png/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/png/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/assets/images/png/favicon-192x192.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="preload" href="/assets/css/style.css?v=1.4" as="style">
+    <link rel="stylesheet" href="/assets/css/style.css?v=1.4" />
+    <link rel="stylesheet" href="/assets/css/tailwind.min.css?v=1.0" />
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Stratégies d'Options pour Protéger un Portefeuille Actions : Mécaniques, Coûts et Limites",
+    "description": "Protective put, collar (JHEQX), covered call (JEPI), put spread, tail risk hedging (Universa) et VIX calls : mécanique, coût réel et limites des 6 grandes stratégies de couverture par options.",
+    "datePublished": "2026-04-15",
+    "dateModified": "2026-04-15",
+    "inLanguage": "fr",
+    "author": {
+        "@type": "Person",
+        "name": "Alexandre VINAL",
+        "url": "https://www.linkedin.com/in/alexandrevinal/"
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "SparkCore Fund Management",
+        "legalName": "SparkCore.investment OÜ",
+        "url": "https://sparkcore.fund",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "https://sparkcore.fund/assets/images/png/favicon-192x192.png"
+        }
+    },
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://sparkcore.fund/fr/blog/strategies-options-protection-portefeuille-actions"
+    },
+    "url": "https://sparkcore.fund/fr/blog/strategies-options-protection-portefeuille-actions",
+    "image": "https://images.unsplash.com/photo-1642790551116-18e150f248e3?w=1260&h=750&fit=crop&q=80",
+    "wordCount": 4800,
+    "keywords": ["options", "couverture portefeuille", "protective put", "collar", "put spread", "tail risk hedging", "VIX", "JHEQX", "JEPI", "Universa", "gestion du risque"]
+}
+    </script>
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://sparkcore.fund/fr/" },
+        { "@type": "ListItem", "position": 2, "name": "Articles", "item": "https://sparkcore.fund/fr/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "Stratégies d'Options pour Protéger un Portefeuille Actions", "item": "https://sparkcore.fund/fr/blog/strategies-options-protection-portefeuille-actions" }
+    ]
+}
+    </script>
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "Quelle stratégie de couverture par options est la plus utilisée par les fonds institutionnels ?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Le collar est la stratégie la plus répandue dans le monde institutionnel. Le JPMorgan Hedged Equity Fund (JHEQX), avec environ 21 milliards de dollars d'actifs sous gestion, en est l'exemple emblématique. Il applique un collar trimestriel systématique qui a limité la perte à -5,8 % en 2022 quand le S&P 500 perdait -18,1 %. Le coût net est quasi nul, au prix d'une participation plafonnée à la hausse."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Peut-on combiner plusieurs stratégies de couverture sur le même portefeuille ?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Oui — c'est la pratique institutionnelle standard. Un portefeuille peut simultanément porter un collar de base pour la protection structurelle, une allocation marginale de puts deep out-of-the-money pour le tail risk, et une vente partielle de calls pour un revenu complémentaire. L'essentiel est de vérifier que les positions ne se compensent pas inutilement et que le coût cumulé reste inférieur à la valeur de protection effective."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "À quel moment est-il rationnel d'acheter une couverture par options ?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Le timing optimal est contre-intuitif : il faut acheter la protection quand les marchés montent et que le VIX est bas (primes bon marché), pas lorsque la panique est installée et que le coût des options a déjà doublé ou triplé. Un investisseur qui cherche à couvrir son portefeuille en pleine correction paie un prix 2 à 3 fois supérieur à ce qu'il aurait payé quelques semaines plus tôt — pour une protection qui arrive après le début des dommages."
+            }
+        }
+    ]
+}
+    </script>
+  </head>
+  <body class="bg-white">
+    <header class="bg-white sticky top-0 z-10 drop-shadow-lg">
+      <nav class="max-w-[1440px] mx-auto lg:px-8 md:px-6 px-4 py-4 lg:py-[17px] flex justify-between items-center">
+        <a rel="noopener noreferrer" href="/fr/"><img class="md:w-[209px] md:h-10 w-[125px] h-6" src="/assets/images/svg/logo.svg" alt="SparkCore Fund Management" width="210" height="40"></a>
+        <div class="flex item-center gap-7">
+          <a href="/fr/" class="font-inter font-normal md:h-[54px] md:px-6 md:py-4 px-4 py-3 h-11 rounded text-sm md:text-base bg-darkGray text-white !leading-140 hover:bg-transparent hover:text-darkGray border border-transparent hover:border-darkGray duration-300 flex items-center justify-center">Nous contacter</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="py-12 sm:py-16 lg:py-20">
+      <article class="max-w-[800px] mx-auto px-6">
+
+        <p class="font-inter text-sm text-steelBlue mb-4">Publié le 15 avril 2026 &middot; Par <a href="https://www.linkedin.com/in/alexandrevinal/" target="_blank" rel="noopener noreferrer" class="hover:underline">Alexandre VINAL</a> &middot; 22 min de lecture</p>
+
+        <h1 class="font-funnel-display text-custom-5xl max-md:text-custom-4xl max-sm:text-custom-3xl text-darkGray mb-8 leading-tight">
+          Stratégies d'Options pour Protéger un Portefeuille Actions : Mécaniques, Coûts et Limites
+        </h1>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Il n'existe pas de protection gratuite contre les baisses de marché. Cette vérité est régulièrement ignorée lorsque les marchés corrigent, que la pression de vendre devient maximale, et qu'un investisseur cherche en urgence un mécanisme de couverture dont le coût a déjà doublé.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Les options offrent un ensemble de solutions pour gérer le risque directionnel d'un portefeuille actions sans en sortir. Chaque stratégie repose sur un arbitrage différent : coût contre niveau de protection, participation à la hausse contre sécurité en cas de chute, simplicité opérationnelle contre efficacité en crise extrême.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Cet article passe en revue les six grandes stratégies de couverture utilisées par les investisseurs institutionnels et les fonds de gestion active. Pour chacune, nous détaillons la mécanique, le coût réel exprimé en pourcentage du portefeuille par an, le comportement observé en période de crise et en marché haussier, un exemple de fonds ou d'indice qui l'utilise, et les limites qui en contraignent l'adoption. L'article se conclut sur un tableau comparatif récapitulatif.</p>
+
+        <div class="border-l-4 border-steelBlue bg-[#F9FAFB] pl-5 py-4 pr-4 mb-8 rounded-r-lg">
+          <p class="font-inter text-sm font-semibold text-darkGray mb-3">Points clés à retenir</p>
+          <ul class="font-inter text-base text-mediumGray leading-160 list-disc pl-5 space-y-2">
+            <li>Le protective put coûte <strong class="text-darkGray">1 à 4 % par an</strong> selon l'horizon et le niveau de strike choisi (<a href="https://stockalpha.ai/alpha-learning/tail-risk-hedging-strategies-to-protect-your-portfolio-from-black-swans" class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200" target="_blank" rel="noopener noreferrer">Stock Alpha AI</a>, 2025).</li>
+            <li>Le collar (JHEQX) a limité la perte à <strong class="text-darkGray">-5,8 % en 2022</strong> contre -18,1 % pour le S&P 500 — à coût net quasi nul en primes (<a href="https://www.acaciainvestmentresearch.com/post/the-jpm-collar-strategy" class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200" target="_blank" rel="noopener noreferrer">Acacia Investment Research</a>, 2026).</li>
+            <li>Universa Investments a enregistré <strong class="text-darkGray">+4 144 % en mars 2020</strong> avec des puts deep out-of-the-money — au prix d'un portage annuel de 1,5 à 3 % (Bloomberg, 2020).</li>
+            <li>Il n'existe <strong class="text-darkGray">aucune stratégie qui protège intégralement</strong> sans sacrifier de la performance ou engager un coût récurrent explicite ou implicite.</li>
+          </ul>
+        </div>
+
+        <figure class="mt-6 mb-12"><img src="https://images.unsplash.com/photo-1642790551116-18e150f248e3?w=1260&h=750&fit=crop&q=80" alt="Écrans de trading affichant des données de marché et des graphiques d'options financières" class="w-full rounded-lg object-cover max-h-[420px]" loading="lazy" width="1260" height="750" decoding="async" /></figure>
+
+        <h2 class="font-funnel-display text-2xl sm:text-custom-3xl text-darkGray mt-10 mb-4">1. Le Protective Put : La Forme Pure de Protection</h2>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le protective put est la stratégie de couverture dans sa forme la plus directe. L'investisseur achète des puts — options de vente — sur l'indice ou le sous-jacent qui réplique son portefeuille, pour une durée déterminée, fixant ainsi un plancher de perte connu à l'avance. C'est l'équivalent financier d'une assurance : une prime versée en échange d'une protection déclenchée si le sinistre survient.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Mécanique et exemple chiffré</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Considérons un portefeuille de 1 000 000 € indexé sur le S&P 500. Pour se protéger contre une baisse supérieure à 10 %, l'investisseur achète des puts sur le S&P 500 avec un strike à -10 % de la valeur actuelle, pour une échéance de 9 mois. Le coût de cette protection est d'environ 1 % du portefeuille, soit 10 000 €, dans un environnement de volatilité normale (VIX autour de 15-18) (<a href="https://stockalpha.ai/alpha-learning/tail-risk-hedging-strategies-to-protect-your-portfolio-from-black-swans" class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200" target="_blank" rel="noopener noreferrer">Stock Alpha AI</a>, 2025).</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Si le marché baisse de 15 % à l'échéance, le portefeuille accuse une perte brute de 150 000 € — mais les puts couvrent tout ce qui dépasse les 10 %, limitant la perte effective à 110 000 € (100 000 € de correction à -10 % + 10 000 € de prime). Si le marché monte de 15 %, l'investisseur enregistre +140 000 € nets (hausse moins coût de la prime). Le put expire sans valeur — la prime est perdue.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Coût annuel et sensibilité au VIX</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le coût varie fortement selon le niveau de strike, l'échéance et l'environnement de volatilité implicite :</p>
+
+        <ul class="font-inter text-base text-mediumGray leading-160 list-disc pl-6 mb-6 space-y-2">
+          <li>Strike à <strong class="text-darkGray">-10 %, 9 mois, VIX ~15</strong> : environ 1 % du portefeuille</li>
+          <li>Strike à <strong class="text-darkGray">-5 %, 3 mois, VIX ~18</strong> : environ 1,5 à 2 % par trimestre, soit 6 à 8 % annualisé</li>
+          <li>Strike à <strong class="text-darkGray">-20 %, 12 mois</strong> : environ 0,4 à 0,6 %</li>
+          <li>Strike à <strong class="text-darkGray">-10 %, 9 mois, VIX ~30</strong> (en période de crise) : 3 à 4 %, soit 3 à 4 fois le prix en marché calme</li>
+        </ul>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Une protection permanente à -10 % coûte entre 2 et 4 % par an en conditions normales. Le CBOE S&amp;P 500 Protective Put Index (PPUT), qui réplique la stratégie avec des puts at-the-money à 1 mois, affiche sur les vingt dernières années une sous-performance annualisée de 1,5 à 2 % par rapport au simple achat-conservation de l'indice (<a href="https://cdn.cboe.com/resources/indices/whitepapers/Allspring_options-based-downside-protection.pdf" class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200" target="_blank" rel="noopener noreferrer">CBOE/Allspring</a>, 2021). Ce chiffre représente le coût réel d'une couverture permanente — visible, mesurable, et souvent sous-estimé.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Comportement en crise et en marché haussier</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le protective put livre exactement ce qu'il promet. Lors du crash COVID de mars 2020, un investisseur avec des puts à -10 % achetés en janvier (VIX bas, coût réduit) a vu son portefeuille limité à une perte de l'ordre de -11 à -12 % pendant que le S&amp;P 500 chutait de 34 % en 23 séances. En 2022, le même mécanisme a fonctionné : un investisseur couvert a absorbé une correction modérée à la place d'une perte de -18 %. En revanche, dans les phases de hausse prolongée — 2019, 2021, 2023-2024 — le coût cumulé des primes constitue un drag permanent et visible.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Conditions d'utilisation optimales et limites</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">La stratégie est rationnelle dans deux configurations précises : (1) quand le VIX est bas (en dessous de 15-17) et les primes bon marché, en anticipation d'un événement de risque identifié et daté ; (2) quand l'horizon de couverture est délimité — quelques semaines ou mois — et non ouvert. Utilisée en continu sur un portefeuille large, son coût dépasse généralement l'espérance mathématique du bénéfice de protection.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">La limite principale est le coût récurrent en dehors des crises. Une deuxième limite, plus opérationnelle, tient au timing : acheter la protection après le début d'une baisse revient à payer 2 à 3 fois le prix normal, pour une protection qui arrive après les premiers dommages. La stratégie est également inefficace contre les marchés baissiers lents et prolongés (type 2000-2002 ou 2007-2009) lorsque les puts à échéance courte expirent sans valeur et doivent être roulés plusieurs fois à des coûts croissants.</p>
+
+        <blockquote class="border-l-4 border-steelBlue pl-4 my-6 font-inter text-base text-mediumGray leading-160 italic"><span class="font-semibold not-italic text-darkGray">Produit de référence :</span> Le CBOE S&amp;P 500 Protective Put Index (PPUT) constitue le benchmark académique de cette stratégie. Les desks de gestion institutionnels utilisent ponctuellement le protective put autour d'événements identifiés — réunions de banques centrales, publications macro critiques, dossiers géopolitiques clairement datés — plutôt qu'en couverture permanente.</blockquote>
+
+        <h2 class="font-funnel-display text-2xl sm:text-custom-3xl text-darkGray mt-10 mb-4">2. Le Collar : Protection Structurelle à Coût Quasi Nul</h2>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le collar combine un put acheté pour la protection et un call vendu pour en financer le coût. La prime générée par le call vendu compense tout ou partie du coût du put. En contrepartie, l'investisseur renonce aux gains au-delà du strike du call. Le résultat est un corridor de rendement délimité : plancher en cas de baisse, plafond en cas de hausse.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Mécanique et exemple chiffré</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Même portefeuille de 1 000 000 €. L'investisseur achète un put à -5 % et vend simultanément un call à +10 %, pour une durée de 3 mois. Le put coûte environ 1,5 % du portefeuille ; le call vendu rapporte environ 1,3 à 1,5 %. Coût net : proche de zéro, parfois légèrement positif (crédit net).</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Résultats possibles à l'échéance selon les scénarios de marché :</p>
+
+        <ul class="font-inter text-base text-mediumGray leading-160 list-disc pl-6 mb-6 space-y-2">
+          <li><strong class="text-darkGray">Marché baisse de -15 %</strong> : le portefeuille est limité à -5 % (le put prend de la valeur au-delà du plancher)</li>
+          <li><strong class="text-darkGray">Marché stable</strong> : aucune option ne s'exerce, l'investisseur retrouve sa position initiale</li>
+          <li><strong class="text-darkGray">Marché monte de +7 %</strong> : le portefeuille bénéficie de la totalité de la hausse, ni put ni call exercé</li>
+          <li><strong class="text-darkGray">Marché monte de +20 %</strong> : le portefeuille est limité à +10 % (le call vendu est exercé)</li>
+        </ul>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Les bornes du corridor sont ajustables trimestriellement en fonction des conditions de marché. Un collar -5 %/+10 % est typique dans un environnement de volatilité normale ; dans un marché calme (VIX bas), les strikes peuvent être décalés à -3 %/+12 % pour le même coût net nul.</p>
+
+        <figure class="my-8 rounded-lg bg-[#0f172a] p-4 sm:p-6 overflow-x-auto">
+<svg viewBox="0 0 560 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Profils de payoff comparés à l'échéance : portefeuille non couvert, protective put à -10% et collar -5%/+10%">
+  <title>Profils de payoff : non couvert vs protective put vs collar</title>
+  <rect width="560" height="400" fill="#0f1117" rx="8"/>
+  <text x="280" y="26" text-anchor="middle" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="14" font-weight="bold">Profils de payoff à l'échéance</text>
+  <text x="280" y="44" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">P&L du portefeuille selon la variation du marché sous-jacent</text>
+
+  <!-- Plot area: left=70, right=530, top=65, bottom=340 -->
+  <!-- X: -30% to +30% (range 60), 460px / 60 = 7.667px/% -->
+  <!-- Y: -35% to +35% (range 70), 275px / 70 = 3.929px/% -->
+
+  <!-- Grid lines horizontal (dashed) at ±10%, ±20% -->
+  <line x1="70" y1="146" x2="530" y2="146" stroke="#334155" stroke-width="0.75" stroke-dasharray="4,4"/>
+  <line x1="70" y1="185" x2="530" y2="185" stroke="#334155" stroke-width="0.75" stroke-dasharray="4,4"/>
+  <line x1="70" y1="224" x2="530" y2="224" stroke="#334155" stroke-width="0.75" stroke-dasharray="4,4"/>
+  <line x1="70" y1="263" x2="530" y2="263" stroke="#334155" stroke-width="0.75" stroke-dasharray="4,4"/>
+
+  <!-- Zero axes -->
+  <line x1="70" y1="204" x2="530" y2="204" stroke="#475569" stroke-width="1.5"/>
+  <line x1="300" y1="65" x2="300" y2="345" stroke="#475569" stroke-width="1.5" stroke-dasharray="6,3"/>
+
+  <!-- Y axis labels -->
+  <text x="62" y="148" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">+20%</text>
+  <text x="62" y="188" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">+10%</text>
+  <text x="62" y="208" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">0%</text>
+  <text x="62" y="227" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">-10%</text>
+  <text x="62" y="265" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">-20%</text>
+
+  <!-- X axis labels -->
+  <text x="70" y="360" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">-30%</text>
+  <text x="147" y="360" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">-20%</text>
+  <text x="223" y="360" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">-10%</text>
+  <text x="300" y="360" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">0%</text>
+  <text x="377" y="360" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">+10%</text>
+  <text x="453" y="360" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">+20%</text>
+  <text x="530" y="360" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">+30%</text>
+
+  <!-- Axis label -->
+  <text x="300" y="378" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="10">Variation du marché à l'échéance</text>
+  <text x="14" y="250" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="10" transform="rotate(-90 14 250)">P&amp;L portefeuille</text>
+
+  <!-- UNHEDGED (gray dashed): line from (-30%, -30%) to (+30%, +30%) -->
+  <!-- x(-30%)=70, y(-30%)=321 ; x(+30%)=530, y(+30%)=87 -->
+  <!-- y(val) = 204 - val * (275/70) = 204 - val * 3.929 -->
+  <!-- y(-30%) = 204 + 30*3.929 = 204+117.9 = 322 -->
+  <!-- y(+30%) = 204 - 30*3.929 = 204-117.9 = 86 -->
+  <line x1="70" y1="322" x2="530" y2="86" stroke="#64748b" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+  <!-- PROTECTIVE PUT: flat at -11.5% up to -10%, then rises minus 1.5% premium -->
+  <!-- y(-11.5%) = 204 + 11.5*3.929 = 204+45.2 = 249 -->
+  <!-- x(-10%) = 70 + 20*7.667 = 70+153.3 = 223 -->
+  <!-- x(+30%) = 530, y(+28.5%) = 204 - 28.5*3.929 = 204-112 = 92 -->
+  <!-- At market 0%, p&l = -1.5%, y(-1.5%) = 204 + 1.5*3.929 = 204+5.9 = 210 -->
+  <polyline points="70,249 223,249 300,210 530,92" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <!-- COLLAR: flat at -5% to -5%, then rises to +10%, then flat at +10% -->
+  <!-- y(-5%) = 204 + 5*3.929 = 204+19.6 = 224 -->
+  <!-- x(-5%) = 70 + 25*7.667 = 70+191.7 = 262 -->
+  <!-- y(0%) = 204 -->
+  <!-- y(+10%) = 204 - 10*3.929 = 204-39.3 = 165 -->
+  <!-- x(+10%) = 70 + 40*7.667 = 70+306.7 = 377 -->
+  <polyline points="70,224 262,224 300,204 377,165 530,165" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linejoin="round"/>
+
+  <!-- Annotation: collar floor -->
+  <line x1="70" y1="224" x2="262" y2="224" stroke="#3b82f6" stroke-width="0.5" stroke-dasharray="3,3" opacity="0.4"/>
+  <text x="74" y="219" fill="#60a5fa" font-family="system-ui, sans-serif" font-size="9">Plancher -5%</text>
+
+  <!-- Annotation: collar cap -->
+  <line x1="377" y1="165" x2="530" y2="165" stroke="#3b82f6" stroke-width="0.5" stroke-dasharray="3,3" opacity="0.4"/>
+  <text x="450" y="160" fill="#60a5fa" font-family="system-ui, sans-serif" font-size="9">Plafond +10%</text>
+
+  <!-- Annotation: put floor -->
+  <text x="74" y="244" fill="#4ade80" font-family="system-ui, sans-serif" font-size="9">Plancher -11,5%</text>
+
+  <!-- Legend -->
+  <line x1="80" y1="390" x2="105" y2="390" stroke="#64748b" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="110" y="394" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">Non couvert</text>
+  <line x1="195" y1="390" x2="220" y2="390" stroke="#22c55e" stroke-width="2.5"/>
+  <text x="225" y="394" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">Protective put (-10%, -1,5%)</text>
+  <line x1="380" y1="390" x2="405" y2="390" stroke="#3b82f6" stroke-width="2.5"/>
+  <text x="410" y="394" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">Collar (-5%/+10%)</text>
+</svg>
+<figcaption class="font-inter text-sm text-slate-300 leading-160 mt-4">Illustration : profils de payoff à l'échéance pour un portefeuille de 100 — les coûts de prime sont indicatifs et varient selon les conditions de marché</figcaption>
+</figure>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">JHEQX : le collar à l'échelle institutionnelle</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le JPMorgan Hedged Equity Fund (JHEQX) est l'exemple le plus documenté de l'application institutionnelle du collar. Avec environ 21 milliards de dollars d'actifs sous gestion (<a href="https://www.acaciainvestmentresearch.com/post/the-jpm-collar-strategy" class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200" target="_blank" rel="noopener noreferrer">Acacia Investment Research</a>, 2026), il applique un collar trimestriel systématique sur un portefeuille d'actions américaines de grande capitalisation. Le mécanisme engage plus de 40 000 contrats d'options par jambe à chaque renouvellement trimestriel — une logistique qui n'est accessible qu'à des acteurs disposant des capacités opérationnelles d'un courtier institutionnel majeur.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le track record en contexte de stress valide le mécanisme : en 2020 (premier trimestre, crash COVID), JHEQX a enregistré une perte d'environ -5,1 % contre -19,6 % pour le S&amp;P 500 sur la même période. En 2022 (marché baissier annuel, -18,1 % pour l'indice), JHEQX a affiché -5,8 %. Dans les deux cas, la protection a fonctionné tel que conçu.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">En revanche, le coût implicite apparaît clairement dans les phases haussières. En 2021, le S&amp;P 500 a progressé de +28,7 % contre +14,7 % pour JHEQX. En 2023, +26,3 % contre environ +14,1 %. Sur ces deux années seules, un investisseur en JHEQX a laissé 26 points de performance sur la table par rapport à un simple ETF indiciel.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Coût annuel, limites et cadre d'utilisation</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le coût net en primes est proche de zéro dans des conditions de volatilité normales. Mais le coût économique réel — le manque à gagner en phase haussière — est un coût implicite permanent. Le CBOE S&amp;P 500 Collar Index démontre sur la période 1986-2021 un rendement annualisé de 7,65 % contre 10,83 % pour le S&amp;P 500, soit un écart de 3,18 points par an (<a href="https://cdn.cboe.com/resources/indices/whitepapers/Allspring_options-based-downside-protection.pdf" class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200" target="_blank" rel="noopener noreferrer">CBOE/Allspring</a>, 2021). En échange, la volatilité est réduite de 30 % et le drawdown maximum limité à -43 % contre -51 % pour l'indice nu.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le collar est adapté aux investisseurs — fonds de pension, family offices, assureurs — qui ne peuvent pas tolérer de drawdowns dépassant un certain seuil, et qui acceptent en contrepartie de renoncer aux phases de hausse extrême. Il est incompatible avec un objectif de maximisation des rendements sur longue période dans un marché structurellement haussier.</p>
+
+        <h2 class="font-funnel-display text-2xl sm:text-custom-3xl text-darkGray mt-10 mb-4">3. Le Covered Call et le Premium Income : Rendement ou Protection ?</h2>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le covered call — ou stratégie de premium income — n'est pas une stratégie de protection au sens strict. C'est une stratégie de rendement qui réduit marginalement la volatilité tout en conservant une exposition quasi totale à la baisse. La confusion entre couverture et income est l'une des erreurs les plus courantes dans l'évaluation de ces produits.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Mécanique et différence fondamentale avec le collar</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">L'investisseur possède des actions (ou un portefeuille répliquant l'indice) et vend des calls légèrement hors de la monnaie. La prime encaissée augmente le rendement du portefeuille et crée un léger coussin à la baisse. Contrairement au collar, <strong class="text-darkGray">il n'y a pas de put acheté</strong> — l'exposition à la baisse reste quasi totale, atténuée uniquement par les primes encaissées.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">La distinction est fondamentale. Un collar protège à la baisse de manière déterministe (le put s'exerce à partir d'un seuil défini). Un covered call amortit légèrement la baisse via les primes — mais ne constitue pas une protection au sens fiduciaire. Si le marché baisse de 30 %, les primes encaissées sur une année ne compensent que 7 à 9 points de cette perte.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">JEPI : le produit de référence du premium income</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le JPMorgan Equity Premium Income ETF (JEPI) est l'illustration la plus visible de cette approche à grande échelle. Avec environ 36 milliards de dollars d'actifs sous gestion, il n'utilise pas directement des options listées mais des <strong class="text-darkGray">Equity-Linked Notes (ELNs)</strong> — instruments financiers qui embarquent une position courte sur des calls S&amp;P 500. L'effet économique est identique à une vente de calls mensuelle, mais la structure ELN permet de distribuer les primes comme revenus réguliers sous forme de dividendes mensuels.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Chaque mois, JEPI vend des calls à environ 2 % au-dessus du marché. La prime générée, combinée aux dividendes du portefeuille actions sous-jacent, produit un rendement distribué annuel de 7 à 9 % selon les conditions de marché (données 2021-2024). Ce niveau de yield est la raison principale de l'attractivité commerciale du produit — mais il masque une asymétrie défavorable que le track record illustre clairement.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Track record : 2022 et 2023 comme cas d'école</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">2022 est souvent présenté comme la preuve du succès de la stratégie : JEPI a affiché -3,47 % quand le S&amp;P 500 perdait -18,1 %. Mais cette surperformance tient principalement à deux facteurs : (1) les primes accumulées sur 12 mois ont créé un coussin d'environ 8 à 9 points ; (2) le portefeuille sous-jacent de JEPI est défensif par construction, surpondérant les secteurs à faible bêta (utilities, consommation de base) qui ont mieux résisté en 2022. La stratégie d'options n'est pas le seul moteur.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">2023 révèle le vrai coût implicite : le S&amp;P 500 a progressé de +26,3 % tandis que JEPI n'affichait que +9,8 % — une sous-performance de 16,5 points. Le plafonnement mensuel par les calls vendus à 2 % au-dessus du marché a empêché de capter les nombreuses journées de hausse supérieure à 2 % qui caractérisent les rallies violents.</p>
+
+        <figure class="my-8 rounded-lg bg-[#0f172a] p-4 sm:p-6 overflow-x-auto">
+<svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Performance comparée du S&P 500, JHEQX et JEPI en 2022 marché baissier et en 2023 marché haussier">
+  <title>S&amp;P 500 vs JHEQX vs JEPI : 2022 (baisse) et 2023 (hausse)</title>
+  <rect width="560" height="380" fill="#0f1117" rx="8"/>
+  <text x="280" y="26" text-anchor="middle" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="14" font-weight="bold">S&amp;P 500 vs JHEQX vs JEPI — Performance annuelle</text>
+  <text x="280" y="44" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">2022 (marché baissier) et 2023 (marché haussier)</text>
+
+  <!-- Y axis: -25% to +35%, range 60%, plot height=240px, scale=4px/% -->
+  <!-- y(0%) = 280 - 25*4 = 280-100 = 180 (bottom=280, top=60, range scaled) -->
+  <!-- y(val) = 180 - val * 4 -->
+  <!-- y(-25%) = 180+100 = 280 (bottom of plot) -->
+  <!-- y(+35%) = 180-140 = 40 (top of plot) -->
+
+  <!-- Horizontal grid -->
+  <line x1="120" y1="180" x2="460" y2="180" stroke="#475569" stroke-width="1.5"/>
+  <line x1="120" y1="140" x2="460" y2="140" stroke="#334155" stroke-width="0.75" stroke-dasharray="3,3"/>
+  <line x1="120" y1="100" x2="460" y2="100" stroke="#334155" stroke-width="0.75" stroke-dasharray="3,3"/>
+  <line x1="120" y1="220" x2="460" y2="220" stroke="#334155" stroke-width="0.75" stroke-dasharray="3,3"/>
+  <line x1="120" y1="260" x2="460" y2="260" stroke="#334155" stroke-width="0.75" stroke-dasharray="3,3"/>
+
+  <!-- Y labels -->
+  <text x="114" y="183" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">0%</text>
+  <text x="114" y="143" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">+10%</text>
+  <text x="114" y="103" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">+20%</text>
+  <text x="114" y="223" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">-10%</text>
+  <text x="114" y="263" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">-20%</text>
+
+  <!-- GROUP 1: 2022 -->
+  <!-- S&P 500: -18.1% → y=180 to y=180+18.1*4=252.4≈252, height=72 -->
+  <rect x="143" y="180" width="32" height="72" rx="3" fill="#ef4444" opacity="0.9"/>
+  <text x="159" y="272" text-anchor="middle" fill="#ef4444" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">-18,1%</text>
+
+  <!-- JHEQX: -5.8% → y=180 to y=180+5.8*4=203.2≈203, height=23 -->
+  <rect x="181" y="180" width="32" height="23" rx="3" fill="#818cf8" opacity="0.9"/>
+  <text x="197" y="221" text-anchor="middle" fill="#818cf8" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">-5,8%</text>
+
+  <!-- JEPI: -3.47% → y=180 to y=180+3.47*4=193.9≈194, height=14 -->
+  <rect x="219" y="180" width="32" height="14" rx="3" fill="#fbbf24" opacity="0.9"/>
+  <text x="235" y="214" text-anchor="middle" fill="#fbbf24" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">-3,5%</text>
+
+  <!-- 2022 group label -->
+  <text x="190" y="310" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="13" font-weight="bold">2022</text>
+  <text x="190" y="326" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="10">Marché baissier</text>
+
+  <!-- GROUP 2: 2023 -->
+  <!-- S&P 500: +26.3% → y=180-26.3*4=74.8≈75, height=105 -->
+  <rect x="315" y="75" width="32" height="105" rx="3" fill="#22c55e" opacity="0.9"/>
+  <text x="331" y="67" text-anchor="middle" fill="#22c55e" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">+26,3%</text>
+
+  <!-- JHEQX: +14.1% → y=180-14.1*4=123.6≈124, height=56 -->
+  <rect x="353" y="124" width="32" height="56" rx="3" fill="#a5b4fc" opacity="0.9"/>
+  <text x="369" y="116" text-anchor="middle" fill="#a5b4fc" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">+14,1%</text>
+
+  <!-- JEPI: +9.8% → y=180-9.8*4=140.8≈141, height=39 -->
+  <rect x="391" y="141" width="32" height="39" rx="3" fill="#fde68a" opacity="0.9"/>
+  <text x="407" y="133" text-anchor="middle" fill="#fde68a" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">+9,8%</text>
+
+  <!-- 2023 group label -->
+  <text x="369" y="310" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="13" font-weight="bold">2023</text>
+  <text x="369" y="326" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="10">Marché haussier</text>
+
+  <!-- Legend -->
+  <rect x="122" y="346" width="12" height="9" rx="2" fill="#ef4444"/>
+  <text x="139" y="355" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">S&amp;P 500</text>
+  <rect x="195" y="346" width="12" height="9" rx="2" fill="#818cf8"/>
+  <text x="212" y="355" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">JHEQX</text>
+  <rect x="268" y="346" width="12" height="9" rx="2" fill="#fbbf24"/>
+  <text x="285" y="355" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">JEPI</text>
+  <text x="280" y="371" text-anchor="middle" fill="#475569" font-family="system-ui, sans-serif" font-size="9">Sources : Bloomberg, JPMorgan Asset Management — performances annuelles totales</text>
+</svg>
+<figcaption class="font-inter text-sm text-slate-300 leading-160 mt-4">Sources : Bloomberg, JPMorgan Asset Management, 2022-2023</figcaption>
+</figure>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">La stratégie covered call est optimale dans les marchés latéraux ou légèrement haussiers, où les primes encaissées constituent un rendement substantiel sans qu'aucune hausse significative ne soit sacrifiée. Elle est fortement défavorable dans les marchés haussiers rapides — précisément les conditions qui suivent souvent les phases de panique que l'investisseur cherche à couvrir.</p>
+
+        <h2 class="font-funnel-display text-2xl sm:text-custom-3xl text-darkGray mt-10 mb-4">4. Le Put Spread : Protection Partielle à Coût Réduit</h2>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le put spread — ou spread baissier sur options de vente — est une version plus économique et plus ciblée du protective put. Il offre une protection plafonnée entre deux niveaux de strike, ce qui en réduit le coût mais aussi l'efficacité en cas de crise extrême. La logique économique est simple : vendre un put de strike inférieur pour financer partiellement l'achat d'un put de strike plus élevé.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Mécanique et exemple chiffré</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">L'investisseur achète un put à -10 % (coût : ~1,2 % du portefeuille sur 9 mois) et vend simultanément un put à -25 % (revenu : ~0,4 % sur la même échéance). Coût net : 0,8 % du portefeuille pour 9 mois de protection.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Résultats selon les scénarios à l'échéance :</p>
+
+        <ul class="font-inter text-base text-mediumGray leading-160 list-disc pl-6 mb-6 space-y-2">
+          <li><strong class="text-darkGray">Marché -5 %</strong> : aucune option ne s'exerce, perte nette = 5 % + 0,8 % de prime = -5,8 %</li>
+          <li><strong class="text-darkGray">Marché -15 %</strong> : le put acheté à -10 % prend de la valeur (5 points de protection), le put vendu à -25 % n'est pas exercé. Perte effective : -10,8 % au lieu de -15 %</li>
+          <li><strong class="text-darkGray">Marché -30 %</strong> : les deux puts sont exercés. Le put acheté couvre de -10 % à -25 % (15 points). Le put vendu annule la protection au-delà. Perte effective : -15,8 % (15 points de protection sur 30 de baisse)</li>
+          <li><strong class="text-darkGray">Marché +10 %</strong> : aucune option exercée, gain net = +10 % - 0,8 % = +9,2 %</li>
+        </ul>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Coût annuel et cadre d'utilisation</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Selon la profondeur des strikes et l'échéance, le put spread coûte entre 0,3 et 0,8 % du portefeuille par an — soit 3 à 4 fois moins qu'un protective put équivalent. La réduction de coût est directement proportionnelle à l'abandon de protection en cas de chute extrême.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">La stratégie est logique pour les investisseurs qui acceptent les queues de distribution extrêmes (scénarios de type -40 % ou -50 %) mais souhaitent se protéger des corrections ordinaires de -10 à -25 %. Elle couvre bien les corrections de cycle que les marchés subissent régulièrement (2011, 2015, 2018, 2022), mais laisse l'investisseur exposé en cas d'effondrement systémique.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Limites</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">L'absence totale de protection au-delà du put vendu est le risque principal. En mars 2020, un put spread -10 %/-25 % sur le S&amp;P 500 aurait été dépassé en quelques jours de trading : le marché a perdu 34 % de pic à creux, effaçant intégralement la protection à partir de -25 %. L'investisseur se retrouve dans la configuration la plus défavorable : il a payé une prime, obtenu une protection partielle jusqu'à -25 %, puis suivi l'intégralité de la baisse supplémentaire sans couverture. Le confort psychologique offert par le put spread peut conduire à une fausse impression de sécurité dans des scénarios de stress extrême.</p>
+
+        <h2 class="font-funnel-display text-2xl sm:text-custom-3xl text-darkGray mt-10 mb-4">5. Le Tail Risk Hedging : Se Couvrir Contre l'Improbable</h2>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le tail risk hedging consiste à acheter des puts deep out-of-the-money — des options à strike très éloigné du prix actuel, avec une probabilité d'exercice faible mais un gain potentiel extrême lors d'un choc violent. La logique est asymétrique par construction : accepter de perdre la prime 90 à 95 % du temps pour capturer les événements extrêmes qui, quand ils surviennent, peuvent multiplier la valeur des options par 30 à 100.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Mécanique et exemple chiffré</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">L'investisseur alloue 1 % du portefeuille à des puts avec un strike à -35 % du niveau actuel, pour une échéance de 3 à 6 mois. Ces options ont un delta très faible — généralement inférieur à 0,05 — ce qui signifie qu'elles ne bougent quasiment pas lors des variations ordinaires du marché. En marchés normaux, elles expirent sans valeur. Lors d'un choc de volatilité extrême accompagné d'une baisse rapide, leur valeur peut augmenter de plusieurs milliers de pour cent.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">L'asymétrie mathématique est la clé : une option achetée à 0,50 $ de prime peut valoir 30 à 50 $ si le marché plonge de 40 % en quelques semaines — une multiplication par 60 à 100. Sur 1 % du portefeuille, cela représente un gain de 60 à 100 % du portefeuille total, compensant largement la perte subie par le reste du portefeuille.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Universa Investments : la référence empirique</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Universa Investments, fondé par Mark Spitznagel avec Nassim Nicholas Taleb comme conseiller principal en stratégie de risque, est l'illustration la plus documentée du tail risk hedging à l'échelle institutionnelle. En mars 2020, lors de l'effondrement COVID, Universa a déclaré un retour de <strong class="text-darkGray">+4 144 %</strong> pour son fonds de protection tail risk (Bloomberg, 2020). Cette performance explosive illustre précisément l'asymétrie recherchée : des options achetées à coût minimal ont généré des gains extraordinaires lors d'un événement que les marchés ne prévoyaient pas.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le coût de portage annuel de la stratégie Universa est estimé entre 1,5 et 3 % du capital protégé. Ce drag est une perte régulière et prévisible — inhérente au mécanisme — qui ne pose de problème qu'à ceux qui ne comprennent pas ou n'acceptent pas la logique asymétrique de la stratégie.</p>
+
+        <blockquote class="border-l-4 border-steelBlue pl-4 my-6 font-inter text-base text-mediumGray leading-160 italic"><span class="font-semibold not-italic text-darkGray">Observation :</span> La difficulté psychologique du tail risk hedging est réelle. Subir des pertes régulières et modestes pendant 5, 7 ou 10 ans de marchés haussiers sans jamais voir la protection s'activer requiert une conviction institutionnelle que peu de mandats permettent de maintenir. La plupart des gestionnaires qui ont adopté cette stratégie après 2010 l'ont abandonnée avant que l'événement de mars 2020 ne se produise.</blockquote>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Compatibilité avec les mandats institutionnels</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le tail risk hedging pur est incompatible avec la majorité des mandats institutionnels classiques. La raison est structurelle : les comités d'investissement et les clients institutionnels évaluent la performance sur des horizons de 1 à 3 ans. Un gestionnaire qui produit -2 % par an pendant 5 ans avant d'enregistrer +3 000 % lors d'un crash ne peut pas être maintenu dans une structure fiduciaire ordinaire — même si la stratégie est rationnelle sur un horizon de 20 ans.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">En pratique, le tail risk hedging est utilisé de manière marginale dans les portefeuilles institutionnels : 0,5 à 1 % du portefeuille en exposition puts deep OTM, ce qui limite à la fois le drag annuel et le gain absolu en cas d'événement extrême, mais maintient une couverture de queue non nulle.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Calibration et limites</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le choix du strike est déterminant. Des puts trop profonds (strike à -50 %) coûtent quelques centimes mais ne s'activent que lors d'événements historiquement rarissimes. Des puts à -15 % ou -20 % coûtent trop cher au regard de la fréquence de ces événements. La fenêtre de protection optimale — puts à -25 % à -40 % avec des échéances de 3 à 6 mois — est étroite et dépend des conditions de volatilité implicite du moment.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Une limite opérationnelle importante : cette stratégie nécessite un accès aux marchés d'options avec des strikes et des échéances spécifiques, une capacité de roulement systématique des positions, et une discipline de non-intervention lorsque les options approchent de leur expiration sans s'activer. Ces contraintes excluent de facto les investisseurs particuliers et les petites structures.</p>
+
+        <h2 class="font-funnel-display text-2xl sm:text-custom-3xl text-darkGray mt-10 mb-4">6. Les Options sur VIX : Couverture Tactique via la Volatilité</h2>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">La corrélation inverse entre le VIX et le S&amp;P 500 est documentée depuis l'introduction du VIX en 1993 : lors des phases de baisse des actions, la volatilité implicite monte. Cette relation a conduit à développer des instruments permettant de se couvrir indirectement via l'exposition à la volatilité, sans acheter de puts sur l'indice lui-même.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Mécanique des calls VIX</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">L'investisseur achète des calls sur le VIX — l'indice de volatilité implicite à 30 jours du S&amp;P 500. Si le marché chute violemment, le VIX monte. En mars 2020, il est passé de 14 à 85 en moins de quatre semaines. En octobre 2022, lors du plus bas du cycle, il a atteint 34. Un call VIX acheté avec un strike à 20 avant une phase de stress peut voir sa valeur multipliée par 5 à 15 selon l'amplitude du choc.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le mécanisme de protection est indirect : la hausse du VIX génère un gain sur les calls, qui vient compenser en partie la perte du portefeuille actions. La corrélation historique entre le VIX et le S&amp;P 500 est d'environ -0,70 à -0,75 sur les phases de stress aigu — suffisamment stable pour en faire un outil de couverture crédible sur des horizons courts.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Le problème structurel du contango</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le principal problème de toute exposition longue sur la volatilité est la structure à terme des futures VIX. En conditions normales de marché, la courbe des futures VIX est en <strong class="text-darkGray">contango</strong> : les contrats à terme à 1 ou 2 mois sont plus chers que le spot VIX. Rouler une position longue sur ces futures d'un mois sur l'autre implique une perte systématique — le contrat acheté à un prix supérieur converge vers un VIX spot plus bas à l'approche de l'échéance.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Ce coût de portage est typiquement de 5 à 10 % par mois en période calme. Le VXX (iPath Series B S&amp;P 500 VIX Short-Term Futures ETN) illustre ce mécanisme de manière saisissante : depuis son lancement en 2009 jusqu'à 2024, l'instrument a perdu plus de 99 % de sa valeur ajustée aux splits multiples — non pas à cause de la performance du VIX spot, mais exclusivement à cause du coût de portage du roulement mensuel de futures en contango. Sur une année calme, une position longue VXX peut perdre 50 à 70 % de sa valeur.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Outil tactique de court terme</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">La couverture via les options VIX ou des instruments comme le VXX n'est cohérente que dans une logique tactique et de court terme : quelques jours à quelques semaines autour d'un événement de risque identifié (réunion FOMC, publication d'indicateurs macro critiques, calendrier politique sensible), puis clôture rapide après la résolution de l'incertitude.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Les desks de gestion de risque institutionnels utilisent ponctuellement des calls VIX comme couverture de queue sur 1 à 4 semaines — jamais comme protection permanente. Le UVXY (ProShares Ultra VIX Short-Term Futures ETF, 2x levier) peut servir de position tactique pour des horizons très courts (quelques jours), mais son détenteur doit être conscient que le levier amplifie également le coût du contango et que la position se dégrade extrêmement rapidement.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Limites et conditions de défaillance</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">La corrélation inverse VIX/S&amp;P 500, bien que robuste lors des chocs courts et violents, n'est pas parfaite lors des marchés baissiers prolongés. Durant la correction de 2000-2002 (baisse de -50 % sur 2 ans et demi) et lors du marché baissier de 2007-2009, le VIX ne s'est pas maintenu à des niveaux élevés en permanence — il oscillait selon les phases d'accélération et de stabilisation de la baisse. Une exposition longue VIX permanente sur ces périodes aurait subi le coût du contango lors des phases de repli de la volatilité, annulant une grande partie des gains des pics de stress.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Par ailleurs, la liquidité des options VIX se dégrade fortement pour les strikes et les échéances éloignés — ce qui peut contraindre le positionnement à des calls à court terme et proches de la monnaie, dont le coût est plus élevé et la sensibilité moins asymétrique que des options deep OTM.</p>
+
+        <h2 class="font-funnel-display text-2xl sm:text-custom-3xl text-darkGray mt-10 mb-4">Synthèse Comparative des Six Stratégies</h2>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le tableau suivant résume les caractéristiques clés de chaque stratégie. Les coûts indiqués sont des estimations pour des conditions de marché normales (VIX entre 15 et 20) et doivent être adaptés aux conditions effectives de volatilité implicite au moment de la mise en place.</p>
+
+        <div class="overflow-x-auto my-8 rounded-lg border border-lightGray">
+          <table class="w-full font-inter text-sm">
+            <thead class="bg-[#F9FAFB]">
+              <tr>
+                <th class="text-left text-darkGray font-semibold py-3 px-4 border-b border-lightGray">Stratégie</th>
+                <th class="text-left text-darkGray font-semibold py-3 px-4 border-b border-lightGray">Coût annuel typique</th>
+                <th class="text-left text-darkGray font-semibold py-3 px-4 border-b border-lightGray">Niveau de protection</th>
+                <th class="text-left text-darkGray font-semibold py-3 px-4 border-b border-lightGray">Participation hausse</th>
+                <th class="text-left text-darkGray font-semibold py-3 px-4 border-b border-lightGray">Complexité</th>
+                <th class="text-left text-darkGray font-semibold py-3 px-4 border-b border-lightGray">Produit de référence</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-lightGray">
+                <td class="py-3 px-4 font-medium text-darkGray">Protective put</td>
+                <td class="py-3 px-4 text-mediumGray">1 – 4 %</td>
+                <td class="py-3 px-4 text-mediumGray">Illimitée au-delà du strike</td>
+                <td class="py-3 px-4 text-mediumGray">Pleine (moins prime)</td>
+                <td class="py-3 px-4 text-mediumGray">Faible</td>
+                <td class="py-3 px-4 text-mediumGray">CBOE PPUT Index</td>
+              </tr>
+              <tr class="border-b border-lightGray bg-[#FAFAFA]">
+                <td class="py-3 px-4 font-medium text-darkGray">Collar</td>
+                <td class="py-3 px-4 text-mediumGray">~0 % (coût net)</td>
+                <td class="py-3 px-4 text-mediumGray">Plafonnée au strike put (-5 %)</td>
+                <td class="py-3 px-4 text-mediumGray">Plafonnée (strike call +10 %)</td>
+                <td class="py-3 px-4 text-mediumGray">Modérée</td>
+                <td class="py-3 px-4 text-mediumGray">JHEQX (~21 Mds$)</td>
+              </tr>
+              <tr class="border-b border-lightGray">
+                <td class="py-3 px-4 font-medium text-darkGray">Covered call / income</td>
+                <td class="py-3 px-4 text-mediumGray">Revenu net +7 – 9 %</td>
+                <td class="py-3 px-4 text-mediumGray">Très partielle (prime seule)</td>
+                <td class="py-3 px-4 text-mediumGray">Plafonnée (~+2 %/mois)</td>
+                <td class="py-3 px-4 text-mediumGray">Faible</td>
+                <td class="py-3 px-4 text-mediumGray">JEPI (~36 Mds$)</td>
+              </tr>
+              <tr class="border-b border-lightGray bg-[#FAFAFA]">
+                <td class="py-3 px-4 font-medium text-darkGray">Put spread</td>
+                <td class="py-3 px-4 text-mediumGray">0,3 – 0,8 %</td>
+                <td class="py-3 px-4 text-mediumGray">Partielle (-10 % à -25 %)</td>
+                <td class="py-3 px-4 text-mediumGray">Pleine (moins prime nette)</td>
+                <td class="py-3 px-4 text-mediumGray">Modérée</td>
+                <td class="py-3 px-4 text-mediumGray">—</td>
+              </tr>
+              <tr class="border-b border-lightGray">
+                <td class="py-3 px-4 font-medium text-darkGray">Tail risk hedging</td>
+                <td class="py-3 px-4 text-mediumGray">1,5 – 3 % (portage)</td>
+                <td class="py-3 px-4 text-mediumGray">Très élevée (chocs extrêmes)</td>
+                <td class="py-3 px-4 text-mediumGray">Pleine (moins prime)</td>
+                <td class="py-3 px-4 text-mediumGray">Élevée</td>
+                <td class="py-3 px-4 text-mediumGray">Universa Investments</td>
+              </tr>
+              <tr class="bg-[#FAFAFA]">
+                <td class="py-3 px-4 font-medium text-darkGray">VIX calls / VXX</td>
+                <td class="py-3 px-4 text-mediumGray">Variable / tactique</td>
+                <td class="py-3 px-4 text-mediumGray">Court terme uniquement</td>
+                <td class="py-3 px-4 text-mediumGray">Pleine</td>
+                <td class="py-3 px-4 text-mediumGray">Élevée</td>
+                <td class="py-3 px-4 text-mediumGray">VXX, UVXY (tactique)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="font-inter text-xs text-mediumGray leading-160 mb-8 italic">Coûts estimés pour des conditions de marché normales (VIX 15-20). Les coûts augmentent sensiblement lors des pics de volatilité.</p>
+
+        <h2 class="font-funnel-display text-2xl sm:text-custom-3xl text-darkGray mt-10 mb-4">Conclusion : Il N'Existe Pas de Protection Gratuite</h2>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Il n'existe pas de stratégie de couverture optimale dans l'absolu. Chaque approche représente un arbitrage explicite entre trois variables : le coût, le niveau de protection et la participation à la hausse. Toute stratégie qui promet de tout couvrir sans rien sacrifier soit ne fonctionne pas tel que présenté, soit intègre un coût implicite que l'investisseur ne voit pas.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le protective put offre une protection pure et mesurable, au prix d'un drag permanent et d'un timing difficile. Le collar supprime ce drag en plafonnant les gains — solution cohérente pour les investisseurs qui ne peuvent pas tolérer de drawdowns dépassant un seuil défini. Le covered call n'est pas une protection mais une stratégie de revenu qui réduit marginalement la volatilité tout en laissant l'exposition à la baisse quasi intacte. Le put spread réduit le coût en échange d'une couverture partielle, adaptée aux corrections ordinaires mais inefficace face aux chocs extrêmes. Le tail risk hedging protège contre l'improbable au prix de pertes régulières — stratégie rationnelle sur 20 ans, incompatible avec la plupart des mandats à horizon court. Les options VIX sont un outil tactique puissant mais qui se dégrade structurellement si détenu au-delà de quelques semaines.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le choix entre ces approches dépend de trois facteurs non négociables : l'horizon de la protection (quelques semaines ou plusieurs années), le profil de risque de l'investisseur (tolérance au drag permanent versus acceptation d'un drawdown non couvert), et le timing de mise en place (acheter une protection quand la volatilité est basse est rationnel ; l'acheter après une correction, coûteux et souvent trop tardif).</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Les gestionnaires institutionnels sophistiqués combinent généralement plusieurs couches : une protection collar de base pour limiter le drawdown maximum, complétée par une allocation marginale de tail risk hedging pour les scénarios extrêmes, le tout ajusté tactiquement en fonction des conditions de volatilité. Aucune de ces couches n'est gratuite. Aucune n'est parfaite. C'est précisément ce qui rend leur sélection et leur calibration l'un des exercices les plus exigeants de la gestion de portefeuille.</p>
+
+        <h2 class="font-funnel-display text-2xl sm:text-custom-3xl text-darkGray mt-10 mb-4">Questions Fréquentes</h2>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Quelle stratégie de couverture est la plus utilisée par les fonds institutionnels ?</h3>
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le collar est la stratégie la plus répandue. Le JPMorgan Hedged Equity Fund (JHEQX), avec environ 21 milliards de dollars d'actifs sous gestion (<a href="https://www.acaciainvestmentresearch.com/post/the-jpm-collar-strategy" class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200" target="_blank" rel="noopener noreferrer">Acacia Investment Research</a>, 2026), en est l'exemple emblématique. Il applique un collar trimestriel systématique qui a limité la perte à -5,8 % en 2022 quand le S&amp;P 500 perdait -18,1 %. Le coût net est quasi nul en primes, au prix d'une participation plafonnée à la hausse.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Peut-on combiner plusieurs stratégies de couverture sur le même portefeuille ?</h3>
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Oui — c'est la pratique institutionnelle standard. Un portefeuille peut simultanément porter un collar de base pour la protection structurelle, une allocation marginale de puts deep out-of-the-money pour le tail risk, et une vente partielle de calls pour un revenu complémentaire. L'essentiel est de vérifier que les positions ne se compensent pas inutilement et que le coût cumulé reste inférieur à la valeur de protection effective attendue.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">À quel moment est-il rationnel d'acheter une couverture par options ?</h3>
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le timing optimal est contre-intuitif : il faut acheter la protection quand les marchés montent et que le VIX est bas — primes bon marché — pas lorsque la panique est installée et que le coût des options a déjà doublé ou triplé. Un investisseur qui cherche à couvrir son portefeuille en pleine correction paie un prix 2 à 3 fois supérieur à ce qu'il aurait payé quelques semaines plus tôt, pour une protection qui arrive après les premiers dommages. Les professionnels achètent leur couverture dans le calme ; les particuliers l'achètent dans la tempête.</p>
+
+        <p class="font-inter text-xs text-mediumGray leading-160 mt-8 italic border-t border-lightGray pt-8">Sources : Stock Alpha AI, 2025 · CBOE/Allspring, 2021 · Acacia Investment Research, 2026 · Bloomberg, 2020 · JPMorgan Asset Management, 2022-2023 · CBOE S&amp;P 500 Collar Index · Verdad Capital, 2020 · ProShares/iPath (VXX, UVXY) · Universa Investments</p>
+
+        <div class="border border-lightGray rounded-lg p-6 bg-[#F9FAFB] mt-10 mb-10">
+          <p class="font-inter text-sm text-mediumGray leading-160">
+            <strong class="text-darkGray">Avertissement :</strong> Cet article est fourni à titre informatif uniquement et ne constitue pas un conseil en investissement, une sollicitation ou une offre d'investir. Tout investissement en marchés financiers comporte des risques significatifs, y compris la perte possible de tout le capital investi. Les performances passées ne garantissent pas les résultats futurs. Les stratégies de couverture par options évoquées dans cet article impliquent des risques spécifiques et ne conviennent pas à tous les investisseurs. SparkCore.investment OÜ est enregistré en tant que petit gestionnaire de fonds d'investissement alternatifs auprès de l'Autorité de supervision financière estonienne (<a href="https://www.fi.ee/" class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200" target="_blank" rel="noopener noreferrer">Finantsinspektsioon</a>). Les lecteurs doivent consulter un conseiller juridique, fiscal et financier indépendant avant toute décision d'investissement.
+          </p>
+        </div>
+
+        <div class="text-center py-10 border-t border-lightGray">
+          <a href="/fr/blog/" class="font-inter text-sm text-steelBlue hover:text-darkGray transition-colors duration-200 inline-flex items-center gap-2">
+            &larr; Retour aux articles
+          </a>
+        </div>
+
+      </article>
+    </main>
+
+    <footer>
+      <div class="py-8 sm:py-12 lg:py-16 sm:border-t sm:border-lightGray">
+        <div class="max-w-[1360px] px-6 mx-auto">
+          <div class="flex items-center justify-between custom-xs:mb-4 mb-6">
+            <a rel="noopener noreferrer" href="/fr/" class="w-[209px] max-custom-xs:w-[167px] max-custom-xs:h-8 h-40">
+              <img class="w-full h-full" src="/assets/images/svg/logo.svg" alt="SparkCore Fund Management" width="210" height="40">
+            </a>
+          </div>
+          <p class="font-inter font-normal sm:text-base text-lg text-steelBlue leading-140">
+            &copy;<span id="year"></span> SparkCore.investment OÜ — Tous droits réservés.
+          </p>
+          <div class="w-full h-px bg-paleBlue custom-xs:my-4 my-6"></div>
+          <div class="flex gap-3 flex-wrap max-custom-xs:flex-col items-start justify-start">
+            <p class="font-inter text-steelBlue text-base sm:text-sm leading-140">
+              <span class="font-inter font-normal leading-140 text-darkGray">Société de gestion spécialisée dans les crypto-actifs, enregistrée en Estonie. Supervisée par la Finantsinspektsioon :</span>
+              <a rel="noopener noreferrer" href="https://www.fi.ee/en/guides/fund-management-companies/investment-market/small-fund-managers-without-activity-licence/sparkcoreinvestment-ou" target="_blank" class="underline underline-offset-2">Autorité estonienne de supervision financière (Small Fund Manager)</a>
+            </p>
+            <p class="font-inter text-steelBlue text-base sm:text-sm leading-140">
+              <span class="font-inter font-normal leading-140 text-darkGray">Licence :</span>
+              <a rel="noopener noreferrer" href="https://mtr.ttja.ee/taotluse_tulemus/609065" target="_blank" class="underline underline-offset-2">EFIU (Institution Financière)</a>
+            </p>
+          </div>
+          <p class="font-inter font-normal text-base text-sm leading-140 text-steelBlue custom-xs:mt-4 mt-6">
+            <span class="font-inter font-normal leading-140 text-darkGray">N° d'enregistrement : 16265864 — Männimäe 1, Pudisoo, 74626 comté de Harju, Estonie</span>
+            — <a rel="noopener noreferrer" href="https://search.gleif.org/#/record/8945003BBN0RVNNB0S84" target="_blank" class="underline underline-offset-2">LEI: 8945003BBN0RVNNB0S84</a>
+          </p>
+          <p class="font-inter font-normal text-base text-sm leading-140 text-steelBlue custom-xs:mt-4 mt-6">
+            <span class="text-darkGray">Avertissement :</span>
+            Les performances passées ne garantissent pas les performances futures. Les crypto-actifs présentent un risque élevé, incluant un risque de perte totale. Ce site et les graphiques de performance sont fournis à titre informatif uniquement et ne constituent pas une offre d'investissement. L'accès aux stratégies est réservé aux investisseurs qualifiés ou professionnels. Veuillez évaluer votre situation personnelle et obtenir un avis indépendant avant d'investir.
+          </p>
+          <p class="font-inter font-normal text-sm leading-140 text-steelBlue custom-xs:mt-2 mt-3">
+            <a rel="noopener noreferrer" href="/privacy-policy" class="underline underline-offset-2 hover:text-darkGray transition-colors duration-200">Politique de confidentialité</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="/assets/js/set-year.js"></script>
+  </body>
+</html>
