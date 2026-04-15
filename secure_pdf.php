@@ -16,14 +16,20 @@ if (!preg_match('/\.pdf$/i', $file) || !file_exists($path)) {
 // Calcul du hash SHA-256
 $real_hash = hash_file('sha256', $path);
 
-// Vérification du hash fourni
-if ($given_hash === '' || $given_hash !== $real_hash) {
+// Vérification du hash fourni — hash_equals() pour éviter les timing attacks
+if ($given_hash === '' || !hash_equals($real_hash, $given_hash)) {
     http_response_code(403);
     exit("Forbidden");
 }
 
-// Envoi du PDF
+// Headers de sécurité
 header("Content-Type: application/pdf");
 header("Content-Length: " . filesize($path));
+header('Content-Disposition: inline; filename="' . $file . '"');
+header("Cache-Control: no-store, no-cache, must-revalidate, private");
+header("Pragma: no-cache");
+header("X-Content-Type-Options: nosniff");
+header("X-Robots-Tag: noindex, nofollow, noarchive");
+
 readfile($path);
 exit;

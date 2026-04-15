@@ -53,6 +53,5 @@ Disallow: /validation.html
 Disallow: /404.html
 Disallow: /403.html
 Disallow: /500.html
-Disallow: /secure_pdf.php
 
 Sitemap: https://sparkcore.fund/sitemap.xml
