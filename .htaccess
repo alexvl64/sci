@@ -27,6 +27,9 @@ RewriteEngine On
     Header always set X-Content-Type-Options "nosniff"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    # Suppression de l'info de version PHP exposée par défaut
+    Header always unset X-Powered-By
+    Header unset X-Powered-By
 </IfModule>
 
 # ----------------------------------------------------------------
