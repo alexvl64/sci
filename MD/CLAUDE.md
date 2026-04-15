@@ -28,15 +28,85 @@ The following files are gitignored and must never be committed or pushed:
 
 | File | Reason |
 |---|---|
-| `.htaccess` | Managed locally — not deployed via git |
-| `CLAUDE.md` | Local reference only |
-| `MD/` | Source markdown files — not deployed |
+| `node_modules/` | Build artifacts |
+| `request_limit.db` | Runtime data |
+| `form_config.php` | Contains secrets — never commit |
+| `.env`, `*.env`, `*.key`, `*.pem` | Sensitive config patterns |
+
+> The `MD/` directory and `.htaccess` ARE tracked in git (since 2026-04-15) and deployed automatically via GitHub → server. `.htaccess` blocks HTTP access to `/MD/` so the markdown reference files are versioned but never web-accessible.
+
+---
+
+## Security architecture
+
+### Backend PHP — état actuel (post audit 2026-04-15)
+
+Un seul fichier PHP en production : **`secure_pdf.php`** (sert les PDFs d'instructions de dépôt avec vérification SHA-256). Tout le reste a été supprimé comme code mort.
+
+| Fichier | État | Pourquoi |
+|---|---|---|
+| `proxy.php` | ❌ Supprimé | Code mort — jamais référencé en JS/HTML, le formulaire de contact appelle FormCarry directement |
+| `form_config.php` | ❌ Supprimé | Code mort — jamais inclus, la clé Turnstile est gérée côté FormCarry |
+| `secure_pdf.php` | ✅ Conservé + hardenisé | Sert les PDFs avec hash SHA-256 (utilise `hash_equals()` contre timing attacks) |
+
+### Formulaires de contact
+
+Les deux formulaires (sidebar + newsletter) appellent **FormCarry directement** depuis le JS, sans backend PHP intermédiaire :
+- Sidebar : `fetch("https://formcarry.com/s/oHdZL-AalnM", ...)` (`assets/js/index.js:233`)
+- Newsletter : `fetch("https://formcarry.com/s/_xD89dyxiXb", ...)` (`assets/js/index.js:380`)
+
+Le token Turnstile (`cf-turnstile-response`) est joint au FormData. La validation server-side est faite par FormCarry (clé secrète configurée dans leur dashboard).
+
+### Headers de sécurité actifs (via `.htaccess`)
+
+| Header | Valeur | But |
+|---|---|---|
+| `X-Frame-Options` | `SAMEORIGIN` | Anti-clickjacking |
+| `X-Content-Type-Options` | `nosniff` | Anti MIME-sniffing |
+| `Referrer-Policy` | `strict-origin-when-cross-origin` | Limite la fuite d'URL referrer |
+| `Permissions-Policy` | `geolocation=(), microphone=(), camera=()` | Coupe l'accès aux APIs sensibles |
+| `X-Powered-By` | *unset* | Masque la version PHP |
+| `X-Robots-Tag` (sur PDFs) | `noindex, nofollow, noarchive` | Empêche l'indexation des PDFs |
+
+### `secure_pdf.php` — sécurité
+
+- Comparaison de hash via `hash_equals()` (pas `!==`) → résistant aux timing attacks
+- Headers ajoutés : `Cache-Control: no-store`, `Pragma: no-cache`, `X-Content-Type-Options: nosniff`, `X-Robots-Tag: noindex`
+- `Content-Disposition: inline; filename="..."` (consultation navigateur, pas téléchargement forcé)
+
+### PDF blocking — règles `.htaccess`
+
+- Tout fichier PDF dont le nom commence par `instructions_depot_*` (FR) ou `deposit_*` (EN) est bloqué en accès HTTP direct → forcé via `secure_pdf.php`
+- Les contrats `/ressources/contrats/*.pdf` restent accessibles via URL directe (partage par email uniquement, conforme au modèle de menace)
+- Tous les PDFs ont `X-Robots-Tag: noindex` → jamais indexés par Google/Bing/AI crawlers
+
+### Décisions de sécurité explicites (assumées, non corrigées)
+
+| Item | Audit | Décision | Justification |
+|---|---|---|---|
+| **SRI sur scripts CDN** (ApexCharts, Toastify) | HIGH (65/100) | ❌ Skipped | Coût maintenance perpétuelle (regénération hash à chaque update) > bénéfice (jsdelivr jamais compromis en 10 ans). À reconsidérer si on commence à traiter des paiements ou auth. |
+| **CSP `'unsafe-inline'`** | HIGH (60/100) | ✅ Conservé | Nécessaire pour le site statique sans Workers. À retirer si migration vers Cloudflare Workers. |
+| **Contrats `/ressources/contrats/` accessibles par URL directe** | CRITICAL (90/100) | ✅ Conservé | Modèle de menace assumé : URLs partagées uniquement par email, documents non-critiques, `X-Robots-Tag: noindex` empêche l'indexation. |
+
+### Actions de remediation : aucune en attente
+
+L'audit recommandait initialement :
+- ~~Rotate la clé Turnstile~~
+- ~~Mettre à jour la nouvelle clé dans FormCarry~~
+- ~~Purger l'historique git de `form_config.php`~~
+
+**Décision : non requis.** Le repo `alexvl64/sci` est **privé** sur GitHub. La clé Turnstile présente dans l'historique git de `form_config.php` n'est accessible qu'aux collaborateurs autorisés du repo. Combiné avec le fait que :
+- La clé permet uniquement la *validation* de tokens (pas la génération de faux tokens)
+- `form_config.php` n'a jamais été inclus en prod (code mort)
+- FormCarry gère sa propre validation Turnstile avec sa propre clé
+
+→ Le risque résiduel est négligeable. Aucune action requise.
 
 ---
 
 ## Apache / OVH server configuration (.htaccess)
 
-The `.htaccess` is **gitignored** — it lives only on the local machine and on the OVH server (managed manually). Do not commit it.
+The `.htaccess` is **tracked in git** (since 2026-04-15) and deployed automatically via GitHub → OVH server. No manual sync needed.
 
 Current configuration:
 
@@ -70,6 +140,9 @@ RewriteEngine On
     Header always set X-Content-Type-Options "nosniff"
     Header always set Referrer-Policy "strict-origin-when-cross-origin"
     Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+    # Suppression de l'info de version PHP exposée par défaut
+    Header always unset X-Powered-By
+    Header unset X-Powered-By
 </IfModule>
 
 # ----------------------------------------------------------------
@@ -113,21 +186,41 @@ RewriteRule ^ - [R=404,L]
 RewriteRule ^\..* - [R=404,L]
 
 # ----------------------------------------------------------------
+# Blocage du répertoire MD/ (référence interne — jamais accessible en HTTP)
+# ----------------------------------------------------------------
+RewriteRule ^MD(/|$) - [F,L]
+
+# ----------------------------------------------------------------
 # Blocage des fichiers PHP (inaccessible en statique)
 # Important : OVH n'autorise pas toujours `<FilesMatch>` en `.htaccess`.
 # On bloque donc aussi via `mod_rewrite` pour fiabiliser.
+# Exception : secure_pdf.php est accessible (sert les PDFs avec vérification hash)
 # ----------------------------------------------------------------
+# Règle 1 : bloque si URI se termine par .php ET n'est pas secure_pdf.php
 RewriteCond %{REQUEST_URI} \.php$ [NC]
+RewriteCond %{REQUEST_URI} !^/secure_pdf\.php$ [NC]
 RewriteRule ^ - [F,L]
+
+# Règle 2 : même chose — RewriteCond ne s'applique qu'à la règle qui suit immédiatement
+RewriteCond %{REQUEST_URI} !^/secure_pdf\.php$ [NC]
 RewriteRule ^.*\.php$ - [F,L]
 
 # ----------------------------------------------------------------
-# Blocage des PDF sensibles (accès direct interdit)
+# PDFs : pas d'indexation par les moteurs (défense en profondeur vs robots.txt)
 # ----------------------------------------------------------------
-RewriteCond %{REQUEST_URI} ^/ressources/instruction_depot.*\.pdf$ [NC]
+<IfModule mod_headers.c>
+    <FilesMatch "\.pdf$">
+        Header set X-Robots-Tag "noindex, nofollow, noarchive"
+    </FilesMatch>
+</IfModule>
+
+# ----------------------------------------------------------------
+# Blocage des instructions de dépôt (accès direct interdit — doivent passer par secure_pdf.php)
+# Couvre versions FR (instructions_depot_*) et EN (deposit_*)
+# ----------------------------------------------------------------
+RewriteCond %{REQUEST_URI} ^/ressources/(instructions_depot|deposit).*\.pdf$ [NC]
 RewriteRule ^ - [F,L]
-RewriteRule ^ressources/instruction_depot.*\.pdf$ - [F,L]
-RewriteRule ^resources/instruction_depot.*\.pdf$ - [F,L]
+RewriteRule ^ressources/(instructions_depot|deposit).*\.pdf$ - [F,L]
 
 # ----------------------------------------------------------------
 # Equivalent Nginx try_files $uri $uri/ $uri.html =404;

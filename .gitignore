@@ -1,5 +1,7 @@
 node_modules/
-MD/
-!MD/CLAUDE.md
-.htaccess
 request_limit.db
+form_config.php
+.env
+*.env
+*.key
+*.pem
