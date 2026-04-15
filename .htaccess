@@ -67,9 +67,12 @@ RewriteEngine On
 
 # ----------------------------------------------------------------
 # Blocage des fichiers cachés (.git, .env, etc.)
+# Exception : /.well-known/ requis pour security.txt (RFC 9116)
 # ----------------------------------------------------------------
+RewriteCond %{REQUEST_URI} !^/\.well-known(/|$) [NC]
 RewriteCond %{REQUEST_URI} (^|/)\. [NC]
 RewriteRule ^ - [R=404,L]
+RewriteCond %{REQUEST_URI} !^/\.well-known(/|$) [NC]
 RewriteRule ^\..* - [R=404,L]
 
 # ----------------------------------------------------------------

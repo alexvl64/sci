@@ -1,7 +1,7 @@
 const translations = {
   fr: {
     // === FORM / UI (existing keys) ===
-    recaptchaError: "Veuillez valider le reCAPTCHA pour continuer.",
+    recaptchaError: "Veuillez valider le contrôle de sécurité pour continuer.",
     formSubmitLoading: "Envoi en cours...",
     formSubmitSuccess: "Votre message a bien été envoyé.",
     formSubmitError: "Une erreur est survenue. Veuillez réessayer.",
@@ -172,7 +172,7 @@ const translations = {
 
   en: {
     // === FORM / UI (existing keys) ===
-    recaptchaError: "Please validate the reCAPTCHA to proceed.",
+    recaptchaError: "Please complete the security check to proceed.",
     formSubmitLoading: "Sending...",
     formSubmitSuccess: "Your message has been successfully sent.",
     formSubmitError: "An error occurred. Please try again.",
