@@ -1,7 +1,7 @@
 const translations = {
   fr: {
     // === FORM / UI (existing keys) ===
-    recaptchaError: "Veuillez valider le reCAPTCHA pour continuer.",
+    recaptchaError: "Veuillez valider le contrôle de sécurité pour continuer.",
     formSubmitLoading: "Envoi en cours...",
     formSubmitSuccess: "Votre message a bien été envoyé.",
     formSubmitError: "Une erreur est survenue. Veuillez réessayer.",
@@ -148,7 +148,7 @@ const translations = {
     footerRegText: "Société de gestion spécialisée dans les crypto-actifs, enregistrée en Estonie. Supervisée par la Finantsinspektsioon :",
     footerLicenceLabel: "Licence :",
     footerLicenceLink: "EFIU (Institution Financière)",
-    footerAddress: "N° d'enregistrement : 16265864 — Männimäe 1, Pudisoo, 74626 comté de Harju, Estonie",
+    footerAddress: "N° d'enregistrement : 16265864 — Paekalda tn 14-11, Tallinn 13628, Estonie",
     footerDisclaimerLabel: "Avertissement :",
     footerWarning: "Les performances passées ne garantissent pas les performances futures. Les crypto-actifs présentent un risque élevé, incluant un risque de perte totale. Ce site et les graphiques de performance sont fournis à titre informatif uniquement et ne constituent pas une offre d'investissement. L'accès aux stratégies est réservé aux investisseurs qualifiés ou professionnels. Veuillez évaluer votre situation personnelle et obtenir un avis indépendant avant d'investir.",
     footerPrivacyLink: "Politique de confidentialité",
@@ -172,7 +172,7 @@ const translations = {
 
   en: {
     // === FORM / UI (existing keys) ===
-    recaptchaError: "Please validate the reCAPTCHA to proceed.",
+    recaptchaError: "Please complete the security check to proceed.",
     formSubmitLoading: "Sending...",
     formSubmitSuccess: "Your message has been successfully sent.",
     formSubmitError: "An error occurred. Please try again.",
@@ -319,7 +319,7 @@ const translations = {
     footerRegText: "Asset management company specialising in crypto-assets, registered in Estonia. Supervised by Finantsinspektsioon:",
     footerLicenceLabel: "Licence:",
     footerLicenceLink: "EFIU (Financial Institution)",
-    footerAddress: "Reg. No. 16265864 — Männimäe 1, Pudisoo, 74626 Harju County, Estonia",
+    footerAddress: "Reg. No. 16265864 — Paekalda tn 14-11, Tallinn 13628, Estonia",
     footerDisclaimerLabel: "Disclaimer:",
     footerWarning: "Past performance does not guarantee future results. Crypto-assets carry a high level of risk, including the risk of total loss. This website and performance charts are provided for informational purposes only and do not constitute an investment offer. Access to the strategies is reserved for qualified or professional investors. Please assess your personal situation and seek independent advice before investing.",
     footerPrivacyLink: "Privacy Policy",
