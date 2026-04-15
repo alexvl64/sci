@@ -116,13 +116,21 @@ RewriteRule ^\..* - [R=404,L]
 # Blocage des fichiers PHP (inaccessible en statique)
 # Important : OVH n'autorise pas toujours `<FilesMatch>` en `.htaccess`.
 # On bloque donc aussi via `mod_rewrite` pour fiabiliser.
+# Exception : secure_pdf.php est accessible (sert les PDFs avec vérification hash)
+# Note : proxy.php est bloqué — le formulaire de contact envoie directement à l'API
 # ----------------------------------------------------------------
+# Règle 1 : bloque si URI se termine par .php ET n'est pas form_send.php
 RewriteCond %{REQUEST_URI} \.php$ [NC]
+RewriteCond %{REQUEST_URI} !^/secure_pdf\.php$ [NC]
 RewriteRule ^ - [F,L]
+
+# Règle 2 : même chose — RewriteCond ne s'applique qu'à la règle qui suit immédiatement
+RewriteCond %{REQUEST_URI} !^/secure_pdf\.php$ [NC]
 RewriteRule ^.*\.php$ - [F,L]
 
 # ----------------------------------------------------------------
 # Blocage des PDF sensibles (accès direct interdit)
+# ⚠️  Gap connu : deposit_instructions_quants_space.pdf et /contrats/ non couverts
 # ----------------------------------------------------------------
 RewriteCond %{REQUEST_URI} ^/ressources/instruction_depot.*\.pdf$ [NC]
 RewriteRule ^ - [F,L]
