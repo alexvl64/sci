@@ -25,6 +25,12 @@
 - [Delta Neutral & Beta Neutral Crypto Strategies](https://sparkcore.fund/blog/delta-neutral-crypto-strategies-explained): How market-neutral, long/short, and quantitative approaches generate uncorrelated returns in digital asset portfolios.
 - [White-Label Crypto Fund Manager Services](https://sparkcore.fund/blog/white-label-crypto-fund-manager-services): Regulatory structure, AIFM architecture, and operational scope of white-label crypto fund manager services.
 
+## Articles en français
+
+- [Agents IA et Blockchain : Pourquoi les Rails Décentralisés Sont Nativement Conçus pour l'Économie Agentique](https://sparkcore.fund/fr/blog/agents-ia-blockchain-economie-agentique): Analyse infrastructure de la complémentarité déterministe/probabiliste entre blockchain et agents IA — wallet 2s, stablecoins, spending caps, World ID, bataille x402 / AP2 / Tempo.
+- [Stratégies d'Options pour Protéger un Portefeuille Actions](https://sparkcore.fund/fr/blog/strategies-options-protection-portefeuille-actions): Protective put, collar (JHEQX), covered call (JEPI), put spread, tail risk hedging (Universa) et VIX calls — mécanique, coût réel et limites des 6 grandes stratégies de couverture par options.
+- [Le Vrai Coût du Market Timing](https://sparkcore.fund/fr/blog/le-vrai-cout-du-market-timing): Données, études (DALBAR, JP Morgan) et stratégies de couverture — pourquoi vendre dans la panique échoue et comment les professionnels gèrent le risque sans quitter le marché.
+
 ## Resources
 
 - [Dynamic Trends Factsheet](https://sparkcore.fund/factsheets/dynamic-trends): Fund documentation for the Dynamic Trends fund — directional crypto strategy targeting Bitcoin outperformance.
