@@ -24,7 +24,7 @@
 
   <url>
     <loc>https://sparkcore.fund/blog/</loc>
-    <lastmod>2026-04-14</lastmod>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://sparkcore.fund/blog/"/>
@@ -59,6 +59,13 @@
   <url>
     <loc>https://sparkcore.fund/fr/blog/le-vrai-cout-du-market-timing</loc>
     <lastmod>2026-04-14</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://sparkcore.fund/blog/cost-to-launch-regulated-crypto-fund-europe</loc>
+    <lastmod>2026-04-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
