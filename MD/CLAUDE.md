@@ -10,6 +10,63 @@ Context and configuration reference for Claude Code sessions on the `alexvl64/sc
 - **Hosting:** Apache/OVH, behind Cloudflare CDN
 - **Stack:** Tailwind CSS (local build, `tailwind.min.css?v=1.0`), custom CSS (`style.css?v=1.4`), vanilla JS
 - **Entity:** SparkCore.investment OÜ — regulated AIFM (small fund manager), supervised by Finantsinspektsioon (Estonia)
+- **Ads:** aucune publicité payante (Google Ads, Meta, LinkedIn, etc.) — site institutionnel YMYL réservé aux investisseurs professionnels
+
+---
+
+## Tracking & Analytics
+
+> Site institutionnel sans pub. Tracking uniquement pour comprendre le comportement (sessions, sources organiques, scroll, clics formulaires/CTA). **Pas de Google Tag Manager** — overkill pour 1 seul tag, pas d'équipe marketing à autoguider.
+
+### Stack tracking
+
+| Élément | Valeur | Localisation |
+|---|---|---|
+| **GA4 Property** | `530665322` ("SparkCore.investment OÜ") | account `Sparkcore` (`389436882`) |
+| **GA4 Measurement ID** | `G-J80NVPQNVZ` | hardcodé `assets/js/analytics.js:3` |
+| **Loader** | `gtag.js` direct (pas de GTM container) | `<script defer src="/assets/js/analytics.js">` injecté sur toutes les pages |
+| **Consent Mode** | v2, denied par défaut | banner cookie FR/EN auto-localisé via `<html lang>` |
+| **Anonymisation IP** | `anonymize_ip: true` | configuré dans le `gtag('config', ...)` |
+| **localStorage key** | `sc_cookie_consent_v1` | persiste le choix accept/decline |
+
+### Events tracked
+
+GA4 enhanced measurement actif → events automatiques sans code custom :
+- `page_view`, `session_start`, `first_visit`, `user_engagement`
+- `scroll` (90% page)
+- `click` outbound (FormCarry, app.cal.eu, LinkedIn, jsdelivr, etc.)
+- `file_download` (clics PDFs `/ressources/contrats/*.pdf`)
+- `form_start` / `form_submit` (sidebar + newsletter FormCarry)
+
+Pas d'events custom (`gtag('event', ...)`) pour l'instant. Si besoin d'instrumenter un CTA spécifique (ex. "Book a discovery call"), ajouter un push manuel dans `assets/js/index.js` puis marquer l'event en **Key event** dans GA4 Admin.
+
+### APIs Google connectées (config `~/.config/claude-seo/projects/sci.json`)
+
+| API | Statut | Notes |
+|---|---|---|
+| GA4 Data API | ✅ | property `530665322` |
+| GSC Search Analytics | ✅ | `sc-domain:sparkcore.fund` |
+| GSC URL Inspection | ✅ | |
+| GSC Indexing API | ✅ | |
+| PageSpeed Insights | ⚠️ | bug script `audit_details` côté skill (credentials OK) |
+| CrUX history | ⚠️ | trafic Chrome insuffisant — normal pour site récent |
+| Google Ads | ❌ | non applicable (pas d'ads) |
+
+Service Account partagé : `claude-seo@sparkcore-projet-1733486598578.iam.gserviceaccount.com` (Viewer sur GA4, Full sur GSC).
+
+> ⚠️ **Note historique 2026-05-02** : la config sci pointait par erreur vers `properties/529476067` (orphelin, 0 row). Corrigé vers `530665322` après triangulation : repo `analytics.js:3` + `curl https://sparkcore.fund/assets/js/analytics.js` + GA4 admin `dataStreams.list`. Toujours croiser ces 3 sources avant de déclarer le tracking en panne.
+
+### Vérifier le tracking depuis le navigateur
+
+1. **DevTools Network** : F12 → filtre `collect` → recharger → requête `https://www.google-analytics.com/g/collect?v=2&tid=G-J80NVPQNVZ&...`
+2. **Console JS** : `window.dataLayer.find(x => x[0] === 'config')` → `['config', 'G-J80NVPQNVZ', { anonymize_ip: true }]`
+3. **GA4 Realtime** : property `SparkCore.investment OÜ` → Reports → Realtime → +1 user dans les 30s
+
+### Bots & exclusions
+
+- Tracking ne tourne **pas en localhost** (`localhost`/`127.0.0.1` skipped en début de `analytics.js`)
+- Pas d'exclusion bot custom dans GA4 (filtres bot par défaut activés au niveau property)
+- Auto-redirect `/` ↔ `/fr/` via `lang-redirect-{en,fr}.js` skip une longue liste de bots (Googlebot, ClaudeBot, GPTBot, PerplexityBot, etc.) — ces requêtes ne sont jamais redirigées
 
 ---
 
