@@ -44,7 +44,7 @@ GA4 enhanced measurement actif → events automatiques sans code custom :
 |---|---|---|---|
 | `factsheet_request_open` | Click sur `.open-sidebar` avec `data-i18n=dtFactsheet` ou `cvFactsheet` | `fund` (dynamic-trends\|cryptovision), `lang` | `assets/js/index.js` |
 | `contact_form_submit` | Submit succès du sidebar form (FormCarry `oHdZL-AalnM`) | `form_source` (dropdown), `cta_origin` (factsheet-*\|nav-contact\|hero), `lang` | `assets/js/index.js` |
-| `cal_booking_complete` | postMessage `bookingSuccessful` depuis `app.cal.eu` | `event_type=discovery`, `lang` | `assets/js/booking.js` |
+| `cal_booking_complete` | postMessage `bookingSuccessful` depuis `app.cal.eu` (capté sur **toutes** les pages avec Cal — `/discovery-call` + factsheets popup) | `event_type=discovery`, `booking_source` (discovery_page \| factsheet-cryptovision \| factsheet-dynamic-trends \| other), `lang` | `assets/js/analytics.js` (centralisé pour couvrir popups factsheets ET embed `/discovery-call`) |
 
 > ⚠️ **À marquer Key Event dans GA4 Admin** (Admin → Data display → Events → "Mark as Key Event") pour les utiliser comme conversions. Page-view filtré sur `/discovery-call` peut aussi être créé en custom event + Key Event pour mesurer le taux d'arrivée sur la page Cal.
 

@@ -135,4 +135,24 @@
   }
 
   initConsent();
+
+  /* ── GA4: cal_booking_complete (Key Event) — captures bookings from any page hosting a Cal embed/popup ── */
+  window.addEventListener("message", function (e) {
+    if (e.origin !== "https://app.cal.eu") return;
+    var d = e.data || {};
+    var action = d.type || d.action || (d.detail && (d.detail.type || d.detail.action));
+    if (action !== "bookingSuccessful" && action !== "BOOKING_CONFIRMED" && action !== "__bookingSuccessful") return;
+
+    var path = (window.location.pathname || "").toLowerCase();
+    var bookingSource = "other";
+    if (path.indexOf("/discovery-call") === 0) bookingSource = "discovery_page";
+    else if (path.indexOf("/factsheets/cryptovision") === 0) bookingSource = "factsheet-cryptovision";
+    else if (path.indexOf("/factsheets/dynamic-trends") === 0) bookingSource = "factsheet-dynamic-trends";
+
+    gtag("event", "cal_booking_complete", {
+      event_type: "discovery",
+      booking_source: bookingSource,
+      lang: document.documentElement.lang || "en"
+    });
+  });
 })();
