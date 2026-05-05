@@ -68,6 +68,56 @@ Service Account partagé : `claude-seo@sparkcore-projet-1733486598578.iam.gservi
 - Pas d'exclusion bot custom dans GA4 (filtres bot par défaut activés au niveau property)
 - Auto-redirect `/` ↔ `/fr/` via `lang-redirect-{en,fr}.js` skip une longue liste de bots (Googlebot, ClaudeBot, GPTBot, PerplexityBot, etc.) — ces requêtes ne sont jamais redirigées
 
+### Bing Webmaster Tools (mis en place 2026-05-05)
+
+| Élément | Valeur |
+|---|---|
+| **Compte Bing WMT** | `sparkcore.public.df59f6@gmail.com` (Owner) |
+| **Vérification** | `BingSiteAuth.xml` à la racine, GUID `0739094849505C87C0C6BCFDCA094258` |
+| **API key** | stockée dans `~/.config/claude-seo/backlinks-projects/sci.json` (chmod 600) |
+| **Sitemap soumis** | `https://sparkcore.fund/sitemap.xml` (27 URLs, last crawl ~ daily) |
+| **Sitemap obsolète** | `https://www.sparkcore.fund/sitemap.xml` (10 URLs, à supprimer côté UI Bing — cosmétique) |
+
+Le skill `seo-backlinks` lit la config via le symlink `~/.config/claude-seo/backlinks-api.json` qui suit le projet actif (switch via `~/.config/claude-seo/switch.sh sci`). **Connexion à GSC depuis Bing WMT NON nécessaire** — le site est déjà vérifié et indexé indépendamment.
+
+### IndexNow (mis en place 2026-05-05)
+
+Protocole de ping pour notifier Bing/Yandex/Seznam/Yep/Naver des URLs nouvelles ou modifiées (indépendant de Bing WMT API).
+
+| Élément | Valeur |
+|---|---|
+| **Clé IndexNow** | `27994a06b868d24820429dc36c1bafee` |
+| **Fichier servi** | `https://sparkcore.fund/27994a06b868d24820429dc36c1bafee.txt` (HTTP 200, `text/plain`, 32 octets) |
+| **Script** | `scripts/ops/indexnow_ping.py` (stdlib only, pas de dépendances) |
+| **Log** | `logs/indexnow.log` (gitignored, rotation 30j auto) |
+| **Premier ping live** | 2026-05-05 — HTTP 202 Accepted (key validation pending, comportement normal) |
+
+Usage :
+```bash
+# Après publication d'un nouvel article :
+python3 scripts/ops/indexnow_ping.py \
+  https://sparkcore.fund/blog/new-slug \
+  https://sparkcore.fund/fr/blog/new-slug
+
+# Ré-ping global depuis sitemap.xml :
+python3 scripts/ops/indexnow_ping.py --all
+
+# Inspection sans envoi :
+python3 scripts/ops/indexnow_ping.py --all --dry-run
+```
+
+> **Ne PAS partager la clé** entre projets — chaque domaine doit avoir sa propre clé. Celle de dsungkur (`e3fe89c6...a2bd`) est isolée et ne doit jamais apparaître ici.
+
+### Microsoft Clarity — décision 2026-05-05 : non installé
+
+Décision argumentée de **ne PAS installer Clarity** sur sparkcore.fund :
+- **Volume insuffisant** : 2 sessions / 28j en GA4 → heatmaps et session replays ont besoin de 100+ sessions/mois pour produire des insights non-anecdotiques
+- **YMYL financier régulé** (Finantsinspektsioon) : ajouter Microsoft comme sous-traitant data demande update DPA + cookie policy + privacy-policy.html
+- **Audience HNW institutionnelle** : session replay capture des comportements sensibles sur le formulaire discovery-call
+- **Stack minimaliste par design** (pas de GTM) : ajouter Clarity contredirait cette philosophie
+
+À reconsidérer **uniquement si** : trafic > 100 sessions/mois pendant 3 mois consécutifs ET point de friction CRO identifié ET bandwidth pour mettre à jour le compliance legal.
+
 ---
 
 ## Git workflow
