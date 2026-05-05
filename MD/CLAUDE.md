@@ -38,7 +38,17 @@ GA4 enhanced measurement actif → events automatiques sans code custom :
 - `file_download` (clics PDFs `/ressources/contrats/*.pdf`)
 - `form_start` / `form_submit` (sidebar + newsletter FormCarry)
 
-Pas d'events custom (`gtag('event', ...)`) pour l'instant. Si besoin d'instrumenter un CTA spécifique (ex. "Book a discovery call"), ajouter un push manuel dans `assets/js/index.js` puis marquer l'event en **Key event** dans GA4 Admin.
+**Custom events GA4 (ajoutés 2026-05-05)** — 3 Key Events pour capturer l'intention qualifiée :
+
+| Event | Trigger | Paramètres | Fichier |
+|---|---|---|---|
+| `factsheet_request_open` | Click sur `.open-sidebar` avec `data-i18n=dtFactsheet` ou `cvFactsheet` | `fund` (dynamic-trends\|cryptovision), `lang` | `assets/js/index.js` |
+| `contact_form_submit` | Submit succès du sidebar form (FormCarry `oHdZL-AalnM`) | `form_source` (dropdown), `cta_origin` (factsheet-*\|nav-contact\|hero), `lang` | `assets/js/index.js` |
+| `cal_booking_complete` | postMessage `bookingSuccessful` depuis `app.cal.eu` | `event_type=discovery`, `lang` | `assets/js/booking.js` |
+
+> ⚠️ **À marquer Key Event dans GA4 Admin** (Admin → Data display → Events → "Mark as Key Event") pour les utiliser comme conversions. Page-view filtré sur `/discovery-call` peut aussi être créé en custom event + Key Event pour mesurer le taux d'arrivée sur la page Cal.
+
+Tous les events guard `typeof window.gtag === "function"` → silencieux sous Consent Mode v2 denied + en localhost. Pour ajouter un nouvel event custom, suivre le même pattern (snippet + Key Event GA4 Admin).
 
 ### APIs Google connectées (config `~/.config/claude-seo/projects/sci.json`)
 
