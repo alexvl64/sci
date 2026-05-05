@@ -104,6 +104,19 @@ RewriteRule ^.*\.php$ - [F,L]
 </IfModule>
 
 # ----------------------------------------------------------------
+# Factsheets + discovery-call : pages gated email-only, jamais indexer
+# (défense en profondeur vs robots.txt + meta noindex — couvre AI crawlers
+#  qui ignoreraient meta tags, et couvre les rewritten paths sans .html)
+# ----------------------------------------------------------------
+<IfModule mod_setenvif.c>
+    SetEnvIf Request_URI "^/factsheets(/|$)"     SC_NOINDEX
+    SetEnvIf Request_URI "^/discovery-call(/|$)" SC_NOINDEX
+</IfModule>
+<IfModule mod_headers.c>
+    Header set X-Robots-Tag "noindex, nofollow, noarchive" env=SC_NOINDEX
+</IfModule>
+
+# ----------------------------------------------------------------
 # Blocage des instructions de dépôt (accès direct interdit — doivent passer par secure_pdf.php)
 # Couvre versions FR (instructions_depot_*) et EN (deposit_*)
 # ----------------------------------------------------------------

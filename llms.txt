@@ -10,13 +10,13 @@ SparkCore Fund Management (legal entity: SparkCore.investment OÜ) is an alterna
 - Risk level: high, actively managed
 - Strategy: directional exposure to crypto-assets, targeting outperformance relative to Bitcoin
 - Status: operational since 01/08/2025
-- Documentation: https://sparkcore.fund/factsheets/dynamic-trends
+- Documentation: factsheet available on request via discovery call
 
 ### CryptoVision
 - Risk level: moderate
 - Strategy: algorithmic defensive approach, targeting consistent returns with controlled volatility
 - Status: operational since 01/02/2021
-- Documentation: https://sparkcore.fund/factsheets/cryptovision
+- Documentation: factsheet available on request via discovery call
 
 ### Equinoxe
 - Risk level: low
@@ -68,8 +68,7 @@ SparkCore Fund Management offers a white-label solution allowing third-party par
 ## Contacts & Resources
 
 - Website: https://sparkcore.fund
-- Dynamic Trends factsheet: https://sparkcore.fund/factsheets/dynamic-trends
-- CryptoVision factsheet: https://sparkcore.fund/factsheets/cryptovision
+- Fund factsheets: gated, available on request to qualified investors
 - Privacy Policy: https://sparkcore.fund/privacy-policy
 - Contact: contact@sparkcore.fund
 - EFSA registry: https://www.fi.ee/en/guides/fund-management-companies/investment-market/small-fund-managers-without-activity-licence/sparkcoreinvestment-ou

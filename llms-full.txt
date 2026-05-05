@@ -34,8 +34,7 @@
 
 ## Resources
 
-- [Dynamic Trends Factsheet](https://sparkcore.fund/factsheets/dynamic-trends): Fund documentation for the Dynamic Trends fund — directional crypto strategy targeting Bitcoin outperformance.
-- [CryptoVision Factsheet](https://sparkcore.fund/factsheets/cryptovision): Fund documentation for the CryptoVision fund — algorithmic defensive approach with controlled volatility.
+- Fund factsheets (Dynamic Trends, CryptoVision): gated documents, available on request to qualified investors via discovery call.
 - [Privacy Policy](https://sparkcore.fund/privacy-policy): GDPR and data protection policy for SparkCore Fund Management (SparkCore.investment OÜ).
 
 ## License

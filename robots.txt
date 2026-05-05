@@ -26,29 +26,50 @@ User-agent: Teleport Pro
 Disallow: /
 
 # ----------------------------------------------------------------
-# AI crawlers — explicit allow
+# AI crawlers — allowed on public content, but NOT on gated pages
+# (factsheets and discovery-call are email-only landings, never index)
+# ----------------------------------------------------------------
 User-agent: GPTBot
 Allow: /
+Disallow: /factsheets/
+Disallow: /ressources/
+Disallow: /discovery-call
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /factsheets/
+Disallow: /ressources/
+Disallow: /discovery-call
 
 User-agent: Google-Extended
 Allow: /
+Disallow: /factsheets/
+Disallow: /ressources/
+Disallow: /discovery-call
 
 User-agent: ClaudeBot
 Allow: /
+Disallow: /factsheets/
+Disallow: /ressources/
+Disallow: /discovery-call
 
 User-agent: PerplexityBot
 Allow: /
+Disallow: /factsheets/
+Disallow: /ressources/
+Disallow: /discovery-call
 
 User-agent: CCBot
 Allow: /
+Disallow: /factsheets/
+Disallow: /ressources/
+Disallow: /discovery-call
 
-# All other crawlers — block only sensitive paths
+# All other crawlers — block sensitive paths
 User-agent: *
 Disallow: /factsheets/
 Disallow: /ressources/
+Disallow: /discovery-call
 Disallow: /validation.html
 Disallow: /404.html
 Disallow: /403.html
