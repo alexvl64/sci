@@ -121,3 +121,18 @@ Cal("ui", {
     light: { "cal-brand": "#0E1117" }
   }
 });
+
+/* ── GA4: cal_booking_complete (Key Event) ── */
+window.addEventListener("message", (e) => {
+  if (e.origin !== CAL_ORIGIN) return;
+  const data = e.data || {};
+  const action = data.type || data.action || (data.detail && (data.detail.type || data.detail.action));
+  if (action === "bookingSuccessful" || action === "BOOKING_CONFIRMED" || action === "__bookingSuccessful") {
+    if (typeof window.gtag === "function") {
+      window.gtag("event", "cal_booking_complete", {
+        event_type: "discovery",
+        lang: document.documentElement.lang || "en"
+      });
+    }
+  }
+});

@@ -70,6 +70,23 @@ const sidebar = document.getElementById("form-sidebar");
 // Open the sidebar for each button
 openSidebarButtons.forEach((button) => {
   button.addEventListener("click", () => {
+    // GA4: capture which CTA opened the sidebar (re-used by contact_form_submit on success)
+    const i18n = button.dataset.i18n || "";
+    const fund = i18n === "dtFactsheet" ? "dynamic-trends"
+               : i18n === "cvFactsheet" ? "cryptovision"
+               : null;
+    if (fund) {
+      window.__lastCtaOrigin = `factsheet-${fund}`;
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "factsheet_request_open", {
+          fund,
+          lang: document.documentElement.lang || "en"
+        });
+      }
+    } else {
+      window.__lastCtaOrigin = button.closest("nav") ? "nav-contact" : "hero";
+    }
+
     sidebar.classList.remove("-right-full");
     sidebar.classList.add("right-0");
     document.body.classList.add("overflow-hidden");
@@ -245,6 +262,15 @@ form.addEventListener("submit", async (event) => {
     const data = await response.json();
 
     if (data.status === "success") {
+      // GA4: contact_form_submit (Key Event) — captures dropdown source + CTA origin
+      if (typeof window.gtag === "function") {
+        window.gtag("event", "contact_form_submit", {
+          form_source: source || "unknown",
+          cta_origin: window.__lastCtaOrigin || "unknown",
+          lang: document.documentElement.lang || "en"
+        });
+      }
+
       form.reset();
       turnstile.reset("#cf-turnstile");
 
