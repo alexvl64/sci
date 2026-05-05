@@ -38,7 +38,9 @@ GA4 enhanced measurement actif → events automatiques sans code custom :
 - `file_download` (clics PDFs `/ressources/contrats/*.pdf`)
 - `form_start` / `form_submit` (sidebar + newsletter FormCarry)
 
-**Custom events GA4 (ajoutés 2026-05-05)** — 3 Key Events pour capturer l'intention qualifiée :
+**Custom events GA4 (ajoutés 2026-05-05)** — 6 Key Events pour le funnel complet, en deux familles :
+
+**Famille 1 — Code (gtag push depuis JS)** : intention déclarative et conversions actives.
 
 | Event | Trigger | Paramètres | Fichier |
 |---|---|---|---|
@@ -46,9 +48,45 @@ GA4 enhanced measurement actif → events automatiques sans code custom :
 | `contact_form_submit` | Submit succès du sidebar form (FormCarry `oHdZL-AalnM`) | `form_source` (dropdown), `cta_origin` (factsheet-*\|nav-contact\|hero), `lang` | `assets/js/index.js` |
 | `cal_booking_complete` | postMessage `bookingSuccessful` depuis `app.cal.eu` (capté sur **toutes** les pages avec Cal — `/discovery-call` + factsheets popup) | `event_type=discovery`, `booking_source` (discovery_page \| factsheet-cryptovision \| factsheet-dynamic-trends \| other), `lang` | `assets/js/analytics.js` (centralisé pour couvrir popups factsheets ET embed `/discovery-call`) |
 
-> ⚠️ **À marquer Key Event dans GA4 Admin** (Admin → Data display → Events → "Mark as Key Event") pour les utiliser comme conversions. Page-view filtré sur `/discovery-call` peut aussi être créé en custom event + Key Event pour mesurer le taux d'arrivée sur la page Cal.
+**Famille 2 — GA4 Admin (custom events filtrés sur `page_view`)** : signal d'arrivée sur les pages gated email-only. Aucun code — créés dans Admin → Affichage des données → Événements personnalisés.
 
-Tous les events guard `typeof window.gtag === "function"` → silencieux sous Consent Mode v2 denied + en localhost. Pour ajouter un nouvel event custom, suivre le même pattern (snippet + Key Event GA4 Admin).
+| Event | Match conditions |
+|---|---|
+| `discovery_call_view` | `event_name = page_view` AND `page_location contains /discovery-call` |
+| `factsheet_view_cryptovision` | `event_name = page_view` AND `page_location contains /factsheets/cryptovision` |
+| `factsheet_view_dynamic_trends` | `event_name = page_view` AND `page_location contains /factsheets/dynamic-trends` |
+
+> ⚠️ **Tous marqués Key Event dans GA4 Admin** (Administration → Affichage des données → Événements → "Marquer comme événement clé") pour les utiliser comme conversions.
+
+Tous les events code-side guard `typeof window.gtag === "function"` → silencieux sous Consent Mode v2 denied + en localhost. Pour ajouter un nouvel event custom : si signal "arrivée sur une page" → Famille 2 (GA4 Admin, no code) ; si signal d'action utilisateur (click, submit, postMessage) → Famille 1 (snippet + Key Event Admin).
+
+**Funnel mesurable** :
+```
+Homepage / pages publiques
+  → factsheet_request_open  (Tier 1 — intent fund spécifique)
+  → contact_form_submit     (Tier 1 — qualified lead, source dropdown)
+[email avec lien factsheet ou /discovery-call envoyé manuellement]
+  → factsheet_view_*        (Tier 1 — taux d'ouverture-clic email factsheet)
+  → discovery_call_view     (Tier 1 — taux d'arrivée page Cal)
+  → cal_booking_complete    (Tier 1 — conversion ultime, booking_source distingue origine)
+```
+
+### Pages gated (jamais indexer) — défense en profondeur (2026-05-05)
+
+Les pages `/factsheets/cryptovision`, `/factsheets/dynamic-trends` et `/discovery-call` sont des **landings email-only** envoyées manuellement aux prospects qualifiés. **Ne JAMAIS** les indexer.
+
+Quatre couches de protection en place :
+
+| Couche | Implémentation |
+|---|---|
+| Meta tag HTML | `<meta name="robots" content="noindex, nofollow" />` sur les 3 pages |
+| Header HTTP | `X-Robots-Tag: noindex, nofollow, noarchive` via `.htaccess` (`SetEnvIf Request_URI ^/factsheets(/\|$)` et `^/discovery-call(/\|$)`) — couvre les rewritten paths sans `.html` et les bots qui ignorent les meta |
+| `robots.txt` | `Disallow: /factsheets/`, `Disallow: /ressources/`, `Disallow: /discovery-call` répliqué sur **6 AI crawlers** (GPTBot, OAI-SearchBot, Google-Extended, ClaudeBot, PerplexityBot, CCBot) + `User-agent: *` |
+| `llms.txt` + `llms-full.txt` | URLs factsheets retirées, mention textuelle gardée : `factsheet available on request to qualified investors` |
+
+Sitemap.xml ne contient PAS ces 3 pages (volontaire). GSC URL Inspection 2026-05-05 a confirmé qu'aucune n'était indexée par Google.
+
+> Si une nouvelle page gated est créée à l'avenir, propager les 4 couches — sinon elle peut fuiter via `llms.txt` ou les AI crawlers même avec un meta noindex.
 
 ### APIs Google connectées (config `~/.config/claude-seo/projects/sci.json`)
 
