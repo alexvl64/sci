@@ -125,6 +125,16 @@ RewriteRule ^ - [F,L]
 RewriteRule ^ressources/(instructions_depot|deposit).*\.pdf$ - [F,L]
 
 # ----------------------------------------------------------------
+# Redirections 301 — anciens slugs blog absorbés (commit 3a79321, 2026-03-28)
+# + URL /en/ jamais existée mais découverte par Google (origine externe)
+# Ces redirects DOIVENT être avant le bloc try_files pour intercepter avant 404.
+# ----------------------------------------------------------------
+RewriteRule ^blog/low-volatility-crypto-strategy/?$        /blog/what-a-market-neutral-crypto-fund-does    [R=301,L]
+RewriteRule ^blog/estonian-aifm-crypto-fund/?$             /blog/regulated-crypto-fund-manager-estonia     [R=301,L]
+RewriteRule ^blog/how-white-label-funds-launch-in-crypto/?$ /blog/white-label-crypto-fund-manager-services [R=301,L]
+RewriteRule ^en/?$                                          /                                              [R=301,L]
+
+# ----------------------------------------------------------------
 # Equivalent Nginx try_files $uri $uri/ $uri.html =404;
 # ----------------------------------------------------------------
 DirectoryIndex index.html
