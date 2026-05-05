@@ -81,7 +81,7 @@ Quatre couches de protection en place :
 |---|---|
 | Meta tag HTML | `<meta name="robots" content="noindex, nofollow" />` sur les 3 pages |
 | Header HTTP | `X-Robots-Tag: noindex, nofollow, noarchive` via `.htaccess` (`SetEnvIf Request_URI ^/factsheets(/\|$)` et `^/discovery-call(/\|$)`) — couvre les rewritten paths sans `.html` et les bots qui ignorent les meta |
-| `robots.txt` | `Disallow: /factsheets/`, `Disallow: /ressources/`, `Disallow: /discovery-call` répliqué sur **6 AI crawlers** (GPTBot, OAI-SearchBot, Google-Extended, ClaudeBot, PerplexityBot, CCBot) + `User-agent: *` |
+| `robots.txt` | `Disallow: /factsheets/`, `Disallow: /discovery-call` répliqué sur **6 AI crawlers** (GPTBot, OAI-SearchBot, Google-Extended, ClaudeBot, PerplexityBot, CCBot) + `User-agent: *`. **`/ressources/` retiré du Disallow le 2026-05-05** : la protection vit désormais sur le X-Robots-Tag des PDFs (defense en profondeur) — sinon Google ne pouvait pas crawler les vieux PDFs et les laissait indexés malgré tout (paradoxe robots.txt + noindex). |
 | `llms.txt` + `llms-full.txt` | URLs factsheets retirées, mention textuelle gardée : `factsheet available on request to qualified investors` |
 
 Sitemap.xml ne contient PAS ces 3 pages (volontaire). GSC URL Inspection 2026-05-05 a confirmé qu'aucune n'était indexée par Google.
