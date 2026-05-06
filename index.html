@@ -484,9 +484,7 @@
             </p>
             <div class="flex flex-col items-start gap-3 mt-8 relative z-[3]">
               <a
-                href="https://app.cal.eu/sparkcore/discovery"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/discovery-call"
                 class="font-inter font-normal h-[52px] md:h-[54px] md:px-6 py-3.5 md:py-4 px-4 rounded text-sm md:text-base bg-cream text-darkGray !leading-140 hover:bg-transparent hover:text-cream border border-cream duration-300 max-[500px]:w-full flex items-center justify-center"
                 data-i18n="heroCtaPrimary"
               >
@@ -494,19 +492,12 @@
               </a>
               <button
                 aria-label="Request Documentation"
-                class="open-sidebar font-inter font-normal h-[52px] md:h-[54px] md:px-6 py-3.5 md:py-4 px-4 rounded text-sm md:text-base bg-transparent text-cream !leading-140 hover:bg-cream hover:text-darkGray border border-cream duration-300 max-[500px]:w-full flex items-center justify-center"
+                class="open-sidebar hero-cta-ghost font-inter font-normal h-[52px] md:h-[54px] md:px-6 py-3.5 md:py-4 px-4 rounded text-sm md:text-base !leading-140 max-[500px]:w-full flex items-center justify-center"
                 data-i18n="heroCtaSecondary"
                 data-cta-origin="hero"
               >
                 Request Documentation
               </button>
-              <a
-                href="/blog/"
-                class="font-inter text-sm text-lightBlue hover:text-cream transition-colors duration-200 flex items-center gap-1"
-                data-i18n="heroCommentaryLink"
-              >
-                Read our latest market commentary →
-              </a>
             </div>
             <div
               class="absolute xl:top-[103%] top-[32%] max-custom-xs:top-[85%] max-custom-xs:-right-[40px] w-[730px] max-sm:w-full max-custom-xs:h-[200px] left-[-40px] 2xl:hidden"
@@ -553,23 +544,23 @@
     </section>
 
     <!-- === TRUST STRIP === -->
-    <div class="w-full bg-[#F3F5F7] border-b border-[#D8DFE5]">
-      <div class="max-w-[1360px] mx-auto px-6 py-4 grid grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-3">
+    <div class="trust-strip">
+      <div class="trust-strip__grid">
         <div>
-          <p class="font-inter text-[10px] font-semibold text-[#8A9BA8] uppercase tracking-widest mb-0.5">Regulator</p>
-          <a href="https://www.fi.ee/en/guides/fund-management-companies/investment-market/small-fund-managers-without-activity-licence/sparkcoreinvestment-ou" target="_blank" rel="noopener noreferrer" class="font-inter text-xs text-darkGray leading-snug hover:underline">Finantsinspektsioon (EE) — Small Fund Manager</a>
+          <p class="trust-strip__label">Regulator</p>
+          <a href="https://www.fi.ee/en/guides/fund-management-companies/investment-market/small-fund-managers-without-activity-licence/sparkcoreinvestment-ou" target="_blank" rel="noopener noreferrer" class="trust-strip__value">Finantsinspektsioon (EE) — Small Fund Manager</a>
         </div>
         <div>
-          <p class="font-inter text-[10px] font-semibold text-[#8A9BA8] uppercase tracking-widest mb-0.5">Audit &amp; Accounting</p>
-          <p class="font-inter text-xs text-darkGray leading-snug">KPMG Estonia</p>
+          <p class="trust-strip__label">Audit &amp; Accounting</p>
+          <p class="trust-strip__value">KPMG Estonia</p>
         </div>
         <div>
-          <p class="font-inter text-[10px] font-semibold text-[#8A9BA8] uppercase tracking-widest mb-0.5">Legal Counsel</p>
-          <p class="font-inter text-xs text-darkGray leading-snug">Hedman Partners &amp; Co</p>
+          <p class="trust-strip__label">Legal Counsel</p>
+          <p class="trust-strip__value">Hedman Partners &amp; Co</p>
         </div>
         <div>
-          <p class="font-inter text-[10px] font-semibold text-[#8A9BA8] uppercase tracking-widest mb-0.5">LEI</p>
-          <a href="https://search.gleif.org/#/record/8945003BBN0RVNNB0S84" target="_blank" rel="noopener noreferrer" class="font-inter text-xs text-darkGray leading-snug hover:underline">8945003BBN0RVNNB0S84</a>
+          <p class="trust-strip__label">LEI</p>
+          <a href="https://search.gleif.org/#/record/8945003BBN0RVNNB0S84" target="_blank" rel="noopener noreferrer" class="trust-strip__value">8945003BBN0RVNNB0S84</a>
         </div>
       </div>
     </div>
