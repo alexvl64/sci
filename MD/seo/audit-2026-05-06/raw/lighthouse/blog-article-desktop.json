@@ -1,0 +1,804 @@
+{
+  "url": "https://sparkcore.fund/blog/why-invest-in-crypto-funds-2026",
+  "psi": {
+    "desktop": {
+      "url": "https://sparkcore.fund/blog/why-invest-in-crypto-funds-2026",
+      "strategy": "desktop",
+      "lighthouse_scores": {
+        "performance": 90,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lab_metrics": {
+        "first-contentful-paint": {
+          "value": 834.7525477017217,
+          "display": "0.8\u00a0s",
+          "score": 0.94
+        },
+        "largest-contentful-paint": {
+          "value": 1028.0531857164951,
+          "display": "1.0\u00a0s",
+          "score": 0.94
+        },
+        "total-blocking-time": {
+          "value": 223.0000000000001,
+          "display": "220\u00a0ms",
+          "score": 0.75
+        },
+        "cumulative-layout-shift": {
+          "value": 0.000783,
+          "display": "0.001",
+          "score": 1
+        },
+        "speed-index": {
+          "value": 835.6728101209865,
+          "display": "0.8\u00a0s",
+          "score": 0.99
+        },
+        "interactive": {
+          "value": 1244.5531857164951,
+          "display": "1.2\u00a0s",
+          "score": 1
+        }
+      },
+      "field_metrics": {},
+      "opportunities": [
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "savings_ms": 120,
+          "description": "Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)."
+        }
+      ],
+      "diagnostics": [
+        {
+          "id": "total-byte-weight",
+          "title": "Avoids enormous network payloads",
+          "display": "Total size was 443\u00a0KiB",
+          "score": 1,
+          "description": "Large network payloads cost users real money and are highly correlated with long load times. [Learn how to reduce payload sizes](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)."
+        },
+        {
+          "id": "mainthread-work-breakdown",
+          "title": "Minimizes main-thread work",
+          "display": "0.9\u00a0s",
+          "score": 1,
+          "description": "Consider reducing the time spent parsing, compiling and executing JS. You may find delivering smaller JS payloads helps with this. [Learn how to minimize main-thread work](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)"
+        },
+        {
+          "id": "bootup-time",
+          "title": "JavaScript execution time",
+          "display": "0.3\u00a0s",
+          "score": 1,
+          "description": "Consider reducing the time spent parsing, compiling, and executing JS. You may find delivering smaller JS payloads helps with this. [Learn how to reduce Javascript execution time](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)."
+        },
+        {
+          "id": "layout-shifts",
+          "title": "Avoid large layout shifts",
+          "display": "1 layout shift found",
+          "score": 1,
+          "description": "These are the largest layout shifts observed on the page. Each table item represents a single layout shift, and shows the element that shifted the most. Below each item are possible root causes that led to the layout shift. Some of these layout shifts may not be included in the CLS metric value due to [windowing](https://web.dev/articles/cls#what_is_cls). [Learn how to improve CLS](https://web.dev/articles/optimize-cls)"
+        },
+        {
+          "id": "long-tasks",
+          "title": "Avoid long main-thread tasks",
+          "display": "3 long tasks found",
+          "score": 1,
+          "description": "Lists the longest tasks on the main thread, useful for identifying worst contributors to input delay. [Learn how to avoid long main-thread tasks](https://web.dev/articles/optimize-long-tasks)"
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "display": "Est savings of 63\u00a0KiB",
+          "score": 0,
+          "description": "Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)."
+        },
+        {
+          "id": "unused-css-rules",
+          "title": "Reduce unused CSS",
+          "display": "",
+          "score": 1,
+          "description": "Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. [Learn how to reduce unused CSS](https://developer.chrome.com/docs/lighthouse/performance/unused-css-rules/)."
+        }
+      ],
+      "failed_audits": [
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0,
+          "display": "",
+          "description": "[Avoid chaining critical requests](https://developer.chrome.com/docs/performance/insights/network-dependency-tree) by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load."
+        },
+        {
+          "id": "render-blocking-insight",
+          "title": "Render blocking requests",
+          "score": 0,
+          "display": "Est savings of 430\u00a0ms",
+          "description": "Requests are blocking the page's initial render, which may delay LCP. [Deferring or inlining](https://developer.chrome.com/docs/performance/insights/render-blocking) can move these network requests out of the critical path."
+        },
+        {
+          "id": "forced-reflow-insight",
+          "title": "Forced reflow",
+          "score": 0,
+          "display": "",
+          "description": "A forced reflow occurs when JavaScript queries geometric properties (such as offsetWidth) after styles have been invalidated by a change to the DOM state. This can result in poor performance. Learn more about [forced reflows](https://developer.chrome.com/docs/performance/insights/forced-reflow) and possible mitigations."
+        },
+        {
+          "id": "lcp-discovery-insight",
+          "title": "LCP request discovery",
+          "score": 0,
+          "display": "",
+          "description": "[Optimize LCP](https://developer.chrome.com/docs/performance/insights/lcp-discovery) by making the LCP image discoverable from the HTML immediately, and avoiding lazy-loading"
+        },
+        {
+          "id": "image-delivery-insight",
+          "title": "Improve image delivery",
+          "score": 0.5,
+          "display": "Est savings of 46\u00a0KiB",
+          "description": "Reducing the download time of images can improve the perceived load time of the page and LCP. [Learn more about optimizing image size](https://developer.chrome.com/docs/performance/insights/image-delivery)"
+        },
+        {
+          "id": "total-blocking-time",
+          "title": "Total Blocking Time",
+          "score": 0.75,
+          "display": "220\u00a0ms",
+          "description": "Sum of all time periods between FCP and Time to Interactive, when task length exceeded 50ms, expressed in milliseconds. [Learn more about the Total Blocking Time metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/)."
+        },
+        {
+          "id": "max-potential-fid",
+          "title": "Max Potential First Input Delay",
+          "score": 0.79,
+          "display": "170\u00a0ms",
+          "description": "The maximum potential First Input Delay that your users could experience is the duration of the longest task. [Learn more about the Maximum Potential First Input Delay metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/)."
+        }
+      ],
+      "passed_audits_count": 88,
+      "seo_audits": [
+        {
+          "id": "is-crawlable",
+          "title": "Page isn\u2019t blocked from indexing",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "document-title",
+          "title": "Document has a `<title>` element",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "meta-description",
+          "title": "Document has a meta description",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "http-status-code",
+          "title": "Page has successful HTTP status code",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "link-text",
+          "title": "Links have descriptive text",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "crawlable-anchors",
+          "title": "Links are crawlable",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "robots-txt",
+          "title": "robots.txt is valid",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "image-alt",
+          "title": "Image elements have `[alt]` attributes",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "hreflang",
+          "title": "Document has a valid `hreflang`",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "canonical",
+          "title": "Document has a valid `rel=canonical`",
+          "score": 1,
+          "pass": true
+        }
+      ],
+      "accessibility_audits": [],
+      "analysis_timestamp": "2026-05-06T12:21:45.845Z",
+      "audit_details": {
+        "mainthread-work-breakdown": {
+          "title": "Minimizes main-thread work",
+          "headings": [
+            "groupLabel",
+            "duration"
+          ],
+          "items": [
+            {
+              "groupLabel": "Style & Layout",
+              "duration": 450.81899999999996
+            },
+            {
+              "groupLabel": "Script Evaluation",
+              "duration": 237.1029999999995
+            },
+            {
+              "groupLabel": "Script Parsing & Compilation",
+              "duration": 108.75299999999999
+            },
+            {
+              "groupLabel": "Other",
+              "duration": 98.99600000000007
+            },
+            {
+              "groupLabel": "Rendering",
+              "duration": 21.009000000000004
+            }
+          ],
+          "total_items": 6
+        },
+        "trusted-types-xss": {
+          "title": "Mitigate DOM-based XSS with Trusted Types",
+          "headings": [
+            "description",
+            "severity"
+          ],
+          "items": [
+            {
+              "description": "No `Content-Security-Policy` header with Trusted Types directive found",
+              "severity": "High"
+            }
+          ],
+          "total_items": 1
+        },
+        "third-parties-insight": {
+          "title": "3rd parties",
+          "headings": [
+            "entity",
+            "transferSize",
+            "mainThreadTime"
+          ],
+          "items": [
+            {
+              "entity": "Google Tag Manager",
+              "transferSize": 159493,
+              "mainThreadTime": 326.8109999746084
+            },
+            {
+              "entity": "Google Fonts",
+              "transferSize": 174429,
+              "mainThreadTime": 0
+            },
+            {
+              "entity": "unsplash.com",
+              "transferSize": 76900,
+              "mainThreadTime": 0
+            },
+            {
+              "entity": "Google Analytics",
+              "transferSize": 798,
+              "mainThreadTime": 0
+            }
+          ],
+          "total_items": 4
+        },
+        "dom-size-insight": {
+          "title": "Optimize DOM size",
+          "headings": [
+            "statistic",
+            "node",
+            "value"
+          ],
+          "items": [
+            {
+              "statistic": "Total elements",
+              "value": "{'value': 429, 'type': 'numeric', 'granularity': 1}"
+            },
+            {
+              "statistic": "DOM depth",
+              "node": "{'snippet': '<stop offset=\"0%\" stop-color=\"#f59e0b\" stop-opacity=\"0.3\">', 'type': 'node', 'boundingRect': {'top': 0, 'left': 0, 'bottom': 0, 'height': 0, 'width': 0, 'right': 0}, 'selector': 'svg > de",
+              "value": "{'granularity': 1, 'type': 'numeric', 'value': 8}"
+            },
+            {
+              "statistic": "Most children",
+              "node": "{'path': '1,HTML,1,BODY,1,MAIN,0,ARTICLE', 'lhId': 'page-4-ARTICLE', 'nodeLabel': 'Published on 5 May 2026 \u00b7 By Alexandre VINAL \u00b7 22 min read\\n\\nWhy Invest in Crypt\u2026', 'boundingRect': {'top': 168, 'le",
+              "value": "{'granularity': 1, 'value': 100, 'type': 'numeric'}"
+            }
+          ],
+          "total_items": 3
+        },
+        "origin-isolation": {
+          "title": "Ensure proper origin isolation with COOP",
+          "headings": [
+            "description",
+            "directive",
+            "severity"
+          ],
+          "items": [
+            {
+              "description": "No COOP header found",
+              "severity": "High"
+            }
+          ],
+          "total_items": 1
+        },
+        "network-server-latency": {
+          "title": "Server Backend Latencies",
+          "headings": [
+            "origin",
+            "serverResponseTime"
+          ],
+          "items": [
+            {
+              "origin": "https://www.googletagmanager.com",
+              "serverResponseTime": 43
+            },
+            {
+              "origin": "https://sparkcore.fund",
+              "serverResponseTime": 1
+            },
+            {
+              "origin": "https://fonts.gstatic.com",
+              "serverResponseTime": 1
+            },
+            {
+              "origin": "https://images.unsplash.com",
+              "serverResponseTime": 1
+            },
+            {
+              "origin": "https://fonts.googleapis.com",
+              "serverResponseTime": 0
+            }
+          ],
+          "total_items": 6
+        },
+        "network-requests": {
+          "title": "Network Requests",
+          "headings": [
+            "url",
+            "protocol",
+            "networkRequestTime",
+            "networkEndTime",
+            "transferSize",
+            "resourceSize",
+            "statusCode",
+            "mimeType",
+            "resourceType"
+          ],
+          "items": [
+            {
+              "url": "https://sparkcore.fund/blog/why-invest-in-crypto-funds-2026",
+              "protocol": "h2",
+              "networkRequestTime": 2.6280000060796738,
+              "networkEndTime": 50.73100000619888,
+              "transferSize": 18950,
+              "resourceSize": 78091,
+              "statusCode": 200,
+              "mimeType": "text/html",
+              "resourceType": "Document"
+            },
+            {
+              "url": "https://sparkcore.fund/cdn-cgi/speculation",
+              "protocol": "h2",
+              "networkRequestTime": 77.48499999940395,
+              "networkEndTime": 110.63100000470877,
+              "transferSize": 1578,
+              "resourceSize": 128,
+              "statusCode": 200,
+              "mimeType": "application/speculationrules+json",
+              "resourceType": "Other"
+            },
+            {
+              "url": "https://sparkcore.fund/assets/css/style.css?v=1.4",
+              "protocol": "h2",
+              "networkRequestTime": 78.06300000101328,
+              "networkEndTime": 121.65900000184774,
+              "transferSize": 3194,
+              "resourceSize": 4532,
+              "statusCode": 200,
+              "mimeType": "text/css",
+              "resourceType": "Stylesheet"
+            },
+            {
+              "url": "https://sparkcore.fund/assets/js/analytics.js",
+              "protocol": "h2",
+              "networkRequestTime": 110.22700000554323,
+              "networkEndTime": 136.58100000023842,
+              "transferSize": 3796,
+              "resourceSize": 5876,
+              "statusCode": 200,
+              "mimeType": "application/javascript",
+              "resourceType": "Script"
+            },
+            {
+              "url": "https://sparkcore.fund/assets/css/tailwind.min.css?v=1.0",
+              "protocol": "h2",
+              "networkRequestTime": 93.68500000238419,
+              "networkEndTime": 118.67599999904633,
+              "transferSize": 8098,
+              "resourceSize": 29482,
+              "statusCode": 200,
+              "mimeType": "text/css",
+              "resourceType": "Stylesheet"
+            }
+          ],
+          "total_items": 14
+        },
+        "layout-shifts": {
+          "title": "Avoid large layout shifts",
+          "headings": [
+            "node",
+            "score"
+          ],
+          "items": [
+            {
+              "node": "{'snippet': '<h1 class=\"font-funnel-display text-custom-5xl max-md:text-custom-4xl max-sm:text-cus\u2026\">', 'boundingRect': {'height': 100, 'top': 204, 'left': 299, 'bottom': 304, 'right': 1051, 'width': ",
+              "score": 0.000783
+            }
+          ],
+          "total_items": 1
+        },
+        "long-tasks": {
+          "title": "Avoid long main-thread tasks",
+          "headings": [
+            "url",
+            "startTime",
+            "duration"
+          ],
+          "items": [
+            {
+              "url": "https://sparkcore.fund/blog/why-invest-in-crypto-funds-2026",
+              "startTime": 340.05318571649514,
+              "duration": 184
+            },
+            {
+              "url": "https://www.googletagmanager.com/gtag/js?id=G-J80NVPQNVZ",
+              "startTime": 863.053185716495,
+              "duration": 165.0000000000001
+            },
+            {
+              "url": "https://www.googletagmanager.com/gtag/js?id=G-J80NVPQNVZ",
+              "startTime": 1028.0531857164951,
+              "duration": 158
+            }
+          ],
+          "total_items": 3
+        },
+        "render-blocking-insight": {
+          "title": "Render blocking requests",
+          "headings": [
+            "url",
+            "totalBytes",
+            "wastedMs"
+          ],
+          "items": [
+            {
+              "url": "https://sparkcore.fund/assets/css/tailwind.min.css?v=1.0",
+              "totalBytes": 8098,
+              "wastedMs": 121
+            },
+            {
+              "url": "https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+              "totalBytes": 1521,
+              "wastedMs": 230
+            }
+          ],
+          "total_items": 2
+        },
+        "has-hsts": {
+          "title": "Use a strong HSTS policy",
+          "headings": [
+            "description",
+            "directive",
+            "severity"
+          ],
+          "items": [
+            {
+              "description": "No `preload` directive found",
+              "directive": "preload",
+              "severity": "Medium"
+            }
+          ],
+          "total_items": 1
+        },
+        "image-delivery-insight": {
+          "title": "Improve image delivery",
+          "headings": [
+            "node",
+            "url",
+            "totalBytes",
+            "wastedBytes"
+          ],
+          "items": [
+            {
+              "node": "{'nodeLabel': 'Institutional fund managers reviewing crypto allocation strategy in a modern co\u2026', 'lhId': 'page-0-IMG', 'path': '1,HTML,1,BODY,1,MAIN,0,ARTICLE,5,FIGURE,0,IMG', 'snippet': '<img src=\"h",
+              "url": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1260&h=750&fit=crop&q=80",
+              "totalBytes": 76324,
+              "wastedBytes": 47326
+            }
+          ],
+          "total_items": 1
+        },
+        "viewport-insight": {
+          "title": "Optimize viewport for mobile",
+          "headings": [
+            "node"
+          ],
+          "items": [
+            {
+              "node": "{'snippet': '<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">', 'selector': 'head > meta', 'boundingRect': {'width': 0, 'right': 0, 'top': 0, 'left': 0, 'bottom': 0, 'height': 0}"
+            }
+          ],
+          "total_items": 1
+        },
+        "unused-javascript": {
+          "title": "Reduce unused JavaScript",
+          "headings": [
+            "url",
+            "totalBytes",
+            "wastedBytes"
+          ],
+          "items": [
+            {
+              "url": "https://www.googletagmanager.com/gtag/js?id=G-J80NVPQNVZ",
+              "totalBytes": 158805,
+              "wastedBytes": 64588
+            }
+          ],
+          "total_items": 1
+        },
+        "resource-summary": {
+          "title": "Resources Summary",
+          "headings": [
+            "label",
+            "requestCount",
+            "transferSize"
+          ],
+          "items": [
+            {
+              "label": "Total",
+              "requestCount": 14,
+              "transferSize": 453791
+            },
+            {
+              "label": "Font",
+              "requestCount": 3,
+              "transferSize": 172908
+            },
+            {
+              "label": "Script",
+              "requestCount": 3,
+              "transferSize": 165080
+            },
+            {
+              "label": "Image",
+              "requestCount": 2,
+              "transferSize": 81664
+            },
+            {
+              "label": "Document",
+              "requestCount": 1,
+              "transferSize": 18950
+            }
+          ],
+          "total_items": 9
+        },
+        "user-timings": {
+          "title": "User Timing marks and measures",
+          "headings": [
+            "name",
+            "timingType",
+            "startTime",
+            "duration"
+          ],
+          "items": [
+            {
+              "name": "GTM-G-J80NVPQNVZ:15:17",
+              "timingType": "Measure",
+              "startTime": 0,
+              "duration": 152.6
+            },
+            {
+              "name": "GTM-G-J80NVPQNVZ:12:17:14",
+              "timingType": "Measure",
+              "startTime": 152.6,
+              "duration": 819.48
+            },
+            {
+              "name": "GTM-G-J80NVPQNVZ:15",
+              "timingType": "Mark",
+              "startTime": 0
+            },
+            {
+              "name": "GTM-G-J80NVPQNVZ:17",
+              "timingType": "Mark",
+              "startTime": 152.6
+            },
+            {
+              "name": "GTM-G-J80NVPQNVZ:12:14",
+              "timingType": "Mark",
+              "startTime": 972.08
+            }
+          ],
+          "total_items": 5
+        },
+        "server-response-time": {
+          "title": "Initial server response time was short",
+          "headings": [
+            "url",
+            "responseTime"
+          ],
+          "items": [
+            {
+              "url": "https://sparkcore.fund/blog/why-invest-in-crypto-funds-2026",
+              "responseTime": 3
+            }
+          ],
+          "total_items": 1
+        },
+        "main-thread-tasks": {
+          "title": "Tasks",
+          "headings": [
+            "startTime",
+            "duration"
+          ],
+          "items": [
+            {
+              "startTime": 57.722,
+              "duration": 41.686
+            },
+            {
+              "startTime": 100.954,
+              "duration": 10.544
+            },
+            {
+              "startTime": 139.641,
+              "duration": 6.447
+            },
+            {
+              "startTime": 149.489,
+              "duration": 42.807
+            },
+            {
+              "startTime": 192.325,
+              "duration": 368.15
+            }
+          ],
+          "total_items": 10
+        },
+        "total-byte-weight": {
+          "title": "Avoids enormous network payloads",
+          "headings": [
+            "url",
+            "totalBytes"
+          ],
+          "items": [
+            {
+              "url": "https://www.googletagmanager.com/gtag/js?id=G-J80NVPQNVZ",
+              "totalBytes": 159493
+            },
+            {
+              "url": "https://fonts.gstatic.com/s/inter/v20/UcCm3FwrK3iLTcvnUwQT9mI1F54.woff2",
+              "totalBytes": 80556
+            },
+            {
+              "url": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1260&h=750&fit=crop&q=80",
+              "totalBytes": 76900
+            },
+            {
+              "url": "https://fonts.gstatic.com/s/inter/v20/UcCo3FwrK3iLTcviYwYZ8UA3.woff2",
+              "totalBytes": 73828
+            },
+            {
+              "url": "https://sparkcore.fund/blog/why-invest-in-crypto-funds-2026",
+              "totalBytes": 18950
+            }
+          ],
+          "total_items": 10
+        },
+        "bootup-time": {
+          "title": "JavaScript execution time",
+          "headings": [
+            "url",
+            "total",
+            "scripting",
+            "scriptParseCompile"
+          ],
+          "items": [
+            {
+              "url": "https://sparkcore.fund/blog/why-invest-in-crypto-funds-2026",
+              "total": 497.15299999999996,
+              "scripting": 5.456999999999999,
+              "scriptParseCompile": 0.313
+            },
+            {
+              "url": "https://www.googletagmanager.com/gtag/js?id=G-J80NVPQNVZ",
+              "total": 329.51699999999954,
+              "scripting": 221.04899999999955,
+              "scriptParseCompile": 106.86599999999999
+            },
+            {
+              "url": "Unattributable",
+              "total": 90.60500000000008,
+              "scripting": 3.57,
+              "scriptParseCompile": 0
+            }
+          ],
+          "total_items": 3
+        },
+        "network-rtt": {
+          "title": "Network Round Trip Times",
+          "headings": [
+            "origin",
+            "rtt"
+          ],
+          "items": [
+            {
+              "origin": "https://fonts.googleapis.com",
+              "rtt": 0.8999999999999999
+            },
+            {
+              "origin": "https://www.google-analytics.com",
+              "rtt": 0.8999999999999999
+            },
+            {
+              "origin": "https://sparkcore.fund",
+              "rtt": 0.014159545166558289
+            },
+            {
+              "origin": "https://fonts.gstatic.com",
+              "rtt": 0.0011418779506041775
+            },
+            {
+              "origin": "https://images.unsplash.com",
+              "rtt": 0.000990368432529663
+            }
+          ],
+          "total_items": 6
+        },
+        "csp-xss": {
+          "title": "Ensure CSP is effective against XSS attacks",
+          "headings": [
+            "description",
+            "directive",
+            "severity"
+          ],
+          "items": [
+            {
+              "description": "Host allowlists can frequently be bypassed. Consider using CSP nonces or hashes instead, along with `'strict-dynamic'` if necessary.",
+              "directive": "script-src",
+              "severity": "High"
+            },
+            {
+              "description": "`'unsafe-inline'` allows the execution of unsafe in-page scripts and event handlers. Consider using CSP nonces or hashes to allow scripts individually.",
+              "directive": "script-src",
+              "severity": "High"
+            }
+          ],
+          "total_items": 2
+        }
+      },
+      "error": null
+    }
+  },
+  "crux": {
+    "target": "https://sparkcore.fund/blog/why-invest-in-crypto-funds-2026",
+    "metrics": {},
+    "collection_period": null,
+    "form_factor": "ALL",
+    "error": "No CrUX data for this URL. The site likely has insufficient Chrome traffic volume for eligibility."
+  },
+  "error": null
+}

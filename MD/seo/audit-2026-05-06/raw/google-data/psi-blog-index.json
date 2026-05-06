@@ -1,0 +1,1559 @@
+{
+  "url": "https://sparkcore.fund/blog",
+  "psi": {
+    "mobile": {
+      "url": "https://sparkcore.fund/blog",
+      "strategy": "mobile",
+      "lighthouse_scores": {
+        "performance": 71,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lab_metrics": {
+        "first-contentful-paint": {
+          "value": 3020.820394980586,
+          "display": "3.0\u00a0s",
+          "score": 0.49
+        },
+        "largest-contentful-paint": {
+          "value": 4780.909305547431,
+          "display": "4.8\u00a0s",
+          "score": 0.31
+        },
+        "total-blocking-time": {
+          "value": 236,
+          "display": "240\u00a0ms",
+          "score": 0.86
+        },
+        "cumulative-layout-shift": {
+          "value": 0,
+          "display": "0",
+          "score": 1
+        },
+        "speed-index": {
+          "value": 4488.67150399224,
+          "display": "4.5\u00a0s",
+          "score": 0.72
+        },
+        "interactive": {
+          "value": 4780.909305547431,
+          "display": "4.8\u00a0s",
+          "score": 0.79
+        }
+      },
+      "field_metrics": {},
+      "opportunities": [
+        {
+          "id": "redirects",
+          "title": "Avoid multiple page redirects",
+          "savings_ms": 759.1738356177198,
+          "description": "Redirects introduce additional delays before the page can be loaded. [Learn how to avoid page redirects](https://developer.chrome.com/docs/lighthouse/performance/redirects/)."
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "savings_ms": 600,
+          "description": "Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)."
+        }
+      ],
+      "diagnostics": [
+        {
+          "id": "total-byte-weight",
+          "title": "Avoids enormous network payloads",
+          "display": "Total size was 282\u00a0KiB",
+          "score": 1,
+          "description": "Large network payloads cost users real money and are highly correlated with long load times. [Learn how to reduce payload sizes](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)."
+        },
+        {
+          "id": "mainthread-work-breakdown",
+          "title": "Minimizes main-thread work",
+          "display": "0.5\u00a0s",
+          "score": 1,
+          "description": "Consider reducing the time spent parsing, compiling and executing JS. You may find delivering smaller JS payloads helps with this. [Learn how to minimize main-thread work](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)"
+        },
+        {
+          "id": "bootup-time",
+          "title": "JavaScript execution time",
+          "display": "0.3\u00a0s",
+          "score": 1,
+          "description": "Consider reducing the time spent parsing, compiling, and executing JS. You may find delivering smaller JS payloads helps with this. [Learn how to reduce Javascript execution time](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)."
+        },
+        {
+          "id": "layout-shifts",
+          "title": "Avoid large layout shifts",
+          "display": "",
+          "score": null,
+          "description": "These are the largest layout shifts observed on the page. Each table item represents a single layout shift, and shows the element that shifted the most. Below each item are possible root causes that led to the layout shift. Some of these layout shifts may not be included in the CLS metric value due to [windowing](https://web.dev/articles/cls#what_is_cls). [Learn how to improve CLS](https://web.dev/articles/optimize-cls)"
+        },
+        {
+          "id": "long-tasks",
+          "title": "Avoid long main-thread tasks",
+          "display": "2 long tasks found",
+          "score": 1,
+          "description": "Lists the longest tasks on the main thread, useful for identifying worst contributors to input delay. [Learn how to avoid long main-thread tasks](https://web.dev/articles/optimize-long-tasks)"
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "display": "Est savings of 63\u00a0KiB",
+          "score": 0,
+          "description": "Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)."
+        },
+        {
+          "id": "unused-css-rules",
+          "title": "Reduce unused CSS",
+          "display": "",
+          "score": 1,
+          "description": "Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. [Learn how to reduce unused CSS](https://developer.chrome.com/docs/lighthouse/performance/unused-css-rules/)."
+        }
+      ],
+      "failed_audits": [
+        {
+          "id": "render-blocking-insight",
+          "title": "Render blocking requests",
+          "score": 0,
+          "display": "Est savings of 2,100\u00a0ms",
+          "description": "Requests are blocking the page's initial render, which may delay LCP. [Deferring or inlining](https://developer.chrome.com/docs/performance/insights/render-blocking) can move these network requests out of the critical path."
+        },
+        {
+          "id": "forced-reflow-insight",
+          "title": "Forced reflow",
+          "score": 0,
+          "display": "",
+          "description": "A forced reflow occurs when JavaScript queries geometric properties (such as offsetWidth) after styles have been invalidated by a change to the DOM state. This can result in poor performance. Learn more about [forced reflows](https://developer.chrome.com/docs/performance/insights/forced-reflow) and possible mitigations."
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0,
+          "display": "",
+          "description": "[Avoid chaining critical requests](https://developer.chrome.com/docs/performance/insights/network-dependency-tree) by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load."
+        },
+        {
+          "id": "document-latency-insight",
+          "title": "Document request latency",
+          "score": 0,
+          "display": "Est savings of 70\u00a0ms",
+          "description": "Your first network request is the most important. [Reduce its latency](https://developer.chrome.com/docs/performance/insights/document-latency) by avoiding redirects, ensuring a fast server response, and enabling text compression."
+        },
+        {
+          "id": "largest-contentful-paint",
+          "title": "Largest Contentful Paint",
+          "score": 0.31,
+          "display": "4.8\u00a0s",
+          "description": "Largest Contentful Paint marks the time at which the largest text or image is painted. [Learn more about the Largest Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-largest-contentful-paint/)"
+        },
+        {
+          "id": "first-contentful-paint",
+          "title": "First Contentful Paint",
+          "score": 0.49,
+          "display": "3.0\u00a0s",
+          "description": "First Contentful Paint marks the time at which the first text or image is painted. [Learn more about the First Contentful Paint metric](https://developer.chrome.com/docs/lighthouse/performance/first-contentful-paint/)."
+        },
+        {
+          "id": "speed-index",
+          "title": "Speed Index",
+          "score": 0.72,
+          "display": "4.5\u00a0s",
+          "description": "Speed Index shows how quickly the contents of a page are visibly populated. [Learn more about the Speed Index metric](https://developer.chrome.com/docs/lighthouse/performance/speed-index/)."
+        },
+        {
+          "id": "max-potential-fid",
+          "title": "Max Potential First Input Delay",
+          "score": 0.75,
+          "display": "180\u00a0ms",
+          "description": "The maximum potential First Input Delay that your users could experience is the duration of the longest task. [Learn more about the Maximum Potential First Input Delay metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-max-potential-fid/)."
+        },
+        {
+          "id": "interactive",
+          "title": "Time to Interactive",
+          "score": 0.79,
+          "display": "4.8\u00a0s",
+          "description": "Time to Interactive is the amount of time it takes for the page to become fully interactive. [Learn more about the Time to Interactive metric](https://developer.chrome.com/docs/lighthouse/performance/interactive/)."
+        },
+        {
+          "id": "total-blocking-time",
+          "title": "Total Blocking Time",
+          "score": 0.86,
+          "display": "240\u00a0ms",
+          "description": "Sum of all time periods between FCP and Time to Interactive, when task length exceeded 50ms, expressed in milliseconds. [Learn more about the Total Blocking Time metric](https://developer.chrome.com/docs/lighthouse/performance/lighthouse-total-blocking-time/)."
+        }
+      ],
+      "passed_audits_count": 69,
+      "seo_audits": [
+        {
+          "id": "is-crawlable",
+          "title": "Page isn\u2019t blocked from indexing",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "document-title",
+          "title": "Document has a `<title>` element",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "meta-description",
+          "title": "Document has a meta description",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "http-status-code",
+          "title": "Page has successful HTTP status code",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "link-text",
+          "title": "Links have descriptive text",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "crawlable-anchors",
+          "title": "Links are crawlable",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "robots-txt",
+          "title": "robots.txt is valid",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "image-alt",
+          "title": "Image elements have `[alt]` attributes",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "hreflang",
+          "title": "Document has a valid `hreflang`",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "canonical",
+          "title": "Document has a valid `rel=canonical`",
+          "score": 1,
+          "pass": true
+        }
+      ],
+      "accessibility_audits": [],
+      "analysis_timestamp": "2026-05-06T12:19:45.280Z",
+      "audit_details": {
+        "third-parties-insight": {
+          "title": "3rd parties",
+          "headings": [
+            "entity",
+            "transferSize",
+            "mainThreadTime"
+          ],
+          "items": [
+            {
+              "entity": "Google Tag Manager",
+              "transferSize": 159493,
+              "mainThreadTime": 273.05999999970663
+            },
+            {
+              "entity": "Google Fonts",
+              "transferSize": 93873,
+              "mainThreadTime": 0
+            },
+            {
+              "entity": "Google Analytics",
+              "transferSize": 798,
+              "mainThreadTime": 0
+            }
+          ],
+          "total_items": 3
+        },
+        "trusted-types-xss": {
+          "title": "Mitigate DOM-based XSS with Trusted Types",
+          "headings": [
+            "description",
+            "severity"
+          ],
+          "items": [
+            {
+              "description": "No `Content-Security-Policy` header with Trusted Types directive found",
+              "severity": "High"
+            }
+          ],
+          "total_items": 1
+        },
+        "render-blocking-insight": {
+          "title": "Render blocking requests",
+          "headings": [
+            "url",
+            "totalBytes",
+            "wastedMs"
+          ],
+          "items": [
+            {
+              "url": "https://sparkcore.fund/assets/css/tailwind.min.css?v=1.0",
+              "totalBytes": 8095,
+              "wastedMs": 459
+            },
+            {
+              "url": "https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+              "totalBytes": 1521,
+              "wastedMs": 751
+            }
+          ],
+          "total_items": 2
+        },
+        "unused-javascript": {
+          "title": "Reduce unused JavaScript",
+          "headings": [
+            "url",
+            "totalBytes",
+            "wastedBytes"
+          ],
+          "items": [
+            {
+              "url": "https://www.googletagmanager.com/gtag/js?id=G-J80NVPQNVZ",
+              "totalBytes": 158806,
+              "wastedBytes": 64722
+            }
+          ],
+          "total_items": 1
+        },
+        "viewport-insight": {
+          "title": "Optimize viewport for mobile",
+          "headings": [
+            "node"
+          ],
+          "items": [
+            {
+              "node": "{'boundingRect': {'width': 0, 'left': 0, 'right': 0, 'bottom': 0, 'height': 0, 'top': 0}, 'snippet': '<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">', 'path': '1,HTML,0,HEAD,1,"
+            }
+          ],
+          "total_items": 1
+        },
+        "main-thread-tasks": {
+          "title": "Tasks",
+          "headings": [
+            "startTime",
+            "duration"
+          ],
+          "items": [
+            {
+              "startTime": 171.074,
+              "duration": 21.399
+            },
+            {
+              "startTime": 193.206,
+              "duration": 5.974
+            },
+            {
+              "startTime": 317.49,
+              "duration": 17.431
+            },
+            {
+              "startTime": 346.521,
+              "duration": 36.462
+            },
+            {
+              "startTime": 385.878,
+              "duration": 147.898
+            }
+          ],
+          "total_items": 7
+        },
+        "network-requests": {
+          "title": "Network Requests",
+          "headings": [
+            "url",
+            "protocol",
+            "networkRequestTime",
+            "networkEndTime",
+            "transferSize",
+            "resourceSize",
+            "statusCode",
+            "mimeType",
+            "resourceType"
+          ],
+          "items": [
+            {
+              "url": "https://sparkcore.fund/blog",
+              "protocol": "http/1.1",
+              "networkRequestTime": 1.8540000001667067,
+              "networkEndTime": 72.76800000004005,
+              "transferSize": 1661,
+              "resourceSize": 0,
+              "statusCode": 308,
+              "mimeType": "text/plain"
+            },
+            {
+              "url": "https://sparkcore.fund/blog/",
+              "protocol": "h2",
+              "networkRequestTime": 73.877000000095,
+              "networkEndTime": 164.73800000012852,
+              "transferSize": 7474,
+              "resourceSize": 35869,
+              "statusCode": 200,
+              "mimeType": "text/html",
+              "resourceType": "Document"
+            },
+            {
+              "url": "https://sparkcore.fund/cdn-cgi/speculation",
+              "protocol": "h2",
+              "networkRequestTime": 178.51700000010896,
+              "networkEndTime": 226.6390000001993,
+              "transferSize": 1576,
+              "resourceSize": 128,
+              "statusCode": 200,
+              "mimeType": "application/speculationrules+json",
+              "resourceType": "Other"
+            },
+            {
+              "url": "https://sparkcore.fund/assets/js/analytics.js",
+              "protocol": "h2",
+              "networkRequestTime": 190.2190000001574,
+              "networkEndTime": 315.27800000004936,
+              "transferSize": 3783,
+              "resourceSize": 5876,
+              "statusCode": 200,
+              "mimeType": "application/javascript",
+              "resourceType": "Script"
+            },
+            {
+              "url": "https://sparkcore.fund/assets/css/style.css?v=1.4",
+              "protocol": "h2",
+              "networkRequestTime": 190.81600000010803,
+              "networkEndTime": 281.7170000001788,
+              "transferSize": 3189,
+              "resourceSize": 4532,
+              "statusCode": 200,
+              "mimeType": "text/css",
+              "resourceType": "Stylesheet"
+            }
+          ],
+          "total_items": 14
+        },
+        "bootup-time": {
+          "title": "JavaScript execution time",
+          "headings": [
+            "url",
+            "total",
+            "scripting",
+            "scriptParseCompile"
+          ],
+          "items": [
+            {
+              "url": "https://www.googletagmanager.com/gtag/js?id=G-J80NVPQNVZ",
+              "total": 345.66359999999924,
+              "scripting": 211.63199999999924,
+              "scriptParseCompile": 117.80999999999999
+            },
+            {
+              "url": "https://sparkcore.fund/blog/",
+              "total": 79.686,
+              "scripting": 2.2871999999999995,
+              "scriptParseCompile": 0.35040000000000004
+            },
+            {
+              "url": "Unattributable",
+              "total": 73.33320000000012,
+              "scripting": 5.2464,
+              "scriptParseCompile": 0
+            }
+          ],
+          "total_items": 3
+        },
+        "mainthread-work-breakdown": {
+          "title": "Minimizes main-thread work",
+          "headings": [
+            "groupLabel",
+            "duration"
+          ],
+          "items": [
+            {
+              "groupLabel": "Script Evaluation",
+              "duration": 227.06159999999923
+            },
+            {
+              "groupLabel": "Script Parsing & Compilation",
+              "duration": 120.25200000000001
+            },
+            {
+              "groupLabel": "Other",
+              "duration": 79.76640000000013
+            },
+            {
+              "groupLabel": "Style & Layout",
+              "duration": 57.502800000000015
+            },
+            {
+              "groupLabel": "Garbage Collection",
+              "duration": 14.250000000000002
+            }
+          ],
+          "total_items": 7
+        },
+        "server-response-time": {
+          "title": "Initial server response time was short",
+          "headings": [
+            "url",
+            "responseTime"
+          ],
+          "items": [
+            {
+              "url": "https://sparkcore.fund/blog/",
+              "responseTime": 2
+            }
+          ],
+          "total_items": 1
+        },
+        "network-rtt": {
+          "title": "Network Round Trip Times",
+          "headings": [
+            "origin",
+            "rtt"
+          ],
+          "items": [
+            {
+              "origin": "https://sparkcore.fund",
+              "rtt": 2.725499999999998
+            },
+            {
+              "origin": "https://fonts.googleapis.com",
+              "rtt": 0.8999999999999999
+            },
+            {
+              "origin": "https://www.google-analytics.com",
+              "rtt": 0.8999999999999999
+            },
+            {
+              "origin": "https://www.googletagmanager.com",
+              "rtt": 0.0010357391293434914
+            },
+            {
+              "origin": "https://fonts.gstatic.com",
+              "rtt": 0.0008881274267436312
+            }
+          ],
+          "total_items": 5
+        },
+        "total-byte-weight": {
+          "title": "Avoids enormous network payloads",
+          "headings": [
+            "url",
+            "totalBytes"
+          ],
+          "items": [
+            {
+              "url": "https://www.googletagmanager.com/gtag/js?id=G-J80NVPQNVZ",
+              "totalBytes": 159493
+            },
+            {
+              "url": "https://fonts.gstatic.com/s/inter/v20/UcCo3FwrK3iLTcviYwYZ8UA3.woff2",
+              "totalBytes": 73828
+            },
+            {
+              "url": "https://fonts.gstatic.com/s/funneldisplay/v3/B50WF7FGv37QNVWgE0ga--4Pbb6dDYs0gnHA.woff2",
+              "totalBytes": 18524
+            },
+            {
+              "url": "https://sparkcore.fund/assets/css/tailwind.min.css?v=1.0",
+              "totalBytes": 8095
+            },
+            {
+              "url": "https://sparkcore.fund/blog/",
+              "totalBytes": 7474
+            }
+          ],
+          "total_items": 10
+        },
+        "dom-size-insight": {
+          "title": "Optimize DOM size",
+          "headings": [
+            "statistic",
+            "node",
+            "value"
+          ],
+          "items": [
+            {
+              "statistic": "Total elements",
+              "value": "{'value': 166, 'type': 'numeric', 'granularity': 1}"
+            },
+            {
+              "statistic": "DOM depth",
+              "node": "{'type': 'node', 'selector': 'div.grid > a.blog-card > div > p.font-inter', 'lhId': 'page-3-P', 'nodeLabel': 'INSTITUTIONAL', 'snippet': '<p class=\"font-inter text-xs text-steelBlue uppercase tracking",
+              "value": "{'value': 8, 'type': 'numeric', 'granularity': 1}"
+            },
+            {
+              "statistic": "Most children",
+              "node": "{'selector': 'main > section.py-16 > div.max-w-[1360px] > div.grid', 'type': 'node', 'path': '1,HTML,1,BODY,3,MAIN,0,SECTION,0,DIV,3,DIV', 'snippet': '<div class=\"grid md:grid-cols-2 gap-8\">', 'boundi",
+              "value": "{'type': 'numeric', 'granularity': 1, 'value': 19}"
+            }
+          ],
+          "total_items": 3
+        },
+        "user-timings": {
+          "title": "User Timing marks and measures",
+          "headings": [
+            "name",
+            "timingType",
+            "startTime",
+            "duration"
+          ],
+          "items": [
+            {
+              "name": "GTM-G-J80NVPQNVZ:15:17",
+              "timingType": "Measure",
+              "startTime": 0,
+              "duration": 319.399
+            },
+            {
+              "name": "GTM-G-J80NVPQNVZ:10:17:14",
+              "timingType": "Measure",
+              "startTime": 319.399,
+              "duration": 346.834
+            },
+            {
+              "name": "GTM-G-J80NVPQNVZ:15",
+              "timingType": "Mark",
+              "startTime": 0
+            },
+            {
+              "name": "GTM-G-J80NVPQNVZ:17",
+              "timingType": "Mark",
+              "startTime": 319.399
+            },
+            {
+              "name": "GTM-G-J80NVPQNVZ:10:14",
+              "timingType": "Mark",
+              "startTime": 666.233
+            }
+          ],
+          "total_items": 5
+        },
+        "origin-isolation": {
+          "title": "Ensure proper origin isolation with COOP",
+          "headings": [
+            "description",
+            "directive",
+            "severity"
+          ],
+          "items": [
+            {
+              "description": "No COOP header found",
+              "severity": "High"
+            }
+          ],
+          "total_items": 1
+        },
+        "has-hsts": {
+          "title": "Use a strong HSTS policy",
+          "headings": [
+            "description",
+            "directive",
+            "severity"
+          ],
+          "items": [
+            {
+              "description": "No `preload` directive found",
+              "directive": "preload",
+              "severity": "Medium"
+            }
+          ],
+          "total_items": 1
+        },
+        "redirects": {
+          "title": "Avoid multiple page redirects",
+          "headings": [
+            "url",
+            "wastedMs"
+          ],
+          "items": [
+            {
+              "url": "https://sparkcore.fund/blog",
+              "wastedMs": 759.1738356177198
+            },
+            {
+              "url": "https://sparkcore.fund/blog/",
+              "wastedMs": 0
+            }
+          ],
+          "total_items": 2
+        },
+        "csp-xss": {
+          "title": "Ensure CSP is effective against XSS attacks",
+          "headings": [
+            "description",
+            "directive",
+            "severity"
+          ],
+          "items": [
+            {
+              "description": "Host allowlists can frequently be bypassed. Consider using CSP nonces or hashes instead, along with `'strict-dynamic'` if necessary.",
+              "directive": "script-src",
+              "severity": "High"
+            },
+            {
+              "description": "`'unsafe-inline'` allows the execution of unsafe in-page scripts and event handlers. Consider using CSP nonces or hashes to allow scripts individually.",
+              "directive": "script-src",
+              "severity": "High"
+            }
+          ],
+          "total_items": 2
+        },
+        "network-server-latency": {
+          "title": "Server Backend Latencies",
+          "headings": [
+            "origin",
+            "serverResponseTime"
+          ],
+          "items": [
+            {
+              "origin": "https://www.googletagmanager.com",
+              "serverResponseTime": 7
+            },
+            {
+              "origin": "https://sparkcore.fund",
+              "serverResponseTime": 1
+            },
+            {
+              "origin": "https://fonts.googleapis.com",
+              "serverResponseTime": 1
+            },
+            {
+              "origin": "https://fonts.gstatic.com",
+              "serverResponseTime": 0.5
+            },
+            {
+              "origin": "https://www.google-analytics.com",
+              "serverResponseTime": 0
+            }
+          ],
+          "total_items": 5
+        },
+        "long-tasks": {
+          "title": "Avoid long main-thread tasks",
+          "headings": [
+            "url",
+            "startTime",
+            "duration"
+          ],
+          "items": [
+            {
+              "url": "https://www.googletagmanager.com/gtag/js?id=G-J80NVPQNVZ",
+              "startTime": 3648.3497377992767,
+              "duration": 177
+            },
+            {
+              "url": "https://www.googletagmanager.com/gtag/js?id=G-J80NVPQNVZ",
+              "startTime": 3825.3497377992767,
+              "duration": 159
+            }
+          ],
+          "total_items": 2
+        },
+        "resource-summary": {
+          "title": "Resources Summary",
+          "headings": [
+            "label",
+            "requestCount",
+            "transferSize"
+          ],
+          "items": [
+            {
+              "label": "Total",
+              "requestCount": 14,
+              "transferSize": 288629
+            },
+            {
+              "label": "Script",
+              "requestCount": 3,
+              "transferSize": 165056
+            },
+            {
+              "label": "Font",
+              "requestCount": 2,
+              "transferSize": 92352
+            },
+            {
+              "label": "Stylesheet",
+              "requestCount": 3,
+              "transferSize": 12805
+            },
+            {
+              "label": "Document",
+              "requestCount": 1,
+              "transferSize": 7474
+            }
+          ],
+          "total_items": 9
+        }
+      },
+      "error": null
+    },
+    "desktop": {
+      "url": "https://sparkcore.fund/blog",
+      "strategy": "desktop",
+      "lighthouse_scores": {
+        "performance": 99,
+        "accessibility": 100,
+        "best-practices": 100,
+        "seo": 100
+      },
+      "lab_metrics": {
+        "first-contentful-paint": {
+          "value": 777.1225610421907,
+          "display": "0.8\u00a0s",
+          "score": 0.96
+        },
+        "largest-contentful-paint": {
+          "value": 777.1225610421907,
+          "display": "0.8\u00a0s",
+          "score": 0.98
+        },
+        "total-blocking-time": {
+          "value": 47,
+          "display": "50\u00a0ms",
+          "score": 1
+        },
+        "cumulative-layout-shift": {
+          "value": 0.000225,
+          "display": "0",
+          "score": 1
+        },
+        "speed-index": {
+          "value": 777.1225610421907,
+          "display": "0.8\u00a0s",
+          "score": 0.99
+        },
+        "interactive": {
+          "value": 1008.7820364824213,
+          "display": "1.0\u00a0s",
+          "score": 1
+        }
+      },
+      "field_metrics": {},
+      "opportunities": [
+        {
+          "id": "redirects",
+          "title": "Avoid multiple page redirects",
+          "savings_ms": 206.50327278252155,
+          "description": "Redirects introduce additional delays before the page can be loaded. [Learn how to avoid page redirects](https://developer.chrome.com/docs/lighthouse/performance/redirects/)."
+        }
+      ],
+      "diagnostics": [
+        {
+          "id": "total-byte-weight",
+          "title": "Avoids enormous network payloads",
+          "display": "Total size was 282\u00a0KiB",
+          "score": 1,
+          "description": "Large network payloads cost users real money and are highly correlated with long load times. [Learn how to reduce payload sizes](https://developer.chrome.com/docs/lighthouse/performance/total-byte-weight/)."
+        },
+        {
+          "id": "mainthread-work-breakdown",
+          "title": "Minimizes main-thread work",
+          "display": "0.3\u00a0s",
+          "score": 1,
+          "description": "Consider reducing the time spent parsing, compiling and executing JS. You may find delivering smaller JS payloads helps with this. [Learn how to minimize main-thread work](https://developer.chrome.com/docs/lighthouse/performance/mainthread-work-breakdown/)"
+        },
+        {
+          "id": "bootup-time",
+          "title": "JavaScript execution time",
+          "display": "0.2\u00a0s",
+          "score": 1,
+          "description": "Consider reducing the time spent parsing, compiling, and executing JS. You may find delivering smaller JS payloads helps with this. [Learn how to reduce Javascript execution time](https://developer.chrome.com/docs/lighthouse/performance/bootup-time/)."
+        },
+        {
+          "id": "layout-shifts",
+          "title": "Avoid large layout shifts",
+          "display": "1 layout shift found",
+          "score": 1,
+          "description": "These are the largest layout shifts observed on the page. Each table item represents a single layout shift, and shows the element that shifted the most. Below each item are possible root causes that led to the layout shift. Some of these layout shifts may not be included in the CLS metric value due to [windowing](https://web.dev/articles/cls#what_is_cls). [Learn how to improve CLS](https://web.dev/articles/optimize-cls)"
+        },
+        {
+          "id": "long-tasks",
+          "title": "Avoid long main-thread tasks",
+          "display": "2 long tasks found",
+          "score": 1,
+          "description": "Lists the longest tasks on the main thread, useful for identifying worst contributors to input delay. [Learn how to avoid long main-thread tasks](https://web.dev/articles/optimize-long-tasks)"
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "display": "Est savings of 63\u00a0KiB",
+          "score": 0.5,
+          "description": "Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)."
+        },
+        {
+          "id": "unused-css-rules",
+          "title": "Reduce unused CSS",
+          "display": "",
+          "score": 1,
+          "description": "Reduce unused rules from stylesheets and defer CSS not used for above-the-fold content to decrease bytes consumed by network activity. [Learn how to reduce unused CSS](https://developer.chrome.com/docs/lighthouse/performance/unused-css-rules/)."
+        }
+      ],
+      "failed_audits": [
+        {
+          "id": "render-blocking-insight",
+          "title": "Render blocking requests",
+          "score": 0,
+          "display": "Est savings of 520\u00a0ms",
+          "description": "Requests are blocking the page's initial render, which may delay LCP. [Deferring or inlining](https://developer.chrome.com/docs/performance/insights/render-blocking) can move these network requests out of the critical path."
+        },
+        {
+          "id": "document-latency-insight",
+          "title": "Document request latency",
+          "score": 0,
+          "display": "Est savings of 30\u00a0ms",
+          "description": "Your first network request is the most important. [Reduce its latency](https://developer.chrome.com/docs/performance/insights/document-latency) by avoiding redirects, ensuring a fast server response, and enabling text compression."
+        },
+        {
+          "id": "network-dependency-tree-insight",
+          "title": "Network dependency tree",
+          "score": 0,
+          "display": "",
+          "description": "[Avoid chaining critical requests](https://developer.chrome.com/docs/performance/insights/network-dependency-tree) by reducing the length of chains, reducing the download size of resources, or deferring the download of unnecessary resources to improve page load."
+        },
+        {
+          "id": "unused-javascript",
+          "title": "Reduce unused JavaScript",
+          "score": 0.5,
+          "display": "Est savings of 63\u00a0KiB",
+          "description": "Reduce unused JavaScript and defer loading scripts until they are required to decrease bytes consumed by network activity. [Learn how to reduce unused JavaScript](https://developer.chrome.com/docs/lighthouse/performance/unused-javascript/)."
+        }
+      ],
+      "passed_audits_count": 77,
+      "seo_audits": [
+        {
+          "id": "is-crawlable",
+          "title": "Page isn\u2019t blocked from indexing",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "document-title",
+          "title": "Document has a `<title>` element",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "meta-description",
+          "title": "Document has a meta description",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "http-status-code",
+          "title": "Page has successful HTTP status code",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "link-text",
+          "title": "Links have descriptive text",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "crawlable-anchors",
+          "title": "Links are crawlable",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "robots-txt",
+          "title": "robots.txt is valid",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "image-alt",
+          "title": "Image elements have `[alt]` attributes",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "hreflang",
+          "title": "Document has a valid `hreflang`",
+          "score": 1,
+          "pass": true
+        },
+        {
+          "id": "canonical",
+          "title": "Document has a valid `rel=canonical`",
+          "score": 1,
+          "pass": true
+        }
+      ],
+      "accessibility_audits": [],
+      "analysis_timestamp": "2026-05-06T12:20:07.644Z",
+      "audit_details": {
+        "unused-javascript": {
+          "title": "Reduce unused JavaScript",
+          "headings": [
+            "url",
+            "totalBytes",
+            "wastedBytes"
+          ],
+          "items": [
+            {
+              "url": "https://www.googletagmanager.com/gtag/js?id=G-J80NVPQNVZ",
+              "totalBytes": 158805,
+              "wastedBytes": 64588
+            }
+          ],
+          "total_items": 1
+        },
+        "render-blocking-insight": {
+          "title": "Render blocking requests",
+          "headings": [
+            "url",
+            "totalBytes",
+            "wastedMs"
+          ],
+          "items": [
+            {
+              "url": "https://sparkcore.fund/assets/css/tailwind.min.css?v=1.0",
+              "totalBytes": 8098,
+              "wastedMs": 127
+            },
+            {
+              "url": "https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
+              "totalBytes": 1521,
+              "wastedMs": 201
+            }
+          ],
+          "total_items": 2
+        },
+        "dom-size-insight": {
+          "title": "Optimize DOM size",
+          "headings": [
+            "statistic",
+            "node",
+            "value"
+          ],
+          "items": [
+            {
+              "statistic": "Total elements",
+              "value": "{'value': 166, 'type': 'numeric', 'granularity': 1}"
+            },
+            {
+              "statistic": "DOM depth",
+              "node": "{'lhId': 'page-4-P', 'path': '1,HTML,1,BODY,3,MAIN,0,SECTION,0,DIV,3,DIV,1,A,0,DIV,0,P', 'type': 'node', 'snippet': '<p class=\"font-inter text-xs text-steelBlue uppercase tracking-widest mb-3\">', 'nod",
+              "value": "{'granularity': 1, 'type': 'numeric', 'value': 8}"
+            },
+            {
+              "statistic": "Most children",
+              "node": "{'path': '1,HTML,1,BODY,3,MAIN,0,SECTION,0,DIV,3,DIV', 'type': 'node', 'lhId': 'page-3-DIV', 'boundingRect': {'top': 547, 'height': 2940, 'width': 1302, 'bottom': 3487, 'right': 1326, 'left': 24}, 'se",
+              "value": "{'type': 'numeric', 'granularity': 1, 'value': 19}"
+            }
+          ],
+          "total_items": 3
+        },
+        "redirects": {
+          "title": "Avoid multiple page redirects",
+          "headings": [
+            "url",
+            "wastedMs"
+          ],
+          "items": [
+            {
+              "url": "https://sparkcore.fund/blog",
+              "wastedMs": 206.50327278252155
+            },
+            {
+              "url": "https://sparkcore.fund/blog/",
+              "wastedMs": 0
+            }
+          ],
+          "total_items": 2
+        },
+        "origin-isolation": {
+          "title": "Ensure proper origin isolation with COOP",
+          "headings": [
+            "description",
+            "directive",
+            "severity"
+          ],
+          "items": [
+            {
+              "description": "No COOP header found",
+              "severity": "High"
+            }
+          ],
+          "total_items": 1
+        },
+        "trusted-types-xss": {
+          "title": "Mitigate DOM-based XSS with Trusted Types",
+          "headings": [
+            "description",
+            "severity"
+          ],
+          "items": [
+            {
+              "description": "No `Content-Security-Policy` header with Trusted Types directive found",
+              "severity": "High"
+            }
+          ],
+          "total_items": 1
+        },
+        "csp-xss": {
+          "title": "Ensure CSP is effective against XSS attacks",
+          "headings": [
+            "description",
+            "directive",
+            "severity"
+          ],
+          "items": [
+            {
+              "description": "Host allowlists can frequently be bypassed. Consider using CSP nonces or hashes instead, along with `'strict-dynamic'` if necessary.",
+              "directive": "script-src",
+              "severity": "High"
+            },
+            {
+              "description": "`'unsafe-inline'` allows the execution of unsafe in-page scripts and event handlers. Consider using CSP nonces or hashes to allow scripts individually.",
+              "directive": "script-src",
+              "severity": "High"
+            }
+          ],
+          "total_items": 2
+        },
+        "mainthread-work-breakdown": {
+          "title": "Minimizes main-thread work",
+          "headings": [
+            "groupLabel",
+            "duration"
+          ],
+          "items": [
+            {
+              "groupLabel": "Script Evaluation",
+              "duration": 103.7550000000002
+            },
+            {
+              "groupLabel": "Script Parsing & Compilation",
+              "duration": 55.446000000000005
+            },
+            {
+              "groupLabel": "Style & Layout",
+              "duration": 49.457
+            },
+            {
+              "groupLabel": "Other",
+              "duration": 45.540000000000035
+            },
+            {
+              "groupLabel": "Rendering",
+              "duration": 10.043
+            }
+          ],
+          "total_items": 7
+        },
+        "long-tasks": {
+          "title": "Avoid long main-thread tasks",
+          "headings": [
+            "url",
+            "startTime",
+            "duration"
+          ],
+          "items": [
+            {
+              "url": "https://www.googletagmanager.com/gtag/js?id=G-J80NVPQNVZ",
+              "startTime": 856.006545565043,
+              "duration": 86
+            },
+            {
+              "url": "https://www.googletagmanager.com/gtag/js?id=G-J80NVPQNVZ",
+              "startTime": 942.006545565043,
+              "duration": 61
+            }
+          ],
+          "total_items": 2
+        },
+        "bootup-time": {
+          "title": "JavaScript execution time",
+          "headings": [
+            "url",
+            "total",
+            "scripting",
+            "scriptParseCompile"
+          ],
+          "items": [
+            {
+              "url": "https://www.googletagmanager.com/gtag/js?id=G-J80NVPQNVZ",
+              "total": 150.94100000000026,
+              "scripting": 94.98400000000025,
+              "scriptParseCompile": 53.797
+            },
+            {
+              "url": "https://sparkcore.fund/blog/",
+              "total": 66.80100000000002,
+              "scripting": 1.264,
+              "scriptParseCompile": 0.18
+            }
+          ],
+          "total_items": 2
+        },
+        "total-byte-weight": {
+          "title": "Avoids enormous network payloads",
+          "headings": [
+            "url",
+            "totalBytes"
+          ],
+          "items": [
+            {
+              "url": "https://www.googletagmanager.com/gtag/js?id=G-J80NVPQNVZ",
+              "totalBytes": 159493
+            },
+            {
+              "url": "https://fonts.gstatic.com/s/inter/v20/UcCo3FwrK3iLTcviYwYZ8UA3.woff2",
+              "totalBytes": 73828
+            },
+            {
+              "url": "https://fonts.gstatic.com/s/funneldisplay/v3/B50WF7FGv37QNVWgE0ga--4Pbb6dDYs0gnHA.woff2",
+              "totalBytes": 18524
+            },
+            {
+              "url": "https://sparkcore.fund/assets/css/tailwind.min.css?v=1.0",
+              "totalBytes": 8098
+            },
+            {
+              "url": "https://sparkcore.fund/blog/",
+              "totalBytes": 7474
+            }
+          ],
+          "total_items": 10
+        },
+        "third-parties-insight": {
+          "title": "3rd parties",
+          "headings": [
+            "entity",
+            "transferSize",
+            "mainThreadTime"
+          ],
+          "items": [
+            {
+              "entity": "Google Tag Manager",
+              "transferSize": 159493,
+              "mainThreadTime": 148.07599999988452
+            },
+            {
+              "entity": "Google Fonts",
+              "transferSize": 93873,
+              "mainThreadTime": 0
+            },
+            {
+              "entity": "Google Analytics",
+              "transferSize": 798,
+              "mainThreadTime": 0
+            }
+          ],
+          "total_items": 3
+        },
+        "network-rtt": {
+          "title": "Network Round Trip Times",
+          "headings": [
+            "origin",
+            "rtt"
+          ],
+          "items": [
+            {
+              "origin": "https://sparkcore.fund",
+              "rtt": 1.8354600000000003
+            },
+            {
+              "origin": "https://fonts.googleapis.com",
+              "rtt": 0.9830699999999999
+            },
+            {
+              "origin": "https://www.google-analytics.com",
+              "rtt": 0.8999999999999999
+            },
+            {
+              "origin": "https://fonts.gstatic.com",
+              "rtt": 0.0019031302527806482
+            },
+            {
+              "origin": "https://www.googletagmanager.com",
+              "rtt": 0.001035739159488081
+            }
+          ],
+          "total_items": 5
+        },
+        "user-timings": {
+          "title": "User Timing marks and measures",
+          "headings": [
+            "name",
+            "timingType",
+            "startTime",
+            "duration"
+          ],
+          "items": [
+            {
+              "name": "GTM-G-J80NVPQNVZ:15:17",
+              "timingType": "Measure",
+              "startTime": 0,
+              "duration": 236.899
+            },
+            {
+              "name": "GTM-G-J80NVPQNVZ:12:17:14",
+              "timingType": "Measure",
+              "startTime": 236.899,
+              "duration": 236.515
+            },
+            {
+              "name": "GTM-G-J80NVPQNVZ:15",
+              "timingType": "Mark",
+              "startTime": 0
+            },
+            {
+              "name": "GTM-G-J80NVPQNVZ:17",
+              "timingType": "Mark",
+              "startTime": 236.899
+            },
+            {
+              "name": "GTM-G-J80NVPQNVZ:12:14",
+              "timingType": "Mark",
+              "startTime": 473.414
+            }
+          ],
+          "total_items": 5
+        },
+        "resource-summary": {
+          "title": "Resources Summary",
+          "headings": [
+            "label",
+            "requestCount",
+            "transferSize"
+          ],
+          "items": [
+            {
+              "label": "Total",
+              "requestCount": 14,
+              "transferSize": 288674
+            },
+            {
+              "label": "Script",
+              "requestCount": 3,
+              "transferSize": 165080
+            },
+            {
+              "label": "Font",
+              "requestCount": 2,
+              "transferSize": 92352
+            },
+            {
+              "label": "Stylesheet",
+              "requestCount": 3,
+              "transferSize": 12813
+            },
+            {
+              "label": "Document",
+              "requestCount": 1,
+              "transferSize": 7474
+            }
+          ],
+          "total_items": 9
+        },
+        "viewport-insight": {
+          "title": "Optimize viewport for mobile",
+          "headings": [
+            "node"
+          ],
+          "items": [
+            {
+              "node": "{'path': '1,HTML,0,HEAD,1,META', 'type': 'node', 'lhId': 'page-2-META', 'nodeLabel': 'head > meta', 'snippet': '<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">', 'boundingRect':"
+            }
+          ],
+          "total_items": 1
+        },
+        "server-response-time": {
+          "title": "Initial server response time was short",
+          "headings": [
+            "url",
+            "responseTime"
+          ],
+          "items": [
+            {
+              "url": "https://sparkcore.fund/blog/",
+              "responseTime": 1
+            }
+          ],
+          "total_items": 1
+        },
+        "layout-shifts": {
+          "title": "Avoid large layout shifts",
+          "headings": [
+            "node",
+            "score"
+          ],
+          "items": [
+            {
+              "node": "{'path': '1,HTML,1,BODY,3,MAIN,0,SECTION,0,DIV,0,H1', 'type': 'node', 'lhId': 'page-1-H1', 'selector': 'main > section.py-16 > div.max-w-[1360px] > h1.font-funnel-display', 'boundingRect': {'left': 24",
+              "score": 0.000225
+            }
+          ],
+          "total_items": 1
+        },
+        "network-server-latency": {
+          "title": "Server Backend Latencies",
+          "headings": [
+            "origin",
+            "serverResponseTime"
+          ],
+          "items": [
+            {
+              "origin": "https://www.googletagmanager.com",
+              "serverResponseTime": 41
+            },
+            {
+              "origin": "https://sparkcore.fund",
+              "serverResponseTime": 1
+            },
+            {
+              "origin": "https://fonts.googleapis.com",
+              "serverResponseTime": 1
+            },
+            {
+              "origin": "https://fonts.gstatic.com",
+              "serverResponseTime": 1
+            },
+            {
+              "origin": "https://www.google-analytics.com",
+              "serverResponseTime": 1
+            }
+          ],
+          "total_items": 5
+        },
+        "network-requests": {
+          "title": "Network Requests",
+          "headings": [
+            "url",
+            "protocol",
+            "networkRequestTime",
+            "networkEndTime",
+            "transferSize",
+            "resourceSize",
+            "statusCode",
+            "mimeType",
+            "resourceType"
+          ],
+          "items": [
+            {
+              "url": "https://sparkcore.fund/blog",
+              "protocol": "http/1.1",
+              "networkRequestTime": 1.384000000078231,
+              "networkEndTime": 33.65100000053644,
+              "transferSize": 1654,
+              "resourceSize": 0,
+              "statusCode": 308,
+              "mimeType": "text/plain"
+            },
+            {
+              "url": "https://sparkcore.fund/blog/",
+              "protocol": "h2",
+              "networkRequestTime": 34.55200000014156,
+              "networkEndTime": 95.74200000055134,
+              "transferSize": 7474,
+              "resourceSize": 35869,
+              "statusCode": 200,
+              "mimeType": "text/html",
+              "resourceType": "Document"
+            },
+            {
+              "url": "https://sparkcore.fund/cdn-cgi/speculation",
+              "protocol": "h2",
+              "networkRequestTime": 103.96900000050664,
+              "networkEndTime": 122.94000000040978,
+              "transferSize": 1582,
+              "resourceSize": 128,
+              "statusCode": 200,
+              "mimeType": "application/speculationrules+json",
+              "resourceType": "Other"
+            },
+            {
+              "url": "https://sparkcore.fund/assets/js/analytics.js",
+              "protocol": "h2",
+              "networkRequestTime": 105.05800000019372,
+              "networkEndTime": 153.62200000043958,
+              "transferSize": 3796,
+              "resourceSize": 5876,
+              "statusCode": 200,
+              "mimeType": "application/javascript",
+              "resourceType": "Script"
+            },
+            {
+              "url": "https://sparkcore.fund/assets/css/style.css?v=1.4",
+              "protocol": "h2",
+              "networkRequestTime": 105.16500000050291,
+              "networkEndTime": 149.27700000070035,
+              "transferSize": 3194,
+              "resourceSize": 4532,
+              "statusCode": 200,
+              "mimeType": "text/css",
+              "resourceType": "Stylesheet"
+            }
+          ],
+          "total_items": 14
+        },
+        "main-thread-tasks": {
+          "title": "Tasks",
+          "headings": [
+            "startTime",
+            "duration"
+          ],
+          "items": [
+            {
+              "startTime": 99.55,
+              "duration": 12.372
+            },
+            {
+              "startTime": 177.034,
+              "duration": 34.642
+            },
+            {
+              "startTime": 214.695,
+              "duration": 20.318
+            },
+            {
+              "startTime": 235.063,
+              "duration": 6.035
+            },
+            {
+              "startTime": 326.331,
+              "duration": 86.269
+            }
+          ],
+          "total_items": 7
+        },
+        "has-hsts": {
+          "title": "Use a strong HSTS policy",
+          "headings": [
+            "description",
+            "directive",
+            "severity"
+          ],
+          "items": [
+            {
+              "description": "No `preload` directive found",
+              "directive": "preload",
+              "severity": "Medium"
+            }
+          ],
+          "total_items": 1
+        }
+      },
+      "error": null
+    }
+  },
+  "crux": {
+    "target": "https://sparkcore.fund/blog",
+    "metrics": {},
+    "collection_period": null,
+    "form_factor": "ALL",
+    "error": "No CrUX data for this URL. The site likely has insufficient Chrome traffic volume for eligibility."
+  },
+  "error": null
+}

@@ -1,0 +1,8 @@
+{
+  "target": "https://sparkcore.fund/fr/",
+  "form_factor": "ALL",
+  "metrics": {},
+  "collection_periods": [],
+  "trends": {},
+  "error": "No CrUX history data for this URL. Insufficient Chrome traffic volume for eligibility."
+}

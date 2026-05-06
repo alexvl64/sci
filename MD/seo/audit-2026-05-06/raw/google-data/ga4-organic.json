@@ -1,0 +1,51 @@
+{
+  "property": "530665322",
+  "report": "organic_traffic",
+  "date_range": {
+    "start": "2026-04-08",
+    "end": "2026-05-05"
+  },
+  "totals": {
+    "sessions": 2,
+    "users": 2,
+    "pageviews": 2,
+    "avg_daily_sessions": 1.0
+  },
+  "daily_data": [
+    {
+      "date": "20260501",
+      "sessions": 1,
+      "users": 1,
+      "pageviews": 1,
+      "bounce_rate": 100.0,
+      "avg_session_duration": 4.9,
+      "engagement_rate": 0.0
+    },
+    {
+      "date": "20260503",
+      "sessions": 1,
+      "users": 1,
+      "pageviews": 1,
+      "bounce_rate": 0.0,
+      "avg_session_duration": 38.7,
+      "engagement_rate": 100.0
+    }
+  ],
+  "top_pages": [
+    {
+      "landing_page": "/",
+      "sessions": 2,
+      "users": 2,
+      "pageviews": 2,
+      "bounce_rate": 50.0,
+      "engagement_rate": 50.0
+    }
+  ],
+  "quota_tokens_used": {
+    "daily_consumed": 1,
+    "daily_remaining": 199999,
+    "hourly_consumed": 1,
+    "hourly_remaining": 39999
+  },
+  "error": null
+}
