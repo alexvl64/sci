@@ -1,0 +1,38 @@
+# Cloudflare Pages _headers — sparkcore.fund
+# Applied to static asset responses (Functions override these for their routes)
+
+# ----------------------------------------------------------------
+# Global security headers + BETA noindex (remove X-Robots-Tag before prod)
+# ----------------------------------------------------------------
+/*
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  X-Robots-Tag: noindex, nofollow
+
+# ----------------------------------------------------------------
+# Gated pages — defense in depth (Functions also enforce this)
+# ----------------------------------------------------------------
+/factsheets/*
+  X-Robots-Tag: noindex, nofollow, noarchive
+
+/factsheets
+  X-Robots-Tag: noindex, nofollow, noarchive
+
+/discovery-call
+  X-Robots-Tag: noindex, nofollow, noarchive
+
+/discovery-call.html
+  X-Robots-Tag: noindex, nofollow, noarchive
+
+/validation.html
+  X-Robots-Tag: noindex, nofollow, noarchive
+
+# ----------------------------------------------------------------
+# PDFs served statically (contrats/) — no-store + noindex
+# Protected PDFs go through the Function which sets its own headers
+# ----------------------------------------------------------------
+/ressources/contrats/*
+  X-Robots-Tag: noindex, nofollow, noarchive
+  Cache-Control: no-store, no-cache, must-revalidate, private
