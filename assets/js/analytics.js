@@ -7,11 +7,11 @@
   if (!GA_MEASUREMENT_ID || GA_MEASUREMENT_ID === "G-XXXXXXXXXX") return;
   if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") return;
 
-  var script = document.createElement("script");
-  script.async = true;
-  script.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA_MEASUREMENT_ID);
-  document.head.appendChild(script);
-
+  // dataLayer + gtag must be available synchronously so that:
+  //  1. Consent Mode v2 defaults are recorded BEFORE gtag.js loads
+  //  2. Any synchronous gtag('event', ...) call from page scripts queues correctly
+  // gtag.js is loaded later, on first user intent or after a 3s idle window —
+  // the queue is replayed when the script executes.
   window.dataLayer = window.dataLayer || [];
   function gtag() {
     window.dataLayer.push(arguments);
@@ -31,6 +31,38 @@
     anonymize_ip: true
   });
 
+  // Lazy-load gtag.js on first user intent (pointer/touch/scroll/key/focus)
+  // or after 3s idle — whichever comes first.
+  var gtagLoaded = false;
+  function loadGtag() {
+    if (gtagLoaded) return;
+    gtagLoaded = true;
+    var script = document.createElement("script");
+    script.async = true;
+    script.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA_MEASUREMENT_ID);
+    document.head.appendChild(script);
+  }
+
+  var INTENT_EVENTS = ["pointerdown", "touchstart", "scroll", "keydown", "focusin"];
+  function onIntent() {
+    loadGtag();
+    for (var i = 0; i < INTENT_EVENTS.length; i++) {
+      window.removeEventListener(INTENT_EVENTS[i], onIntent, true);
+    }
+  }
+  for (var i = 0; i < INTENT_EVENTS.length; i++) {
+    // capture phase + passive so it never blocks scroll/touch
+    window.addEventListener(INTENT_EVENTS[i], onIntent, { passive: true, capture: true });
+  }
+
+  // Fallback: load after 3s of idle. requestIdleCallback when available,
+  // setTimeout otherwise (Safari < 16, older WebViews).
+  if ("requestIdleCallback" in window) {
+    window.requestIdleCallback(loadGtag, { timeout: 3000 });
+  } else {
+    setTimeout(loadGtag, 3000);
+  }
+
   function updateConsent(consentValue) {
     var granted = consentValue === "granted";
     gtag("consent", "update", {
@@ -42,6 +74,9 @@
     try {
       localStorage.setItem(CONSENT_STORAGE_KEY, consentValue);
     } catch (e) {}
+    // If the user accepts/rejects before the lazy timer fires, load gtag.js
+    // immediately so the consent update is processed without further delay.
+    loadGtag();
   }
 
   function getConsentLabels() {
@@ -49,10 +84,10 @@
     if (isFrench) {
       return {
         title: "",
-        text: "Nous utilisons des cookies essentiels pour une exp\u00e9rience personnalis\u00e9e. En savoir plus dans notre",
+        text: "Nous utilisons des cookies essentiels pour une expérience personnalisée. En savoir plus dans notre",
         accept: "Tout accepter",
         reject: "Refuser",
-        privacy: "Politique de confidentialit\u00e9"
+        privacy: "Politique de confidentialité"
       };
     }
     return {
@@ -154,5 +189,7 @@
       booking_source: bookingSource,
       lang: document.documentElement.lang || "en"
     });
+    // Booking is high-intent — make sure gtag.js loads now if it hasn't already.
+    loadGtag();
   });
 })();
