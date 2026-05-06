@@ -2,6 +2,8 @@
 
 > Registered alternative investment fund manager (AIFM) based in Estonia, specialising in crypto-assets.
 
+> Last updated: 2026-05-06
+
 SparkCore Fund Management (legal entity: SparkCore.investment OÜ) is an alternative investment fund manager incorporated in Estonia (registry no. 16265864), operating under the Small Fund Manager regime supervised by the Finantsinspektsioon (EFSA). The company manages funds invested in crypto-assets, targeting professional investors, institutional investors, and family offices. Accounting is handled by KPMG Estonia.
 
 ## Funds
@@ -26,6 +28,7 @@ SparkCore Fund Management (legal entity: SparkCore.investment OÜ) is an alterna
 ## Regulatory Structure
 
 - Legal entity: SparkCore.investment OÜ, Estonian registry no. 16265864
+- LEI (Legal Entity Identifier): 8945003BBN0RVNNB0S84 — https://search.gleif.org/#/record/8945003BBN0RVNNB0S84
 - Regime: Small Fund Manager registered with the Finantsinspektsioon (EFSA)
 - EFSA registry: https://www.fi.ee/en/guides/fund-management-companies/investment-market/small-fund-managers-without-activity-licence/sparkcoreinvestment-ou
 - Financial Institution licence: EFIU (KYC/AML) — https://mtr.ttja.ee/taotluse_tulemus/609065
