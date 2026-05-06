@@ -1,0 +1,22 @@
+{
+  "property": "sc-domain:sparkcore.fund",
+  "sitemaps": [
+    {
+      "path": "https://sparkcore.fund/sitemap.xml",
+      "last_submitted": "2026-03-11T05:00:12.368Z",
+      "is_pending": false,
+      "is_index": false,
+      "type": "sitemap",
+      "warnings": "0",
+      "errors": "0",
+      "contents": [
+        {
+          "type": "web",
+          "submitted": "26",
+          "indexed": "0"
+        }
+      ]
+    }
+  ],
+  "error": null
+}

@@ -90,7 +90,7 @@ Sitemap.xml ne contient PAS ces 3 pages (volontaire). GSC URL Inspection 2026-05
 
 > Si une nouvelle page gated est créée à l'avenir, propager les 4 couches — sinon elle peut fuiter via `llms.txt` ou les AI crawlers même avec un meta noindex.
 
-### APIs Google connectées (config `~/.config/claude-seo/projects/sci.json`)
+### APIs connectées (config `~/.config/claude-seo/projects/sci.json`)
 
 | API | Statut | Notes |
 |---|---|---|
@@ -100,7 +100,10 @@ Sitemap.xml ne contient PAS ces 3 pages (volontaire). GSC URL Inspection 2026-05
 | GSC Indexing API | ✅ | |
 | PageSpeed Insights | ⚠️ | bug script `audit_details` côté skill (credentials OK) |
 | CrUX history | ⚠️ | trafic Chrome insuffisant — normal pour site récent |
+| Cloudflare API | ✅ Read-only | clé `cloudflare_api_token`, IP-restreinte au VPS, créée 2026-05-06. Voir section Cloudflare ci-dessous pour usage. |
 | Google Ads | ❌ | non applicable (pas d'ads) |
+| Bing Webmaster | ✅ | clé dans `backlinks-projects/sci.json`, voir section Bing WMT |
+| IndexNow | ✅ | clé `27994a06b868d24820429dc36c1bafee`, script `scripts/ops/indexnow_ping.py` |
 
 Service Account partagé : `claude-seo@sparkcore-projet-1733486598578.iam.gserviceaccount.com` (Viewer sur GA4, Full sur GSC).
 
@@ -314,19 +317,41 @@ Le `.htaccess` est conservé dans le repo pour référence historique mais **n'e
 | Firewall Custom | Block archiving bots | ✅ actif |
 | Page Rule | sitemap.xml cache bypass | ⚠️ legacy OVH, peut être supprimé |
 
-### Cloudflare zone — settings (audit 2026-05-06)
+### Cloudflare zone — settings (vérifié via API 2026-05-06)
+
+État actuel (lu via Cloudflare API `/zones/{id}/settings/{key}`) :
 
 ```
 ssl: strict          ✅
-tls_1_3: on          ✅
+tls_1_3: zrt         ✅ (= TLS 1.3 + 0-RTT, mieux qu'on)
 http3: on            ✅
 brotli: on           ✅
 browser_cache_ttl: 31536000  ✅
-always_use_https: off        ⚠️ recommandé: on
-min_tls_version: 1.0         ⚠️ recommandé: 1.2
-0rtt: off                    💡 recommandé: on (perf)
-early_hints: off             💡 recommandé: on (perf)
+always_use_https: on         ✅
+min_tls_version: 1.2         ✅
+0rtt: on                     ✅
+early_hints: on              ✅
 ```
+
+> Tous les recommendations de l'audit `2026-05-06` sont **déjà appliqués**. La config CF zone est en l'état idéal pour Free plan.
+
+### Cloudflare API — token disponible
+
+Token "Read-all" dans `~/.config/claude-seo/projects/sci.json` clé `cloudflare_api_token` :
+- Scope : Read-only sur le compte (lecture zones/settings/DNS)
+- IP-restriction : `158.220.123.20` (VPS uniquement — IPv6 sortant doit être désactivé pour les appels API, force IPv4 via `socket.AF_INET`)
+- Créé : 2026-05-06
+
+Usage typique :
+```bash
+TOKEN=$(jq -r .cloudflare_api_token ~/.config/claude-seo/projects/sci.json)
+curl -4 -H "Authorization: Bearer $TOKEN" \
+  https://api.cloudflare.com/client/v4/zones?name=sparkcore.fund
+```
+
+Si besoin d'écrire des settings (modifier zone, créer Page Rules, etc.) → créer un nouveau token avec `Zone:Zone Settings:Edit` permissions, IP-restriction au VPS, et le sauver sous une clé séparée `cloudflare_api_token_write` dans le même fichier (ne jamais réutiliser le read-only).
+
+> **Le token de dsungkur n'existe pas** (`cloudflare_api_token` absent de `projects/dsungkur.json`). Si dsungkur en a besoin, créer un token séparé scoped à la zone dsungkur.com — ne pas partager celui de sci.
 
 ### `.htaccess` (legacy OVH — conservé pour référence)
 
