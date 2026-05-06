@@ -45,9 +45,12 @@
     <link rel="preload" href="../assets/css/tailwind.min.css?v=1.0" as="style">
     <link rel="preload" as="image" href="/assets/images/webp/hero-image.webp" imagesrcset="/assets/images/webp/hero-image-480.webp 480w, /assets/images/webp/hero-image-768.webp 768w, /assets/images/webp/hero-image.webp 1440w" imagesizes="(max-width: 480px) 480px, (max-width: 768px) 768px, 1440px" fetchpriority="high">
     <link rel="stylesheet" href="../assets/css/style.css?v=1.5" />
-    <!-- aos css -->
-    <link rel="stylesheet" href="../assets/css/aos.min.css" />
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <!-- aos css — non-critical, loaded async -->
+    <link rel="preload" href="../assets/css/aos.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="../assets/css/aos.min.css"></noscript>
+    <!-- toastify css — non-critical, loaded async -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"></noscript>
 
     <link rel="stylesheet" href="../assets/css/tailwind.min.css?v=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/apexcharts" defer></script>
