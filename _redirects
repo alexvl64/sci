@@ -1,0 +1,22 @@
+# Cloudflare Pages _redirects — sparkcore.fund
+# Format: /source /destination statusCode
+# First match wins — specific rules before generic ones
+
+# ----------------------------------------------------------------
+# Blog slug 301s (mirrors .htaccess, commit 3a79321)
+# ----------------------------------------------------------------
+/blog/low-volatility-crypto-strategy/          /blog/what-a-market-neutral-crypto-fund-does   301
+/blog/low-volatility-crypto-strategy           /blog/what-a-market-neutral-crypto-fund-does   301
+/blog/estonian-aifm-crypto-fund/               /blog/regulated-crypto-fund-manager-estonia    301
+/blog/estonian-aifm-crypto-fund                /blog/regulated-crypto-fund-manager-estonia    301
+/blog/how-white-label-funds-launch-in-crypto/  /blog/white-label-crypto-fund-manager-services 301
+/blog/how-white-label-funds-launch-in-crypto   /blog/white-label-crypto-fund-manager-services 301
+
+# /en/ → / (external link ghost path)
+/en/  /  301
+/en   /  301
+
+# ----------------------------------------------------------------
+# Blog trailing slash removal (generic — replaces CF Transform Rule)
+# ----------------------------------------------------------------
+/blog/:slug/  /blog/:slug  301

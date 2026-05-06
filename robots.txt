@@ -33,36 +33,43 @@ User-agent: GPTBot
 Allow: /
 Disallow: /factsheets/
 Disallow: /discovery-call
+Disallow: /MD/
 
 User-agent: OAI-SearchBot
 Allow: /
 Disallow: /factsheets/
 Disallow: /discovery-call
+Disallow: /MD/
 
 User-agent: Google-Extended
 Allow: /
 Disallow: /factsheets/
 Disallow: /discovery-call
+Disallow: /MD/
 
 User-agent: ClaudeBot
 Allow: /
 Disallow: /factsheets/
 Disallow: /discovery-call
+Disallow: /MD/
 
 User-agent: PerplexityBot
 Allow: /
 Disallow: /factsheets/
 Disallow: /discovery-call
+Disallow: /MD/
 
 User-agent: CCBot
 Allow: /
 Disallow: /factsheets/
 Disallow: /discovery-call
+Disallow: /MD/
 
 # All other crawlers — block sensitive paths
 User-agent: *
 Disallow: /factsheets/
 Disallow: /discovery-call
+Disallow: /MD/
 Disallow: /validation.html
 Disallow: /404.html
 Disallow: /403.html
