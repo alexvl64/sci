@@ -7,7 +7,9 @@ Context and configuration reference for Claude Code sessions on the `alexvl64/sc
 ## Project overview
 
 - **Site:** sparkcore.fund — static HTML/CSS/JS, bilingual EN/FR
-- **Hosting:** Apache/OVH, behind Cloudflare CDN
+- **Hosting:** Cloudflare Pages (migrated from OVH 2026-05-06)
+  - Prod: `sparkcore-fund` project → `main` branch → `sparkcore.fund`
+  - Beta: `sparkcore-fund-beta` project → `beta` branch → `beta.sparkcore.fund`
 - **Stack:** Tailwind CSS (local build, `tailwind.min.css?v=1.0`), custom CSS (`style.css?v=1.4`), vanilla JS
 - **Entity:** SparkCore.investment OÜ — regulated AIFM (small fund manager), supervised by Finantsinspektsioon (Estonia)
 - **Ads:** aucune publicité payante (Google Ads, Meta, LinkedIn, etc.) — site institutionnel YMYL réservé aux investisseurs professionnels
@@ -168,12 +170,22 @@ Décision argumentée de **ne PAS installer Clarity** sur sparkcore.fund :
 
 ---
 
-## Git workflow
+## Git workflow & déploiement
 
 - Always create a **new branch from `main`** for each task
 - Branch naming: `claude/<short-description>`
 - Commit, push, create PR, then merge (squash)
 - Never push directly to `main`
+
+### Déploiement automatique (Cloudflare Pages)
+
+| Action | Résultat | Délai |
+|---|---|---|
+| Merge PR → `main` | Deploy auto sur `sparkcore.fund` | ~30-60 sec |
+| Push → `beta` | Deploy auto sur `beta.sparkcore.fund` | ~30-60 sec |
+| PR ouverte (feature branch) | Preview URL `branch.sparkcore-fund-beta.pages.dev` | ~30-60 sec |
+
+Workflow recommandé : feature branch → PR vers `beta` (tester sur beta.sparkcore.fund) → PR vers `main` (prod).
 
 ---
 
@@ -194,15 +206,16 @@ The following files are gitignored and must never be committed or pushed:
 
 ## Security architecture
 
-### Backend PHP — état actuel (post audit 2026-04-15)
+### Backend — CF Pages Functions (post migration 2026-05-06)
 
-Un seul fichier PHP en production : **`secure_pdf.php`** (sert les PDFs d'instructions de dépôt avec vérification SHA-256). Tout le reste a été supprimé comme code mort.
+Plus de PHP. Le seul backend est une **CF Pages Function** en JS :
 
-| Fichier | État | Pourquoi |
+| Fichier | État | Rôle |
 |---|---|---|
-| `proxy.php` | ❌ Supprimé | Code mort — jamais référencé en JS/HTML, le formulaire de contact appelle FormCarry directement |
-| `form_config.php` | ❌ Supprimé | Code mort — jamais inclus, la clé Turnstile est gérée côté FormCarry |
-| `secure_pdf.php` | ✅ Conservé + hardenisé | Sert les PDFs avec hash SHA-256 (utilise `hash_equals()` contre timing attacks) |
+| `proxy.php` | ❌ Supprimé | Code mort |
+| `form_config.php` | ❌ Supprimé | Code mort |
+| `secure_pdf.php` | ❌ Supprimé | Remplacé par `functions/ressources/[[path]].js` |
+| `functions/ressources/[[path]].js` | ✅ Actif | Gate SHA-256 pour PDFs dépôt sur CF Pages |
 
 ### Formulaires de contact
 
@@ -212,28 +225,31 @@ Les deux formulaires (sidebar + newsletter) appellent **FormCarry directement** 
 
 Le token Turnstile (`cf-turnstile-response`) est joint au FormData. La validation server-side est faite par FormCarry (clé secrète configurée dans leur dashboard).
 
-### Headers de sécurité actifs (via `.htaccess`)
+### Headers de sécurité actifs
 
-| Header | Valeur | But |
-|---|---|---|
-| `X-Frame-Options` | `SAMEORIGIN` | Anti-clickjacking |
-| `X-Content-Type-Options` | `nosniff` | Anti MIME-sniffing |
-| `Referrer-Policy` | `strict-origin-when-cross-origin` | Limite la fuite d'URL referrer |
-| `Permissions-Policy` | `geolocation=(), microphone=(), camera=()` | Coupe l'accès aux APIs sensibles |
-| `X-Powered-By` | *unset* | Masque la version PHP |
-| `X-Robots-Tag` (sur PDFs) | `noindex, nofollow, noarchive` | Empêche l'indexation des PDFs |
+Deux sources complémentaires :
 
-### `secure_pdf.php` — sécurité
+| Source | Headers |
+|---|---|
+| `_headers` (CF Pages) | `X-Frame-Options`, `X-Content-Type-Options`, `Referrer-Policy`, `Permissions-Policy`, `X-Robots-Tag` sur pages gated + MD/ |
+| CF Transform Rule | `Content-Security-Policy` (couvre toute la zone, y compris beta) |
+| CF Pages Function | `Cache-Control: no-store`, `X-Robots-Tag: noindex` sur PDFs protégés |
 
-- Comparaison de hash via `hash_equals()` (pas `!==`) → résistant aux timing attacks
-- Headers ajoutés : `Cache-Control: no-store`, `Pragma: no-cache`, `X-Content-Type-Options: nosniff`, `X-Robots-Tag: noindex`
-- `Content-Disposition: inline; filename="..."` (consultation navigateur, pas téléchargement forcé)
+### PDF gate — CF Pages Function
 
-### PDF blocking — règles `.htaccess`
+- Fichier : `functions/ressources/[[path]].js`
+- PDFs protégés (`instructions_depot_*`, `deposit_*`) : accès bloqué sans `?h=<sha256>` correct → 403
+- Contrats (`/ressources/contrats/*.pdf`) : pass-through vers le static asset store
+- Hash comparison XOR (constant-time, réplique `hash_equals()` PHP)
+- URL format : `/ressources/<filename>.pdf?h=<sha256-du-fichier>`
+- **Mettre à jour les hashes dans la Function si un PDF est remplacé** (`sha256sum <fichier>`)
 
-- Tout fichier PDF dont le nom commence par `instructions_depot_*` (FR) ou `deposit_*` (EN) est bloqué en accès HTTP direct → forcé via `secure_pdf.php`
-- Les contrats `/ressources/contrats/*.pdf` restent accessibles via URL directe (partage par email uniquement, conforme au modèle de menace)
-- Tous les PDFs ont `X-Robots-Tag: noindex` → jamais indexés par Google/Bing/AI crawlers
+Hashes actuels (2026-05-06) :
+```
+instructions_depot_dynamic_trends.pdf  → 6dd4b62679ebe03a60acca7d1d0ed853a52becfffa61515de03fb0958209d3f8
+instructions_depot_cryptovision.pdf    → bbe56dfa98a64d40b195d8ff548300e8fdf4ac8e66ab4b78b78c81621ee43e55
+deposit_instructions_quants_space.pdf  → 660385624f4f305eab4b0b4a3a2f940d88816d06427efceff1bb70d3d40fe0a2
+```
 
 ### Décisions de sécurité explicites (assumées, non corrigées)
 
@@ -259,9 +275,60 @@ L'audit recommandait initialement :
 
 ---
 
-## Apache / OVH server configuration (.htaccess)
+## Cloudflare Pages — configuration infrastructure
 
-The `.htaccess` is **tracked in git** (since 2026-04-15) and deployed automatically via GitHub → OVH server. No manual sync needed.
+Le `.htaccess` est conservé dans le repo pour référence historique mais **n'est plus exécuté** (CF Pages ignore Apache config). Les équivalents CF Pages sont :
+
+| `.htaccess` | Équivalent CF Pages |
+|---|---|
+| Redirects 301 slugs blog | `_redirects` |
+| Headers sécurité | `_headers` + CF Transform Rule |
+| Blocage PDFs dépôt | `functions/ressources/[[path]].js` |
+| URL rewriting .html | Natif CF Pages |
+| Error pages | `/404.html` auto-utilisé par CF Pages |
+
+### CF Pages projects
+
+| Projet | Branche | Domaine |
+|---|---|---|
+| `sparkcore-fund` | `main` | `sparkcore.fund` |
+| `sparkcore-fund-beta` | `beta` | `beta.sparkcore.fund` |
+
+### `_redirects` — redirects actifs
+
+```
+/blog/low-volatility-crypto-strategy   → /blog/what-a-market-neutral-crypto-fund-does  301
+/blog/estonian-aifm-crypto-fund        → /blog/regulated-crypto-fund-manager-estonia   301
+/blog/how-white-label-funds-launch-in-crypto → /blog/white-label-crypto-fund-manager-services 301
+/en/                                   → /  301
+/blog/:slug/                           → /blog/:slug  301
+```
+
+### Cloudflare zone — règles actives (audit 2026-05-06)
+
+| Type | Règle | Statut |
+|---|---|---|
+| Transform Rule | CSP header (toute la zone) | ✅ actif |
+| Redirect Rule | www → non-www (301) | ✅ actif |
+| Redirect Rule | blog trailing slash removal | ✅ actif |
+| Firewall Custom | Block archiving bots | ✅ actif |
+| Page Rule | sitemap.xml cache bypass | ⚠️ legacy OVH, peut être supprimé |
+
+### Cloudflare zone — settings (audit 2026-05-06)
+
+```
+ssl: strict          ✅
+tls_1_3: on          ✅
+http3: on            ✅
+brotli: on           ✅
+browser_cache_ttl: 31536000  ✅
+always_use_https: off        ⚠️ recommandé: on
+min_tls_version: 1.0         ⚠️ recommandé: 1.2
+0rtt: off                    💡 recommandé: on (perf)
+early_hints: off             💡 recommandé: on (perf)
+```
+
+### `.htaccess` (legacy OVH — conservé pour référence)
 
 Current configuration:
 
