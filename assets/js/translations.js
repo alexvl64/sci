@@ -41,8 +41,21 @@ const translations = {
     sidebarSubmit: "Nous contacter",
 
     // === HERO ===
-    heroTitle: "Gestion Institutionnelle <span class=\"block\">de Fonds en Crypto-actifs</span>",
-    heroTagline: "L'investissement fiable dans l'univers des crypto-actifs",
+    heroTitle: "Stratégies institutionnelles <span class=\"block\">sur les actifs numériques</span>",
+    heroTagline: "Trois approches distinctes. Un cadre réglementé. Conçu pour les investisseurs qui exigent la rigueur.",
+    heroCtaPrimary: "Planifier un appel →",
+    heroCtaSecondary: "Demander la documentation",
+    heroCommentaryLink: "Lire notre dernier commentaire de marché →",
+
+    // === OUR APPROACH ===
+    approachTitle: "Notre approche",
+    approachSubtitle: "Une exposition disciplinée aux marchés des actifs numériques — avec la rigueur opérationnelle attendue des gérants alternatifs institutionnels.",
+    approachP1Title: "Disciplinée",
+    approachP1: "Chaque stratégie opère avec des objectifs de risque explicites, un dimensionnement de position systématique et un noyau défensif algorithmique indépendant.",
+    approachP2Title: "Transparente",
+    approachP2: "Lettres mensuelles aux investisseurs, valorisation trimestrielle auditée par KPMG, reporting sur demande.",
+    approachP3Title: "Réglementée",
+    approachP3: "Structure AIF estonienne supervisée par la Finantsinspektsioon — le même cadre opérationnel que les gestionnaires alternatifs traditionnels.",
 
     // === FUNDS SECTION ===
     fundsTitle: "Nos fonds d'investissement crypto",
@@ -150,7 +163,7 @@ const translations = {
     footerLicenceLink: "EFIU (Institution Financière)",
     footerAddress: "N° d'enregistrement : 16265864 — Männimäe 1, Pudisoo, 74626 comté de Harju, Estonie",
     footerDisclaimerLabel: "Avertissement :",
-    footerWarning: "Les performances passées ne garantissent pas les performances futures. Les crypto-actifs présentent un risque élevé, incluant un risque de perte totale. Ce site et les graphiques de performance sont fournis à titre informatif uniquement et ne constituent pas une offre d'investissement. L'accès aux stratégies est réservé aux investisseurs qualifiés ou professionnels. Veuillez évaluer votre situation personnelle et obtenir un avis indépendant avant d'investir.",
+    footerWarning: "Les performances passées ne garantissent pas les performances futures. Les crypto-actifs présentent un risque élevé, incluant un risque de perte totale. Ce site et les graphiques de performance sont fournis à titre informatif uniquement et ne constituent pas une offre d'investissement. L'accès aux stratégies SparkCore est réservé aux investisseurs expérimentés, aux investisseurs institutionnels et aux family offices. Investissement minimum : 50 000 €. Veuillez évaluer votre situation personnelle et obtenir un avis indépendant avant d'investir.",
     footerPrivacyLink: "Politique de confidentialité",
     footerInsightsLink: "Articles",
 
@@ -212,8 +225,21 @@ const translations = {
     sidebarSubmit: "Contact Us",
 
     // === HERO ===
-    heroTitle: "Institutional Crypto Asset <span class=\"block\">Fund Management</span>",
-    heroTagline: "Reliable investment in the crypto-asset universe",
+    heroTitle: "Institutional-grade strategies <span class=\"block\">in digital assets</span>",
+    heroTagline: "Three distinct approaches. One regulated framework. Managed for investors who demand precision.",
+    heroCtaPrimary: "Schedule a Discovery Call →",
+    heroCtaSecondary: "Request Documentation",
+    heroCommentaryLink: "Read our latest market commentary →",
+
+    // === OUR APPROACH ===
+    approachTitle: "Our approach",
+    approachSubtitle: "Disciplined, regulated exposure to digital asset markets — with the operational rigour you expect from institutional alternative managers.",
+    approachP1Title: "Disciplined",
+    approachP1: "Each strategy operates with explicit risk targets, systematic position-sizing, and an independent algorithmic defensive core.",
+    approachP2Title: "Transparent",
+    approachP2: "Monthly investor letters, quarterly NAV with KPMG-audited accounting, and on-demand portfolio reporting.",
+    approachP3Title: "Regulated",
+    approachP3: "Estonian AIF structure supervised by Finantsinspektsioon — the same operational framework as traditional alternative asset managers.",
 
     // === FUNDS SECTION ===
     fundsTitle: "Our crypto investment funds",
@@ -321,7 +347,7 @@ const translations = {
     footerLicenceLink: "EFIU (Financial Institution)",
     footerAddress: "Reg. No. 16265864 — Männimäe 1, Pudisoo, 74626 Harju County, Estonia",
     footerDisclaimerLabel: "Disclaimer:",
-    footerWarning: "Past performance does not guarantee future results. Crypto-assets carry a high level of risk, including the risk of total loss. This website and performance charts are provided for informational purposes only and do not constitute an investment offer. Access to the strategies is reserved for qualified or professional investors. Please assess your personal situation and seek independent advice before investing.",
+    footerWarning: "Past performance does not guarantee future results. Crypto-assets carry a high level of risk, including the risk of total loss. This website and performance charts are provided for informational purposes only and do not constitute an investment offer. Access to SparkCore strategies is reserved for experienced investors, institutional investors and family offices. Minimum investment: €50,000. Please assess your personal situation and seek independent advice before investing.",
     footerPrivacyLink: "Privacy Policy",
     footerInsightsLink: "Insights",
 

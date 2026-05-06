@@ -121,3 +121,55 @@ input[type="number"] {
   background-color: #F3F5F7 !important;
   color: #0E1117 !important;
 }
+
+/* ── Trust strip ── */
+.trust-strip {
+  background-color: #F3F5F7;
+  border-bottom: 1px solid #D0DAE3;
+}
+.trust-strip__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px 24px;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 14px 24px;
+}
+@media (min-width: 1024px) {
+  .trust-strip__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0 32px;
+  }
+}
+.trust-strip__label {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  color: #667085;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 2px;
+}
+.trust-strip__value {
+  display: block;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #0E1117;
+  text-decoration: none;
+}
+a.trust-strip__value:hover {
+  text-decoration: underline;
+}
+
+/* ── Hero ghost CTA ── */
+.hero-cta-ghost {
+  background: transparent;
+  color: #DBD1BC;
+  border: 1px solid #DBD1BC;
+  transition: background 0.3s, color 0.3s;
+}
+.hero-cta-ghost:hover {
+  background: #DBD1BC;
+  color: #0E1117;
+}
