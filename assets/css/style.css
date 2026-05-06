@@ -122,6 +122,13 @@ input[type="number"] {
   color: #0E1117 !important;
 }
 
+/* ── Hero left content — right padding to prevent text touching image ── */
+@media (min-width: 768px) {
+  .hero-content-left {
+    padding-right: 48px;
+  }
+}
+
 /* ── Section light background (Our approach) ── */
 .section-light-bg {
   background-color: #F3F5F7;
