@@ -122,6 +122,11 @@ input[type="number"] {
   color: #0E1117 !important;
 }
 
+/* ── Section light background (Our approach) ── */
+.section-light-bg {
+  background-color: #F3F5F7;
+}
+
 /* ── Trust strip ── */
 .trust-strip {
   background-color: #F3F5F7;
