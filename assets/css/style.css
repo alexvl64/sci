@@ -143,7 +143,19 @@ input[type="number"] {
 @media (min-width: 1024px) {
   .trust-strip__grid {
     grid-template-columns: repeat(4, 1fr);
-    gap: 0 32px;
+    gap: 0;
+    padding: 14px 24px;
+  }
+  .trust-strip__grid > div {
+    padding: 0 24px;
+    border-left: 1px solid #D0DAE3;
+  }
+  .trust-strip__grid > div:first-child {
+    padding-left: 0;
+    border-left: none;
+  }
+  .trust-strip__grid > div:last-child {
+    padding-right: 0;
   }
 }
 .trust-strip__label {
