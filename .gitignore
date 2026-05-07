@@ -6,3 +6,4 @@ form_config.php
 *.key
 *.pem
 logs/
+.claude/settings.local.json
