@@ -171,6 +171,54 @@ Décision argumentée de **ne PAS installer Clarity** sur sparkcore.fund :
 
 À reconsidérer **uniquement si** : trafic > 100 sessions/mois pendant 3 mois consécutifs ET point de friction CRO identifié ET bandwidth pour mettre à jour le compliance legal.
 
+### Audio narration — Cloud Text-to-Speech (mis en place 2026-05-07)
+
+Génération d'audio de narration pour les articles longs (ex: `/fr/blog/clarity-act-us-impacts-investisseurs`). Player UI custom charte SparkCore + sticky mini-bar bottom (`assets/css/audio-player.css` + `assets/js/audio-player.js`).
+
+| Élément | Valeur |
+|---|---|
+| **Service** | Google **Cloud** Text-to-Speech (≠ Gemini AI Studio TTS) |
+| **Endpoint** | `texttospeech.googleapis.com` |
+| **Projet GCP** | `sparkcore-projet-1733486598578` (numéro `319198584479`) — owner `sparkcore.public.df59f6@gmail.com` |
+| **Auth** | Service account existant `claude-seo@sparkcore-projet-1733486598578.iam.gserviceaccount.com` (déjà configuré pour GSC/GA4) |
+| **Script** | `scripts/ops/tts_cloud_long.py` — chunking par paragraphe (max 4500 chars/chunk) + concat ffmpeg avec 0,4s silence inter-chunk |
+| **Voix par défaut** | `fr-FR-Neural2-G` (MALE, narrative pro) — gratuite via free tier 1M chars/mois |
+| **Voix premium** | `fr-FR-Chirp3-HD-Charon` (MALE, $30/1M chars), `fr-FR-Studio-D` (MALE broadcast, $160/1M chars) |
+| **Format output** | MP3 mono 96 kbps 24 kHz |
+
+#### Pourquoi Cloud TTS et pas Gemini TTS Flash AI Studio
+
+Gemini TTS Flash (`gemini-2.5-flash-preview-tts`) a une **limite de durée audio output non documentée** : pour un texte de ~4 600 mots / 30 000 chars, il compresse la prosodie pour rester sous ~10 min audio, donnant un débit anormal de **~420 wpm** au lieu de 130-160 wpm normal en français. Vérifié 2026-05-07 sur l'article CLARITY Act (audio livré $3,67, débit non uniforme entre début et fin).
+
+Cloud TTS Neural2 / Chirp3-HD n'a **pas cette limite** : chaque chunk de 4 500 chars est généré indépendamment avec un débit naturel uniforme. Concaténation propre via ffmpeg avec petit silence inter-section pour respiration.
+
+#### Pricing Cloud TTS (vérifié 2026-05-07)
+
+| Tier | Prix /1M chars | Free tier mensuel | Pour article 30k chars |
+|---|---|---|---|
+| Standard | $4 | 4M chars/mois | $0 |
+| Wavenet / Neural2 | $16 | **1M chars/mois** | **$0** (volume sci faible) |
+| Chirp3-HD (Gemini-based) | $30 | aucun | $0,90 |
+| Studio (broadcast) | $160 | 100k chars/mois | $4,80 |
+
+Sci faisant ~12 articles/an avec audio, Neural2 reste largement sous le free tier → coût effectif **$0/an**.
+
+#### Activation
+
+API activée le 2026-05-07 sur le projet sparkcore depuis le compte `sparkcore.public.df59f6@gmail.com`. Aucune nouvelle clé créée — réutilisation du SA existant. Pour activer une nouvelle voix premium ou modifier les permissions IAM, utiliser le compte `sparkcore.public.df59f6@gmail.com` (pas `alex@cointips.fr`).
+
+#### Usage
+
+```bash
+export GOOGLE_APPLICATION_CREDENTIALS="/home/alex/.config/claude-seo/service_account.json"
+python3 /tmp/tts_venv/bin/python scripts/ops/tts_cloud_long.py \
+  --input /tmp/article_audio_text.txt \
+  --output assets/audio/<slug>.mp3 \
+  --voice fr-FR-Neural2-G
+```
+
+Le venv `/tmp/tts_venv/` est temporaire (recréé si besoin via `python3 -m venv /tmp/tts_venv && /tmp/tts_venv/bin/pip install google-cloud-texttospeech`). Pour persistance, créer `~/.config/claude-seo/tts-venv/` ou ajouter `google-cloud-texttospeech` à un requirements global.
+
 ---
 
 ## Git workflow & déploiement
