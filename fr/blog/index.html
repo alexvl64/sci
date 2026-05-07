@@ -111,6 +111,61 @@
         border-color: #0E1117;
         box-shadow: 0 4px 16px rgba(14, 17, 23, 0.08);
       }
+      .filter-chips-wrap {
+        position: relative;
+      }
+      .filter-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      @media (max-width: 640px) {
+        .filter-chips {
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          padding-bottom: 0.5rem;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none;
+        }
+        .filter-chips::-webkit-scrollbar { display: none; }
+        .filter-chips-wrap::after {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 0;
+          bottom: 0.5rem;
+          width: 32px;
+          background: linear-gradient(to right, transparent, white);
+          pointer-events: none;
+        }
+      }
+      .filter-chip {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.875rem;
+        line-height: 1.4;
+        padding: 0.5rem 1rem;
+        border: 1px solid #D0DAE3;
+        border-radius: 999px;
+        background: white;
+        color: #475569;
+        cursor: pointer;
+        transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+        white-space: nowrap;
+        font-weight: 400;
+      }
+      .filter-chip:hover {
+        border-color: #0E1117;
+        color: #0E1117;
+      }
+      .filter-chip:focus-visible {
+        outline: 2px solid #0E1117;
+        outline-offset: 2px;
+      }
+      .filter-chip.active {
+        background: #0E1117;
+        border-color: #0E1117;
+        color: white;
+      }
     </style>
   </head>
 
@@ -147,13 +202,24 @@
             Perspectives et analyses en français sur l'investissement, la gestion du risque et la gestion de fonds réglementée.
           </p>
 
-          <p class="font-inter text-base text-mediumGray leading-160 mb-12 max-w-[820px]">
+          <p class="font-inter text-base text-mediumGray leading-160 mb-10 max-w-[820px]">
             SparkCore Fund Management (entité juridique SparkCore.investment OÜ) est un gestionnaire de fonds d'investissement alternatifs (AIFM) enregistré en Estonie et supervisé par la Finantsinspektsioon. Nos articles explorent les réalités pratiques de la gestion d'actifs — de la discipline d'investissement à la gestion du risque de marché, en passant par la structuration de fonds réglementés en Europe.
           </p>
 
+          <div class="filter-chips-wrap mb-12">
+            <p class="font-inter text-xs text-steelBlue uppercase tracking-widest mb-4">Filtrer par catégorie</p>
+            <div class="filter-chips" role="group" aria-label="Filtrer les articles par catégorie">
+              <button type="button" class="filter-chip active" data-cat="all" aria-pressed="true">Tous (5)</button>
+              <button type="button" class="filter-chip" data-cat="regulation" aria-pressed="false">Régulation crypto (1)</button>
+              <button type="button" class="filter-chip" data-cat="markets" aria-pressed="false">Marchés (2)</button>
+              <button type="button" class="filter-chip" data-cat="defi" aria-pressed="false">Infrastructure &amp; DeFi (1)</button>
+              <button type="button" class="filter-chip" data-cat="risk" aria-pressed="false">Gestion du risque (1)</button>
+            </div>
+          </div>
+
           <div class="grid md:grid-cols-2 gap-8">
             <!-- Article : CLARITY Act US (FR) -->
-            <a href="/fr/blog/clarity-act-us-impacts-investisseurs" class="blog-card rounded-lg p-8 flex flex-col justify-between">
+            <a href="/fr/blog/clarity-act-us-impacts-investisseurs" data-category="regulation" class="blog-card rounded-lg p-8 flex flex-col justify-between">
               <div>
                 <p class="font-inter text-xs text-steelBlue uppercase tracking-widest mb-3">Régulation crypto</p>
                 <h2 class="font-funnel-display text-xl sm:text-2xl text-darkGray !leading-130 mb-3">
@@ -168,7 +234,7 @@
               </span>
             </a>
             <!-- Article : Indicateurs marché crypto (FR) -->
-            <a href="/fr/blog/indicateurs-marche-crypto-actifs" class="blog-card rounded-lg p-8 flex flex-col justify-between">
+            <a href="/fr/blog/indicateurs-marche-crypto-actifs" data-category="markets" class="blog-card rounded-lg p-8 flex flex-col justify-between">
               <div>
                 <p class="font-inter text-xs text-steelBlue uppercase tracking-widest mb-3">Marchés crypto</p>
                 <h2 class="font-funnel-display text-xl sm:text-2xl text-darkGray !leading-130 mb-3">
@@ -183,7 +249,7 @@
               </span>
             </a>
             <!-- Article : Agents IA & Blockchain (FR) -->
-            <a href="/fr/blog/agents-ia-blockchain-economie-agentique" class="blog-card rounded-lg p-8 flex flex-col justify-between">
+            <a href="/fr/blog/agents-ia-blockchain-economie-agentique" data-category="defi" class="blog-card rounded-lg p-8 flex flex-col justify-between">
               <div>
                 <p class="font-inter text-xs text-steelBlue uppercase tracking-widest mb-3">Infrastructure &amp; DeFi</p>
                 <h2 class="font-funnel-display text-xl sm:text-2xl text-darkGray !leading-130 mb-3">
@@ -198,7 +264,7 @@
               </span>
             </a>
             <!-- Article : Stratégies d'Options (FR) -->
-            <a href="/fr/blog/strategies-options-protection-portefeuille-actions" class="blog-card rounded-lg p-8 flex flex-col justify-between">
+            <a href="/fr/blog/strategies-options-protection-portefeuille-actions" data-category="risk" class="blog-card rounded-lg p-8 flex flex-col justify-between">
               <div>
                 <p class="font-inter text-xs text-steelBlue uppercase tracking-widest mb-3">Gestion du risque</p>
                 <h2 class="font-funnel-display text-xl sm:text-2xl text-darkGray !leading-130 mb-3">
@@ -213,7 +279,7 @@
               </span>
             </a>
             <!-- Article : Market Timing (FR) -->
-            <a href="/fr/blog/le-vrai-cout-du-market-timing" class="blog-card rounded-lg p-8 flex flex-col justify-between">
+            <a href="/fr/blog/le-vrai-cout-du-market-timing" data-category="markets" class="blog-card rounded-lg p-8 flex flex-col justify-between">
               <div>
                 <p class="font-inter text-xs text-steelBlue uppercase tracking-widest mb-3">Marchés</p>
                 <h2 class="font-funnel-display text-xl sm:text-2xl text-darkGray !leading-130 mb-3">
@@ -337,5 +403,6 @@
     </footer>
 
     <script src="/assets/js/set-year.js"></script>
+    <script defer src="/assets/js/blog-filter.js"></script>
   </body>
 </html>
