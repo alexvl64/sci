@@ -207,17 +207,95 @@ Sci faisant ~12 articles/an avec audio, Neural2 reste largement sous le free tie
 
 API activée le 2026-05-07 sur le projet sparkcore depuis le compte `sparkcore.public.df59f6@gmail.com`. Aucune nouvelle clé créée — réutilisation du SA existant. Pour activer une nouvelle voix premium ou modifier les permissions IAM, utiliser le compte `sparkcore.public.df59f6@gmail.com` (pas `alex@cointips.fr`).
 
-#### Usage
+#### Deux modes : résumé court vs lecture intégrale
+
+**Mode résumé (recommandé par défaut)** — 200-300 mots, 1-2 min audio, 600-900 KB. Couvre les 4-5 takeaways clés en français naturel narratif. C'est ce qui charge sur le player de l'article. Taux d'écoute attendu beaucoup plus élevé qu'une lecture intégrale.
+
+**Mode lecture intégrale** — 4 000-5 000 mots, 25-30 min audio, 12-13 MB. Lecture du body article. Optionnel, pour readers qui veulent l'expérience complète. Pas chargé par défaut sur le player ; peut être référencé via lien direct.
+
+#### Naming convention assets/audio/
+
+| Fichier | Contenu | Player |
+|---|---|---|
+| `<slug>-resume.mp3` | Résumé 200-300 mots, 1-2 min | **Default** sur le player de l'article |
+| `<slug>.mp3` | Lecture intégrale du body | Optionnel, lien direct |
+
+#### Procédure complète (à reproduire pour chaque nouvel article)
+
+**Étape 1** — Rédiger le script résumé (200-300 mots, français parlé naturel) :
+
+Règles :
+- Ouvrir avec le finding/answer principal (vote, statut, deadline...)
+- 4-5 takeaways clés couverts
+- Pas de meta-commentaire ("dans cet article", "nous allons voir")
+- Phrase de clôture qui pointe vers l'article complet ("Article complet sur sparkcore point fund")
+- Acronymes prononcés en lettres ou en mots selon usage (ex: "CFTC" lu "C-F-T-C", "AIFM" lu "A-I-F-M" ou "AIF-M")
+- Nombres écrits en chiffres (le TTS gère bien : "294 contre 134", "$320 milliards")
+
+Sauver dans `/tmp/<slug>_summary.txt`.
+
+**Étape 2** — Générer l'audio :
 
 ```bash
 export GOOGLE_APPLICATION_CREDENTIALS="/home/alex/.config/claude-seo/service_account.json"
-python3 /tmp/tts_venv/bin/python scripts/ops/tts_cloud_long.py \
-  --input /tmp/article_audio_text.txt \
-  --output assets/audio/<slug>.mp3 \
+/tmp/tts_venv/bin/python scripts/ops/tts_cloud_long.py \
+  --input /tmp/<slug>_summary.txt \
+  --output assets/audio/<slug>-resume.mp3 \
   --voice fr-FR-Neural2-G
 ```
 
-Le venv `/tmp/tts_venv/` est temporaire (recréé si besoin via `python3 -m venv /tmp/tts_venv && /tmp/tts_venv/bin/pip install google-cloud-texttospeech`). Pour persistance, créer `~/.config/claude-seo/tts-venv/` ou ajouter `google-cloud-texttospeech` à un requirements global.
+**Étape 3** — Re-encode en 64 kbps mono pour optimiser la bande passante CF Pages :
+
+```bash
+ffmpeg -y -i assets/audio/<slug>-resume.mp3 -b:a 64k -ac 1 -ar 24000 /tmp/.opt.mp3 \
+  && mv /tmp/.opt.mp3 assets/audio/<slug>-resume.mp3
+```
+
+**Étape 4** — Embed dans l'article HTML, après le `<h1>` et avant le bloc "En bref" :
+
+```html
+<aside class="article-audio-player"
+       data-src="/assets/audio/<slug>-resume.mp3"
+       data-label="Écouter le résumé audio · X min XX"
+       aria-label="Lecteur audio résumé de l'article"></aside>
+```
+
+Et dans le `<head>` (si pas déjà présent dans le template d'article) :
+
+```html
+<link rel="stylesheet" href="/assets/css/audio-player.css?v=1.0" />
+```
+
+Et avant `</body>` :
+
+```html
+<script defer src="/assets/js/audio-player.js?v=1.0"></script>
+```
+
+Le JS gère automatiquement : main player, mini-bar sticky bottom (apparaît dès que le main sort du viewport), bouton X pour dismiss, vitesses 1x→2x cyclique, seek keyboard ArrowLeft/Right, sync state main+mini.
+
+**Étape 5** — Bump `dateModified` dans le JSON-LD BlogPosting de l'article et commit.
+
+#### Venv Python persistant
+
+Le venv `/tmp/tts_venv/` est temporaire (perdu au reboot). Pour persistance :
+
+```bash
+python3 -m venv ~/.config/claude-seo/tts-venv
+~/.config/claude-seo/tts-venv/bin/pip install google-cloud-texttospeech
+```
+
+Puis remplacer dans la procédure : `/tmp/tts_venv/bin/python` → `~/.config/claude-seo/tts-venv/bin/python`.
+
+#### Coût récap
+
+| Volume mensuel | Coût Neural2 |
+|---|---|
+| 1-30 articles audio (résumés 250 mots) | $0 (free tier 1M chars/mois) |
+| 30-100 articles audio | $0-$0.40 |
+| Articles intégraux 4 000+ mots | $0 jusqu'à 8 articles, puis ~$0.05/article |
+
+Pour sci avec ~12 articles/an dont une partie audio : **$0/an effectif**.
 
 ---
 
