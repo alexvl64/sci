@@ -166,31 +166,22 @@
       });
     }
 
-    /* --- IntersectionObserver: show mini when main is offscreen --- */
+    /* --- IntersectionObserver: show mini when main is offscreen ---
+       Comportement editorial standard (NYT/FT/Substack) : le mini sert d'invitation
+       a ecouter, donc il apparait des que le main player sort du viewport, qu'on
+       ait clique play ou non. L'utilisateur peut dismiss avec le bouton X. */
     if ("IntersectionObserver" in window) {
       const observer = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (miniEl.classList.contains("is-dismissed")) return;
           if (!entry.isIntersecting) {
-            /* main est hors viewport ET audio en cours de lecture (ou deja consulte) */
-            if (audio.currentTime > 0 || !audio.paused) {
-              miniEl.classList.add("is-pinned");
-            }
+            miniEl.classList.add("is-pinned");
           } else {
             miniEl.classList.remove("is-pinned");
           }
         });
       }, { threshold: 0, rootMargin: "0px 0px -20px 0px" });
       observer.observe(mainEl);
-
-      /* Si l'utilisateur lance le play en haut puis scroll, on veut le mini visible immediatement
-         meme si le main n'a pas encore quitte le viewport. On declenche un re-evaluation quand audio.play */
-      audio.addEventListener("play", function () {
-        const rect = mainEl.getBoundingClientRect();
-        if (rect.bottom < 0 || rect.top > window.innerHeight) {
-          if (!miniEl.classList.contains("is-dismissed")) miniEl.classList.add("is-pinned");
-        }
-      });
     }
   }
 
