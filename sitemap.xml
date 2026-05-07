@@ -43,12 +43,19 @@
 
   <url>
     <loc>https://sparkcore.fund/fr/blog/</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://sparkcore.fund/blog/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://sparkcore.fund/fr/blog/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://sparkcore.fund/blog/"/>
+  </url>
+
+  <url>
+    <loc>https://sparkcore.fund/fr/blog/clarity-act-us-impacts-investisseurs</loc>
+    <lastmod>2026-05-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 
   <url>
