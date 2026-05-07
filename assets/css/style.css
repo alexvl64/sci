@@ -134,56 +134,101 @@ input[type="number"] {
   background-color: #F3F5F7;
 }
 
-/* ── Trust strip ── */
-.trust-strip {
-  background-color: #F3F5F7;
-  border-bottom: 1px solid #D0DAE3;
+/* ── Trust top bar (above hero) ── */
+.trust-topbar {
+  background: #1a1d24;
+  border-bottom: 1px solid #232730;
+  padding: 12px 0;
 }
-.trust-strip__grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px 24px;
-  max-width: 1360px;
-  margin: 0 auto;
-  padding: 14px 24px;
-}
-@media (min-width: 1024px) {
-  .trust-strip__grid {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 0;
-    padding: 14px 24px;
-  }
-  .trust-strip__grid > div {
-    padding: 0 24px;
-    border-left: 1px solid #D0DAE3;
-  }
-  .trust-strip__grid > div:first-child {
-    padding-left: 0;
-    border-left: none;
-  }
-  .trust-strip__grid > div:last-child {
-    padding-right: 0;
-  }
-}
-.trust-strip__label {
+.trust-topbar__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0 16px;
   font-family: 'Inter', sans-serif;
-  font-size: 10px;
+}
+.trust-topbar__cell {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #DBD1BC;
+}
+.trust-topbar__label {
+  font-size: 9px;
   font-weight: 600;
-  color: #667085;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
-  margin-bottom: 2px;
+  letter-spacing: 0.06em;
+  color: #6B7B8D;
 }
-.trust-strip__value {
-  display: block;
-  font-family: 'Inter', sans-serif;
-  font-size: 12px;
-  line-height: 1.45;
-  color: #0E1117;
+.trust-topbar__value {
+  font-size: 11px;
+  font-weight: 500;
+  color: #DBD1BC;
   text-decoration: none;
 }
-a.trust-strip__value:hover {
+.trust-topbar__value--mono {
+  font-family: 'Courier New', ui-monospace, monospace;
+  font-size: 10px;
+  letter-spacing: 0.03em;
+}
+a.trust-topbar__value:hover {
   text-decoration: underline;
+}
+.trust-topbar__sep {
+  color: #2d3748;
+  font-size: 11px;
+  user-select: none;
+}
+@media (max-width: 640px) {
+  .trust-topbar__inner {
+    gap: 6px 12px;
+    padding: 4px 0;
+  }
+  .trust-topbar__sep {
+    display: none;
+  }
+  .trust-topbar__cell {
+    flex-basis: 48%;
+    justify-content: flex-start;
+  }
+}
+
+/* ── Hero chart (right column) ── */
+.hero-chart-wrap {
+  background: #0f1117;
+  border: 1px solid #1E2530;
+  border-radius: 8px;
+  padding: 16px 12px 12px;
+}
+.hero-chart-canvas {
+  min-height: 280px;
+}
+@media (min-width: 768px) {
+  .hero-chart-canvas {
+    min-height: 460px;
+  }
+}
+.hero-chart-canvas .apexcharts-canvas {
+  background: transparent !important;
+}
+/* Tone down legend size in hero (global rule sets 20px which is too big here) */
+.hero-chart-canvas .apexcharts-legend-text {
+  font-size: 13px !important;
+  padding-left: 12px !important;
+}
+@media (max-width: 767.98px) {
+  .hero-chart-canvas .apexcharts-legend-text {
+    font-size: 12px !important;
+    padding-left: 8px !important;
+  }
+}
+
+/* ── Hero CTAs row (replaces stacked column layout) ── */
+.hero-ctas-row {
+  /* defaults to flex-wrap gap-3 from inline classes; reserve for future tuning */
 }
 
 /* ── Hero ghost CTA ── */

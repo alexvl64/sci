@@ -40,12 +40,29 @@ const translations = {
     sidebarFieldRequired: "Veuillez remplir ce champ obligatoire.",
     sidebarSubmit: "Nous contacter",
 
+    // === TRUST TOP BAR ===
+    topbarRegulator: "Régulateur",
+    topbarAudit: "Audit",
+    topbarCounsel: "Conseil",
+    topbarLei: "LEI",
+
     // === HERO ===
+    heroEyebrow: "AIFM · Estonie · LEI 8945003BBN0RVNNB0S84",
     heroTitle: "Stratégies institutionnelles <span class=\"block\">sur les actifs numériques</span>",
     heroTagline: "Trois approches distinctes. Un cadre réglementé. Conçu pour les investisseurs qui exigent la rigueur.",
     heroCtaPrimary: "Planifier un appel →",
     heroCtaSecondary: "Demander la documentation",
     heroCommentaryLink: "Lire notre dernier commentaire de marché →",
+    heroChartTitle: "Dynamic Trends · Série NAV (base 100)",
+    heroChartAsOf: "Au <span id=\"chart-as-of\">—</span>",
+    heroChartCaption: "Inception janv. 2020. Mise à jour hebdomadaire. <span id=\"chart-ytd-caption\">—</span>",
+    heroChartDisclaimer: "Les performances passées ne préjugent pas des performances futures.",
+
+    // === BACKGROUND / VISUAL INTERLUDE ===
+    bgEyebrow: "Contexte",
+    bgTitle: "Un cadre réglementé — construit par des opérationnels.",
+    bgBody1: "SparkCore a été fondé par des opérateurs quant en crypto-actifs avec un track record sur stratégies directionnelles et systématiques depuis le précédent cycle. La maison est construite sur une conviction : les investisseurs institutionnels méritent un accès transparent et supervisé aux stratégies digital-asset.",
+    bgBody2: "Aujourd'hui, SparkCore opère comme un AIFM estonien (Small Fund Manager) sous la supervision de Finantsinspektsioon, avec trois AIFs distincts couvrant des stratégies directionnelle, market-neutral et défensive.",
 
     // === OUR APPROACH ===
     approachTitle: "Notre approche",
@@ -224,12 +241,29 @@ const translations = {
     sidebarFieldRequired: "Please fill in this required field.",
     sidebarSubmit: "Contact Us",
 
+    // === TRUST TOP BAR ===
+    topbarRegulator: "Regulator",
+    topbarAudit: "Audit",
+    topbarCounsel: "Counsel",
+    topbarLei: "LEI",
+
     // === HERO ===
+    heroEyebrow: "AIFM · Estonia · LEI 8945003BBN0RVNNB0S84",
     heroTitle: "Institutional-grade strategies <span class=\"block\">in digital assets</span>",
     heroTagline: "Three distinct approaches. One regulated framework. Managed for investors who demand precision.",
     heroCtaPrimary: "Schedule a Discovery Call →",
     heroCtaSecondary: "Request Documentation",
     heroCommentaryLink: "Read our latest market commentary →",
+    heroChartTitle: "Dynamic Trends · NAV Series (base 100)",
+    heroChartAsOf: "As of <span id=\"chart-as-of\">—</span>",
+    heroChartCaption: "Inception Jan 2020. Updated weekly. <span id=\"chart-ytd-caption\">—</span>",
+    heroChartDisclaimer: "Past performance does not guarantee future results.",
+
+    // === BACKGROUND / VISUAL INTERLUDE ===
+    bgEyebrow: "Background",
+    bgTitle: "A regulated framework — built by operators.",
+    bgBody1: "SparkCore was founded by quantitative crypto-asset operators with track records running directional and systematic strategies since the previous cycle. The firm is built on a single conviction: institutional-grade investors deserve transparent, regulator-supervised access to digital-asset strategies.",
+    bgBody2: "Today, SparkCore operates as an Estonian AIFM (Small Fund Manager) under Finantsinspektsioon supervision, with three distinct AIFs covering directional, market-neutral and defensive strategies.",
 
     // === OUR APPROACH ===
     approachTitle: "Our approach",
