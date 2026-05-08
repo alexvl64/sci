@@ -40,17 +40,19 @@
     <link rel="manifest" href="/site.webmanifest">
 
     <!-- CSS -->
-    <link rel="preload" href="/assets/css/style.css?v=1.6" as="style">
-    <link rel="stylesheet" href="/assets/css/style.css?v=1.6" />
+    <link rel="preload" href="/assets/css/style.css?v=1.7" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/style.css?v=1.7"></noscript>
 
     <!-- Tailwind -->
-    <link rel="stylesheet" href="/assets/css/tailwind.min.css?v=1.0" />
+    <link rel="preload" href="/assets/css/tailwind.min.css?v=1.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/tailwind.min.css?v=1.0"></noscript>
 
     <!-- JSON-LD Article Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
+      "@id": "https://sparkcore.fund/blog/cost-to-launch-regulated-crypto-fund-europe#article",
       "headline": "Cost to Launch a Regulated Crypto Fund in Europe",
       "description": "A regulated crypto fund in Europe costs €14k–€500k in year one. Full 2026 cost breakdown: white-label AIFM from €14k, standalone AIFM from €60k. Estonia, Luxembourg, Cyprus, Malta compared.",
       "url": "https://sparkcore.fund/blog/cost-to-launch-regulated-crypto-fund-europe",
@@ -68,23 +70,28 @@
               "https://www.youtube.com/@cointips"
           ]
       },
-      "publisher": {
-        "@type": "Organization",
-        "name": "SparkCore Fund Management",
-        "legalName": "SparkCore.investment OÜ",
-        "url": "https://sparkcore.fund",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://sparkcore.fund/assets/images/png/favicon-192x192.png"
-        }
-      },
+      "publisher": {"@id": "https://sparkcore.fund/#organization"},
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://sparkcore.fund/blog/cost-to-launch-regulated-crypto-fund-europe"
       },
-      "image": "https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=1260&h=750&fit=crop&q=80",
+      "image": {
+
+        "@type": "ImageObject",
+
+        "url": "https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=1260&h=750&fit=crop&q=80",
+
+        "width": 1260,
+
+        "height": 750
+
+      },
       "wordCount": 2800,
-      "keywords": ["cost to launch regulated crypto fund Europe", "crypto fund setup costs EU", "Estonia AIFM cost", "white-label crypto fund", "AIFM vs CASP license"]
+      "keywords": ["cost to launch regulated crypto fund Europe", "crypto fund setup costs EU", "Estonia AIFM cost", "white-label crypto fund", "AIFM vs CASP license"],
+      "about": [
+        {"@type": "Thing", "name": "Alternative Investment Fund Managers Directive", "sameAs": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32011L0061"},
+        {"@type": "Thing", "name": "Markets in Crypto-Assets Regulation", "sameAs": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32023R1114"}
+      ]
     }
     </script>
 
@@ -744,7 +751,7 @@
         <aside class="bg-[#F9FAFB] border border-lightGray rounded-lg p-6 my-10">
           <p class="font-funnel-display text-xl text-darkGray mb-2">Want to launch your own regulated fund?</p>
           <p class="font-inter text-base text-mediumGray leading-160 mb-4">SparkCore offers white-label AIFM structuring in Estonia &mdash; from substance setup to Finantsinspektsioon registration. We co-build with crypto-native managers who want to operate in a regulated EU framework without 12&ndash;18 months of Luxembourg authorisation.</p>
-          <a href="/discovery-call" class="inline-flex items-center font-inter font-medium text-white bg-darkGray hover:bg-steelBlue px-5 py-3 rounded text-sm transition-colors duration-200">Schedule a Founders Call &rarr;</a>
+          <button type="button" data-cal-link="sparkcore/discovery" data-cal-origin="https://app.cal.eu" data-cal-config='{"layout":"month_view","theme":"light"}' class="founder-cta-btn">Schedule a Founders Call &rarr;</button>
         </aside>
 
         <div class="border border-lightGray rounded-lg p-6 bg-[#F9FAFB] mt-10 mb-10">
@@ -761,7 +768,7 @@
         </div>
 
       <aside class="article-bio mt-10 pt-8 border-t border-lightGray flex items-start gap-4">
-          <img src="/assets/images/webp/team-member-third.webp" alt="Photo of Alexandre VINAL" class="w-16 h-16 rounded-full object-cover flex-shrink-0" width="832" height="800" loading="lazy" />
+          <img src="/assets/images/webp/team-member-third.webp" alt="Photo of Alexandre VINAL" class="article-bio-avatar" width="832" height="800" loading="lazy" />
           <div>
             <h3 class="font-funnel-display text-lg text-darkGray mb-2">About the author</h3>
             <p class="font-inter text-sm text-mediumGray leading-160">
@@ -810,6 +817,12 @@
         </div>
       </div>
     </footer>
-    <script src="/assets/js/set-year.js"></script>
+    <script src="/assets/js/set-year.js"></script>    <!-- Cal.com popup — Founder CTA -->
+    <script>
+    (function(C,A,L){let p=function(a,ar){a.q.push(ar)};let d=C.document;C.Cal=C.Cal||function(){let cal=C.Cal;let ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement("script")).src=A+"/embed/embed.js";cal.loaded=true}if(ar[0]===L){const api=function(){p(api,arguments)};const namespace=ar[1];api.q=api.q||[];if(typeof namespace==="string"){cal.ns[namespace]=cal.ns[namespace]||api;p(cal.ns[namespace],ar);p(cal,["initNamespace",namespace])}else p(cal,ar);return}p(cal,ar)}})(window,"https://app.cal.eu","init");
+    Cal("init",{origin:"https://app.cal.eu"});
+    Cal("ui",{theme:"light",cssVarsPerTheme:{light:{"cal-brand":"#0E1117"}}});
+    </script>
+
   </body>
 </html>

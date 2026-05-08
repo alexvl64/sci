@@ -36,14 +36,16 @@
     <link rel="apple-touch-icon" sizes="192x192" href="/assets/images/png/favicon-192x192.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <link rel="preload" href="/assets/css/style.css?v=1.6" as="style">
-    <link rel="stylesheet" href="/assets/css/style.css?v=1.6" />
-    <link rel="stylesheet" href="/assets/css/tailwind.min.css?v=1.0" />
+    <link rel="preload" href="/assets/css/style.css?v=1.7" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/style.css?v=1.7"></noscript>
+    <link rel="preload" href="/assets/css/tailwind.min.css?v=1.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/tailwind.min.css?v=1.0"></noscript>
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
+      "@id": "https://sparkcore.fund/blog/delta-neutral-crypto-strategies-explained#article",
       "headline": "Delta Neutral and Beta Neutral Crypto Strategies Explained",
       "description": "Delta neutral crypto strategies explained: how market neutral, long/short and quantitative approaches generate uncorrelated returns in digital asset portfolios.",
       "datePublished": "2026-03-09",
@@ -58,22 +60,23 @@
               "https://www.youtube.com/@cointips"
           ]
       },
-      "publisher": {
-        "@type": "Organization",
-        "name": "SparkCore Fund Management",
-        "legalName": "SparkCore.investment OÜ",
-        "url": "https://sparkcore.fund",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://sparkcore.fund/assets/images/png/favicon-192x192.png"
-        }
-      },
+      "publisher": {"@id": "https://sparkcore.fund/#organization"},
       "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https://sparkcore.fund/blog/delta-neutral-crypto-strategies-explained"
       },
       "url": "https://sparkcore.fund/blog/delta-neutral-crypto-strategies-explained",
-      "image": "https://sparkcore.fund/meta-image.webp",
+      "image": {
+
+        "@type": "ImageObject",
+
+        "url": "https://sparkcore.fund/meta-image.webp",
+
+        "width": 1200,
+
+        "height": 630
+
+      },
       "dateModified": "2026-05-08",
       "wordCount": 2546,
       "inLanguage": "en",
@@ -376,7 +379,7 @@
         </div>
 
       <aside class="article-bio mt-10 pt-8 border-t border-lightGray flex items-start gap-4">
-          <img src="/assets/images/webp/team-member-third.webp" alt="Photo of Alexandre VINAL" class="w-16 h-16 rounded-full object-cover flex-shrink-0" width="832" height="800" loading="lazy" />
+          <img src="/assets/images/webp/team-member-third.webp" alt="Photo of Alexandre VINAL" class="article-bio-avatar" width="832" height="800" loading="lazy" />
           <div>
             <h3 class="font-funnel-display text-lg text-darkGray mb-2">About the author</h3>
             <p class="font-inter text-sm text-mediumGray leading-160">

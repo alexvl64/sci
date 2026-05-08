@@ -33,15 +33,17 @@
     <link rel="apple-touch-icon" sizes="192x192" href="/assets/images/png/favicon-192x192.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <link rel="preload" href="/assets/css/style.css?v=1.6" as="style">
-    <link rel="stylesheet" href="/assets/css/style.css?v=1.6" />
-    <link rel="stylesheet" href="/assets/css/tailwind.min.css?v=1.0" />
+    <link rel="preload" href="/assets/css/style.css?v=1.7" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/style.css?v=1.7"></noscript>
+    <link rel="preload" href="/assets/css/tailwind.min.css?v=1.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/tailwind.min.css?v=1.0"></noscript>
     <link rel="stylesheet" href="/assets/css/audio-player.css?v=1.0" />
 
     <script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    "@id": "https://sparkcore.fund/fr/blog/clarity-act-us-impacts-investisseurs#article",
     "headline": "CLARITY Act US 2026 : Dossier Complet sur les Impacts pour les Investisseurs",
     "description": "H.R. 3633 voté 294-134 par la Chambre. Sénat ciblé 4 juillet 2026 par la Maison Blanche. Dossier complet : SEC vs CFTC, stablecoins, DeFi, MiCA, conséquences pour investisseurs européens.",
     "datePublished": "2026-05-07",
@@ -58,22 +60,23 @@
             "https://www.youtube.com/@cointips"
         ]
     },
-    "publisher": {
-        "@type": "Organization",
-        "name": "SparkCore Fund Management",
-        "legalName": "SparkCore.investment OÜ",
-        "url": "https://sparkcore.fund",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "https://sparkcore.fund/assets/images/png/favicon-192x192.png"
-        }
-    },
+    "publisher": {"@id": "https://sparkcore.fund/#organization"},
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://sparkcore.fund/fr/blog/clarity-act-us-impacts-investisseurs"
     },
     "url": "https://sparkcore.fund/fr/blog/clarity-act-us-impacts-investisseurs",
-    "image": "https://sparkcore.fund/assets/images/blog/hero-clarity-act-us.jpg",
+    "image": {
+
+      "@type": "ImageObject",
+
+      "url": "https://sparkcore.fund/assets/images/blog/hero-clarity-act-us.jpg",
+
+      "width": 1200,
+
+      "height": 630
+
+    },
     "wordCount": 3300,
     "keywords": ["CLARITY Act", "régulation crypto", "SEC", "CFTC", "stablecoin", "DeFi", "MiCA", "H.R. 3633", "digital commodity", "investisseur"],
     "isAccessibleForFree": true
@@ -570,7 +573,7 @@
         </div>
 
       <aside class="article-bio mt-10 pt-8 border-t border-lightGray flex items-start gap-4">
-          <img src="/assets/images/webp/team-member-third.webp" alt="Photo d'Alexandre VINAL" class="w-16 h-16 rounded-full object-cover flex-shrink-0" width="832" height="800" loading="lazy" />
+          <img src="/assets/images/webp/team-member-third.webp" alt="Photo d'Alexandre VINAL" class="article-bio-avatar" width="832" height="800" loading="lazy" />
           <div>
             <h3 class="font-funnel-display text-lg text-darkGray mb-2">À propos de l'auteur</h3>
             <p class="font-inter text-sm text-mediumGray leading-160">

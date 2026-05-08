@@ -41,20 +41,32 @@
     <link rel="manifest" href="/site.webmanifest">
 
     <!-- CSS -->
-    <link rel="preload" href="/assets/css/style.css?v=1.6" as="style">
-    <link rel="stylesheet" href="/assets/css/style.css?v=1.6" />
+    <link rel="preload" href="/assets/css/style.css?v=1.7" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/style.css?v=1.7"></noscript>
 
     <!-- Tailwind -->
-    <link rel="stylesheet" href="/assets/css/tailwind.min.css?v=1.0" />
+    <link rel="preload" href="/assets/css/tailwind.min.css?v=1.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/tailwind.min.css?v=1.0"></noscript>
 
     <!-- JSON-LD Article Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
+      "@id": "https://sparkcore.fund/blog/crypto-fund-fees-2026#article",
       "headline": "Crypto Fund Fees in 2026: What the Data Says",
       "description": "Average crypto fund fees: 1.70% management and 20% performance. Full data on benchmarks, high-water marks, and what institutional allocators accept in 2026.",
-      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1260&h=750&fit=crop&q=80",
+      "image": {
+
+        "@type": "ImageObject",
+
+        "url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1260&h=750&fit=crop&q=80",
+
+        "width": 1260,
+
+        "height": 750
+
+      },
       "url": "https://sparkcore.fund/blog/crypto-fund-fees-2026",
       "datePublished": "2026-04-01",
       "dateModified": "2026-05-08",
@@ -75,21 +87,15 @@
               "https://www.youtube.com/@cointips"
           ]
       },
-      "publisher": {
-        "@type": "Organization",
-        "name": "SparkCore Fund Management",
-        "legalName": "SparkCore.investment OÜ",
-        "url": "https://sparkcore.fund",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://sparkcore.fund/assets/images/png/favicon-192x192.png"
-        }
-      },
+      "publisher": {"@id": "https://sparkcore.fund/#organization"},
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://sparkcore.fund/blog/crypto-fund-fees-2026"
       },
-      "keywords": ["crypto fund fees", "hedge fund fees", "performance fee", "management fee", "crypto hedge funds", "high water mark", "2 and 20", "AIFMD", "institutional crypto"]
+      "keywords": ["crypto fund fees", "hedge fund fees", "performance fee", "management fee", "crypto hedge funds", "high water mark", "2 and 20", "AIFMD", "institutional crypto"],
+      "about": [
+        {"@type": "Thing", "name": "AIFMD II (Directive (EU) 2024/927)", "sameAs": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L0927"}
+      ]
     }
     </script>
 
@@ -430,7 +436,7 @@
         </div>
 
       <aside class="article-bio mt-10 pt-8 border-t border-lightGray flex items-start gap-4">
-          <img src="/assets/images/webp/team-member-third.webp" alt="Photo of Alexandre VINAL" class="w-16 h-16 rounded-full object-cover flex-shrink-0" width="832" height="800" loading="lazy" />
+          <img src="/assets/images/webp/team-member-third.webp" alt="Photo of Alexandre VINAL" class="article-bio-avatar" width="832" height="800" loading="lazy" />
           <div>
             <h3 class="font-funnel-display text-lg text-darkGray mb-2">About the author</h3>
             <p class="font-inter text-sm text-mediumGray leading-160">
