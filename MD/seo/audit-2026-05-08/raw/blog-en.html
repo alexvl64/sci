@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="/assets/js/analytics.js"></script>
+    <title>SparkCore Insights | Crypto Fund Management &amp; Regulatory Intelligence</title>
+    <meta name="description" content="Expert articles on regulated crypto fund management in Estonia, delta neutral strategies, AIF structuring and white-label fund services." />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="SparkCore Fund Management" />
+
+    <link rel="canonical" href="https://sparkcore.fund/blog/" />
+    <link rel="alternate" hreflang="en" href="https://sparkcore.fund/blog/" />
+    <link rel="alternate" hreflang="fr" href="https://sparkcore.fund/fr/blog/" />
+    <link rel="alternate" hreflang="x-default" href="https://sparkcore.fund/blog/" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="SparkCore Insights | Crypto Fund Management &amp; Regulatory Intelligence" />
+    <meta property="og:description" content="Expert articles on regulated crypto fund management in Estonia, delta neutral strategies, AIF structuring and white-label fund services." />
+    <meta property="og:url" content="https://sparkcore.fund/blog/" />
+    <meta property="og:site_name" content="SparkCore Fund Management" />
+    <meta property="og:image" content="https://sparkcore.fund/meta-image.webp" />
+
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="SparkCore Insights | Crypto Fund Management &amp; Regulatory Intelligence" />
+    <meta property="twitter:description" content="Expert articles on regulated crypto fund management in Estonia, delta neutral strategies, AIF structuring and white-label fund services." />
+    <meta property="twitter:image" content="https://sparkcore.fund/meta-image.webp" />
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/png/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/png/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/png/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/assets/images/png/favicon-192x192.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="preload" href="/assets/css/style.css?v=1.6" as="style">
+    <link rel="stylesheet" href="/assets/css/style.css?v=1.6" />
+    <link rel="stylesheet" href="/assets/css/tailwind.min.css?v=1.0" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "SparkCore Insights",
+      "description": "Regulatory intelligence and institutional perspectives on crypto asset management.",
+      "url": "https://sparkcore.fund/blog/",
+      "inLanguage": "en",
+      "publisher": {
+        "@type": "Organization",
+        "name": "SparkCore Fund Management",
+        "legalName": "SparkCore.investment OÜ",
+        "url": "https://sparkcore.fund",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://sparkcore.fund/assets/images/png/favicon-192x192.png"
+        }
+      },
+      "blogPost": [
+        {
+          "@type": "BlogPosting",
+          "headline": "AIF vs AIFM: What's the Difference and Why It Matters for Crypto Funds",
+          "url": "https://sparkcore.fund/blog/aif-vs-aifm-crypto-explained",
+          "datePublished": "2026-05-06",
+          "author": { "@type": "Person", "name": "Alexandre VINAL" }
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Why Invest in Crypto Funds? 7 Best Reasons for 2026",
+          "url": "https://sparkcore.fund/blog/why-invest-in-crypto-funds-2026",
+          "datePublished": "2026-05-05",
+          "author": { "@type": "Person", "name": "Alexandre VINAL" }
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Estonia vs. Luxembourg vs. Malta: Which EU Jurisdiction for Your Crypto Fund?",
+          "url": "https://sparkcore.fund/blog/estonia-luxembourg-malta-crypto-fund",
+          "datePublished": "2026-04-14",
+          "author": { "@type": "Person", "name": "Alexandre VINAL" }
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Sub-Threshold AIFM for Crypto: Thresholds, Benefits, and the Estonia Option",
+          "url": "https://sparkcore.fund/blog/sub-threshold-aifm-crypto-estonia",
+          "datePublished": "2026-04-07",
+          "author": { "@type": "Person", "name": "Alexandre VINAL" }
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Do Crypto Fund Managers Need a MiCA CASP License?",
+          "url": "https://sparkcore.fund/blog/do-crypto-fund-managers-need-mica-casp-license",
+          "datePublished": "2026-03-28",
+          "author": { "@type": "Person", "name": "Alexandre VINAL" }
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Crypto Fund vs ETF",
+          "url": "https://sparkcore.fund/blog/crypto-fund-vs-etf",
+          "datePublished": "2026-03-26",
+          "author": { "@type": "Person", "name": "Alexandre VINAL" }
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "What Is a Crypto AIFM",
+          "url": "https://sparkcore.fund/blog/what-is-a-crypto-aifm",
+          "datePublished": "2026-03-25",
+          "author": { "@type": "Person", "name": "Alexandre VINAL" }
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Crypto Fund Compliance Guide",
+          "url": "https://sparkcore.fund/blog/crypto-fund-compliance-guide",
+          "datePublished": "2026-03-24",
+          "author": { "@type": "Person", "name": "Alexandre VINAL" }
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "What an Alternative Investment Fund Platform Does",
+          "url": "https://sparkcore.fund/blog/what-an-alternative-investment-fund-platform-does",
+          "datePublished": "2026-03-23",
+          "author": { "@type": "Person", "name": "Alexandre VINAL" }
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "White Label Crypto Fund Platform",
+          "url": "https://sparkcore.fund/blog/white-label-crypto-fund-platform",
+          "datePublished": "2026-03-20",
+          "author": { "@type": "Person", "name": "Alexandre VINAL" }
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Crypto Arbitrage Investment Fund",
+          "url": "https://sparkcore.fund/blog/crypto-arbitrage-investment-fund",
+          "datePublished": "2026-03-17",
+          "author": { "@type": "Person", "name": "Alexandre VINAL" }
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "What a Market Neutral Crypto Fund Does",
+          "url": "https://sparkcore.fund/blog/what-a-market-neutral-crypto-fund-does",
+          "datePublished": "2026-03-16",
+          "author": { "@type": "Person", "name": "Alexandre VINAL" }
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Bitcoin Outperformance Strategy Fund",
+          "url": "https://sparkcore.fund/blog/bitcoin-outperformance-strategy-fund",
+          "datePublished": "2026-03-15",
+          "author": { "@type": "Person", "name": "Alexandre VINAL" }
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "What an Institutional Crypto Fund Manager Does",
+          "url": "https://sparkcore.fund/blog/what-an-institutional-crypto-fund-manager-does",
+          "datePublished": "2026-03-14",
+          "author": { "@type": "Person", "name": "Alexandre VINAL" }
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Crypto Fund for Qualified Investors",
+          "url": "https://sparkcore.fund/blog/crypto-fund-for-qualified-investors",
+          "datePublished": "2025-03-13",
+          "author": { "@type": "Person", "name": "Alexandre VINAL" }
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "What a Regulated Crypto Fund Changes",
+          "url": "https://sparkcore.fund/blog/regulated-crypto-investment-fund",
+          "datePublished": "2026-03-11",
+          "author": { "@type": "Person", "name": "Alexandre VINAL" }
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "What It Means to Be a Regulated Crypto Fund Manager in Estonia",
+          "url": "https://sparkcore.fund/blog/regulated-crypto-fund-manager-estonia",
+          "datePublished": "2026-03-09",
+          "author": { "@type": "Person", "name": "Alexandre VINAL" }
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "How to Launch a Crypto Fund in Estonia: A Regulatory and Operational Guide",
+          "url": "https://sparkcore.fund/blog/how-to-launch-a-crypto-fund-estonia",
+          "datePublished": "2026-03-09",
+          "author": { "@type": "Person", "name": "Alexandre VINAL" }
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Delta Neutral and Beta Neutral Crypto Strategies Explained",
+          "url": "https://sparkcore.fund/blog/delta-neutral-crypto-strategies-explained",
+          "datePublished": "2026-03-09",
+          "author": { "@type": "Person", "name": "Alexandre VINAL" }
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "White-Label Crypto Fund Manager Services: What They Are and How They Work",
+          "url": "https://sparkcore.fund/blog/white-label-crypto-fund-manager-services",
+          "datePublished": "2026-03-09",
+          "author": { "@type": "Person", "name": "Alexandre VINAL" }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+      .blog-card {
+        border: 1px solid #D0DAE3;
+        transition: border-color 0.3s, box-shadow 0.3s;
+      }
+      .blog-card:hover {
+        border-color: #0E1117;
+        box-shadow: 0 4px 16px rgba(14, 17, 23, 0.08);
+      }
+      .filter-chips-wrap {
+        position: relative;
+      }
+      .filter-chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+      @media (max-width: 640px) {
+        .filter-chips {
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          padding-bottom: 0.5rem;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none;
+        }
+        .filter-chips::-webkit-scrollbar { display: none; }
+        .filter-chips-wrap::after {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 0;
+          bottom: 0.5rem;
+          width: 32px;
+          background: linear-gradient(to right, transparent, white);
+          pointer-events: none;
+        }
+      }
+      .filter-chip {
+        font-family: 'Inter', sans-serif;
+        font-size: 0.875rem;
+        line-height: 1.4;
+        padding: 0.5rem 1rem;
+        border: 1px solid #D0DAE3;
+        border-radius: 999px;
+        background: white;
+        color: #475569;
+        cursor: pointer;
+        transition: border-color 0.2s, background-color 0.2s, color 0.2s;
+        white-space: nowrap;
+        font-weight: 400;
+      }
+      .filter-chip:hover {
+        border-color: #0E1117;
+        color: #0E1117;
+      }
+      .filter-chip:focus-visible {
+        outline: 2px solid #0E1117;
+        outline-offset: 2px;
+      }
+      .filter-chip.active {
+        background: #0E1117;
+        border-color: #0E1117;
+        color: white;
+      }
+    </style>
+  </head>
+
+  <body class="bg-white">
+    <!-- ========= HEADER ======= -->
+    <header class="bg-white sticky top-0 z-10 drop-shadow-lg">
+      <nav
+        class="max-w-[1440px] mx-auto lg:px-8 md:px-6 px-4 py-4 lg:py-[17px] flex justify-between items-center"
+      >
+        <a rel="noopener noreferrer" href="/"
+          ><img
+            class="md:w-[209px] md:h-10 w-[125px] h-6"
+            src="/assets/images/svg/logo.svg"
+            alt="SparkCore Fund Management" width="210" height="40"></a>
+        <div class="flex item-center gap-7">
+          <a
+            href="/"
+            class="font-inter font-normal md:h-[54px] md:px-6 md:py-4 px-4 py-3 h-11 rounded text-sm md:text-base bg-darkGray text-white !leading-140 hover:bg-transparent hover:text-darkGray border border-transparent hover:border-darkGray duration-300 flex items-center justify-center"
+          >
+            Discover SparkCore
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ======== BLOG LISTING ======== -->
+    <main>
+      <section class="py-16 sm:py-20 lg:py-24">
+        <div class="max-w-[1360px] px-6 mx-auto">
+          <h1 class="font-funnel-display text-custom-5xxl max-md:text-custom-5xl max-sm:text-custom-4xl text-darkGray !leading-120 mb-4">
+            SparkCore Insights
+          </h1>
+          <p class="font-inter text-lg text-steelBlue leading-160 mb-6 max-w-[720px]">
+            Regulatory intelligence and institutional perspectives on crypto asset management.
+          </p>
+
+          <p class="font-inter text-base text-mediumGray leading-160 mb-12 max-w-[820px]">
+            SparkCore Fund Management (legal entity SparkCore.investment OÜ) is a regulated alternative investment fund manager (AIFM) registered in Estonia and supervised by Finantsinspektsioon. Our articles cover the practical realities of operating a crypto-asset fund within the European regulatory framework — from AIFM registration and AML/CFT compliance to fund structuring, delta neutral strategies and white-label services. Whether you are an institutional allocator evaluating crypto fund exposure, a fund manager exploring the Estonian jurisdiction, or a professional investor seeking to understand how regulated crypto funds operate under EU law, these resources provide detailed, practitioner-level insight.
+          </p>
+
+          <!-- Pillar guide (always visible, outside grid+filter) -->
+          <a href="/resources/regulated-crypto-fund-estonia/" class="blog-card rounded-lg p-8 flex flex-col justify-between bg-cream text-darkGray mb-12">
+            <div>
+              <p class="font-inter text-xs uppercase tracking-wide mb-3 text-mediumGray">Pillar guide</p>
+              <h2 class="font-funnel-display text-2xl sm:text-3xl !leading-130 mb-3 text-darkGray">
+                Launching a Regulated Crypto Fund in Estonia: The Complete Guide
+              </h2>
+              <p class="font-inter text-base !leading-160 mb-4 text-darkGray">
+                The full framework &mdash; AIFMD, MiCA overlay, Estonian sub-threshold AIFM, costs, timelines, custody, and a worked example. 16-minute read.
+              </p>
+            </div>
+            <p class="font-inter text-sm font-semibold text-darkGray">Read the complete guide &rarr;</p>
+          </a>
+
+          <div class="filter-chips-wrap mb-12">
+            <p class="font-inter text-xs text-steelBlue uppercase tracking-widest mb-4">Filter by category</p>
+            <div class="filter-chips" role="group" aria-label="Filter articles by category">
+              <button type="button" class="filter-chip active" data-cat="all" aria-pressed="true">All (20)</button>
+              <button type="button" class="filter-chip" data-cat="regulation" aria-pressed="false">Regulation &amp; Compliance (6)</button>
+              <button type="button" class="filter-chip" data-cat="fund-structure" aria-pressed="false">Fund Structure (5)</button>
+              <button type="button" class="filter-chip" data-cat="strategies" aria-pressed="false">Investment Strategies (4)</button>
+              <button type="button" class="filter-chip" data-cat="investors" aria-pressed="false">For Investors (5)</button>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <!-- Article 0 -->
+            <a href="/blog/aif-vs-aifm-crypto-explained" data-category="regulation" class="blog-card rounded-lg p-8 flex flex-col justify-between">
+              <div>
+                <p class="font-inter text-xs text-steelBlue uppercase tracking-widest mb-3">Regulation</p>
+                <h2 class="font-funnel-display text-xl sm:text-2xl text-darkGray !leading-130 mb-3">
+                  AIF vs AIFM: What's the Difference and Why It Matters for Crypto Funds
+                </h2>
+                <p class="font-inter text-base text-mediumGray leading-160">
+                  AIF is the fund vehicle. AIFM is the manager. Under AIFMD, every regulated crypto fund needs both &mdash; and conflating them costs trust. Explained.
+                </p>
+              </div>
+              <span class="font-inter text-sm text-darkGray mt-6 inline-flex items-center gap-2 hover:underline">
+                Read article &rarr;
+              </span>
+            </a>
+
+            <!-- Article 0 -->
+            <a href="/blog/why-invest-in-crypto-funds-2026" data-category="investors" class="blog-card rounded-lg p-8 flex flex-col justify-between">
+              <div>
+                <p class="font-inter text-xs text-steelBlue uppercase tracking-widest mb-3">Institutional</p>
+                <h2 class="font-funnel-display text-xl sm:text-2xl text-darkGray !leading-130 mb-3">
+                  Why Invest in Crypto Funds? 7 Best Reasons for 2026
+                </h2>
+                <p class="font-inter text-base text-mediumGray leading-160">
+                  55% of hedge funds now hold crypto &mdash; up from 29% in 2023. Here are 7 evidence-based reasons to invest in crypto funds in 2026, from risk-adjusted returns to EU regulatory protections.
+                </p>
+              </div>
+              <span class="font-inter text-sm text-darkGray mt-6 inline-flex items-center gap-2 hover:underline">
+                Read article &rarr;
+              </span>
+            </a>
+
+            <!-- Article 1 -->
+            <a href="/blog/estonia-luxembourg-malta-crypto-fund" data-category="regulation" class="blog-card rounded-lg p-8 flex flex-col justify-between">
+              <div>
+                <p class="font-inter text-xs text-steelBlue uppercase tracking-widest mb-3">Regulation</p>
+                <h2 class="font-funnel-display text-xl sm:text-2xl text-darkGray !leading-130 mb-3">
+                  Estonia vs. Luxembourg vs. Malta: Which EU Jurisdiction for Your Crypto Fund?
+                </h2>
+                <p class="font-inter text-base text-mediumGray leading-160">
+                  Estonia's 0% tax on retained profits, 1&ndash;2 day company registration, and FSA crypto-friendly stance compared to Luxembourg and Malta for crypto fund managers.
+                </p>
+              </div>
+              <span class="font-inter text-sm text-darkGray mt-6 inline-flex items-center gap-2 hover:underline">
+                Read article &rarr;
+              </span>
+            </a>
+
+            <!-- Article 1 -->
+            <a href="/blog/sub-threshold-aifm-crypto-estonia" data-category="regulation" class="blog-card rounded-lg p-8 flex flex-col justify-between">
+              <div>
+                <p class="font-inter text-xs text-steelBlue uppercase tracking-widest mb-3">Regulation</p>
+                <h2 class="font-funnel-display text-xl sm:text-2xl text-darkGray !leading-130 mb-3">
+                  Sub-Threshold AIFM for Crypto: Thresholds, Benefits, and the Estonia Option
+                </h2>
+                <p class="font-inter text-base text-mediumGray leading-160">
+                  Estonia's sub-threshold AIFM regime lets crypto fund managers operate under EU law without full AIFMD authorisation. Thresholds, compliance obligations, and the registration process explained.
+                </p>
+              </div>
+              <span class="font-inter text-sm text-darkGray mt-6 inline-flex items-center gap-2 hover:underline">
+                Read article &rarr;
+              </span>
+            </a>
+
+            <!-- Article 1 -->
+            <a href="/blog/do-crypto-fund-managers-need-mica-casp-license" data-category="regulation" class="blog-card rounded-lg p-8 flex flex-col justify-between">
+              <div>
+                <p class="font-inter text-xs text-steelBlue uppercase tracking-widest mb-3">Regulation</p>
+                <h2 class="font-funnel-display text-xl sm:text-2xl text-darkGray !leading-130 mb-3">
+                  Do Crypto Fund Managers Need a MiCA CASP License?
+                </h2>
+                <p class="font-inter text-base text-mediumGray leading-160">
+                  MiCA CASP rules from Dec 2024: when AIFMs can use Article 60 instead of a separate license, what sub-threshold managers must do, and Estonia’s 2026 deadline.
+                </p>
+              </div>
+              <span class="font-inter text-sm text-darkGray mt-6 inline-flex items-center gap-2 hover:underline">
+                Read article &rarr;
+              </span>
+            </a>
+
+            <!-- Article 3 -->
+            <a href="/blog/crypto-fund-vs-etf" data-category="investors" class="blog-card rounded-lg p-8 flex flex-col justify-between">
+              <div>
+                <p class="font-inter text-xs text-steelBlue uppercase tracking-widest mb-3">Comparison</p>
+                <h2 class="font-funnel-display text-xl sm:text-2xl text-darkGray !leading-130 mb-3">
+                  Crypto Fund vs ETF
+                </h2>
+                <p class="font-inter text-base text-mediumGray leading-160">
+                  Crypto fund vs ETF: compare structure, liquidity, regulation, strategy range, and investor fit to choose the right vehicle for crypto exposure.
+                </p>
+              </div>
+              <span class="font-inter text-sm text-darkGray mt-6 inline-flex items-center gap-2 hover:underline">
+                Read article &rarr;
+              </span>
+            </a>
+
+            <!-- Article 4 -->
+            <a href="/blog/what-is-a-crypto-aifm" data-category="fund-structure" class="blog-card rounded-lg p-8 flex flex-col justify-between">
+              <div>
+                <p class="font-inter text-xs text-steelBlue uppercase tracking-widest mb-3">AIFM</p>
+                <h2 class="font-funnel-display text-xl sm:text-2xl text-darkGray !leading-130 mb-3">
+                  What Is a Crypto AIFM
+                </h2>
+                <p class="font-inter text-base text-mediumGray leading-160">
+                  What is a crypto AIFM? Learn how regulated crypto fund managers structure portfolios, oversee risk, and provide institutional market access.
+                </p>
+              </div>
+              <span class="font-inter text-sm text-darkGray mt-6 inline-flex items-center gap-2 hover:underline">
+                Read article &rarr;
+              </span>
+            </a>
+
+            <!-- Article 4 -->
+            <a href="/blog/crypto-fund-compliance-guide" data-category="regulation" class="blog-card rounded-lg p-8 flex flex-col justify-between">
+              <div>
+                <p class="font-inter text-xs text-steelBlue uppercase tracking-widest mb-3">Compliance</p>
+                <h2 class="font-funnel-display text-xl sm:text-2xl text-darkGray !leading-130 mb-3">
+                  Crypto Fund Compliance Guide
+                </h2>
+                <p class="font-inter text-base text-mediumGray leading-160">
+                  A crypto fund compliance guide for managers and investors covering structure, AML, custody, valuation, reporting, and regulator-facing controls.
+                </p>
+              </div>
+              <span class="font-inter text-sm text-darkGray mt-6 inline-flex items-center gap-2 hover:underline">
+                Read article &rarr;
+              </span>
+            </a>
+
+            <!-- Article 5 -->
+            <a href="/blog/what-an-alternative-investment-fund-platform-does" data-category="fund-structure" class="blog-card rounded-lg p-8 flex flex-col justify-between">
+              <div>
+                <p class="font-inter text-xs text-steelBlue uppercase tracking-widest mb-3">Platform</p>
+                <h2 class="font-funnel-display text-xl sm:text-2xl text-darkGray !leading-130 mb-3">
+                  What an Alternative Investment Fund Platform Does
+                </h2>
+                <p class="font-inter text-base text-mediumGray leading-160">
+                  See how an alternative investment fund platform supports regulated crypto funds with compliance, reporting, custody access, and launch infrastructure.
+                </p>
+              </div>
+              <span class="font-inter text-sm text-darkGray mt-6 inline-flex items-center gap-2 hover:underline">
+                Read article &rarr;
+              </span>
+            </a>
+
+            <!-- Article 6 -->
+            <a href="/blog/white-label-crypto-fund-platform" data-category="fund-structure" class="blog-card rounded-lg p-8 flex flex-col justify-between">
+              <div>
+                <p class="font-inter text-xs text-steelBlue uppercase tracking-widest mb-3">White Label</p>
+                <h2 class="font-funnel-display text-xl sm:text-2xl text-darkGray !leading-130 mb-3">
+                  White Label Crypto Fund Platform
+                </h2>
+                <p class="font-inter text-base text-mediumGray leading-160">
+                  A white label crypto fund platform helps managers launch regulated crypto funds with compliance, banking, reporting, and fund operations in place.
+                </p>
+              </div>
+              <span class="font-inter text-sm text-darkGray mt-6 inline-flex items-center gap-2 hover:underline">
+                Read article &rarr;
+              </span>
+            </a>
+
+            <!-- Article 8 -->
+            <a href="/blog/crypto-arbitrage-investment-fund" data-category="strategies" class="blog-card rounded-lg p-8 flex flex-col justify-between">
+              <div>
+                <p class="font-inter text-xs text-steelBlue uppercase tracking-widest mb-3">Arbitrage</p>
+                <h2 class="font-funnel-display text-xl sm:text-2xl text-darkGray !leading-130 mb-3">
+                  Crypto Arbitrage Investment Fund
+                </h2>
+                <p class="font-inter text-base text-mediumGray leading-160">
+                  A crypto arbitrage investment fund offers market-neutral exposure through controlled execution, risk management, and institutional fund structure.
+                </p>
+              </div>
+              <span class="font-inter text-sm text-darkGray mt-6 inline-flex items-center gap-2 hover:underline">
+                Read article &rarr;
+              </span>
+            </a>
+
+            <!-- Article 10 -->
+            <a href="/blog/what-a-market-neutral-crypto-fund-does" data-category="strategies" class="blog-card rounded-lg p-8 flex flex-col justify-between">
+              <div>
+                <p class="font-inter text-xs text-steelBlue uppercase tracking-widest mb-3">Market Neutral</p>
+                <h2 class="font-funnel-display text-xl sm:text-2xl text-darkGray !leading-130 mb-3">
+                  What a Market Neutral Crypto Fund Does
+                </h2>
+                <p class="font-inter text-base text-mediumGray leading-160">
+                  A market neutral crypto fund targets crypto returns with limited market beta using hedging, arbitrage, and disciplined risk controls.
+                </p>
+              </div>
+              <span class="font-inter text-sm text-darkGray mt-6 inline-flex items-center gap-2 hover:underline">
+                Read article &rarr;
+              </span>
+            </a>
+
+            <!-- Article 11 -->
+            <a href="/blog/bitcoin-outperformance-strategy-fund" data-category="strategies" class="blog-card rounded-lg p-8 flex flex-col justify-between">
+              <div>
+                <p class="font-inter text-xs text-steelBlue uppercase tracking-widest mb-3">Strategy</p>
+                <h2 class="font-funnel-display text-xl sm:text-2xl text-darkGray !leading-130 mb-3">
+                  Bitcoin Outperformance Strategy Fund
+                </h2>
+                <p class="font-inter text-base text-mediumGray leading-160">
+                  A bitcoin outperformance strategy fund aims to beat Bitcoin with controlled risk, active positioning, and institutional fund structure.
+                </p>
+              </div>
+              <span class="font-inter text-sm text-darkGray mt-6 inline-flex items-center gap-2 hover:underline">
+                Read article &rarr;
+              </span>
+            </a>
+
+            <!-- Article 12 -->
+            <a href="/blog/what-an-institutional-crypto-fund-manager-does" data-category="investors" class="blog-card rounded-lg p-8 flex flex-col justify-between">
+              <div>
+                <p class="font-inter text-xs text-steelBlue uppercase tracking-widest mb-3">Institutional</p>
+                <h2 class="font-funnel-display text-xl sm:text-2xl text-darkGray !leading-130 mb-3">
+                  What an Institutional Crypto Fund Manager Does
+                </h2>
+                <p class="font-inter text-base text-mediumGray leading-160">
+                  Learn what an institutional crypto fund manager does, how regulated structures work, and what sophisticated investors should assess before allocating.
+                </p>
+              </div>
+              <span class="font-inter text-sm text-darkGray mt-6 inline-flex items-center gap-2 hover:underline">
+                Read article &rarr;
+              </span>
+            </a>
+
+            <!-- Article 13 -->
+            <a href="/blog/crypto-fund-for-qualified-investors" data-category="investors" class="blog-card rounded-lg p-8 flex flex-col justify-between">
+              <div>
+                <p class="font-inter text-xs text-steelBlue uppercase tracking-widest mb-3">Qualified Investors</p>
+                <h2 class="font-funnel-display text-xl sm:text-2xl text-darkGray !leading-130 mb-3">
+                  Crypto Fund for Qualified Investors
+                </h2>
+                <p class="font-inter text-base text-mediumGray leading-160">
+                  A crypto fund for qualified investors offers regulated access, risk controls, reporting, and fund structure beyond direct token ownership.
+                </p>
+              </div>
+              <span class="font-inter text-sm text-darkGray mt-6 inline-flex items-center gap-2 hover:underline">
+                Read article &rarr;
+              </span>
+            </a>
+
+            <!-- Article 14 -->
+
+            <a href="/blog/regulated-crypto-investment-fund" data-category="investors" class="blog-card rounded-lg p-8 flex flex-col justify-between">
+              <div>
+                <p class="font-inter text-xs text-steelBlue uppercase tracking-widest mb-3">Institutional Allocation</p>
+                <h2 class="font-funnel-display text-xl sm:text-2xl text-darkGray !leading-130 mb-3">
+                  What a Regulated Crypto Fund Changes
+                </h2>
+                <p class="font-inter text-base text-mediumGray leading-160">
+                  A regulated crypto investment fund offers structured access, oversight, and risk controls for qualified investors seeking institutional crypto exposure.
+                </p>
+              </div>
+              <span class="font-inter text-sm text-darkGray mt-6 inline-flex items-center gap-2 hover:underline">
+                Read article &rarr;
+              </span>
+            </a>
+
+            <!-- Article 16 -->
+            <a href="/blog/regulated-crypto-fund-manager-estonia" data-category="regulation" class="blog-card rounded-lg p-8 flex flex-col justify-between">
+              <div>
+                <p class="font-inter text-xs text-steelBlue uppercase tracking-widest mb-3">Regulatory Framework</p>
+                <h2 class="font-funnel-display text-xl sm:text-2xl text-darkGray !leading-130 mb-3">
+                  What It Means to Be a Regulated Crypto Fund Manager in Estonia
+                </h2>
+                <p class="font-inter text-base text-mediumGray leading-160">
+                  An in-depth look at the Estonian Investment Funds Act, EFSA supervision, and the AIFM registration regime for crypto-asset fund managers operating within the EU.
+                </p>
+              </div>
+              <span class="font-inter text-sm text-darkGray mt-6 inline-flex items-center gap-2 hover:underline">
+                Read article &rarr;
+              </span>
+            </a>
+
+            <!-- Article 17 -->
+            <a href="/blog/how-to-launch-a-crypto-fund-estonia" data-category="fund-structure" class="blog-card rounded-lg p-8 flex flex-col justify-between">
+              <div>
+                <p class="font-inter text-xs text-steelBlue uppercase tracking-widest mb-3">Fund Structuring</p>
+                <h2 class="font-funnel-display text-xl sm:text-2xl text-darkGray !leading-130 mb-3">
+                  How to Launch a Crypto Fund in Estonia: A Regulatory and Operational Guide
+                </h2>
+                <p class="font-inter text-base text-mediumGray leading-160">
+                  A step-by-step guide covering legal vehicles, AIFM registration, fund documentation, AML/CFT infrastructure, and the white-label route for crypto fund managers.
+                </p>
+              </div>
+              <span class="font-inter text-sm text-darkGray mt-6 inline-flex items-center gap-2 hover:underline">
+                Read article &rarr;
+              </span>
+            </a>
+
+            <!-- Article 18 -->
+            <a href="/blog/delta-neutral-crypto-strategies-explained" data-category="strategies" class="blog-card rounded-lg p-8 flex flex-col justify-between">
+              <div>
+                <p class="font-inter text-xs text-steelBlue uppercase tracking-widest mb-3">Investment Strategies</p>
+                <h2 class="font-funnel-display text-xl sm:text-2xl text-darkGray !leading-130 mb-3">
+                  Delta Neutral and Beta Neutral Crypto Strategies Explained
+                </h2>
+                <p class="font-inter text-base text-mediumGray leading-160">
+                  Understanding market neutral strategies in crypto asset management — from delta and beta neutrality to long/short portfolio construction and quantitative signal generation.
+                </p>
+              </div>
+              <span class="font-inter text-sm text-darkGray mt-6 inline-flex items-center gap-2 hover:underline">
+                Read article &rarr;
+              </span>
+            </a>
+
+            <!-- Article 19 -->
+            <a href="/blog/white-label-crypto-fund-manager-services" data-category="fund-structure" class="blog-card rounded-lg p-8 flex flex-col justify-between">
+              <div>
+                <p class="font-inter text-xs text-steelBlue uppercase tracking-widest mb-3">White-Label Services</p>
+                <h2 class="font-funnel-display text-xl sm:text-2xl text-darkGray !leading-130 mb-3">
+                  White-Label Crypto Fund Manager Services: What They Are and How They Work
+                </h2>
+                <p class="font-inter text-base text-mediumGray leading-160">
+                  How regulated AIFM white-label services enable fund managers to launch crypto funds in Europe without building compliance infrastructure from scratch.
+                </p>
+              </div>
+              <span class="font-inter text-sm text-darkGray mt-6 inline-flex items-center gap-2 hover:underline">
+                Read article &rarr;
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ======== FOOTER ======== -->
+    <footer>
+      <div class="py-8 sm:py-12 lg:py-16 sm:border-t sm:border-lightGray">
+        <div class="max-w-[1360px] px-6 mx-auto">
+          <div class="flex items-center justify-between custom-xs:mb-4 mb-6">
+            <a
+              rel="noopener noreferrer"
+              href="/"
+              class="w-[209px] max-custom-xs:w-[167px] max-custom-xs:h-8 h-10"
+            >
+              <img
+                class="w-full h-full"
+                src="/assets/images/svg/logo.svg"
+                alt="SparkCore Fund Management" width="210" height="40">
+            </a>
+            <div class="flex items-center gap-4">
+              <a
+                rel="noopener noreferrer"
+                href="https://www.linkedin.com/company/sparkcore-investment-o%C3%BC/"
+                target="_blank"
+                class="size-[34px] rounded-full border border-steelBlue hover:scale-[1.1] transition-all duration-300 max-sm:hidden flex items-center justify-center"
+              >
+                <img
+                  src="/assets/images/svg/linkedin.svg"
+                  alt="LinkedIn"
+                  class="w-4 h-[19px]" width="16" height="17">
+              </a>
+            </div>
+          </div>
+          <p
+            class="font-inter font-normal sm:text-base text-lg text-steelBlue leading-140"
+          >
+            &copy;<span id="year"></span> SparkCore.investment OÜ — All rights reserved.
+          </p>
+          <div class="w-full h-px bg-paleBlue custom-xs:my-4 my-6"></div>
+          <div
+            class="flex gap-3 flex-wrap max-custom-xs:flex-col items-start justify-start"
+          >
+            <p
+              class="font-inter text-steelBlue text-base sm:text-sm leading-140"
+            >
+              <span class="font-inter font-normal leading-140 text-darkGray"
+                >Asset management company specialising in crypto-assets, registered in Estonia. Supervised by Finantsinspektsioon:</span
+              >
+              <a
+                rel="noopener noreferrer"
+                href="https://www.fi.ee/en/guides/fund-management-companies/investment-market/small-fund-managers-without-activity-licence/sparkcoreinvestment-ou"
+                target="_blank"
+                class="underline underline-offset-2"
+                >Estonian Financial Supervisory Authority (Small Fund Manager)
+              </a>
+            </p>
+            <p
+              class="font-funnel-display font-normal text-base sm:text-sm leading-140 text-softBlueGray max-custom-xs:hidden"
+            >
+            —
+            </p>
+            <p
+              class="font-inter text-steelBlue text-base sm:text-sm leading-140"
+            >
+              <span class="font-inter font-normal leading-140 text-darkGray"
+                >Licence:</span
+              >
+              <a
+                rel="noopener noreferrer"
+                href="https://mtr.ttja.ee/taotluse_tulemus/609065"
+                target="_blank"
+                class="underline underline-offset-2"
+                >EFIU (Financial Institution)
+              </a>
+            </p>
+          </div>
+          <p class="font-inter font-normal text-base sm:text-sm leading-140 text-steelBlue custom-xs:mt-4 mt-6">
+            <span class="font-inter font-normal leading-140 text-darkGray" data-i18n="footerAddress">Reg. No. 16265864 — Männimäe 1, Pudisoo, 74626 Harju County, Estonia</span>
+            — <a rel="noopener noreferrer" href="https://search.gleif.org/#/record/8945003BBN0RVNNB0S84" target="_blank" class="underline underline-offset-2">LEI: 8945003BBN0RVNNB0S84</a>
+          </p>
+          <p
+            class="font-inter font-normal text-base sm:text-sm leading-140 text-steelBlue custom-xs:mt-4 mt-6"
+          >
+            <span class="text-darkGray">Disclaimer:</span>
+            Past performance does not guarantee future results.
+            Crypto-assets carry a high level of risk, including the risk of total loss.
+            This website and performance charts are provided for informational purposes only and do not constitute an investment offer.
+            Access to the strategies is reserved for qualified or professional investors.
+            Please assess your personal situation and seek independent advice before investing.
+          </p>
+          <p class="font-inter font-normal text-sm leading-140 text-steelBlue custom-xs:mt-2 mt-3">
+            <a rel="noopener noreferrer" href="/privacy-policy"
+               class="underline underline-offset-2 hover:text-darkGray transition-colors duration-200"
+               >Privacy Policy</a>
+          </p>
+          <div class="flex items-center gap-4 sm:hidden mt-6">
+            <a
+              rel="noopener noreferrer"
+              href="https://www.linkedin.com/company/sparkcore-investment-o%C3%BC/"
+              target="_blank"
+              class="max-md:size-[54px] rounded-full border hover:scale-[1.1] transition-all duration-300 border-steelBlue flex items-center justify-center"
+            >
+              <img
+                src="/assets/images/svg/linkedin.svg"
+                alt="LinkedIn"
+                class="size-6" width="16" height="17">
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="/assets/js/set-year.js"></script>
+    <script defer src="/assets/js/blog-filter.js"></script>
+  <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9f859b68c938657d',t:'MTc3ODIxMzM0Ng=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
