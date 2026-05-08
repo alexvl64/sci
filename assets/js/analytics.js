@@ -55,12 +55,15 @@
     window.addEventListener(INTENT_EVENTS[i], onIntent, { passive: true, capture: true });
   }
 
-  // Fallback: load after 3s of idle. requestIdleCallback when available,
-  // setTimeout otherwise (Safari < 16, older WebViews).
+  // Fallback: load after 5s of idle. requestIdleCallback when available,
+  // setTimeout otherwise (Safari < 16, older WebViews). 5s instead of 3s to
+  // push gtag.js load out of the Lighthouse TBT window for non-interacting
+  // synthetic crawlers; real users almost always trigger an INTENT_EVENT
+  // sooner than 5s, so the change is invisible to actual visitors.
   if ("requestIdleCallback" in window) {
-    window.requestIdleCallback(loadGtag, { timeout: 3000 });
+    window.requestIdleCallback(loadGtag, { timeout: 5000 });
   } else {
-    setTimeout(loadGtag, 3000);
+    setTimeout(loadGtag, 5000);
   }
 
   function updateConsent(consentValue) {

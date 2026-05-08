@@ -353,7 +353,7 @@ const translations = {
     footerDisclaimerLabel: "Disclaimer:",
     footerWarning: "Past performance does not guarantee future results. Crypto-assets carry a high level of risk, including the risk of total loss. This website and performance charts are provided for informational purposes only and do not constitute an investment offer. Access to SparkCore strategies is reserved for experienced investors, institutional investors and family offices. Minimum investment: €50,000. Please assess your personal situation and seek independent advice before investing.",
     footerPrivacyLink: "Privacy Policy",
-    footerInsightsLink: "Insights",
+    footerInsightsLink: "Articles",
 
     // === VALIDATION PAGE ===
     validationTitle: "Verification Complete",

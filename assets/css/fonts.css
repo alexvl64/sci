@@ -3,6 +3,12 @@
  * Subsets: latin + latin-ext only (FR/EN audience)
  * Weights: 400, 500, 600 — verified via grep on used font-{normal,medium,semibold} classes
  * Files in /assets/fonts/, served from CF Pages with Cache-Control max-age=31536000 immutable.
+ *
+ * font-display: swap on all faces. Tried `optional` on 400-latin (PR #143)
+ * but `optional` locks the fallback permanently when a font is requested
+ * for the first time well after page load — the lazy-rendered ApexCharts
+ * legend was hitting that case and showing a system fallback instead of
+ * Funnel Display. Reverted.
  */
 
 @font-face {
