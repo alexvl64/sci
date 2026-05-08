@@ -133,6 +133,8 @@ Service Account partagé : `claude-seo@sparkcore-projet-1733486598578.iam.gservi
 
 Le skill `seo-backlinks` lit la config via le symlink `~/.config/claude-seo/backlinks-api.json` qui suit le projet actif (switch via `~/.config/claude-seo/switch.sh sci`). **Connexion à GSC depuis Bing WMT NON nécessaire** — le site est déjà vérifié et indexé indépendamment.
 
+> **Note sur les "404" du skill `seo-backlinks`** (audit 2026-05-08, S6-1) : la config projet (`bing_verified_sites: ["https://sparkcore.fund/"]`) est correcte et matche `GetSiteRoles` Bing exactement. Les erreurs HTTP 404 viennent du skill qui appelle un endpoint déprécié (`GetLinkDetails`). L'endpoint vivant est `GetLinkCounts` qui retourne `{Links: [], TotalPages: 0}` — ce n'est pas une erreur, le site n'a juste **aucun backlink indexé chez Bing à date** (normal pour une fondation 1 mois). Re-checker à 3 mois post-launch. Aucune action côté projet.
+
 ### IndexNow (mis en place 2026-05-05)
 
 Protocole de ping pour notifier Bing/Yandex/Seznam/Yep/Naver des URLs nouvelles ou modifiées (indépendant de Bing WMT API).

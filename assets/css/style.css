@@ -198,6 +198,66 @@ a.trust-strip__value:hover {
   color: #0E1117;
 }
 
+/* ── Hero latest article badge ── */
+.hero-latest-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 16px 6px 12px;
+  background: rgba(219, 209, 188, 0.08);
+  border: 1px solid rgba(219, 209, 188, 0.25);
+  border-radius: 999px;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: #DBD1BC;
+  text-decoration: none;
+  transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+  margin-bottom: 24px;
+  max-width: 100%;
+  width: max-content;
+}
+.hero-latest-badge:hover {
+  background: rgba(219, 209, 188, 0.18);
+  border-color: rgba(219, 209, 188, 0.5);
+}
+.hero-latest-badge__label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #8FA3B8;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 10px;
+  font-weight: 700;
+}
+.hero-latest-badge__label::before {
+  content: "✦";
+  color: #DBD1BC;
+  font-size: 13px;
+}
+.hero-latest-badge__title {
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 220px;
+}
+.hero-latest-badge__arrow {
+  font-weight: 500;
+  transition: transform 0.2s ease;
+}
+.hero-latest-badge:hover .hero-latest-badge__arrow {
+  transform: translateX(2px);
+}
+@media (min-width: 768px) {
+  .hero-latest-badge {
+    font-size: 14px;
+  }
+  .hero-latest-badge__title {
+    max-width: 320px;
+  }
+}
+
 /* ── Article author bio (S2-2) ── */
 .article-bio-avatar {
   width: 64px;

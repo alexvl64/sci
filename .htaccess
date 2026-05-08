@@ -1,5 +1,18 @@
 # ============================================================
-# .htaccess — sparkcore.fund
+# .htaccess — sparkcore.fund — LEGACY
+# ============================================================
+# ⚠️  LEGACY FILE — NOT EXECUTED
+#
+# sparkcore.fund migrated from OVH (Apache/LiteSpeed) to Cloudflare Pages
+# on 2026-05-06. CF Pages does NOT execute Apache configuration.
+#
+# Active equivalents on CF Pages:
+#   - This file's redirects → _redirects (CF Pages)
+#   - This file's headers   → _headers (CF Pages) + CF Transform Rule (CSP)
+#   - This file's PDF gate  → functions/ressources/[[path]].js (CF Function)
+#
+# Kept in repo for historical reference only. Safe to delete if you want
+# a cleaner repo — no production behavior is bound to it.
 # ============================================================
 
 Options -Indexes
