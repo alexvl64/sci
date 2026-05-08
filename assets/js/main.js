@@ -159,4 +159,39 @@ function renderChart(dates, dynamicTrends, btcBase) {
   const chart = new ApexCharts(document.querySelector("#chart"), options);
   chart.render();
 }
-fetchJsonData();
+
+// Lazy-load: defer apexcharts download + chart render until #chart enters viewport.
+// Reason: ApexCharts is ~530 KB uncompressed and accounted for ~351 ms of long-task
+// time on mobile; users rarely scroll to the chart, and even when they do, a 300 px
+// rootMargin gives enough lead time to fetch + render before it is on-screen.
+function loadApexCharts() {
+  if (typeof ApexCharts !== "undefined") return Promise.resolve();
+  return new Promise(function (resolve, reject) {
+    var s = document.createElement("script");
+    s.src = "https://cdn.jsdelivr.net/npm/apexcharts";
+    s.onload = resolve;
+    s.onerror = reject;
+    document.head.appendChild(s);
+  });
+}
+
+(function () {
+  var chartEl = document.querySelector("#chart");
+  if (!chartEl) return;
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      for (var i = 0; i < entries.length; i++) {
+        if (entries[i].isIntersecting) {
+          io.disconnect();
+          loadApexCharts().then(fetchJsonData).catch(function (err) {
+            console.error("Failed to load ApexCharts:", err);
+          });
+          return;
+        }
+      }
+    }, { rootMargin: "300px" });
+    io.observe(chartEl);
+  } else {
+    loadApexCharts().then(fetchJsonData);
+  }
+})();
