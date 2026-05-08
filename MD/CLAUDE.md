@@ -777,13 +777,42 @@ SparkCore runs **two independent content clusters** that target different audien
 
 ## Blog article conventions
 
-- Schema: `"@type": "BlogPosting"` (not `Article`)
+- Schema: `"@type": "BlogPosting"` (not `Article`). **Exception**: `/resources/regulated-crypto-fund-estonia/` pillar uses `"@type": "Article"` + `"articleSection": "Regulatory Guide"` since it's a comprehensive guide, not a blog post (matches breadcrumb label).
 - Publisher logo: `https://sparkcore.fund/assets/images/png/favicon-192x192.png`
 - `"inLanguage": "en"` on all EN articles
 - Footer year script: `<script src="/assets/js/set-year.js"></script>`
 - External link class: `class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200" target="_blank" rel="noopener noreferrer"`
 - Internal link class: `class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200"`
-- Author: Alexandre VINAL — `https://www.linkedin.com/in/alexandrevinal/`
+- Author: Alexandre VINAL — `https://www.linkedin.com/in/alexandrevinal/`. Full author Person schema (with `@id: "https://sparkcore.fund/#person-alexandre-vinal"`, `jobTitle`, `sameAs` to LinkedIn + Cointips YouTube) on every article. EN articles use `"jobTitle": "Founder & Managing Partner, SparkCore Fund Management"`. FR articles use `"jobTitle": "Fondateur & Managing Partner, SparkCore Fund Management"`.
+
+### Byline format (visible at top of article)
+
+- **EN articles + pillar**: `Published on DD Month YYYY &middot; Last reviewed DD Month YYYY &middot; By <a>Alexandre VINAL</a> &middot; N min read`
+- **FR articles**: `Publié le DD month YYYY &middot; Mis à jour le DD month YYYY &middot; Par <a>Alexandre VINAL</a> &middot; N min de lecture`
+
+### dateModified review cadence — Mode A (quarterly)
+
+YMYL financial content requires a review cadence. Frozen `dateModified == datePublished` is the largest E-E-A-T trust signal failure on the site (per audit-2026-05-08).
+
+**Cadence**: every 3 months (Jan / Apr / Jul / Oct), CRON-driven from the VPS — see `~/cron-prompts/sci/quarterly-content-review.md`.
+
+**The review is a real review** — not a no-op refresh. Each article must receive at least one substantive editorial change (new paragraph, updated statistic, fresh source link, new regulation reference). Google detects "fake refresh" patterns where `dateModified` bumps without content delta and can penalise the page.
+
+**When you bump `dateModified`, you MUST simultaneously bump all 4 surfaces** (otherwise the signals diverge):
+
+1. JSON-LD `"dateModified": "YYYY-MM-DD"` in the article schema
+2. OG meta `<meta property="article:modified_time" content="YYYY-MM-DDTHH:MM:SS+00:00">`
+3. Visible byline — `Last reviewed DD Month YYYY` (EN) / `Mis à jour le DD month YYYY` (FR)
+4. `sitemap.xml` `<lastmod>YYYY-MM-DD</lastmod>` for that article
+
+**Event-driven reviews** are also allowed (in addition to the quarterly pass) when a regulatory milestone changes the content materially:
+- AIFMD II transposition (April 2026)
+- Estonian VASP licence sunset (1 July 2026)
+- MiCA Phase 2 milestones
+- Auditor / regulator status changes
+- New fund launches
+
+The CRON produces a triage report (which articles need updates and why) — actual editorial changes are made by a human-in-the-loop pass after the report lands. The CRON does NOT auto-edit YMYL content.
 
 ---
 
