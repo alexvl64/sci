@@ -198,23 +198,34 @@ a.trust-strip__value:hover {
   color: #0E1117;
 }
 
-/* ── Nav Articles link (header secondary CTA) ── */
+/* ── Nav Articles button (header secondary CTA — outlined ghost) ── */
 .nav-articles-link {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   font-family: 'Inter', sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   font-size: 14px;
   line-height: 1.4;
   color: #0E1117;
+  background: transparent;
+  border: 1px solid #0E1117;
+  border-radius: 4px;
+  height: 44px;
+  padding: 0 16px;
   text-decoration: none;
-  transition: color 0.2s ease;
+  transition: background 0.3s ease, color 0.3s ease;
+  cursor: pointer;
+  white-space: nowrap;
 }
 .nav-articles-link:hover {
-  color: #4A6275;
+  background: #0E1117;
+  color: #fff;
 }
 @media (min-width: 768px) {
   .nav-articles-link {
+    height: 54px;
+    padding: 0 24px;
     font-size: 16px;
   }
 }
