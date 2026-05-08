@@ -16,6 +16,7 @@ const translations = {
 
     // === NAVIGATION ===
     navContact: "Nous contacter",
+    navArticles: "Articles",
 
     // === SIDEBAR FORM ===
     sidebarTitle: "En savoir plus sur SparkCore ?",
@@ -200,6 +201,7 @@ const translations = {
 
     // === NAVIGATION ===
     navContact: "Contact Us",
+    navArticles: "Articles",
 
     // === SIDEBAR FORM ===
     sidebarTitle: "Learn more about SparkCore?",

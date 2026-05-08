@@ -19,4 +19,5 @@
 # ----------------------------------------------------------------
 # Blog trailing slash removal (generic — replaces CF Transform Rule)
 # ----------------------------------------------------------------
-/blog/:slug/  /blog/:slug  301
+/blog/:slug/     /blog/:slug     301
+/fr/blog/:slug/  /fr/blog/:slug  301
