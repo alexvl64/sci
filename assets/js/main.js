@@ -1,6 +1,13 @@
-// AOS
+// AOS — once: true ensures animations play exactly once and elements remain
+// visible after their first reveal, even if scrolled out and back in. Without
+// this, AOS may re-apply its initial hidden state (opacity:0, translateX) on
+// re-entry into the viewport — the homepage's hero-content-left and other
+// data-aos sections were disappearing on scroll-up after a FR→EN switch
+// because the browser restored a non-zero scroll position and AOS scanned
+// elements as out-of-viewport at init time.
 AOS.init({
   duration: 400,
+  once: true,
 });
 
 //   =========== CHART JS ========
