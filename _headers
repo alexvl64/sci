@@ -31,6 +31,10 @@
 /discovery-call.html
   X-Robots-Tag: noindex, nofollow, noarchive
 
+# /validation = post-KYC redirect from Shufti — must never be indexed
+/validation
+  X-Robots-Tag: noindex, nofollow, noarchive
+
 /validation.html
   X-Robots-Tag: noindex, nofollow, noarchive
 

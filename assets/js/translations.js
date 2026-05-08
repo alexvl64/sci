@@ -43,6 +43,7 @@ const translations = {
     // === HERO ===
     heroTitle: "Stratégies institutionnelles <span class=\"block\">sur les actifs numériques</span>",
     heroTagline: "Trois approches distinctes. Un cadre réglementé. Conçu pour les investisseurs qui exigent la rigueur.",
+    heroTrustSignal: "<span>Supervisé par <a href=\"https://www.fi.ee/en/guides/fund-management-companies/investment-market/small-fund-managers-without-activity-licence/sparkcoreinvestment-ou\" class=\"underline underline-offset-2 hover:text-white\" target=\"_blank\" rel=\"noopener noreferrer\">Finantsinspektsioon (EE)</a></span><span class=\"max-sm:hidden\" aria-hidden=\"true\">·</span><span>LEI <a href=\"https://search.gleif.org/#/record/8945003BBN0RVNNB0S84\" class=\"underline underline-offset-2 hover:text-white\" target=\"_blank\" rel=\"noopener noreferrer\">8945003BBN0RVNNB0S84</a></span><span class=\"max-sm:hidden\" aria-hidden=\"true\">·</span><span>Audité par KPMG Estonia</span>",
     heroCtaPrimary: "Planifier un appel →",
     heroCtaSecondary: "Demander la documentation",
     heroCommentaryLink: "Lire notre dernier commentaire de marché →",
@@ -227,6 +228,7 @@ const translations = {
     // === HERO ===
     heroTitle: "Institutional-grade strategies <span class=\"block\">in digital assets</span>",
     heroTagline: "Three distinct approaches. One regulated framework. Managed for investors who demand precision.",
+    heroTrustSignal: "<span>Supervised by <a href=\"https://www.fi.ee/en/guides/fund-management-companies/investment-market/small-fund-managers-without-activity-licence/sparkcoreinvestment-ou\" class=\"underline underline-offset-2 hover:text-white\" target=\"_blank\" rel=\"noopener noreferrer\">Finantsinspektsioon (EE)</a></span><span class=\"max-sm:hidden\" aria-hidden=\"true\">·</span><span>LEI <a href=\"https://search.gleif.org/#/record/8945003BBN0RVNNB0S84\" class=\"underline underline-offset-2 hover:text-white\" target=\"_blank\" rel=\"noopener noreferrer\">8945003BBN0RVNNB0S84</a></span><span class=\"max-sm:hidden\" aria-hidden=\"true\">·</span><span>Audited by KPMG Estonia</span>",
     heroCtaPrimary: "Schedule a Discovery Call →",
     heroCtaSecondary: "Request Documentation",
     heroCommentaryLink: "Read our latest market commentary →",

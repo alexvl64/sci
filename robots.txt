@@ -7,9 +7,6 @@ Disallow: /
 User-agent: archive.org_bot
 Disallow: /
 
-User-agent: Wayback Machine
-Disallow: /
-
 User-agent: HTTrack
 Disallow: /
 
@@ -33,44 +30,51 @@ User-agent: GPTBot
 Allow: /
 Disallow: /factsheets/
 Disallow: /discovery-call
+Disallow: /validation
 Disallow: /MD/
 
 User-agent: OAI-SearchBot
 Allow: /
 Disallow: /factsheets/
 Disallow: /discovery-call
+Disallow: /validation
 Disallow: /MD/
 
 User-agent: Google-Extended
 Allow: /
 Disallow: /factsheets/
 Disallow: /discovery-call
+Disallow: /validation
 Disallow: /MD/
 
 User-agent: ClaudeBot
 Allow: /
 Disallow: /factsheets/
 Disallow: /discovery-call
+Disallow: /validation
 Disallow: /MD/
 
 User-agent: PerplexityBot
 Allow: /
 Disallow: /factsheets/
 Disallow: /discovery-call
+Disallow: /validation
 Disallow: /MD/
 
 User-agent: CCBot
 Allow: /
 Disallow: /factsheets/
 Disallow: /discovery-call
+Disallow: /validation
 Disallow: /MD/
 
 # All other crawlers — block sensitive paths
 User-agent: *
 Disallow: /factsheets/
 Disallow: /discovery-call
-Disallow: /MD/
+Disallow: /validation
 Disallow: /validation.html
+Disallow: /MD/
 Disallow: /404.html
 Disallow: /403.html
 Disallow: /500.html

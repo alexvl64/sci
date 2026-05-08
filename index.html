@@ -45,7 +45,7 @@
     <link rel="preload" href="./assets/css/tailwind.min.css?v=1.0" as="style">
     <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/funnel-display-400-latin.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-400-latin.woff2" crossorigin>
-    <link rel="preload" as="image" href="/assets/images/webp/hero-image.webp" fetchpriority="high">
+    <link rel="preload" as="image" href="/assets/images/webp/hero-image.webp" imagesrcset="/assets/images/webp/hero-image-480.webp 480w, /assets/images/webp/hero-image-768.webp 768w, /assets/images/webp/hero-image.webp 1440w" imagesizes="(max-width: 480px) 480px, (max-width: 768px) 768px, 1440px" fetchpriority="high">
     <link rel="stylesheet" href="./assets/css/style.css?v=1.6" />
     <link rel="stylesheet" href="./assets/css/tailwind.min.css?v=1.0" />
     <!-- aos css — non-critical, loaded async -->
@@ -112,8 +112,11 @@
           "url": "https://sparkcore.fund/",
           "name": "SparkCore — Regulated Crypto Fund Manager | Estonia",
           "description": "SparkCore Fund Management is a regulated crypto AIFM based in Estonia specialising in alternative investment funds invested in crypto-assets.",
-          "inLanguage": "en"
-        },
+          "inLanguage": "en",
+      "speakable": {
+        "@type": "SpeakableSpecification",
+        "cssSelector": ["h1", "h2"]
+      }},
         {
           "@type": "FinancialService",
           "name": "SparkCore Fund Management",
@@ -226,7 +229,7 @@
   </head>
 
   <body>
-    <script src="/assets/js/lang-redirect-en.js"></script>
+    <script src="/assets/js/lang-redirect-en.js" defer></script>
     <!-- ========= HEADER ======= -->
     <header class="bg-white sticky top-0 z-10 drop-shadow-lg">
       <nav
@@ -527,6 +530,13 @@
               data-i18n="heroTagline"
             >
               Three distinct approaches. One regulated framework. Managed for investors who demand precision.
+            </p>
+            <p class="max-w-[600px] font-inter text-sm text-lightBlue mt-4 flex flex-wrap items-center gap-x-3 gap-y-1 relative z-[3]" data-i18n-html="heroTrustSignal">
+              <span>Supervised by <a href="https://www.fi.ee/en/guides/fund-management-companies/investment-market/small-fund-managers-without-activity-licence/sparkcoreinvestment-ou" class="underline underline-offset-2 hover:text-white" target="_blank" rel="noopener noreferrer">Finantsinspektsioon (EE)</a></span>
+              <span class="max-sm:hidden" aria-hidden="true">·</span>
+              <span>LEI <a href="https://search.gleif.org/#/record/8945003BBN0RVNNB0S84" class="underline underline-offset-2 hover:text-white" target="_blank" rel="noopener noreferrer">8945003BBN0RVNNB0S84</a></span>
+              <span class="max-sm:hidden" aria-hidden="true">·</span>
+              <span>Audited by KPMG Estonia</span>
             </p>
             <div class="flex flex-col items-start gap-3 mt-8 relative z-[3]">
               <button
