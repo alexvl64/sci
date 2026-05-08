@@ -54,7 +54,7 @@
     <!-- toastify css — non-critical, loaded async -->
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"></noscript>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts" defer></script>
+    <!-- ApexCharts loaded lazily via IntersectionObserver in main.js when #chart enters viewport -->
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
 

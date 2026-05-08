@@ -68,12 +68,60 @@ Files: `index.html`, `fr/index.html`. Other pages (blog, factsheets, ressources)
 - **Mobile** : gain réel confirmé (+13 pts, –45 % element render delay). Le sub-metric "element render delay" ne peut pas être de la variance — c'est le résultat direct de l'inline CSS.
 - **Desktop** : pas de gain notable, possiblement légère régression de –5 à –10 pts. Acceptable car desktop reste en LCP < 2.5s (Good).
 
-## Prochaine étape recommandée
+## Sprint perf v2 — ApexCharts IO (PR #141, applied 2026-05-08 ~15h)
 
-**Sprint perf v2** (1-2 h) :
-1. **ApexCharts dynamic import via IntersectionObserver** sur la section chart — élimine 351 ms du critical path. Gain attendu mobile +5-8 pts.
-2. **Réduire le tailwind.min.css** par tree-shake actif (PurgeCSS strict) — actuellement 29 KB, possible 15-20 KB.
-3. **Moins prioritaire** : code-split `index.js` (14.7 KB) en feature-modules (form, toggle, etc.) lazy-loaded.
+**Branch:** `claude/perf-apexcharts-io`
+**Preview:** `https://claude-perf-apexcharts-io.sparkcore-fund.pages.dev/`
+
+### Changes
+
+- Removed `<script src=".../apexcharts" defer>` from `<head>` on `/` and `/fr/`
+- `main.js` now lazy-loads ApexCharts via IntersectionObserver on `#chart` (rootMargin 300 px)
+- Falls back to immediate load if IO unavailable
+- Factsheets out of scope (own JS, own apexcharts script, noindex pages)
+
+### Live PSI delta vs Sprint v1
+
+| | v1 (Plan A+B+C+D) | v2 (+ ApexCharts IO) | Δ v2 vs v1 |
+|---|---|---|---|
+| **Mobile score** | 70 | **70** (stable 3 runs) | = |
+| Mobile LCP | 7.5 s | **6.0 s** | **−1.5 s (−20 %)** |
+| Mobile FCP | 2.5 s | 2.5 s | = |
+| Mobile TBT | 130 ms | 130 ms | = |
+| Mobile SI | 4.0 s | 5.1 s | +1.1 s (chart paint deferred, expected) |
+| **Desktop score** | 51 (within variance) | **83** (stable 3 runs) | **+32 pts** |
+| Desktop LCP | 1.5 s | 1.0 s | −0.5 s |
+| Desktop TBT | 460 ms | 350 ms | −110 ms |
+
+### Long tasks comparison
+
+| Task | v1 | v2 |
+|---|---|---|
+| ApexCharts | **351 ms** | gone from initial load ✓ |
+| main.js | 203 ms | 145 ms |
+| GTM gtag | 274 ms cumul | 265 ms cumul |
+
+### Combined v1 + v2 vs original prod baseline
+
+| | Baseline 14h (prod) | Final v1+v2 | Δ |
+|---|---|---|---|
+| Mobile score | 57 | **70** | **+13 pts** |
+| Mobile LCP | 9.5 s | **6.0 s** | **−3.5 s (−37 %)** |
+| Desktop score | 92 (best of variance) | 83 (stable) | within variance |
+| Desktop LCP | 1.1 s | 1.0 s | −0.1 s |
+
+## Status livraison
+
+- v1 (Plan A+B+C+D) : merged main 2026-05-08 09:19 UTC via PR #140
+- v2 (ApexCharts IO) : pending — PR #141 → beta → main
+
+## Prochaines étapes optionnelles (Sprint v3 si besoin)
+
+1. **Tree-shake `tailwind.min.css`** plus agressif (PurgeCSS strict) — actuellement 29 KB, possible 15-20 KB.
+2. **Code-split `index.js`** (14.7 KB) en feature-modules (form, toggle, etc.) lazy-loaded.
+3. **GTM gtag.js (~265 ms)** — pourrait être chargé après idle pour libérer encore plus de TBT mobile.
+
+Le score mobile **70** plafonne à cause du throttling Lighthouse slow-4G + 4×CPU et de la latence inhérente aux scripts third-party (GTM, Cronitor). Pour aller au-delà, il faudrait revoir l'architecture analytics ou attendre CrUX field data réel (qui ne subit pas le throttling).
 
 ## Caveat — variance PSI
 
