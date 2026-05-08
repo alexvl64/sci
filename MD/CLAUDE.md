@@ -225,7 +225,8 @@ API activée le 2026-05-07 sur le projet sparkcore depuis le compte `sparkcore.p
 **Étape 1** — Rédiger le script résumé (200-300 mots, français parlé naturel) :
 
 Règles :
-- Ouvrir avec le finding/answer principal (vote, statut, deadline...)
+- **Intro standardisée obligatoire** (toujours identique d'un article à l'autre) — ouvrir avec : *"Cet article vous est présenté par SparkCore, société de gestion régulée en Europe spécialisée sur les crypto-actifs. [Titre de l'article]."* Ne **jamais** nommer l'auteur ni sa fonction dans l'audio (le byline reste sur la page HTML uniquement). Pas d'équivalent en outro — la signature marque est en intro seulement.
+- Enchaîner avec le finding/answer principal (vote, statut, deadline...)
 - 4-5 takeaways clés couverts
 - Pas de meta-commentaire ("dans cet article", "nous allons voir")
 - Phrase de clôture qui pointe vers l'article complet ("Article complet sur sparkcore point fund")
