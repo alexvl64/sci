@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/alex/.claude/skills/seo/scripts/pagespeed_check.py", line 649, in <module>
+    main()
+  File "/home/alex/.claude/skills/seo/scripts/pagespeed_check.py", line 524, in main
+    result = combined_check(args.url, api_key=api_key, strategy=args.strategy)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alex/.claude/skills/seo/scripts/pagespeed_check.py", line 452, in combined_check
+    psi_result = run_pagespeed(url, strategy=strat, api_key=api_key)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/alex/.claude/skills/seo/scripts/pagespeed_check.py", line 289, in run_pagespeed
+    result["audit_details"][audit_id] = {
+    ~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'audit_details'
