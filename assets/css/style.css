@@ -197,3 +197,40 @@ a.trust-strip__value:hover {
   background: #DBD1BC;
   color: #0E1117;
 }
+
+/* ── Article author bio (S2-2) ── */
+.article-bio-avatar {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* ── Founder CTA button (S2-6) — Cal.eu popup ── */
+.founder-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #fff;
+  background: #0E1117;
+  border-radius: 4px;
+  padding: 12px 20px;
+  text-decoration: none;
+  transition: background 0.2s ease;
+  cursor: pointer;
+  border: none;
+}
+.founder-cta-btn:hover {
+  background: #4A6275;
+}
+@media (min-width: 768px) {
+  .founder-cta-btn {
+    font-size: 16px;
+    padding: 14px 24px;
+  }
+}

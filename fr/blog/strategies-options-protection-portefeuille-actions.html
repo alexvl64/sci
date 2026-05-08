@@ -33,14 +33,16 @@
     <link rel="apple-touch-icon" sizes="192x192" href="/assets/images/png/favicon-192x192.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <link rel="preload" href="/assets/css/style.css?v=1.6" as="style">
-    <link rel="stylesheet" href="/assets/css/style.css?v=1.6" />
-    <link rel="stylesheet" href="/assets/css/tailwind.min.css?v=1.0" />
+    <link rel="preload" href="/assets/css/style.css?v=1.7" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/style.css?v=1.7"></noscript>
+    <link rel="preload" href="/assets/css/tailwind.min.css?v=1.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/tailwind.min.css?v=1.0"></noscript>
 
     <script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    "@id": "https://sparkcore.fund/fr/blog/strategies-options-protection-portefeuille-actions#article",
     "headline": "Stratégies d'Options pour Protéger un Portefeuille Actions : Mécaniques, Coûts et Limites",
     "description": "Protective put, collar (JHEQX -8,06% vs S&P -18,1% en 2022), covered call (JEPI), put spread, tail risk hedging (Universa +4 144% Q1 2020) et VIX calls : mécanique, coûts et limites.",
     "datePublished": "2026-04-15",
@@ -57,22 +59,23 @@
             "https://www.youtube.com/@cointips"
         ]
     },
-    "publisher": {
-        "@type": "Organization",
-        "name": "SparkCore Fund Management",
-        "legalName": "SparkCore.investment OÜ",
-        "url": "https://sparkcore.fund",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "https://sparkcore.fund/assets/images/png/favicon-192x192.png"
-        }
-    },
+    "publisher": {"@id": "https://sparkcore.fund/#organization"},
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://sparkcore.fund/fr/blog/strategies-options-protection-portefeuille-actions"
     },
     "url": "https://sparkcore.fund/fr/blog/strategies-options-protection-portefeuille-actions",
-    "image": "https://images.unsplash.com/photo-1642790551116-18e150f248e3?w=1260&h=750&fit=crop&q=80",
+    "image": {
+
+      "@type": "ImageObject",
+
+      "url": "https://images.unsplash.com/photo-1642790551116-18e150f248e3?w=1260&h=750&fit=crop&q=80",
+
+      "width": 1260,
+
+      "height": 750
+
+    },
     "wordCount": 4800,
     "keywords": ["options", "couverture portefeuille", "protective put", "collar", "put spread", "tail risk hedging", "VIX", "JHEQX", "JEPI", "Universa", "gestion du risque"]
 }
@@ -612,7 +615,7 @@
         </div>
 
       <aside class="article-bio mt-10 pt-8 border-t border-lightGray flex items-start gap-4">
-          <img src="/assets/images/webp/team-member-third.webp" alt="Photo d'Alexandre VINAL" class="w-16 h-16 rounded-full object-cover flex-shrink-0" width="832" height="800" loading="lazy" />
+          <img src="/assets/images/webp/team-member-third.webp" alt="Photo d'Alexandre VINAL" class="article-bio-avatar" width="832" height="800" loading="lazy" />
           <div>
             <h3 class="font-funnel-display text-lg text-darkGray mb-2">À propos de l'auteur</h3>
             <p class="font-inter text-sm text-mediumGray leading-160">

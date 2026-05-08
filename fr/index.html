@@ -41,12 +41,12 @@
     <link rel="manifest" href="/site.webmanifest">
 
     <!-- style css -->
-    <link rel="preload" href="../assets/css/style.css?v=1.6" as="style">
-    <link rel="preload" href="../assets/css/tailwind.min.css?v=1.0" as="style">
+    <link rel="preload" href="../assets/css/style.css?v=1.7" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="preload" href="../assets/css/tailwind.min.css?v=1.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/funnel-display-400-latin.woff2" crossorigin>
     <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-400-latin.woff2" crossorigin>
     <link rel="preload" as="image" href="/assets/images/webp/hero-image.webp" imagesrcset="/assets/images/webp/hero-image-480.webp 480w, /assets/images/webp/hero-image-768.webp 768w, /assets/images/webp/hero-image.webp 1440w" imagesizes="(max-width: 480px) 480px, (max-width: 768px) 768px, 1440px" fetchpriority="high">
-    <link rel="stylesheet" href="../assets/css/style.css?v=1.6" />
+    <noscript><link rel="stylesheet" href="../assets/css/style.css?v=1.7"></noscript>
     <!-- aos css — non-critical, loaded async -->
     <link rel="preload" href="../assets/css/aos.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="../assets/css/aos.min.css"></noscript>
@@ -54,7 +54,7 @@
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"></noscript>
 
-    <link rel="stylesheet" href="../assets/css/tailwind.min.css?v=1.0" />
+    <noscript><link rel="stylesheet" href="../assets/css/tailwind.min.css?v=1.0"></noscript>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts" defer></script>
     <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <script src="../assets/js/aos.min.js"></script>
@@ -69,11 +69,17 @@
       "@graph": [
         {
           "@type": "Organization",
+          "@id": "https://sparkcore.fund/#organization",
           "name": "SparkCore Fund Management",
           "legalName": "SparkCore.investment OÜ",
           "alternateName": ["SparkCore", "SparkCore Asset Management"],
           "url": "https://sparkcore.fund/",
-          "logo": "https://sparkcore.fund/assets/images/png/favicon-192x192.png",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://sparkcore.fund/assets/images/png/favicon-192x192.png",
+            "width": 192,
+            "height": 192
+          },
           "description": "Gestionnaire de fonds d'investissement alternatifs (AIFM) spécialisé dans les crypto-actifs, enregistré en Estonie et supervisé par la Finantsinspektsioon.",
           "leiCode": "8945003BBN0RVNNB0S84",
           "taxID": "16265864",
@@ -84,43 +90,67 @@
             "https://www.fi.ee/en/guides/fund-management-companies/investment-market/small-fund-managers-without-activity-licence/sparkcoreinvestment-ou"
           ],
           "founder": [
-            {
-              "@type": "Person",
-              "name": "Paul-Antoine PONS",
-              "jobTitle": "Managing Partner",
-              "sameAs": "https://www.linkedin.com/in/paul-antoine-pons-523aa919a/"
-            },
-            {
-              "@type": "Person",
-              "name": "Olivier SAYEGH",
-              "jobTitle": "Managing Partner",
-              "sameAs": "https://www.linkedin.com/in/olivier-sayegh-5b89b3135/"
-            },
-            {
-              "@type": "Person",
-              "name": "Alexandre VINAL",
-              "jobTitle": "Managing Partner",
-              "sameAs": [
-                "https://www.linkedin.com/in/alexandrevinal/",
-                "https://www.youtube.com/@cointips"
-              ]
-            }
+            {"@id": "https://sparkcore.fund/#person-paul-antoine-pons"},
+            {"@id": "https://sparkcore.fund/#person-olivier-sayegh"},
+            {"@id": "https://sparkcore.fund/#person-alexandre-vinal"}
           ]
         },
         {
+          "@type": "Person",
+          "@id": "https://sparkcore.fund/#person-paul-antoine-pons",
+          "name": "Paul-Antoine PONS",
+          "jobTitle": "Managing Partner, SparkCore Fund Management",
+          "url": "https://www.linkedin.com/in/paul-antoine-pons-523aa919a/",
+          "worksFor": {"@id": "https://sparkcore.fund/#organization"},
+          "sameAs": ["https://www.linkedin.com/in/paul-antoine-pons-523aa919a/"]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://sparkcore.fund/#person-olivier-sayegh",
+          "name": "Olivier SAYEGH",
+          "jobTitle": "Managing Partner, SparkCore Fund Management",
+          "url": "https://www.linkedin.com/in/olivier-sayegh-5b89b3135/",
+          "worksFor": {"@id": "https://sparkcore.fund/#organization"},
+          "sameAs": ["https://www.linkedin.com/in/olivier-sayegh-5b89b3135/"]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://sparkcore.fund/#person-alexandre-vinal",
+          "name": "Alexandre VINAL",
+          "jobTitle": "Fondateur & Managing Partner, SparkCore Fund Management",
+          "url": "https://www.linkedin.com/in/alexandrevinal/",
+          "worksFor": {"@id": "https://sparkcore.fund/#organization"},
+          "sameAs": [
+            "https://www.linkedin.com/in/alexandrevinal/",
+            "https://www.youtube.com/@cointips"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://sparkcore.fund/#website",
+          "url": "https://sparkcore.fund/",
+          "name": "SparkCore Fund Management",
+          "publisher": {"@id": "https://sparkcore.fund/#organization"},
+          "inLanguage": ["en", "fr"]
+        },
+        {
           "@type": "WebPage",
-          "@id": "https://sparkcore.fund/fr/",
+          "@id": "https://sparkcore.fund/fr/#webpage",
           "url": "https://sparkcore.fund/fr/",
           "name": "SparkCore — Gestionnaire de fonds crypto réglementé | Estonie",
           "description": "SparkCore Fund Management est un AIFM crypto réglementé basé en Estonie, spécialisé dans les fonds d'investissement alternatifs en crypto-actifs.",
+          "isPartOf": {"@id": "https://sparkcore.fund/#website"},
+          "about": {"@id": "https://sparkcore.fund/#organization"},
           "inLanguage": "fr"
         },
         {
           "@type": "FinancialService",
+          "@id": "https://sparkcore.fund/#financialservice",
           "name": "SparkCore Fund Management",
           "legalName": "SparkCore.investment OÜ",
           "description": "Gestionnaire de fonds d'investissement alternatifs (AIFM) réglementé, spécialisé dans les fonds d'investissement en crypto-actifs. Gestion de fonds d'investissement alternatifs.",
           "url": "https://sparkcore.fund/fr/",
+          "provider": {"@id": "https://sparkcore.fund/#organization"},
           "areaServed": "EU",
           "address": {
             "@type": "PostalAddress",

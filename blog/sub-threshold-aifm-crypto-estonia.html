@@ -34,14 +34,16 @@
     <link rel="apple-touch-icon" sizes="192x192" href="/assets/images/png/favicon-192x192.png">
     <link rel="manifest" href="/site.webmanifest">
 
-    <link rel="preload" href="/assets/css/style.css?v=1.6" as="style">
-    <link rel="stylesheet" href="/assets/css/style.css?v=1.6" />
-    <link rel="stylesheet" href="/assets/css/tailwind.min.css?v=1.0" />
+    <link rel="preload" href="/assets/css/style.css?v=1.7" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/style.css?v=1.7"></noscript>
+    <link rel="preload" href="/assets/css/tailwind.min.css?v=1.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/tailwind.min.css?v=1.0"></noscript>
 
     <script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
+    "@id": "https://sparkcore.fund/blog/sub-threshold-aifm-crypto-estonia#article",
     "headline": "Sub-Threshold AIFM for Crypto: Thresholds, Benefits, and the Estonia Option",
     "description": "55% of hedge funds now hold crypto assets. Sub-threshold AIFM registration under AIFMD Article 3(2) lets crypto fund managers launch in 30–60 days with €25,000 capital in Estonia.",
     "datePublished": "2026-04-07",
@@ -56,22 +58,23 @@
             "https://www.youtube.com/@cointips"
         ]
     },
-    "publisher": {
-        "@type": "Organization",
-        "name": "SparkCore Fund Management",
-        "legalName": "SparkCore.investment OÜ",
-        "url": "https://sparkcore.fund",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "https://sparkcore.fund/assets/images/png/favicon-192x192.png"
-        }
-    },
+    "publisher": {"@id": "https://sparkcore.fund/#organization"},
     "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://sparkcore.fund/blog/sub-threshold-aifm-crypto-estonia"
     },
     "url": "https://sparkcore.fund/blog/sub-threshold-aifm-crypto-estonia",
-    "image": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&h=630&fit=crop&q=80",
+    "image": {
+
+      "@type": "ImageObject",
+
+      "url": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&h=630&fit=crop&q=80",
+
+      "width": 1200,
+
+      "height": 630
+
+    },
     "dateModified": "2026-05-08",
     "wordCount": 5000,
     "inLanguage": "en",
@@ -83,6 +86,10 @@
         "alternative investment fund",
         "MiCA",
         "digital assets"
+    ],
+    "about": [
+      {"@type": "Thing", "name": "Alternative Investment Fund Managers Directive", "sameAs": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32011L0061"},
+      {"@type": "Thing", "name": "AIFMD II (Directive (EU) 2024/927)", "sameAs": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024L0927"}
     ],
     "isAccessibleForFree": true
 }
@@ -607,7 +614,7 @@
         <aside class="bg-[#F9FAFB] border border-lightGray rounded-lg p-6 my-10">
           <p class="font-funnel-display text-xl text-darkGray mb-2">Want to launch your own regulated fund?</p>
           <p class="font-inter text-base text-mediumGray leading-160 mb-4">SparkCore offers white-label AIFM structuring in Estonia &mdash; from substance setup to Finantsinspektsioon registration. We co-build with crypto-native managers who want to operate in a regulated EU framework without 12&ndash;18 months of Luxembourg authorisation.</p>
-          <a href="/discovery-call" class="inline-flex items-center font-inter font-medium text-white bg-darkGray hover:bg-steelBlue px-5 py-3 rounded text-sm transition-colors duration-200">Schedule a Founders Call &rarr;</a>
+          <button type="button" data-cal-link="sparkcore/discovery" data-cal-origin="https://app.cal.eu" data-cal-config='{"layout":"month_view","theme":"light"}' class="founder-cta-btn">Schedule a Founders Call &rarr;</button>
         </aside>
 
         <div class="border-l-4 border-steelBlue bg-[#F9FAFB] pl-5 py-8 pr-5 mt-12 mb-12 rounded-r-lg">
@@ -631,7 +638,7 @@
           </a>
         </div>
       <aside class="article-bio mt-10 pt-8 border-t border-lightGray flex items-start gap-4">
-          <img src="/assets/images/webp/team-member-third.webp" alt="Photo of Alexandre VINAL" class="w-16 h-16 rounded-full object-cover flex-shrink-0" width="832" height="800" loading="lazy" />
+          <img src="/assets/images/webp/team-member-third.webp" alt="Photo of Alexandre VINAL" class="article-bio-avatar" width="832" height="800" loading="lazy" />
           <div>
             <h3 class="font-funnel-display text-lg text-darkGray mb-2">About the author</h3>
             <p class="font-inter text-sm text-mediumGray leading-160">
@@ -680,6 +687,12 @@
         </div>
       </div>
     </footer>
-    <script src="/assets/js/set-year.js"></script>
+    <script src="/assets/js/set-year.js"></script>    <!-- Cal.com popup — Founder CTA -->
+    <script>
+    (function(C,A,L){let p=function(a,ar){a.q.push(ar)};let d=C.document;C.Cal=C.Cal||function(){let cal=C.Cal;let ar=arguments;if(!cal.loaded){cal.ns={};cal.q=cal.q||[];d.head.appendChild(d.createElement("script")).src=A+"/embed/embed.js";cal.loaded=true}if(ar[0]===L){const api=function(){p(api,arguments)};const namespace=ar[1];api.q=api.q||[];if(typeof namespace==="string"){cal.ns[namespace]=cal.ns[namespace]||api;p(cal.ns[namespace],ar);p(cal,["initNamespace",namespace])}else p(cal,ar);return}p(cal,ar)}})(window,"https://app.cal.eu","init");
+    Cal("init",{origin:"https://app.cal.eu"});
+    Cal("ui",{theme:"light",cssVarsPerTheme:{light:{"cal-brand":"#0E1117"}}});
+    </script>
+
   </body>
 </html>

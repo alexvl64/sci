@@ -40,17 +40,19 @@
     <link rel="manifest" href="/site.webmanifest">
 
     <!-- CSS -->
-    <link rel="preload" href="/assets/css/style.css?v=1.6" as="style">
-    <link rel="stylesheet" href="/assets/css/style.css?v=1.6" />
+    <link rel="preload" href="/assets/css/style.css?v=1.7" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/style.css?v=1.7"></noscript>
 
     <!-- Tailwind -->
-    <link rel="stylesheet" href="/assets/css/tailwind.min.css?v=1.0" />
+    <link rel="preload" href="/assets/css/tailwind.min.css?v=1.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/tailwind.min.css?v=1.0"></noscript>
 
     <!-- JSON-LD Article Schema -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "BlogPosting",
+      "@id": "https://sparkcore.fund/blog/why-invest-in-crypto-funds-2026#article",
       "headline": "Why Invest in Crypto Funds? 7 Best Reasons for 2026",
       "description": "55% of hedge funds now hold crypto — up from 29% in 2023. Here are 7 evidence-based reasons to invest in crypto funds in 2026, from risk-adjusted returns to EU regulatory protections.",
       "url": "https://sparkcore.fund/blog/why-invest-in-crypto-funds-2026",
@@ -68,21 +70,22 @@
               "https://www.youtube.com/@cointips"
           ]
       },
-      "publisher": {
-        "@type": "Organization",
-        "name": "SparkCore Fund Management",
-        "legalName": "SparkCore.investment OÜ",
-        "url": "https://sparkcore.fund",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https://sparkcore.fund/assets/images/png/favicon-192x192.png"
-        }
-      },
+      "publisher": {"@id": "https://sparkcore.fund/#organization"},
       "mainEntityOfPage": {
         "@type": "WebPage",
         "@id": "https://sparkcore.fund/blog/why-invest-in-crypto-funds-2026"
       },
-      "image": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1260&h=750&fit=crop&q=80",
+      "image": {
+
+        "@type": "ImageObject",
+
+        "url": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=1260&h=750&fit=crop&q=80",
+
+        "width": 1260,
+
+        "height": 750
+
+      },
       "wordCount": 3600,
       "keywords": ["crypto funds", "institutional crypto", "crypto fund investment", "Bitcoin allocation", "crypto hedge funds", "EU crypto regulation", "MiCA", "AIFMD", "portfolio diversification"]
     }
@@ -717,7 +720,7 @@
         </div>
 
       <aside class="article-bio mt-10 pt-8 border-t border-lightGray flex items-start gap-4">
-          <img src="/assets/images/webp/team-member-third.webp" alt="Photo of Alexandre VINAL" class="w-16 h-16 rounded-full object-cover flex-shrink-0" width="832" height="800" loading="lazy" />
+          <img src="/assets/images/webp/team-member-third.webp" alt="Photo of Alexandre VINAL" class="article-bio-avatar" width="832" height="800" loading="lazy" />
           <div>
             <h3 class="font-funnel-display text-lg text-darkGray mb-2">About the author</h3>
             <p class="font-inter text-sm text-mediumGray leading-160">
