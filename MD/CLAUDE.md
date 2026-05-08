@@ -657,7 +657,7 @@ All settings below are live on the `sparkcore.fund` zone.
 | Max-age | 12 months (31 536 000 s) |
 | Include Subdomains | ✅ |
 | No-sniff | ✅ |
-| Preload | ❌ deferred — enable after several weeks of confirmed stability |
+| Preload | ✅ enabled 2026-05-08, submitted to hstspreload.org (status: pending inclusion). ETA Chromium pickup 6-12 weeks. Per audit Sprint 1 / S1-6. |
 
 ### Rules → Transform Rules → Modify Response Header
 
