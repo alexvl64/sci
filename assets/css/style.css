@@ -205,14 +205,14 @@ a.trust-strip__value:hover {
   justify-content: center;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.4;
   color: #0E1117;
   background: transparent;
   border: 1px solid #0E1117;
   border-radius: 4px;
-  height: 44px;
-  padding: 0 16px;
+  height: 40px;
+  padding: 0 12px;
   text-decoration: none;
   transition: background 0.3s ease, color 0.3s ease;
   cursor: pointer;
@@ -227,6 +227,20 @@ a.trust-strip__value:hover {
     height: 54px;
     padding: 0 24px;
     font-size: 16px;
+  }
+}
+
+/* Mobile only: tighten gap + adjacent primary CTA padding when both header
+   buttons are present. Prevents overlap of the right-side group with the
+   logo on narrow viewports. */
+@media (max-width: 767px) {
+  div:has(> .nav-articles-link) {
+    gap: 0.5rem;
+  }
+  div:has(> .nav-articles-link) > a:not(.nav-articles-link),
+  div:has(> .nav-articles-link) > button:not(.nav-articles-link) {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 }
 
