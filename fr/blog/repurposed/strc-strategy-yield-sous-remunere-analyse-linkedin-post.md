@@ -1,33 +1,32 @@
 # LinkedIn Post — STRC Strategy yield sous-rémunéré
 
 > **Format :** Post LinkedIn standard (feed), pas article long-form.
-> **Longueur :** ~2 310 caractères (au-dessus du sweet spot 1 300-1 900, sous la limite max 3 000 ; toléré pour la densité analytique d'un sujet crédit).
+> **Longueur :** ~2 530 caractères (au-dessus du sweet spot 1 300-1 900, sous la limite max 3 000 ; toléré pour la densité analytique d'un sujet crédit).
 > **Ton :** Institutionnel, sobre, sans emojis ni décoration. Pas de question d'engagement explicite (autorité > call-to-engagement).
+> **Style :** Français naturel — éviter les calques anglais ("fair value", "money market funds", "bps", "AT1"...) et les énumérations techniques denses. Garder le détail chiffré pour l'article complet.
 > **Publication :** Mardi 12 au jeudi 14 mai 2026, 8h-10h CEST. Lien en premier commentaire.
 
 ---
 
 ## Texte du post (à copier-coller tel quel)
 
-STRC, lancé par Strategy Inc. en juillet 2025, affiche un coupon annuel de 11,5 % distribué chaque mois en cash, avec un prix maintenu autour de 100 dollars. La narrative marketing positionne l'instrument comme alternative aux money market funds.
+STRC, lancé par Strategy Inc. en juillet 2025, paie un coupon annuel de 11,5 % distribué chaque mois en cash, à un prix maintenu autour de 100 dollars. Le marketing présente l'instrument comme une alternative aux fonds monétaires.
 
-Le yield apparent ne reflète pas la nature du risque porté.
+Ce n'est ni l'un, ni l'autre.
 
-Quatre points structurels rarement discutés dans la couverture mainstream.
+Premier point. STRC n'est pas un produit de dette. C'est une action de préférence — un titre de capital qui passe derrière toute la dette de l'émetteur. Pas d'échéance, pas de garantie, pas de cas de défaut au sens où un créancier l'entendrait. Si Strategy décide de ne pas verser le coupon, le détenteur n'a aucun recours obligataire — il subit la baisse de prix.
 
-(1) STRC n'est pas un instrument de dette. C'est une action de préférence perpétuelle : pas de maturité, pas de covenants, pas de collatéral, pas de cas de défaut au sens créancier. Le dividende est versé sur funds legally available, à la discrétion du conseil d'administration.
+Deuxième point. Le maintien autour de 100 dollars n'est pas garanti par contrat. C'est une intention déclarée par le management, qui se réserve toute discrétion sur l'ajustement mensuel du taux. Si le coupon nécessaire pour défendre les 100 dollars devient trop coûteux pour l'émetteur, Strategy peut juridiquement refuser de l'augmenter et laisser le prix dériver.
 
-(2) Le maintien autour de 100 dollars est une intention déclarée du management, pas une obligation contractuelle. Le prospectus 424B5 laisse à Strategy une "sole and absolute discretion" sur le taux variable. Si le coupon nécessaire pour défendre le peg devient économiquement insoutenable, l'émetteur peut juridiquement le refuser et laisser le prix dériver.
+Troisième point. Si on additionne les vrais risques de l'instrument — Strategy n'a aucune activité opérationnelle qui génère les liquidités nécessaires au service du coupon, l'exposition est concentrée sur un seul actif volatile (le bitcoin), STRC est subordonné à plusieurs milliards de dollars de dette — le rendement économiquement justifié se situe entre 14 % et 20 %, avec un point central autour de 15 à 16 %.
 
-(3) L'empilement des primes de risque — baseline UST 10 ans autour de 4,4 %, crédit Strategy équivalent BB, subordination derrière environ 18 milliards de dollars de claims senior, concentration single-asset bitcoin, optionalité défavorable, duration cachée, liquidité, fiscalité, gouvernance — aboutit à un yield exigible entre 13,8 % et 19,8 %, avec un point central autour de 15,5 à 16,5 %.
+Quatrième point. À 11,5 %, le détenteur est donc rémunéré environ 400 à 500 points de base en dessous du juste prix. Cet écart correspond aux droits qu'il a cédés gratuitement à Strategy : la discrétion sur le taux, le rachat possible à 101 dollars, et la liberté de laisser le prix dériver si la défense des 100 dollars devient trop coûteuse.
 
-(4) À 11,5 % actuel, l'écart de 400 à 500 bps avec ce fair value est la valeur de l'option implicite que le détenteur a vendue gratuitement à Strategy : optionalité sur le taux, sur le timing du call, sur la duration en cas de peg break, sur la suspension temporaire en environnement adverse.
+La comparaison la plus pertinente n'est pas l'obligation bancaire en stress, ni l'action préférentielle d'un foncier hypothécaire en difficulté. C'est l'action préférentielle d'un transporteur maritime en cycle bas : un actif volatile sous-jacent, pas de cashflow garanti, des dirigeants qui gardent la main sur les distributions. Ces titres se traitent à 11 à 16 % de rendement, sans illusion de prix stable.
 
-Le comparable structurel le plus proche n'est pas l'AT1 bancaire post-Credit Suisse ni la préférentielle REIT mortgage en stress. C'est la préférentielle shipping en cycle bas, qui cote 11 à 16 % sans peg artificiel pour amortir le repricing.
+Le marché peut continuer à payer au-dessus du juste prix pendant un temps. Il finira par ajuster.
 
-Le marché peut continuer à payer au-dessus du fair value pendant un temps. Il finira par repricer.
-
-Article complet : décomposition des dix modes de défaillance identifiables, comparables crédit chiffrés, comparaison avec STRF (10 % fixe cumulatif senior dans la stack Strategy). Lien en premier commentaire.
+Article complet : décomposition des dix scénarios de défaillance identifiables, comparaisons chiffrées avec les instruments similaires, alternative possible dans la même structure de capital. Lien en premier commentaire.
 
 Alexandre VINAL — SparkCore Fund Management
 
@@ -35,17 +34,27 @@ Alexandre VINAL — SparkCore Fund Management
 
 ## Premier commentaire (à publier immédiatement après le post)
 
-Article complet, prospectus 424B5 sourcé, décomposition primes de risque, comparables shipping/AT1/REIT mortgage stress : https://sparkcore.fund/fr/blog/strc-strategy-yield-sous-remunere-analyse
+Article complet, prospectus et sources officielles, décomposition détaillée des primes de risque : https://sparkcore.fund/fr/blog/strc-strategy-yield-sous-remunere-analyse
 
 ---
 
 ## Notes opérationnelles
 
-- **Caractères du post principal :** ~2 270 (densité justifiée par sujet crédit technique ; reste sous la limite 3 000)
+- **Caractères du post principal :** ~2 530 (densité analytique justifiée par sujet crédit ; reste sous la limite 3 000)
+- **Choix éditoriaux clés** :
+  - "Action de préférence" seul (sans "perpétuelle") — terme légal français correct ; "perpétuelle" était un calque maladroit de l'anglais
+  - "Fonds monétaires" au lieu de "money market funds"
+  - "Points de base" au lieu de "bps"
+  - "Juste prix" au lieu de "fair value"
+  - "Obligation bancaire en stress" au lieu d'"AT1 post-Credit Suisse"
+  - "Foncier hypothécaire" au lieu de "REIT mortgage"
+  - "Transporteur maritime" au lieu de "shipping"
+  - Numérique : fourchette arrondie 14-20 % (article : 13,8-19,8 %) pour la lisibilité feed
+  - Pas de termes techniques verbatim du prospectus ("funds legally available", "sole and absolute discretion") — ils alourdissent sans rien ajouter au sens
 - **Pas de hashtags dans le corps :** ton institutionnel SparkCore. Option à ajouter en commentaire si stratégie SEO LinkedIn
-- **Hashtags suggérés (si activés en commentaire) :** `#STRC` `#Strategy` `#PreferredStock` `#CreditAnalysis` `#Bitcoin` `#YieldInvesting`
+- **Hashtags suggérés (si activés en commentaire) :** `#STRC` `#Strategy` `#Bitcoin` `#AnalyseCrédit` `#Rendement` `#FondsMonétaires`
 - **Pas de question d'engagement explicite :** autorité institutionnelle, l'engagement vient des analystes/PMs qui réagissent sur le fond (alignement avec convention clarity-act post)
-- **Cible audience LinkedIn :** PMs crédit, family offices, allocators institutionnels, analystes sell-side, journalistes finance
-- **Risque réputationnel à anticiper :** position contrarienne sur un instrument à 8,5 Md $ d'encours et 80 % détenu par des particuliers. Préparer 2-3 réponses-types pour les commentaires bullish ou défensifs (focus : pas une reco vente, analyse de fair value vs prix marché)
+- **Cible audience LinkedIn :** PMs crédit, family offices, allocators institutionnels, analystes sell-side, journalistes finance — accessible aussi aux investisseurs particuliers HNW grâce au français naturel
+- **Risque réputationnel à anticiper :** position contrarienne sur un instrument à 8,5 Md $ d'encours et 80 % détenu par des particuliers. Préparer 2-3 réponses-types pour les commentaires bullish ou défensifs (focus : pas une reco vente, analyse de juste prix vs prix marché)
 - **Calendrier :** publier mardi 12 ou mercredi 13 mai 2026, 8h-10h CEST. Éviter lundi (saturation feed post-weekend). Éviter vendredi (engagement faible)
-- **Variation suivante (2-3 semaines après) :** si Strategy maintient 11,5 % au mois de juin, repost avec angle "le peg tient mais consomme du runway". Si Strategy relève à 11,75-12 %, repost avec angle "le 5ème ajustement consécutif valide la thèse de cap implicite"
+- **Variation suivante (2-3 semaines après) :** si Strategy maintient 11,5 % au mois de juin, repost avec angle "le prix tient mais consomme du runway". Si Strategy relève à 11,75-12 %, repost avec angle "le 5ème ajustement consécutif valide la thèse de plafond implicite"
