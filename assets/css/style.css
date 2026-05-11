@@ -230,17 +230,14 @@ a.trust-strip__value:hover {
   }
 }
 
-/* Mobile only: tighten gap + adjacent primary CTA padding when both header
-   buttons are present. Prevents overlap of the right-side group with the
-   logo on narrow viewports. */
+/* Mobile only: tighten the primary CTA that sits next to nav-articles-link
+   so the logo doesn't get overlapped on narrow viewports. The parent gap is
+   already reduced via Tailwind classes (gap-2 md:gap-7) — no :has() needed. */
 @media (max-width: 767px) {
-  div:has(> .nav-articles-link) {
-    gap: 0.5rem;
-  }
-  div:has(> .nav-articles-link) > a:not(.nav-articles-link),
-  div:has(> .nav-articles-link) > button:not(.nav-articles-link) {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+  .nav-articles-link + a,
+  .nav-articles-link + button {
+    padding-left: 0.625rem;
+    padding-right: 0.625rem;
   }
 }
 
