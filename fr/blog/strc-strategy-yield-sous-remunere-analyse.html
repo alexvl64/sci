@@ -421,92 +421,13 @@
 
         <p class="font-inter text-base text-mediumGray leading-160 mb-4">La lecture de ces comparables est cohérente avec la décomposition analytique. STRC présente une combinaison de facteurs de risque — absence de cashflow opérationnel, single-asset BTC, gouvernance concentrée, perpétuelle non bornée, discrétion totale du board sur le taux — qui est, dans l'ensemble, plus défavorable que la plupart de ces familles d'instruments. Un yield exigible entre 13,8 % et 19,8 %, avec un point central autour de 15,5-16,5 %, est cohérent avec ce positionnement.</p>
 
-        <figure class="my-8 rounded-lg bg-[#0f172a] p-4 sm:p-6 overflow-x-auto">
-<svg viewBox="0 0 720 440" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Comparaison horizontale des yields : high yield BB- 7%, CCC 11%, REIT mortgage en stress 12%, AT1 post-Credit Suisse 11%, shipping prefs cycle bas 13,5%, STRC actuel 11,5%, STRC fair value 16%">
-  <title>Comparables crédit STRC : où se situe le taux actuel vs le fair value</title>
-  <rect width="720" height="440" fill="#0f1117" rx="8"/>
-
-  <!-- Title block -->
-  <text x="360" y="28" text-anchor="middle" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="15" font-weight="bold">Comparables crédit · yields typiques mai 2026</text>
-  <text x="360" y="46" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Le taux STRC actuel (11,5 %) est en dessous du fair value estimé (16 %) et proche de comparables à risque inférieur</text>
-
-  <!-- Plot area: x 220 to 660 (width 440 for bars), y 78 to 380 (7 rows). row height ~42, gap 6 -->
-  <!-- X axis: 0% to 18%, scale 440/18 = 24.444 px/% -->
-  <!-- x(val) = 220 + val * 24.444 -->
-
-  <!-- X axis grid -->
-  <line x1="220" y1="380" x2="660" y2="380" stroke="#475569" stroke-width="1"/>
-  <line x1="220" y1="78" x2="220" y2="380" stroke="#475569" stroke-width="1"/>
-  <line x1="342.22" y1="78" x2="342.22" y2="380" stroke="#334155" stroke-width="0.75" stroke-dasharray="3,3"/>
-  <line x1="464.44" y1="78" x2="464.44" y2="380" stroke="#334155" stroke-width="0.75" stroke-dasharray="3,3"/>
-  <line x1="586.67" y1="78" x2="586.67" y2="380" stroke="#334155" stroke-width="0.75" stroke-dasharray="3,3"/>
-
-  <!-- X labels -->
-  <text x="220" y="398" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">0%</text>
-  <text x="342.22" y="398" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">5%</text>
-  <text x="464.44" y="398" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">10%</text>
-  <text x="586.67" y="398" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">15%</text>
-
-  <!-- Reference vertical line: STRC actuel 11,5% -->
-  <line x1="500.56" y1="78" x2="500.56" y2="380" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="6,4"/>
-  <text x="503" y="74" fill="#ef4444" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">STRC actuel · 11,5%</text>
-
-  <!-- Reference vertical line: STRC fair value 16% (point central) -->
-  <line x1="611.11" y1="78" x2="611.11" y2="380" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="6,4"/>
-  <text x="614" y="74" fill="#22c55e" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">Fair value · ~16%</text>
-
-  <!-- ====== HORIZONTAL BARS ======
-       Row layout: y starts 90, height 28, gap 14, step 42
-       Row 1 (HY BB-): y=90 to 118, midpoint 7.0, range 6.5-7.5
-       Row 2 (HY CCC): y=132 to 160, midpoint 11.0, range 9-13
-       Row 3 (REIT stress): y=174 to 202, midpoint 12.0, range 10-14
-       Row 4 (AT1): y=216 to 244, midpoint 11.0, range 9-13
-       Row 5 (Shipping prefs): y=258 to 286, midpoint 13.5, range 11-16
-       Row 6 (STRC actuel): y=300 to 328, point 11.5
-       Row 7 (STRC fair value): y=342 to 370, range 13.8-19.8 -->
-
-  <!-- Row 1: HY BB- range 6.5 to 7.5 -->
-  <rect x="378.89" y="98" width="24.44" height="12" fill="#64748b"/>
-  <text x="215" y="116" text-anchor="end" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11">High yield BB-</text>
-  <text x="410" y="116" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10">6,5-7,5%</text>
-
-  <!-- Row 2: HY CCC range 9 to 13 -->
-  <rect x="440" y="140" width="97.78" height="12" fill="#8b5cf6"/>
-  <text x="215" y="158" text-anchor="end" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11">High yield CCC</text>
-  <text x="544" y="158" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10">9-13%</text>
-
-  <!-- Row 3: REIT mortgage stress 10-14 -->
-  <rect x="464.44" y="182" width="97.78" height="12" fill="#a78bfa"/>
-  <text x="215" y="200" text-anchor="end" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11">Prefs REIT mortgage stress</text>
-  <text x="568" y="200" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10">10-14%</text>
-
-  <!-- Row 4: AT1 post-CS 9-13 -->
-  <rect x="440" y="224" width="97.78" height="12" fill="#7c3aed"/>
-  <text x="215" y="242" text-anchor="end" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11">AT1 banques post-CS</text>
-  <text x="544" y="242" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10">9-13%</text>
-
-  <!-- Row 5: Shipping prefs 11-16 -->
-  <rect x="488.89" y="266" width="122.22" height="12" fill="#f59e0b"/>
-  <text x="215" y="284" text-anchor="end" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11">Prefs shipping cycle bas</text>
-  <text x="617" y="284" fill="#fcd34d" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">11-16% ★</text>
-
-  <!-- Row 6: STRC actuel 11,5% (single point as small bar) -->
-  <rect x="498.56" y="308" width="4" height="12" fill="#ef4444"/>
-  <circle cx="500.56" cy="314" r="5" fill="#ef4444"/>
-  <text x="215" y="326" text-anchor="end" fill="#fca5a5" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">STRC actuel</text>
-  <text x="512" y="326" fill="#fca5a5" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">11,5%</text>
-
-  <!-- Row 7: STRC fair value 13.8-19.8 -->
-  <rect x="557.33" y="350" width="146.67" height="12" fill="#22c55e" opacity="0.9"/>
-  <text x="215" y="368" text-anchor="end" fill="#86efac" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">STRC fair value (cet article)</text>
-  <text x="710" y="368" text-anchor="end" fill="#86efac" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">13,8-19,8%</text>
-
-  <!-- ★ legend caption -->
-  <text x="360" y="418" text-anchor="middle" fill="#fcd34d" font-family="system-ui, sans-serif" font-size="9">★ Comparable structurellement le plus proche : collatéral volatil + pas de cashflow opérationnel + discrétion managériale</text>
-  <text x="360" y="432" text-anchor="middle" fill="#475569" font-family="system-ui, sans-serif" font-size="9">Sources : FRED ICE BofA HY indices ; analyses crédit propres (confiance modérée), mai 2026</text>
-</svg>
-<figcaption class="font-inter text-sm text-slate-300 leading-160 mt-4">Comparaison des yields entre STRC (taux actuel 11,5 % et fair value estimé 13,8-19,8 %) et cinq familles de comparables crédit. Lecture : STRC actuel se loge dans la fourchette CCC et REIT mortgage stress — alors que sa combinaison de facteurs de risque (single-asset BTC + perpétuelle + discrétion board) est structurellement plus défavorable. La référence la plus proche reste la préférentielle shipping en cycle bas (★). Sources : FRED ICE BofA HY indices, mai 2026 ; estimations analytiques propres à confiance modérée.</figcaption>
-</figure>
+        <figure class="my-8 -mx-6 sm:mx-0 sm:rounded-lg bg-[#0f172a] p-4 sm:p-6 overflow-x-auto">
+          <picture>
+            <source srcset="/assets/images/blog/charts/strc-comparables.webp" type="image/webp">
+            <img src="/assets/images/blog/charts/strc-comparables.png" alt="Comparables crédit STRC mai 2026 : high yield BB- 6,5-7,5%, CCC 9-13%, préférentielles REIT mortgage stress 10-14%, AT1 banques post-Credit Suisse 9-13%, préférentielles shipping cycle bas 11-16% (comparable le plus proche), STRC actuel 11,5%, STRC fair value estimé 13,8-19,8%" width="720" height="440" loading="lazy" decoding="async" class="w-full h-auto">
+          </picture>
+          <figcaption class="font-inter text-xs text-slate-300 leading-160 mt-4">Comparaison des yields entre STRC (taux actuel 11,5 % et fair value estimé 13,8-19,8 %) et cinq familles de comparables crédit. Lecture : STRC actuel se loge dans la fourchette CCC et REIT mortgage stress — alors que sa combinaison de facteurs de risque (single-asset BTC + perpétuelle + discrétion board) est structurellement plus défavorable. La référence la plus proche reste la préférentielle shipping en cycle bas (★). Sources : FRED ICE BofA HY indices, mai 2026 ; estimations analytiques propres à confiance modérée.</figcaption>
+        </figure>
 
 <!-- [UNIQUE INSIGHT] L'analogie avec les préférentielles shipping cyclique (Star Bulk, Diana Shipping, Genco) est la plus pertinente parmi les comparables crédit habituels, car elle combine les trois caractéristiques structurelles partagées avec STRC : (1) collatéral implicite à valorisation volatile, (2) absence de cashflow opérationnel garanti, (3) discrétion managériale élevée sur les distributions. Cette analogie est rarement mentionnée dans la couverture STRC mainstream, qui privilégie les comparables banking AT1 ou REIT. -->
         <p class="font-inter text-base text-mediumGray leading-160 mb-4">La référence la plus pertinente reste vraisemblablement la préférentielle shipping en cycle bas. Cet instrument combine trois caractéristiques structurelles partagées avec STRC : un collatéral volatil (la valeur des navires versus celle du bitcoin), l'absence de cashflow opérationnel garanti, et une discrétion managériale élevée sur les distributions. Le fait que ces préférentielles cotent 11 à 16 % en environnement adverse, sans peg artificiel pour amortir le repricing, est instructif sur ce que STRC pourrait coter en cas de stress.</p>
