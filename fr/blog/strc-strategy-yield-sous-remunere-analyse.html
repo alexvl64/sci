@@ -35,8 +35,8 @@
 
     <link rel="preload" href="/assets/css/style.css?v=2.3" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/assets/css/style.css?v=2.3"></noscript>
-    <link rel="preload" href="/assets/css/tailwind.min.css?v=1.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/assets/css/tailwind.min.css?v=1.0"></noscript>
+    <link rel="preload" href="/assets/css/tailwind.min.css?v=1.1" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/tailwind.min.css?v=1.1"></noscript>
 
     <script type="application/ld+json">
 {
@@ -349,132 +349,12 @@
 
         <p class="font-inter text-xs text-mediumGray leading-160 mt-2 mb-8 italic">Sources baseline : Federal Reserve H.15 Selected Interest Rates, 8 mai 2026 ; FRED DGS10. Primes de risque : estimation analytique à confiance modérée fondée sur la lecture du prospectus 424B5 et les comparables crédit identifiés.</p>
 
-        <figure class="my-8 rounded-lg bg-[#0f172a] p-4 sm:p-6 overflow-x-auto">
-<svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Waterfall : empilement des primes de risque STRC partant du UST 10Y à 4,4% pour atteindre un yield exigible de 16,5%. Le taux actuel STRC à 11,5% est sous-rémunéré d'environ 500 bps">
-  <title>Waterfall des primes de risque STRC : du UST 10Y au yield exigible</title>
-  <rect width="720" height="460" fill="#0f1117" rx="8"/>
-
-  <!-- Title block -->
-  <text x="360" y="28" text-anchor="middle" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="15" font-weight="bold">Empilement des primes de risque STRC</text>
-  <text x="360" y="46" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">UST 10Y baseline + 8 primes = yield exigible · gap vs taux actuel = sous-rémunération</text>
-
-  <!-- Plot area: x 70 to 690 (width 620), y 80 to 380 (height 300). Y axis 0 to 18%, scale 300/18 = 16.667 px/% -->
-  <!-- y(val) = 380 - val * 16.667 -->
-  <!-- Key y values:
-       y(0) = 380   y(5) = 296.67   y(10) = 213.33   y(11.5) = 188.33   y(15) = 130
-       y(16.5) = 105   y(18) = 80 -->
-
-  <!-- Horizontal grid -->
-  <line x1="70" y1="380" x2="690" y2="380" stroke="#475569" stroke-width="1"/>
-  <line x1="70" y1="296.67" x2="690" y2="296.67" stroke="#334155" stroke-width="0.75" stroke-dasharray="3,3"/>
-  <line x1="70" y1="213.33" x2="690" y2="213.33" stroke="#334155" stroke-width="0.75" stroke-dasharray="3,3"/>
-  <line x1="70" y1="130" x2="690" y2="130" stroke="#334155" stroke-width="0.75" stroke-dasharray="3,3"/>
-  <line x1="70" y1="80" x2="690" y2="80" stroke="#334155" stroke-width="0.75" stroke-dasharray="3,3"/>
-
-  <!-- Y labels -->
-  <text x="62" y="383" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">0%</text>
-  <text x="62" y="300" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">5%</text>
-  <text x="62" y="217" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">10%</text>
-  <text x="62" y="133" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">15%</text>
-
-  <!-- Reference line: Taux actuel STRC 11,5% — horizontal red dashed -->
-  <line x1="70" y1="188.33" x2="690" y2="188.33" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="6,4"/>
-  <text x="80" y="183" fill="#ef4444" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">Taux STRC actuel · 11,5 %</text>
-
-  <!-- ====== WATERFALL BARS ======
-       Each bar: width 64, gap 10 → step 74
-       x1 = 90, x2 = 164, x3 = 238, x4 = 312, x5 = 386, x6 = 460, x7 = 534, x8 (total) = 610
-       Cumulative levels:
-       Start    0     end of UST       4.4   → y = 380 - 73.33 = 306.67
-       After Crédit +3.0   → 7.4    → y = 380 - 123.33 = 256.67
-       After Subord +1.25  → 8.65   → y = 380 - 144.17 = 235.83
-       After BTC +2.5      → 11.15  → y = 380 - 185.83 = 194.17
-       After Opt +2.0      → 13.15  → y = 380 - 219.17 = 160.83
-       After Duration +1.5 → 14.65  → y = 380 - 244.17 = 135.83
-       After Liq+Fisc+Gouv +1.85 → 16.5 → y = 380 - 275 = 105 -->
-
-  <!-- Connector lines between bars -->
-  <line x1="154" y1="306.67" x2="164" y2="306.67" stroke="#64748b" stroke-width="1" stroke-dasharray="2,2"/>
-  <line x1="228" y1="256.67" x2="238" y2="256.67" stroke="#64748b" stroke-width="1" stroke-dasharray="2,2"/>
-  <line x1="302" y1="235.83" x2="312" y2="235.83" stroke="#64748b" stroke-width="1" stroke-dasharray="2,2"/>
-  <line x1="376" y1="194.17" x2="386" y2="194.17" stroke="#64748b" stroke-width="1" stroke-dasharray="2,2"/>
-  <line x1="450" y1="160.83" x2="460" y2="160.83" stroke="#64748b" stroke-width="1" stroke-dasharray="2,2"/>
-  <line x1="524" y1="135.83" x2="534" y2="135.83" stroke="#64748b" stroke-width="1" stroke-dasharray="2,2"/>
-  <line x1="598" y1="105" x2="610" y2="105" stroke="#64748b" stroke-width="1" stroke-dasharray="2,2"/>
-
-  <!-- Bar 1: UST 4.4% from 380 to 306.67 (height 73.33) -->
-  <rect x="90" y="306.67" width="64" height="73.33" rx="2" fill="#64748b"/>
-  <text x="122" y="297" text-anchor="middle" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">4,4%</text>
-
-  <!-- Bar 2: Crédit BB +3.0 from 306.67 to 256.67 (height 50) -->
-  <rect x="164" y="256.67" width="64" height="50" rx="2" fill="#7c3aed"/>
-  <text x="196" y="247" text-anchor="middle" fill="#a78bfa" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">+3,0</text>
-
-  <!-- Bar 3: Subord +1.25 from 256.67 to 235.83 (height 20.83) -->
-  <rect x="238" y="235.83" width="64" height="20.83" rx="2" fill="#8b5cf6"/>
-  <text x="270" y="226" text-anchor="middle" fill="#c4b5fd" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">+1,25</text>
-
-  <!-- Bar 4: BTC concentration +2.5 from 235.83 to 194.17 (height 41.67) -->
-  <rect x="312" y="194.17" width="64" height="41.67" rx="2" fill="#a78bfa"/>
-  <text x="344" y="184" text-anchor="middle" fill="#ddd6fe" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">+2,5</text>
-
-  <!-- Bar 5: Optionalité board +2.0 from 194.17 to 160.83 (height 33.33) -->
-  <rect x="386" y="160.83" width="64" height="33.33" rx="2" fill="#f59e0b"/>
-  <text x="418" y="151" text-anchor="middle" fill="#fcd34d" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">+2,0</text>
-
-  <!-- Bar 6: Duration cachée +1.5 from 160.83 to 135.83 (height 25) -->
-  <rect x="460" y="135.83" width="64" height="25" rx="2" fill="#fbbf24"/>
-  <text x="492" y="126" text-anchor="middle" fill="#fde68a" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">+1,5</text>
-
-  <!-- Bar 7: Liq + Fiscal + Gouvernance +1.85 from 135.83 to 105 (height 30.83) -->
-  <rect x="534" y="105" width="64" height="30.83" rx="2" fill="#fde68a"/>
-  <text x="566" y="95" text-anchor="middle" fill="#fef3c7" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">+1,85</text>
-
-  <!-- Bar 8: TOTAL yield exigible 16.5% (full bar) from 380 to 105 -->
-  <rect x="610" y="105" width="64" height="275" rx="2" fill="#22c55e" opacity="0.9"/>
-  <text x="642" y="96" text-anchor="middle" fill="#86efac" font-family="system-ui, sans-serif" font-size="14" font-weight="bold">16,5%</text>
-  <text x="642" y="245" text-anchor="middle" fill="#0f1117" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">YIELD</text>
-  <text x="642" y="258" text-anchor="middle" fill="#0f1117" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">EXIGIBLE</text>
-
-  <!-- ====== X axis labels (component names) ====== -->
-  <text x="122" y="400" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">UST 10Y</text>
-  <text x="122" y="413" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="9">baseline</text>
-
-  <text x="196" y="400" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">Crédit</text>
-  <text x="196" y="413" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="9">équiv. BB</text>
-
-  <text x="270" y="400" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">Subord.</text>
-  <text x="270" y="413" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="9">dette + STRF</text>
-
-  <text x="344" y="400" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">Concentr.</text>
-  <text x="344" y="413" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="9">BTC</text>
-
-  <text x="418" y="400" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">Optionalité</text>
-  <text x="418" y="413" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="9">board</text>
-
-  <text x="492" y="400" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">Duration</text>
-  <text x="492" y="413" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="9">cachée</text>
-
-  <text x="566" y="400" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">Liq + Fisc</text>
-  <text x="566" y="413" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="9">+ Gouv.</text>
-
-  <text x="642" y="400" text-anchor="middle" fill="#86efac" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">TOTAL</text>
-  <text x="642" y="413" text-anchor="middle" fill="#22c55e" font-family="system-ui, sans-serif" font-size="9">~15,5–16,5%</text>
-
-  <!-- Gap callout annotation between actual line (11.5%) and total (16.5%) -->
-  <!-- y at 11.5 = 188.33, y at 16.5 = 105 → vertical span 83.33 px -->
-  <!-- Position arrow near right side around x=700 -->
-  <line x1="685" y1="188.33" x2="685" y2="105" stroke="#fbbf24" stroke-width="2" stroke-dasharray="3,2"/>
-  <polygon points="681,108 689,108 685,102" fill="#fbbf24"/>
-  <polygon points="681,185 689,185 685,191" fill="#fbbf24"/>
-  <text x="660" y="148" text-anchor="end" fill="#fbbf24" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">Gap</text>
-  <text x="660" y="161" text-anchor="end" fill="#fbbf24" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">+500 bps</text>
-  <text x="660" y="174" text-anchor="end" fill="#fde68a" font-family="system-ui, sans-serif" font-size="9">sous-rémunération</text>
-
-  <!-- Footer source line -->
-  <text x="360" y="445" text-anchor="middle" fill="#475569" font-family="system-ui, sans-serif" font-size="9">UST 10Y : Fed H.15 (mai 2026) · Primes de risque : estimation analytique propre (confiance modérée)</text>
-</svg>
-<figcaption class="font-inter text-sm text-slate-300 leading-160 mt-4">Waterfall des primes de risque STRC. Lecture : on part du Treasury 10 ans (~4,4 %), on ajoute progressivement chaque prime de risque, on aboutit à un yield exigible autour de 16,5 % (point central de la fourchette 13,8-19,8 %). La ligne rouge en pointillés à 11,5 % marque le taux STRC actuel : l'écart de ~500 bps représente la sous-rémunération structurelle. Sources : Federal Reserve H.15, mai 2026 ; estimations analytiques propres à confiance modérée.</figcaption>
+        <figure class="my-8 -mx-6 sm:mx-0 sm:rounded-lg bg-[#0f172a] p-4 sm:p-6 overflow-x-auto">
+          <picture>
+            <source srcset="/assets/images/blog/charts/strc-waterfall.webp" type="image/webp">
+            <img src="/assets/images/blog/charts/strc-waterfall.png" alt="Waterfall des primes de risque STRC : départ du Treasury 10 ans à 4,4 %, empilement de 8 primes (crédit BB-équivalent, subordination, concentration BTC, optionalité board, duration cachée, liquidité, fiscalité, gouvernance), yield exigible ~16,5 %, gap de ~500 bps avec le taux STRC actuel à 11,5 %" width="720" height="460" loading="lazy" decoding="async" class="w-full h-auto">
+          </picture>
+<figcaption class="font-inter text-xs text-slate-300 leading-160 mt-4">Waterfall des primes de risque STRC. Lecture : on part du Treasury 10 ans (~4,4 %), on ajoute progressivement chaque prime de risque, on aboutit à un yield exigible autour de 16,5 % (point central de la fourchette 13,8-19,8 %). La ligne rouge en pointillés à 11,5 % marque le taux STRC actuel : l'écart de ~500 bps représente la sous-rémunération structurelle. Sources : Federal Reserve H.15, mai 2026 ; estimations analytiques propres à confiance modérée.</figcaption>
 </figure>
 
         <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Pourquoi le marché paie au-dessus du fair value</h3>

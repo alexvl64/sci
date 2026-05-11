@@ -35,8 +35,8 @@
 
     <link rel="preload" href="/assets/css/style.css?v=2.3" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="/assets/css/style.css?v=2.3"></noscript>
-    <link rel="preload" href="/assets/css/tailwind.min.css?v=1.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="/assets/css/tailwind.min.css?v=1.0"></noscript>
+    <link rel="preload" href="/assets/css/tailwind.min.css?v=1.1" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/tailwind.min.css?v=1.1"></noscript>
 
     <script type="application/ld+json">
 {
@@ -238,7 +238,7 @@
 
         <p class="font-inter text-base text-mediumGray leading-160 mb-4">Mesurer en BTC isole cette véritable variable. La progression de 700 000 à 806 700 BTC dans IBIT entre juillet 2025 et avril 2026 reste valide indépendamment de toute fluctuation de prix : 106 700 BTC physiques ont été acquis et déposés en custody. Cette donnée est ce qui structure réellement l'offre disponible sur le marché spot.</p>
 
-        <figure class="my-8 rounded-lg bg-[#0f172a] p-4 sm:p-6 overflow-x-auto">
+        <figure class="my-8 -mx-6 sm:mx-0 sm:rounded-lg bg-[#0f172a] p-4 sm:p-6 overflow-x-auto">
 <svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Évolution des avoirs IBIT en BTC entre juillet 2025 et avril 2026, montrant une accumulation de 106 700 BTC indépendante des fluctuations de prix">
   <title>IBIT — Avoirs en BTC (juillet 2025 → avril 2026)</title>
   <rect width="560" height="380" fill="#0f1117" rx="8"/>
@@ -299,7 +299,7 @@
   <!-- Legend -->
   <text x="280" y="370" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="10">Source : BlackRock IBIT, CoinDesk, Yahoo Finance — chiffres approximatifs reconstitués</text>
 </svg>
-<figcaption class="font-inter text-sm text-slate-300 leading-160 mt-4">Reconstitution graphique de la trajectoire d'accumulation IBIT en BTC. Le creux de novembre correspond au débouclage du basis trade (-4 Md$ en outflows) interprété à tort comme capitulation directionnelle.</figcaption>
+<figcaption class="font-inter text-xs text-slate-300 leading-160 mt-4">Reconstitution graphique de la trajectoire d'accumulation IBIT en BTC. Le creux de novembre correspond au débouclage du basis trade (-4 Md$ en outflows) interprété à tort comme capitulation directionnelle.</figcaption>
 </figure>
 
         <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Distinguer flux directionnels et basis trade</h3>
@@ -347,7 +347,7 @@
 
         <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le calcul s'effectue en différence de volatilité implicite : <strong class="text-darkGray">Skew = IV(Put 25Δ) − IV(Call 25Δ)</strong>. Un résultat positif signifie que les puts coûtent plus cher en termes de volatilité que les calls équivalents — autrement dit, les acteurs paient une prime pour la protection contre la baisse. Un résultat négatif inverse la logique : la demande de leverage long (calls) est plus forte que la demande de protection.</p>
 
-        <figure class="my-8 rounded-lg bg-[#0f172a] p-4 sm:p-6 overflow-x-auto">
+        <figure class="my-8 -mx-6 sm:mx-0 sm:rounded-lg bg-[#0f172a] p-4 sm:p-6 overflow-x-auto">
 <svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Matrice d'interprétation du 25 delta skew Bitcoin selon quatre régimes : extrême call-skewed, neutre call, neutre put, extrême put-skewed">
   <title>25 Delta Skew Bitcoin — Matrice d'interprétation</title>
   <rect width="560" height="360" fill="#0f1117" rx="8"/>
@@ -379,7 +379,7 @@
   <text x="55" y="320" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10">Protection structurelle. Whales anticipent un mouvement baissier.</text>
   <text x="55" y="334" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="9.5">Cas type : flip pré-10 oct 2025 → cascade $19B 24h plus tard</text>
 </svg>
-<figcaption class="font-inter text-sm text-slate-300 leading-160 mt-4">Quatre régimes de skew donnent quatre lectures distinctes du sentiment options. Le flip de skew vers le put-skewed extrême est l'une des configurations les plus systématiquement précédées par une correction.</figcaption>
+<figcaption class="font-inter text-xs text-slate-300 leading-160 mt-4">Quatre régimes de skew donnent quatre lectures distinctes du sentiment options. Le flip de skew vers le put-skewed extrême est l'une des configurations les plus systématiquement précédées par une correction.</figcaption>
 </figure>
 
         <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Le skew comme leading indicator</h3>
@@ -472,7 +472,7 @@
           <li><strong class="text-darkGray">Funding négatif persistant</strong> — Short-driven. Capitulation ou pessimisme extrême. Configuration de short squeeze potentiel et de plancher local.</li>
         </ul>
 
-        <figure class="my-8 rounded-lg bg-[#0f172a] p-4 sm:p-6 overflow-x-auto">
+        <figure class="my-8 -mx-6 sm:mx-0 sm:rounded-lg bg-[#0f172a] p-4 sm:p-6 overflow-x-auto">
 <svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cascade du 10 octobre 2025 : timeline du krach Bitcoin avec funding rate, prix BTC et liquidations cumulées en 24 heures">
   <title>Cascade du 10 octobre 2025 — funding, prix et liquidations</title>
   <rect width="560" height="380" fill="#0f1117" rx="8"/>
@@ -526,7 +526,7 @@
   <text x="280" y="345" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="10">Lecture clé : le funding élevé n'a pas causé le krach — il l'a rendu possible.</text>
   <text x="280" y="362" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="10">Source : Amberdata, FTI Consulting, CoinGecko, Insights4VC (2025)</text>
 </svg>
-<figcaption class="font-inter text-sm text-slate-300 leading-160 mt-4">Le 10 octobre 2025 illustre la cascade typique : configuration crowded long signalée par funding élevé, skew put-skewed et OI au plus haut, puis catalyseur exogène (annonce tarifs douaniers) qui déclenche l'unwind forcé.</figcaption>
+<figcaption class="font-inter text-xs text-slate-300 leading-160 mt-4">Le 10 octobre 2025 illustre la cascade typique : configuration crowded long signalée par funding élevé, skew put-skewed et OI au plus haut, puis catalyseur exogène (annonce tarifs douaniers) qui déclenche l'unwind forcé.</figcaption>
 </figure>
 
         <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Le piège du raisonnement isolé</h3>
