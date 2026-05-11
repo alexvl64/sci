@@ -42,7 +42,7 @@ const translations = {
     sidebarSubmit: "Nous contacter",
 
     // === HERO ===
-    heroLatestArticle: "<span class=\"hero-latest-badge__label\">Nouveau</span><span class=\"hero-latest-badge__title\">CLARITY Act US 2026 : Impacts pour Investisseurs Européens</span><span class=\"hero-latest-badge__arrow\" aria-hidden=\"true\">→</span>",
+    heroLatestArticle: "<span class=\"hero-latest-badge__label\">Nouveau</span><span class=\"hero-latest-badge__title\">STRC à 11,5 % : pourquoi ce rendement sous-rémunère le risque</span><span class=\"hero-latest-badge__arrow\" aria-hidden=\"true\">→</span>",
     heroTitle: "Stratégies institutionnelles <span class=\"block\">sur les actifs numériques</span>",
     heroTagline: "Trois approches distinctes. Un cadre réglementé. Conçu pour les investisseurs qui exigent la rigueur.",
     heroCtaPrimary: "Planifier un appel →",
