@@ -239,66 +239,10 @@
         <p class="font-inter text-base text-mediumGray leading-160 mb-4">Mesurer en BTC isole cette véritable variable. La progression de 700 000 à 806 700 BTC dans IBIT entre juillet 2025 et avril 2026 reste valide indépendamment de toute fluctuation de prix : 106 700 BTC physiques ont été acquis et déposés en custody. Cette donnée est ce qui structure réellement l'offre disponible sur le marché spot.</p>
 
         <figure class="my-8 -mx-6 sm:mx-0 sm:rounded-lg bg-[#0f172a] p-4 sm:p-6 overflow-x-auto">
-<svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Évolution des avoirs IBIT en BTC entre juillet 2025 et avril 2026, montrant une accumulation de 106 700 BTC indépendante des fluctuations de prix">
-  <title>IBIT — Avoirs en BTC (juillet 2025 → avril 2026)</title>
-  <rect width="560" height="380" fill="#0f1117" rx="8"/>
-  <text x="280" y="26" text-anchor="middle" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="14" font-weight="bold">IBIT — Accumulation physique en BTC</text>
-  <text x="280" y="44" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Avoirs en BTC entre juillet 2025 et avril 2026 — donnée structurelle indépendante du prix</text>
-
-  <!-- Plot area: x 80-540, y 70-300 -->
-  <!-- Y axis: 600k to 850k BTC, range 250k, height 230, scale 0.92 px / 1k BTC -->
-  <line x1="80" y1="300" x2="540" y2="300" stroke="#475569" stroke-width="1.5"/>
-  <line x1="80" y1="70" x2="80" y2="300" stroke="#475569" stroke-width="1.5"/>
-
-  <!-- Grid lines -->
-  <line x1="80" y1="254" x2="540" y2="254" stroke="#334155" stroke-width="0.5" stroke-dasharray="3,3"/>
-  <line x1="80" y1="208" x2="540" y2="208" stroke="#334155" stroke-width="0.5" stroke-dasharray="3,3"/>
-  <line x1="80" y1="162" x2="540" y2="162" stroke="#334155" stroke-width="0.5" stroke-dasharray="3,3"/>
-  <line x1="80" y1="116" x2="540" y2="116" stroke="#334155" stroke-width="0.5" stroke-dasharray="3,3"/>
-  <line x1="80" y1="70" x2="540" y2="70" stroke="#334155" stroke-width="0.5" stroke-dasharray="3,3"/>
-
-  <!-- Y labels -->
-  <text x="74" y="304" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">600k</text>
-  <text x="74" y="258" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">650k</text>
-  <text x="74" y="212" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">700k</text>
-  <text x="74" y="166" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">750k</text>
-  <text x="74" y="120" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">800k</text>
-  <text x="74" y="74" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">850k</text>
-
-  <!-- X labels (10 months) -->
-  <text x="100" y="320" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">Jul</text>
-  <text x="148" y="320" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">Aug</text>
-  <text x="196" y="320" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">Sep</text>
-  <text x="244" y="320" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">Oct</text>
-  <text x="292" y="320" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">Nov</text>
-  <text x="340" y="320" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">Dec</text>
-  <text x="388" y="320" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">Jan</text>
-  <text x="436" y="320" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">Feb</text>
-  <text x="484" y="320" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">Mar</text>
-  <text x="532" y="320" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">Apr</text>
-
-  <text x="280" y="345" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="10">2025-2026</text>
-  <text x="20" y="185" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="10" transform="rotate(-90 20 185)">BTC détenus (en milliers)</text>
-
-  <!-- Line: 700k Jul → 740k Aug → 765k Sep → 780k Oct → 770k Nov (outflows basis trade) → 760k Dec → 770k Jan → 785k Feb → 800k Mar → 806.7k Apr -->
-  <!-- y(700) = 208, y(740) = 208 - 40*0.92 = 171, y(765) = 208-65*0.92=148, y(780)=208-80*0.92=134, y(770)=208-70*0.92=144, y(760)=208-60*0.92=153, y(770)=144, y(785)=130, y(800)=116, y(806.7)=110 -->
-  <polyline points="100,208 148,171 196,148 244,134 292,144 340,153 388,144 436,130 484,116 532,110" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linejoin="round"/>
-
-  <!-- Data points -->
-  <circle cx="100" cy="208" r="3.5" fill="#22c55e"/>
-  <circle cx="244" cy="134" r="3.5" fill="#fbbf24"/>
-  <circle cx="292" cy="144" r="3.5" fill="#ef4444"/>
-  <circle cx="532" cy="110" r="3.5" fill="#22c55e"/>
-
-  <!-- Annotations -->
-  <text x="100" y="225" text-anchor="middle" fill="#86efac" font-family="system-ui, sans-serif" font-size="9">700 000</text>
-  <text x="244" y="125" text-anchor="middle" fill="#fde68a" font-family="system-ui, sans-serif" font-size="9">Pic Oct 2025</text>
-  <text x="292" y="160" text-anchor="middle" fill="#fca5a5" font-family="system-ui, sans-serif" font-size="9">Outflows -4 Md$</text>
-  <text x="488" y="100" text-anchor="end" fill="#86efac" font-family="system-ui, sans-serif" font-size="9">806 700 (ATH)</text>
-
-  <!-- Legend -->
-  <text x="280" y="370" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="10">Source : BlackRock IBIT, CoinDesk, Yahoo Finance — chiffres approximatifs reconstitués</text>
-</svg>
+<picture>
+            <source srcset="/assets/images/blog/charts/indicateurs-marche-crypto-actifs-chart-1.webp" type="image/webp">
+            <img src="/assets/images/blog/charts/indicateurs-marche-crypto-actifs-chart-1.png" alt="Évolution des avoirs IBIT en BTC entre juillet 2025 et avril 2026, montrant une accumulation de 106 700 BTC indépendante des fluctuations de prix" width="560" height="380" loading="lazy" decoding="async" class="w-full h-auto">
+          </picture>
 <figcaption class="font-inter text-xs text-slate-300 leading-160 mt-4">Reconstitution graphique de la trajectoire d'accumulation IBIT en BTC. Le creux de novembre correspond au débouclage du basis trade (-4 Md$ en outflows) interprété à tort comme capitulation directionnelle.</figcaption>
 </figure>
 
@@ -348,37 +292,10 @@
         <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le calcul s'effectue en différence de volatilité implicite : <strong class="text-darkGray">Skew = IV(Put 25Δ) − IV(Call 25Δ)</strong>. Un résultat positif signifie que les puts coûtent plus cher en termes de volatilité que les calls équivalents — autrement dit, les acteurs paient une prime pour la protection contre la baisse. Un résultat négatif inverse la logique : la demande de leverage long (calls) est plus forte que la demande de protection.</p>
 
         <figure class="my-8 -mx-6 sm:mx-0 sm:rounded-lg bg-[#0f172a] p-4 sm:p-6 overflow-x-auto">
-<svg viewBox="0 0 560 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Matrice d'interprétation du 25 delta skew Bitcoin selon quatre régimes : extrême call-skewed, neutre call, neutre put, extrême put-skewed">
-  <title>25 Delta Skew Bitcoin — Matrice d'interprétation</title>
-  <rect width="560" height="360" fill="#0f1117" rx="8"/>
-  <text x="280" y="26" text-anchor="middle" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="14" font-weight="bold">25 Delta Skew Bitcoin — Matrice d'interprétation</text>
-  <text x="280" y="44" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Skew = IV(Put 25Δ) − IV(Call 25Δ) — lecture par régime</text>
-
-  <!-- 4 zones horizontales -->
-  <!-- Zone 1: extreme call-skewed (skew < -8%) -->
-  <rect x="40" y="70" width="480" height="60" fill="#16a34a" opacity="0.15" rx="4"/>
-  <text x="55" y="92" fill="#86efac" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">Skew &lt; −8% — Extrême call-skewed</text>
-  <text x="55" y="110" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10">Euphorie. Leverage long crowded — souvent fin de phase haussière.</text>
-  <text x="55" y="124" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="9.5">Cas type : sommet BTC 69k$ (2021), top novembre 2024</text>
-
-  <!-- Zone 2: neutral call-skewed (-8 to 0) -->
-  <rect x="40" y="140" width="480" height="60" fill="#3b82f6" opacity="0.15" rx="4"/>
-  <text x="55" y="162" fill="#93c5fd" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">Skew −8% à 0% — Neutre orienté call</text>
-  <text x="55" y="180" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10">Sentiment haussier modéré. Accumulation institutionnelle saine.</text>
-  <text x="55" y="194" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="9.5">Configuration recherchée pour entrer un long structurel</text>
-
-  <!-- Zone 3: neutral put-skewed (0 to +8) -->
-  <rect x="40" y="210" width="480" height="60" fill="#fbbf24" opacity="0.15" rx="4"/>
-  <text x="55" y="232" fill="#fde68a" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">Skew 0% à +8% — Neutre orienté put</text>
-  <text x="55" y="250" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10">Demande de protection en hausse. Marché en consolidation prudente.</text>
-  <text x="55" y="264" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="9.5">Signal d'attention ; pas encore de retournement franc</text>
-
-  <!-- Zone 4: extreme put-skewed (>+8) -->
-  <rect x="40" y="280" width="480" height="60" fill="#ef4444" opacity="0.15" rx="4"/>
-  <text x="55" y="302" fill="#fca5a5" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">Skew &gt; +8% — Extrême put-skewed</text>
-  <text x="55" y="320" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10">Protection structurelle. Whales anticipent un mouvement baissier.</text>
-  <text x="55" y="334" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="9.5">Cas type : flip pré-10 oct 2025 → cascade $19B 24h plus tard</text>
-</svg>
+<picture>
+            <source srcset="/assets/images/blog/charts/indicateurs-marche-crypto-actifs-chart-2.webp" type="image/webp">
+            <img src="/assets/images/blog/charts/indicateurs-marche-crypto-actifs-chart-2.png" alt="Matrice d'interprétation du 25 delta skew Bitcoin selon quatre régimes : extrême call-skewed, neutre call, neutre put, extrême put-skewed" width="560" height="360" loading="lazy" decoding="async" class="w-full h-auto">
+          </picture>
 <figcaption class="font-inter text-xs text-slate-300 leading-160 mt-4">Quatre régimes de skew donnent quatre lectures distinctes du sentiment options. Le flip de skew vers le put-skewed extrême est l'une des configurations les plus systématiquement précédées par une correction.</figcaption>
 </figure>
 
@@ -473,59 +390,10 @@
         </ul>
 
         <figure class="my-8 -mx-6 sm:mx-0 sm:rounded-lg bg-[#0f172a] p-4 sm:p-6 overflow-x-auto">
-<svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Cascade du 10 octobre 2025 : timeline du krach Bitcoin avec funding rate, prix BTC et liquidations cumulées en 24 heures">
-  <title>Cascade du 10 octobre 2025 — funding, prix et liquidations</title>
-  <rect width="560" height="380" fill="#0f1117" rx="8"/>
-  <text x="280" y="26" text-anchor="middle" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="14" font-weight="bold">Cascade du 10 octobre 2025 — Timeline T-7j à T+12h</text>
-  <text x="280" y="44" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Funding crowded → catalyseur exogène → 19 Md$ liquidés en 24h</text>
-
-  <!-- Timeline horizontal -->
-  <line x1="50" y1="290" x2="510" y2="290" stroke="#475569" stroke-width="1.5"/>
-
-  <!-- Phases -->
-  <!-- Phase 1: T-7j à T-1j (50-220) -->
-  <rect x="50" y="80" width="170" height="200" fill="#fbbf24" opacity="0.10" rx="4"/>
-  <text x="135" y="100" text-anchor="middle" fill="#fde68a" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">Phase de build-up</text>
-  <text x="135" y="116" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10">T-7j → T-1j</text>
-  <text x="135" y="140" text-anchor="middle" fill="#fde68a" font-family="system-ui, sans-serif" font-size="10">Funding &gt; 0,03%/8h</text>
-  <text x="135" y="156" text-anchor="middle" fill="#fde68a" font-family="system-ui, sans-serif" font-size="10">soutenu plusieurs sem.</text>
-  <text x="135" y="180" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">BTC ~ 122 000 $</text>
-  <text x="135" y="200" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">Skew flippé put-skewed</text>
-  <text x="135" y="220" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">CME OI ATH</text>
-  <text x="135" y="240" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">Coinbase Premium &lt; 0</text>
-
-  <!-- Phase 2: T0 (220-310) -->
-  <rect x="225" y="80" width="90" height="200" fill="#ef4444" opacity="0.18" rx="4"/>
-  <text x="270" y="100" text-anchor="middle" fill="#fca5a5" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">T0 — Catalyseur</text>
-  <text x="270" y="116" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10">10 oct 2025</text>
-  <text x="270" y="140" text-anchor="middle" fill="#fca5a5" font-family="system-ui, sans-serif" font-size="10">Tarifs 100 %</text>
-  <text x="270" y="156" text-anchor="middle" fill="#fca5a5" font-family="system-ui, sans-serif" font-size="10">USA-Chine</text>
-  <text x="270" y="180" text-anchor="middle" fill="#fca5a5" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">BTC −14 %</text>
-  <text x="270" y="200" text-anchor="middle" fill="#fca5a5" font-family="system-ui, sans-serif" font-size="11">en 1 heure</text>
-  <text x="270" y="225" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">122k → 105k</text>
-
-  <!-- Phase 3: T+1h à T+24h (320-510) -->
-  <rect x="320" y="80" width="190" height="200" fill="#dc2626" opacity="0.15" rx="4"/>
-  <text x="415" y="100" text-anchor="middle" fill="#fecaca" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">Cascade de liquidations</text>
-  <text x="415" y="116" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="10">T+1h → T+24h</text>
-  <text x="415" y="140" text-anchor="middle" fill="#fecaca" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">19 Md$ liquidés</text>
-  <text x="415" y="156" text-anchor="middle" fill="#fecaca" font-family="system-ui, sans-serif" font-size="10">dont 7 Md$ en 60 min</text>
-  <text x="415" y="180" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">1,6 M traders wipés</text>
-  <text x="415" y="200" text-anchor="middle" fill="#86efac" font-family="system-ui, sans-serif" font-size="10">Funding flip négatif</text>
-  <text x="415" y="220" text-anchor="middle" fill="#86efac" font-family="system-ui, sans-serif" font-size="10">setup short squeeze</text>
-  <text x="415" y="240" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">Rebound 112k$ T+48h</text>
-
-  <!-- Timeline ticks -->
-  <text x="50" y="310" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="9">T-7j</text>
-  <text x="220" y="310" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="9">T-1j</text>
-  <text x="270" y="310" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="9">T0</text>
-  <text x="320" y="310" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="9">T+1h</text>
-  <text x="510" y="310" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="9">T+24h</text>
-
-  <!-- Bottom note -->
-  <text x="280" y="345" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="10">Lecture clé : le funding élevé n'a pas causé le krach — il l'a rendu possible.</text>
-  <text x="280" y="362" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="10">Source : Amberdata, FTI Consulting, CoinGecko, Insights4VC (2025)</text>
-</svg>
+<picture>
+            <source srcset="/assets/images/blog/charts/indicateurs-marche-crypto-actifs-chart-3.webp" type="image/webp">
+            <img src="/assets/images/blog/charts/indicateurs-marche-crypto-actifs-chart-3.png" alt="Cascade du 10 octobre 2025 : timeline du krach Bitcoin avec funding rate, prix BTC et liquidations cumulées en 24 heures" width="560" height="380" loading="lazy" decoding="async" class="w-full h-auto">
+          </picture>
 <figcaption class="font-inter text-xs text-slate-300 leading-160 mt-4">Le 10 octobre 2025 illustre la cascade typique : configuration crowded long signalée par funding élevé, skew put-skewed et OI au plus haut, puis catalyseur exogène (annonce tarifs douaniers) qui déclenche l'unwind forcé.</figcaption>
 </figure>
 
