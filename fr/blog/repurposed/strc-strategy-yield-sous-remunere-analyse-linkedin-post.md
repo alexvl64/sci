@@ -1,7 +1,7 @@
 # LinkedIn Post — STRC Strategy yield sous-rémunéré
 
 > **Format :** Post LinkedIn standard (feed), pas article long-form.
-> **Longueur :** ~2 270 caractères (au-dessus du sweet spot 1 300-1 900, sous la limite max 3 000 ; toléré pour la densité analytique d'un sujet crédit).
+> **Longueur :** ~2 310 caractères (au-dessus du sweet spot 1 300-1 900, sous la limite max 3 000 ; toléré pour la densité analytique d'un sujet crédit).
 > **Ton :** Institutionnel, sobre, sans emojis ni décoration. Pas de question d'engagement explicite (autorité > call-to-engagement).
 > **Publication :** Mardi 12 au jeudi 14 mai 2026, 8h-10h CEST. Lien en premier commentaire.
 
@@ -9,7 +9,7 @@
 
 ## Texte du post (à copier-coller tel quel)
 
-STRC, la préférentielle perpétuelle émise par Strategy Inc. en juillet 2025, affiche un coupon annuel de 11,5 % distribué chaque mois en cash, avec un prix maintenu autour de 100 dollars. La narrative marketing positionne l'instrument comme alternative aux money market funds.
+STRC, lancé par Strategy Inc. en juillet 2025, affiche un coupon annuel de 11,5 % distribué chaque mois en cash, avec un prix maintenu autour de 100 dollars. La narrative marketing positionne l'instrument comme alternative aux money market funds.
 
 Le yield apparent ne reflète pas la nature du risque porté.
 
