@@ -219,87 +219,10 @@
         <p class="font-inter text-base text-mediumGray leading-160 mb-4">Les bornes du corridor sont ajustables trimestriellement en fonction des conditions de marché. Un collar -5 %/+10 % est typique dans un environnement de volatilité normale ; dans un marché calme (VIX bas), les strikes peuvent être décalés à -3 %/+12 % pour le même coût net nul.</p>
 
         <figure class="my-8 -mx-6 sm:mx-0 sm:rounded-lg bg-[#0f172a] p-4 sm:p-6 overflow-x-auto">
-<svg viewBox="0 0 560 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Profils de payoff comparés à l'échéance : portefeuille non couvert, protective put à -10% et collar -5%/+10%">
-  <title>Profils de payoff : non couvert vs protective put vs collar</title>
-  <rect width="560" height="400" fill="#0f1117" rx="8"/>
-  <text x="280" y="26" text-anchor="middle" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="14" font-weight="bold">Profils de payoff à l'échéance</text>
-  <text x="280" y="44" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">P&L du portefeuille selon la variation du marché sous-jacent</text>
-
-  <!-- Plot area: left=70, right=530, top=65, bottom=340 -->
-  <!-- X: -30% to +30% (range 60), 460px / 60 = 7.667px/% -->
-  <!-- Y: -35% to +35% (range 70), 275px / 70 = 3.929px/% -->
-
-  <!-- Grid lines horizontal (dashed) at ±10%, ±20% -->
-  <line x1="70" y1="146" x2="530" y2="146" stroke="#334155" stroke-width="0.75" stroke-dasharray="4,4"/>
-  <line x1="70" y1="185" x2="530" y2="185" stroke="#334155" stroke-width="0.75" stroke-dasharray="4,4"/>
-  <line x1="70" y1="224" x2="530" y2="224" stroke="#334155" stroke-width="0.75" stroke-dasharray="4,4"/>
-  <line x1="70" y1="263" x2="530" y2="263" stroke="#334155" stroke-width="0.75" stroke-dasharray="4,4"/>
-
-  <!-- Zero axes -->
-  <line x1="70" y1="204" x2="530" y2="204" stroke="#475569" stroke-width="1.5"/>
-  <line x1="300" y1="65" x2="300" y2="345" stroke="#475569" stroke-width="1.5" stroke-dasharray="6,3"/>
-
-  <!-- Y axis labels -->
-  <text x="62" y="148" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">+20%</text>
-  <text x="62" y="188" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">+10%</text>
-  <text x="62" y="208" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">0%</text>
-  <text x="62" y="227" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">-10%</text>
-  <text x="62" y="265" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">-20%</text>
-
-  <!-- X axis labels -->
-  <text x="70" y="360" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">-30%</text>
-  <text x="147" y="360" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">-20%</text>
-  <text x="223" y="360" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">-10%</text>
-  <text x="300" y="360" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">0%</text>
-  <text x="377" y="360" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">+10%</text>
-  <text x="453" y="360" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">+20%</text>
-  <text x="530" y="360" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">+30%</text>
-
-  <!-- Axis label -->
-  <text x="300" y="378" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="10">Variation du marché à l'échéance</text>
-  <text x="14" y="250" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="10" transform="rotate(-90 14 250)">P&amp;L portefeuille</text>
-
-  <!-- UNHEDGED (gray dashed): line from (-30%, -30%) to (+30%, +30%) -->
-  <!-- x(-30%)=70, y(-30%)=321 ; x(+30%)=530, y(+30%)=87 -->
-  <!-- y(val) = 204 - val * (275/70) = 204 - val * 3.929 -->
-  <!-- y(-30%) = 204 + 30*3.929 = 204+117.9 = 322 -->
-  <!-- y(+30%) = 204 - 30*3.929 = 204-117.9 = 86 -->
-  <line x1="70" y1="322" x2="530" y2="86" stroke="#64748b" stroke-width="1.5" stroke-dasharray="6,4"/>
-
-  <!-- PROTECTIVE PUT: flat at -11.5% up to -10%, then rises minus 1.5% premium -->
-  <!-- y(-11.5%) = 204 + 11.5*3.929 = 204+45.2 = 249 -->
-  <!-- x(-10%) = 70 + 20*7.667 = 70+153.3 = 223 -->
-  <!-- x(+30%) = 530, y(+28.5%) = 204 - 28.5*3.929 = 204-112 = 92 -->
-  <!-- At market 0%, p&l = -1.5%, y(-1.5%) = 204 + 1.5*3.929 = 204+5.9 = 210 -->
-  <polyline points="70,249 223,249 300,210 530,92" fill="none" stroke="#22c55e" stroke-width="2.5" stroke-linejoin="round"/>
-
-  <!-- COLLAR: flat at -5% to -5%, then rises to +10%, then flat at +10% -->
-  <!-- y(-5%) = 204 + 5*3.929 = 204+19.6 = 224 -->
-  <!-- x(-5%) = 70 + 25*7.667 = 70+191.7 = 262 -->
-  <!-- y(0%) = 204 -->
-  <!-- y(+10%) = 204 - 10*3.929 = 204-39.3 = 165 -->
-  <!-- x(+10%) = 70 + 40*7.667 = 70+306.7 = 377 -->
-  <polyline points="70,224 262,224 300,204 377,165 530,165" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linejoin="round"/>
-
-  <!-- Annotation: collar floor -->
-  <line x1="70" y1="224" x2="262" y2="224" stroke="#3b82f6" stroke-width="0.5" stroke-dasharray="3,3" opacity="0.4"/>
-  <text x="74" y="219" fill="#60a5fa" font-family="system-ui, sans-serif" font-size="9">Plancher -5%</text>
-
-  <!-- Annotation: collar cap -->
-  <line x1="377" y1="165" x2="530" y2="165" stroke="#3b82f6" stroke-width="0.5" stroke-dasharray="3,3" opacity="0.4"/>
-  <text x="450" y="160" fill="#60a5fa" font-family="system-ui, sans-serif" font-size="9">Plafond +10%</text>
-
-  <!-- Annotation: put floor -->
-  <text x="74" y="244" fill="#4ade80" font-family="system-ui, sans-serif" font-size="9">Plancher -11,5%</text>
-
-  <!-- Legend -->
-  <line x1="80" y1="390" x2="105" y2="390" stroke="#64748b" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <text x="110" y="394" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">Non couvert</text>
-  <line x1="195" y1="390" x2="220" y2="390" stroke="#22c55e" stroke-width="2.5"/>
-  <text x="225" y="394" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">Protective put (-10%, -1,5%)</text>
-  <line x1="380" y1="390" x2="405" y2="390" stroke="#3b82f6" stroke-width="2.5"/>
-  <text x="410" y="394" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">Collar (-5%/+10%)</text>
-</svg>
+<picture>
+            <source srcset="/assets/images/blog/charts/strategies-options-protection-portefeuille-actions-chart-1.webp" type="image/webp">
+            <img src="/assets/images/blog/charts/strategies-options-protection-portefeuille-actions-chart-1.png" alt="Profils de payoff comparés à l'échéance : portefeuille non couvert, protective put à -10% et collar -5%/+10%" width="560" height="400" loading="lazy" decoding="async" class="w-full h-auto">
+          </picture>
 <figcaption class="font-inter text-xs text-slate-300 leading-160 mt-4">Illustration : profils de payoff à l'échéance pour un portefeuille de 100 — les coûts de prime sont indicatifs et varient selon les conditions de marché</figcaption>
 </figure>
 
@@ -340,75 +263,10 @@
         <p class="font-inter text-base text-mediumGray leading-160 mb-4">2023 révèle le vrai coût implicite : le S&amp;P 500 a progressé de +26,29 % tandis que JEPI n'affichait que <strong class="text-darkGray">+9,83 %</strong> (<a href="https://www.morningstar.com/etfs/arcx/jepi/performance" class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200" target="_blank" rel="noopener noreferrer">Morningstar</a>, 2024), soit une sous-performance de 16,5 points. Le plafonnement mensuel par les calls vendus à 2 % au-dessus du marché a empêché de capter les nombreuses journées de hausse supérieure à 2 % qui caractérisent les rallies violents.</p>
 
         <figure class="my-8 -mx-6 sm:mx-0 sm:rounded-lg bg-[#0f172a] p-4 sm:p-6 overflow-x-auto">
-<svg viewBox="0 0 560 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Performance comparée du S&P 500, JHEQX et JEPI en 2022 marché baissier et en 2023 marché haussier">
-  <title>S&amp;P 500 vs JHEQX vs JEPI : 2022 (baisse) et 2023 (hausse)</title>
-  <rect width="560" height="380" fill="#0f1117" rx="8"/>
-  <text x="280" y="26" text-anchor="middle" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="14" font-weight="bold">S&amp;P 500 vs JHEQX vs JEPI — Performance annuelle</text>
-  <text x="280" y="44" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">2022 (marché baissier) et 2023 (marché haussier)</text>
-
-  <!-- Y axis: -25% to +35%, range 60%, plot height=240px, scale=4px/% -->
-  <!-- y(0%) = 280 - 25*4 = 280-100 = 180 (bottom=280, top=60, range scaled) -->
-  <!-- y(val) = 180 - val * 4 -->
-  <!-- y(-25%) = 180+100 = 280 (bottom of plot) -->
-  <!-- y(+35%) = 180-140 = 40 (top of plot) -->
-
-  <!-- Horizontal grid -->
-  <line x1="120" y1="180" x2="460" y2="180" stroke="#475569" stroke-width="1.5"/>
-  <line x1="120" y1="140" x2="460" y2="140" stroke="#334155" stroke-width="0.75" stroke-dasharray="3,3"/>
-  <line x1="120" y1="100" x2="460" y2="100" stroke="#334155" stroke-width="0.75" stroke-dasharray="3,3"/>
-  <line x1="120" y1="220" x2="460" y2="220" stroke="#334155" stroke-width="0.75" stroke-dasharray="3,3"/>
-  <line x1="120" y1="260" x2="460" y2="260" stroke="#334155" stroke-width="0.75" stroke-dasharray="3,3"/>
-
-  <!-- Y labels -->
-  <text x="114" y="183" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">0%</text>
-  <text x="114" y="143" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">+10%</text>
-  <text x="114" y="103" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">+20%</text>
-  <text x="114" y="223" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">-10%</text>
-  <text x="114" y="263" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">-20%</text>
-
-  <!-- GROUP 1: 2022 -->
-  <!-- S&P 500: -18.1% → y=180 to y=180+18.1*4=252.4≈252, height=72 -->
-  <rect x="143" y="180" width="32" height="72" rx="3" fill="#ef4444" opacity="0.9"/>
-  <text x="159" y="272" text-anchor="middle" fill="#ef4444" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">-18,1%</text>
-
-  <!-- JHEQX: -8.06% → y=180 to y=180+8.06*4=212.2≈212, height=32 -->
-  <rect x="181" y="180" width="32" height="32" rx="3" fill="#818cf8" opacity="0.9"/>
-  <text x="197" y="230" text-anchor="middle" fill="#818cf8" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">-8,06%</text>
-
-  <!-- JEPI: -3.47% → y=180 to y=180+3.47*4=193.9≈194, height=14 -->
-  <rect x="219" y="180" width="32" height="14" rx="3" fill="#fbbf24" opacity="0.9"/>
-  <text x="235" y="214" text-anchor="middle" fill="#fbbf24" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">-3,5%</text>
-
-  <!-- 2022 group label -->
-  <text x="190" y="310" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="13" font-weight="bold">2022</text>
-  <text x="190" y="326" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="10">Marché baissier</text>
-
-  <!-- GROUP 2: 2023 -->
-  <!-- S&P 500: +26.3% → y=180-26.3*4=74.8≈75, height=105 -->
-  <rect x="315" y="75" width="32" height="105" rx="3" fill="#22c55e" opacity="0.9"/>
-  <text x="331" y="67" text-anchor="middle" fill="#22c55e" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">+26,3%</text>
-
-  <!-- JHEQX: +16.06% → y=180-16.06*4=115.8≈116, height=64 -->
-  <rect x="353" y="116" width="32" height="64" rx="3" fill="#a5b4fc" opacity="0.9"/>
-  <text x="369" y="108" text-anchor="middle" fill="#a5b4fc" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">+16,06%</text>
-
-  <!-- JEPI: +9.8% → y=180-9.8*4=140.8≈141, height=39 -->
-  <rect x="391" y="141" width="32" height="39" rx="3" fill="#fde68a" opacity="0.9"/>
-  <text x="407" y="133" text-anchor="middle" fill="#fde68a" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">+9,8%</text>
-
-  <!-- 2023 group label -->
-  <text x="369" y="310" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="13" font-weight="bold">2023</text>
-  <text x="369" y="326" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="10">Marché haussier</text>
-
-  <!-- Legend -->
-  <rect x="122" y="346" width="12" height="9" rx="2" fill="#ef4444"/>
-  <text x="139" y="355" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">S&amp;P 500</text>
-  <rect x="195" y="346" width="12" height="9" rx="2" fill="#818cf8"/>
-  <text x="212" y="355" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">JHEQX</text>
-  <rect x="268" y="346" width="12" height="9" rx="2" fill="#fbbf24"/>
-  <text x="285" y="355" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">JEPI</text>
-  <text x="280" y="371" text-anchor="middle" fill="#475569" font-family="system-ui, sans-serif" font-size="9">Sources : Morningstar (JHEQX, JEPI), S&amp;P Global — performances annuelles totales</text>
-</svg>
+<picture>
+            <source srcset="/assets/images/blog/charts/strategies-options-protection-portefeuille-actions-chart-2.webp" type="image/webp">
+            <img src="/assets/images/blog/charts/strategies-options-protection-portefeuille-actions-chart-2.png" alt="Performance comparée du S&amp;P 500, JHEQX et JEPI en 2022 marché baissier et en 2023 marché haussier" width="560" height="380" loading="lazy" decoding="async" class="w-full h-auto">
+          </picture>
 <figcaption class="font-inter text-xs text-slate-300 leading-160 mt-4">Sources : Morningstar, S&amp;P Global, 2022-2023</figcaption>
 </figure>
 
