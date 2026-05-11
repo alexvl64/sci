@@ -3,13 +3,24 @@
 # First match wins — specific rules before generic ones
 
 # ----------------------------------------------------------------
-# Blog slug 301s (mirrors .htaccess, commit 3a79321)
+# Block internal/dev files leaked by CF Pages default deploy
+# Replaces legacy .htaccess: RewriteRule ^MD(/|$) - [F,L] and dotfile blocks.
+# CF Pages excludes most dotfiles automatically (.git, .env, .DS_Store, README.md,
+# _headers, _redirects, .gitattributes) but ships these by default.
 # ----------------------------------------------------------------
-/blog/low-volatility-crypto-strategy/          /blog/what-a-market-neutral-crypto-fund-does   301
+/MD/*              /404.html  404
+/.gitignore        /404.html  404
+/package.json      /404.html  404
+/package-lock.json /404.html  404
+
+# ----------------------------------------------------------------
+# Blog slug 301s (mirrors legacy .htaccess, commit 3a79321)
+# Trailing-slash variants omitted: CF Pages auto-strips the slash before
+# _redirects fires, so /old-slug/ resolves via /old-slug + the rule below
+# (2 hops, unavoidable). Adding /old-slug/ rules here would be dead code.
+# ----------------------------------------------------------------
 /blog/low-volatility-crypto-strategy           /blog/what-a-market-neutral-crypto-fund-does   301
-/blog/estonian-aifm-crypto-fund/               /blog/regulated-crypto-fund-manager-estonia    301
 /blog/estonian-aifm-crypto-fund                /blog/regulated-crypto-fund-manager-estonia    301
-/blog/how-white-label-funds-launch-in-crypto/  /blog/white-label-crypto-fund-manager-services 301
 /blog/how-white-label-funds-launch-in-crypto   /blog/white-label-crypto-fund-manager-services 301
 
 # /en/ → / (external link ghost path)

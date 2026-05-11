@@ -82,7 +82,7 @@ Quatre couches de protection en place :
 | Couche | Implémentation |
 |---|---|
 | Meta tag HTML | `<meta name="robots" content="noindex, nofollow" />` sur les 3 pages |
-| Header HTTP | `X-Robots-Tag: noindex, nofollow, noarchive` via `.htaccess` (`SetEnvIf Request_URI ^/factsheets(/\|$)` et `^/discovery-call(/\|$)`) — couvre les rewritten paths sans `.html` et les bots qui ignorent les meta |
+| Header HTTP | `X-Robots-Tag: noindex, nofollow, noarchive` via `_headers` (règles `/factsheets/*`, `/discovery-call`, `/discovery-call.html`, `/validation`, `/validation.html`) — couvre les rewritten paths sans `.html` et les bots qui ignorent les meta |
 | `robots.txt` | `Disallow: /factsheets/`, `Disallow: /discovery-call` répliqué sur **6 AI crawlers** (GPTBot, OAI-SearchBot, Google-Extended, ClaudeBot, PerplexityBot, CCBot) + `User-agent: *`. **`/ressources/` retiré du Disallow le 2026-05-05** : la protection vit désormais sur le X-Robots-Tag des PDFs (defense en profondeur) — sinon Google ne pouvait pas crawler les vieux PDFs et les laissait indexés malgré tout (paradoxe robots.txt + noindex). |
 | `llms.txt` + `llms-full.txt` | URLs factsheets retirées, mention textuelle gardée : `factsheet available on request to qualified investors` |
 
@@ -332,7 +332,7 @@ The following files are gitignored and must never be committed or pushed:
 | `form_config.php` | Contains secrets — never commit |
 | `.env`, `*.env`, `*.key`, `*.pem` | Sensitive config patterns |
 
-> The `MD/` directory and `.htaccess` ARE tracked in git (since 2026-04-15) and deployed automatically via GitHub → server. `.htaccess` blocks HTTP access to `/MD/` so the markdown reference files are versioned but never web-accessible.
+> The `MD/` directory IS tracked in git (since 2026-04-15) for versioning. CF Pages publishes `MD/*` to the static asset store by default, so HTTP access is blocked at edge level via `_redirects` (`/MD/* /404.html 404`) plus `X-Robots-Tag: noindex` from `_headers` as defense in depth.
 
 ---
 
@@ -409,15 +409,23 @@ L'audit recommandait initialement :
 
 ## Cloudflare Pages — configuration infrastructure
 
-Le `.htaccess` est conservé dans le repo pour référence historique mais **n'est plus exécuté** (CF Pages ignore Apache config). Les équivalents CF Pages sont :
+Le `.htaccess` a été **supprimé du repo le 2026-05-09** (commit `claude/cf-error-pages-htaccess-cleanup`). Il n'était plus exécuté depuis la migration CF Pages (2026-05-06) — gardé en référence quelques jours puis dégagé une fois toutes les règles portées. Les équivalents CF Pages :
 
-| `.htaccess` | Équivalent CF Pages |
+| Ancienne règle `.htaccess` | Équivalent CF Pages |
 |---|---|
-| Redirects 301 slugs blog | `_redirects` |
-| Headers sécurité | `_headers` + CF Transform Rule |
-| Blocage PDFs dépôt | `functions/ressources/[[path]].js` |
-| URL rewriting .html | Natif CF Pages |
-| Error pages | `/404.html` auto-utilisé par CF Pages |
+| Redirects 301 slugs blog + trailing slash | `_redirects` |
+| Headers sécurité (X-Frame, nosniff, Referrer, Permissions) | `_headers` |
+| CSP | CF Transform Rule (toute la zone) |
+| Cache-Control 1y assets | CF Pages CDN défaut + ETag |
+| HSTS preload | CF SSL/TLS settings |
+| HTTPS + www→apex | CF DNS/SSL settings + Redirect Rule |
+| `RewriteRule ^MD(/\|$) - [F,L]` | `_redirects` `/MD/* /404.html 404` |
+| Block dotfiles + dev files (`package.json`, `.gitignore`) | `_redirects` (CF Pages auto-exclut `.git`, `.env`, `.DS_Store`, `_headers`, `_redirects`, `README.md`) |
+| Blocage PDFs dépôt (hash gate) | `functions/ressources/[[path]].js` |
+| `noindex` factsheets/discovery-call/validation/contrats | `_headers` |
+| URL rewriting `.html` (try_files) | Natif CF Pages |
+| `ErrorDocument 404 /404.html` | Natif CF Pages |
+| `ErrorDocument 403/500/502/503/504` | `functions/_middleware.js` (rebrand response avec `/403.html` ou `/500.html`) |
 
 ### CF Pages projects
 
@@ -481,161 +489,6 @@ curl -4 -H "Authorization: Bearer $TOKEN" \
 Si besoin d'écrire des settings (modifier zone, créer Page Rules, etc.) → créer un nouveau token avec `Zone:Zone Settings:Edit` permissions, IP-restriction au VPS, et le sauver sous une clé séparée `cloudflare_api_token_write` dans le même fichier (ne jamais réutiliser le read-only).
 
 > **Le token de dsungkur n'existe pas** (`cloudflare_api_token` absent de `projects/dsungkur.json`). Si dsungkur en a besoin, créer un token séparé scoped à la zone dsungkur.com — ne pas partager celui de sci.
-
-### `.htaccess` (legacy OVH — conservé pour référence)
-
-Current configuration:
-
-```apache
-# ============================================================
-# .htaccess — sparkcore.fund
-# ============================================================
-
-Options -Indexes
-
-# ----------------------------------------------------------------
-# Moteur de réécriture
-# ----------------------------------------------------------------
-RewriteEngine On
-
-# ----------------------------------------------------------------
-# HTTP → HTTPS + www → non-www
-# COMMENTÉ pour les tests sur le domaine temporaire OVH
-# À décommenter avant la bascule DNS vers sparkcore.fund
-# ----------------------------------------------------------------
- RewriteCond %{HTTPS} off [OR]
- RewriteCond %{HTTP_HOST} ^www\. [NC]
- RewriteRule ^ https://sparkcore.fund%{REQUEST_URI} [R=301,L]
-
-# ----------------------------------------------------------------
-# Headers de sécurité
-# ----------------------------------------------------------------
-
-<IfModule mod_headers.c>
-    Header always set X-Frame-Options "SAMEORIGIN"
-    Header always set X-Content-Type-Options "nosniff"
-    Header always set Referrer-Policy "strict-origin-when-cross-origin"
-    Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
-    # Suppression de l'info de version PHP exposée par défaut
-    Header always unset X-Powered-By
-    Header unset X-Powered-By
-</IfModule>
-
-# ----------------------------------------------------------------
-# Cache des assets statiques (équivalent Nginx)
-# ----------------------------------------------------------------
-<IfModule mod_headers.c>
-    <FilesMatch "\.(css|js|webp|png|svg|ico|woff2?|ttf|eot|jpg|jpeg|gif)$">
-        Header set Cache-Control "public, max-age=31536000, immutable"
-    </FilesMatch>
-    <FilesMatch "\.(json|xml|txt|html)$">
-        Header set Cache-Control "public, max-age=3600"
-    </FilesMatch>
-</IfModule>
-
-<IfModule mod_expires.c>
-    ExpiresActive On
-    ExpiresByType text/css                      "access plus 1 year"
-    ExpiresByType application/javascript        "access plus 1 year"
-    ExpiresByType image/webp                    "access plus 1 year"
-    ExpiresByType image/png                     "access plus 1 year"
-    ExpiresByType image/svg+xml                 "access plus 1 year"
-    ExpiresByType image/x-icon                  "access plus 1 year"
-    ExpiresByType font/woff2                    "access plus 1 year"
-    ExpiresByType font/woff                     "access plus 1 year"
-    ExpiresByType font/ttf                      "access plus 1 year"
-    ExpiresByType application/vnd.ms-fontobject "access plus 1 year"
-    ExpiresByType image/jpeg                    "access plus 1 year"
-    ExpiresByType image/gif                     "access plus 1 year"
-    ExpiresByType application/json              "access plus 1 year"
-    ExpiresByType application/xml               "access plus 1 year"
-    ExpiresByType text/xml                      "access plus 1 year"
-    ExpiresByType text/plain                    "access plus 1 year"
-    ExpiresByType text/html                     "access plus 1 hour"
-</IfModule>
-
-# ----------------------------------------------------------------
-# Blocage des fichiers cachés (.git, .env, etc.)
-# ----------------------------------------------------------------
-RewriteCond %{REQUEST_URI} (^|/)\. [NC]
-RewriteRule ^ - [R=404,L]
-RewriteRule ^\..* - [R=404,L]
-
-# ----------------------------------------------------------------
-# Blocage du répertoire MD/ (référence interne — jamais accessible en HTTP)
-# ----------------------------------------------------------------
-RewriteRule ^MD(/|$) - [F,L]
-
-# ----------------------------------------------------------------
-# Blocage des fichiers PHP (inaccessible en statique)
-# Important : OVH n'autorise pas toujours `<FilesMatch>` en `.htaccess`.
-# On bloque donc aussi via `mod_rewrite` pour fiabiliser.
-# Exception : secure_pdf.php est accessible (sert les PDFs avec vérification hash)
-# ----------------------------------------------------------------
-# Règle 1 : bloque si URI se termine par .php ET n'est pas secure_pdf.php
-RewriteCond %{REQUEST_URI} \.php$ [NC]
-RewriteCond %{REQUEST_URI} !^/secure_pdf\.php$ [NC]
-RewriteRule ^ - [F,L]
-
-# Règle 2 : même chose — RewriteCond ne s'applique qu'à la règle qui suit immédiatement
-RewriteCond %{REQUEST_URI} !^/secure_pdf\.php$ [NC]
-RewriteRule ^.*\.php$ - [F,L]
-
-# ----------------------------------------------------------------
-# PDFs : pas d'indexation par les moteurs (défense en profondeur vs robots.txt)
-# ----------------------------------------------------------------
-<IfModule mod_headers.c>
-    <FilesMatch "\.pdf$">
-        Header set X-Robots-Tag "noindex, nofollow, noarchive"
-    </FilesMatch>
-</IfModule>
-
-# ----------------------------------------------------------------
-# Blocage des instructions de dépôt (accès direct interdit — doivent passer par secure_pdf.php)
-# Couvre versions FR (instructions_depot_*) et EN (deposit_*)
-# ----------------------------------------------------------------
-RewriteCond %{REQUEST_URI} ^/ressources/(instructions_depot|deposit).*\.pdf$ [NC]
-RewriteRule ^ - [F,L]
-RewriteRule ^ressources/(instructions_depot|deposit).*\.pdf$ - [F,L]
-
-# ----------------------------------------------------------------
-# Equivalent Nginx try_files $uri $uri/ $uri.html =404;
-# ----------------------------------------------------------------
-DirectoryIndex index.html
-
-# 1) Si un fichier existe, Apache le sert directement
-RewriteCond %{REQUEST_FILENAME} -f
-RewriteRule ^ - [L]
-
-# 2) Si c'est un dossier et que l'URL finit déjà par '/', Apache le sert directement
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteCond %{REQUEST_URI} /$
-RewriteRule ^ - [L]
-
-# 3) Si c'est un dossier mais que l'URL n'a pas de '/', on ajoute un '/' en réécriture interne
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteCond %{REQUEST_URI} !/$
-RewriteRule ^(.+)$ $1/ [L]
-
-# 2) Sinon, si un fichier *.html existe, on le sert
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME}.html -f
-RewriteRule ^(.+)$ $1.html [L]
-
-# 3) Sinon 404
-RewriteRule ^ - [R=404,L]
-
-# ----------------------------------------------------------------
-# Pages d'erreur personnalisées
-# ----------------------------------------------------------------
-ErrorDocument 403 /403.html
-ErrorDocument 404 /404.html
-ErrorDocument 500 /500.html
-ErrorDocument 502 /500.html
-ErrorDocument 503 /500.html
-ErrorDocument 504 /500.html
-```
 
 ---
 
