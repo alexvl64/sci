@@ -205,14 +205,14 @@ a.trust-strip__value:hover {
   justify-content: center;
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.4;
   color: #0E1117;
   background: transparent;
   border: 1px solid #0E1117;
   border-radius: 4px;
-  height: 40px;
-  padding: 0 12px;
+  height: 44px;
+  padding: 0 16px;
   text-decoration: none;
   transition: background 0.3s ease, color 0.3s ease;
   cursor: pointer;
@@ -230,14 +230,12 @@ a.trust-strip__value:hover {
   }
 }
 
-/* Mobile only: tighten the primary CTA that sits next to nav-articles-link
-   so the logo doesn't get overlapped on narrow viewports. The parent gap is
-   already reduced via Tailwind classes (gap-2 md:gap-7) — no :has() needed. */
+/* Hide on mobile: the "Découvrir SparkCore" CTA + logo already saturate the
+   narrow header. Showing both buttons forced the Articles pill to overlap the
+   logo text. Users still reach articles via footer + main CTA discovery. */
 @media (max-width: 767px) {
-  .nav-articles-link + a,
-  .nav-articles-link + button {
-    padding-left: 0.625rem;
-    padding-right: 0.625rem;
+  .nav-articles-link {
+    display: none;
   }
 }
 
