@@ -1,7 +1,7 @@
 # LinkedIn Post — STRC Strategy yield sous-rémunéré
 
 > **Format :** Post LinkedIn standard (feed), pas article long-form.
-> **Longueur :** ~2 530 caractères (au-dessus du sweet spot 1 300-1 900, sous la limite max 3 000 ; toléré pour la densité analytique d'un sujet crédit).
+> **Longueur :** ~2 940 caractères (au-dessus du sweet spot 1 300-1 900, sous la limite max 3 000 ; toléré pour la densité analytique d'un sujet crédit).
 > **Ton :** Institutionnel, sobre, sans emojis ni décoration. Pas de question d'engagement explicite (autorité > call-to-engagement).
 > **Style :** Français naturel — éviter les calques anglais ("fair value", "money market funds", "bps", "AT1"...) et les énumérations techniques denses. Garder le détail chiffré pour l'article complet.
 > **Publication :** Mardi 12 au jeudi 14 mai 2026, 8h-10h CEST. Lien en premier commentaire.
@@ -22,7 +22,9 @@ Troisième point. Si on additionne les vrais risques de l'instrument — Strateg
 
 Quatrième point. À 11,5 %, le détenteur est donc rémunéré environ 400 à 500 points de base en dessous du juste prix. Cet écart correspond aux droits qu'il a cédés gratuitement à Strategy : la discrétion sur le taux, le rachat possible à 101 dollars, et la liberté de laisser le prix dériver si la défense des 100 dollars devient trop coûteuse.
 
-La comparaison la plus pertinente n'est pas l'obligation bancaire en stress, ni l'action préférentielle d'un foncier hypothécaire en difficulté. C'est l'action préférentielle d'un transporteur maritime en cycle bas : un actif volatile sous-jacent, pas de cashflow garanti, des dirigeants qui gardent la main sur les distributions. Ces titres se traitent à 11 à 16 % de rendement, sans illusion de prix stable.
+Pour situer STRC, la bonne référence n'est pas l'obligation bancaire à risque de conversion forcée (l'émetteur reste une banque notée qualité d'investissement, un cran au-dessus de Strategy), ni l'action préférentielle d'un foncier hypothécaire en difficulté (le risque y porte sur un portefeuille de crédits, pas sur un actif aussi volatil que le bitcoin).
+
+Le vrai comparable, c'est l'action préférentielle d'une compagnie de transport maritime quand les tarifs de fret chutent et que la valeur des navires baisse. Comme STRC, ce titre repose sur un actif volatil (les navires), n'a pas de revenu garanti qui couvre le coupon, et laisse au management toute latitude sur les distributions. Pour porter ce profil, les investisseurs exigent typiquement 11 à 16 % de rémunération annuelle — sans illusion de prix stable.
 
 Le marché peut continuer à payer au-dessus du juste prix pendant un temps. Il finira par ajuster.
 
@@ -40,7 +42,7 @@ Article complet, prospectus et sources officielles, décomposition détaillée d
 
 ## Notes opérationnelles
 
-- **Caractères du post principal :** ~2 530 (densité analytique justifiée par sujet crédit ; reste sous la limite 3 000)
+- **Caractères du post principal :** ~2 940 (densité analytique justifiée par sujet crédit ; proche de la limite 3 000 — éviter d'allonger)
 - **Choix éditoriaux clés** :
   - "Action de préférence" seul (sans "perpétuelle") — terme légal français correct ; "perpétuelle" était un calque maladroit de l'anglais
   - "Fonds monétaires" au lieu de "money market funds"
