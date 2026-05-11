@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script defer src="/assets/js/analytics.js"></script>
+    <title>STRC à 11,5 % : Pourquoi le Yield Sous-Rémunère le Risque de 400-500 bps | SparkCore</title>
+    <meta name="description" content="Analyse crédit STRC Strategy Inc. : décomposition risque (perpétuelle, peg managérial, dépendance ATM, 818 334 BTC). Yield exigible 15,5-16,5 % vs 11,5 % actuel." />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Alexandre VINAL" />
+
+    <link rel="canonical" href="https://sparkcore.fund/fr/blog/strc-strategy-yield-sous-remunere-analyse" />
+
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="2026-05-11T00:00:00+00:00" />
+    <meta property="article:modified_time" content="2026-05-11T00:00:00+00:00" />
+    <meta property="article:author" content="https://www.linkedin.com/in/alexandrevinal/" />
+    <meta property="og:url" content="https://sparkcore.fund/fr/blog/strc-strategy-yield-sous-remunere-analyse" />
+    <meta property="og:title" content="STRC à 11,5 % : Pourquoi le Yield Sous-Rémunère le Risque de 400-500 bps" />
+    <meta property="og:description" content="Analyse crédit STRC Strategy Inc. : décomposition risque (perpétuelle, peg managérial, dépendance ATM, 818 334 BTC). Yield exigible 15,5-16,5 % vs 11,5 % actuel." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=1260&h=750&fit=crop&q=80" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://sparkcore.fund/fr/blog/strc-strategy-yield-sous-remunere-analyse" />
+    <meta property="twitter:title" content="STRC à 11,5 % : Pourquoi le Yield Sous-Rémunère le Risque de 400-500 bps" />
+    <meta property="twitter:description" content="Analyse crédit STRC Strategy Inc. : décomposition risque (perpétuelle, peg managérial, dépendance ATM, 818 334 BTC). Yield exigible 15,5-16,5 % vs 11,5 % actuel." />
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=1260&h=750&fit=crop&q=80" />
+
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/png/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/png/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="48x48" href="/assets/images/png/favicon-48x48.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="/assets/images/png/favicon-192x192.png">
+    <link rel="manifest" href="/site.webmanifest">
+
+    <link rel="preload" href="/assets/css/style.css?v=2.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/style.css?v=2.0"></noscript>
+    <link rel="preload" href="/assets/css/tailwind.min.css?v=1.0" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="/assets/css/tailwind.min.css?v=1.0"></noscript>
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": "https://sparkcore.fund/fr/blog/strc-strategy-yield-sous-remunere-analyse#article",
+    "headline": "STRC à 11,5 % : Pourquoi le Yield Sous-Rémunère le Risque de 400-500 bps",
+    "description": "Analyse crédit STRC Strategy Inc. : décomposition risque (perpétuelle, peg managérial, dépendance ATM, 818 334 BTC). Yield exigible 15,5-16,5 % vs 11,5 % actuel.",
+    "datePublished": "2026-05-11",
+    "dateModified": "2026-05-11",
+    "inLanguage": "fr",
+    "author": {
+        "@type": "Person",
+        "@id": "https://sparkcore.fund/#person-alexandre-vinal",
+        "name": "Alexandre VINAL",
+        "url": "https://www.linkedin.com/in/alexandrevinal/",
+        "jobTitle": "Fondateur & Managing Partner, SparkCore Fund Management",
+        "sameAs": [
+            "https://www.linkedin.com/in/alexandrevinal/",
+            "https://www.youtube.com/@cointips"
+        ]
+    },
+    "publisher": {"@id": "https://sparkcore.fund/#organization"},
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://sparkcore.fund/fr/blog/strc-strategy-yield-sous-remunere-analyse"
+    },
+    "url": "https://sparkcore.fund/fr/blog/strc-strategy-yield-sous-remunere-analyse",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=1260&h=750&fit=crop&q=80",
+      "width": 1260,
+      "height": 750
+    },
+    "wordCount": 4900,
+    "keywords": ["STRC", "Strategy Inc", "MicroStrategy", "préférentielle perpétuelle", "Stretch Preferred Stock", "yield", "analyse crédit", "Saylor", "Bitcoin treasury", "capital stack", "STRF", "MSTR", "ATM equity"]
+}
+    </script>
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://sparkcore.fund/fr/" },
+        { "@type": "ListItem", "position": 2, "name": "Articles", "item": "https://sparkcore.fund/fr/blog/" },
+        { "@type": "ListItem", "position": 3, "name": "STRC à 11,5 % : pourquoi le yield sous-rémunère le risque", "item": "https://sparkcore.fund/fr/blog/strc-strategy-yield-sous-remunere-analyse" }
+    ]
+}
+    </script>
+
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {
+            "@type": "Question",
+            "name": "STRC est-il un instrument de dette ?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Non. STRC est une action de préférence perpétuelle (Variable Rate Series A Perpetual Stretch Preferred Stock). Le dividende est versé sur funds legally available, à la discrétion du conseil d'administration. Il n'y a pas de maturité, pas de covenants, pas de collatéral, pas de cas de défaut au sens crédit. Strategy peut suspendre la distribution sans déclencher de mécanisme d'enforcement de type créancier."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Le prix de 100 $ est-il garanti par Strategy ?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Non. Le maintien autour de 100 $ est une intention déclarée du management, exprimée via un mécanisme d'ajustement mensuel du taux variable laissé à la sole and absolute discretion de Strategy selon le prospectus 424B5. Aucune obligation contractuelle ne garantit le niveau de cotation. Si le marché demande un coupon supérieur à la capacité de levée raisonnable, Strategy peut laisser le prix dériver."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Quel yield serait économiquement justifié pour STRC ?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "L'empilement des primes de risque (baseline UST 10Y autour de 4,4 %, crédit Strategy équivalent BB, subordination, concentration single-asset BTC, optionalité défavorable, duration cachée, liquidité, fiscalité, gouvernance) aboutit à une fourchette de 13,8 % à 19,8 % avec un point central autour de 15,5-16,5 %. À 11,5 % actuel, l'instrument est sous-rémunéré d'environ 400 à 500 bps pour le risque porté."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "STRF est-il une meilleure alternative que STRC dans la stack Strategy ?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Pour un profil yield-seeking exposé à Strategy, STRF présente un meilleur rapport risque-rendement. Le coupon fixe de 10 % cumulatif, la position senior dans la stack préférentielle, l'absence de peg à défendre, et l'absence de discrétion du board sur le taux le rendent structurellement supérieur. L'écart de 150 bps de yield ne compense pas, à notre estimation, le différentiel de risque entre les deux instruments."
+            }
+        },
+        {
+            "@type": "Question",
+            "name": "Quelle est la probabilité d'une suspension de dividende STRC ?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Notre estimation subjective, à confiance modérée, place la probabilité d'une suspension de dividende sur un horizon de sept ans entre 25 % et 35 %. Le scénario déclencheur typique combine une baisse prolongée du bitcoin sous 40 000 $, une fermeture de la fenêtre ATM, et l'épuisement de la réserve cash USD de 2,25 Md $. Le caractère cumulatif n'efface pas le risque économique : les coupons s'accumulent mais le prix s'effondre."
+            }
+        }
+    ]
+}
+    </script>
+  </head>
+  <body class="bg-white">
+    <header class="bg-white sticky top-0 z-10 drop-shadow-lg">
+      <nav class="max-w-[1440px] mx-auto lg:px-8 md:px-6 px-4 py-4 lg:py-[17px] flex justify-between items-center">
+        <a rel="noopener noreferrer" href="/fr/"><img class="md:w-[209px] md:h-10 w-[125px] h-6" src="/assets/images/svg/logo.svg" alt="SparkCore Fund Management" width="210" height="40"></a>
+        <div class="flex items-center gap-7">
+          <a href="/fr/blog/" class="nav-articles-link" data-i18n="navArticles">Articles</a>
+          <a href="/fr/" class="font-inter font-normal md:h-[54px] md:px-6 md:py-4 px-4 py-3 h-11 rounded text-sm md:text-base bg-darkGray text-white !leading-140 hover:bg-transparent hover:text-darkGray border border-transparent hover:border-darkGray duration-300 flex items-center justify-center">Découvrir SparkCore</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="py-12 sm:py-16 lg:py-20">
+      <article class="max-w-[800px] mx-auto px-6">
+
+        <p class="font-inter text-sm text-steelBlue mb-4">Publié le 11 mai 2026 &middot; Par <a href="https://www.linkedin.com/in/alexandrevinal/" target="_blank" rel="noopener noreferrer" class="hover:underline">Alexandre VINAL</a> &middot; 22 min de lecture</p>
+
+        <h1 class="font-funnel-display text-custom-5xl max-md:text-custom-4xl max-sm:text-custom-3xl text-darkGray mb-8 leading-tight">
+          STRC à 11,5 % : Pourquoi le Yield Sous-Rémunère le Risque de 400-500 bps
+        </h1>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Un coupon mensuel de 11,5 % en cash, un prix qui se maintient autour de 100 $, une promesse marketing d'alternative aux money market funds. Sur le papier, STRC ressemble à l'instrument idéal pour l'investisseur en quête de rendement dans un environnement de taux courts encore élevés.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">L'instrument est mal compris par la majorité de ses détenteurs — dont environ 80 % sont des particuliers, selon les déclarations du CEO de Strategy Inc. Le yield affiché ne correspond pas à la rémunération économiquement justifiée du risque porté. À 11,5 %, STRC sous-rémunère le risque de l'ordre de 400 à 500 bps. Le yield économiquement cohérent serait situé entre 15,5 % et 16,5 %.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Cet article décompose les caractéristiques structurelles de STRC, le modèle économique sous-jacent de Strategy Inc., les dix modes de défaillance identifiables, puis empile les primes de risque pour reconstituer un yield théorique. Il compare l'instrument à des références crédit pertinentes et le situe par rapport aux autres tranches de la stack préférentielle de Strategy — en particulier STRF, qui apparaît comme l'alternative structurellement supérieure pour un profil yield-seeking exposé à l'écosystème Saylor.</p>
+
+        <div class="border border-lightGray rounded-lg p-6 bg-[#F9FAFB] mb-8">
+          <p class="font-inter text-sm font-semibold text-darkGray mb-3">Au programme</p>
+          <ul class="font-inter text-base text-mediumGray leading-160 list-disc pl-5 space-y-2">
+            <li><strong class="text-darkGray">Qu'est-ce que STRC, vraiment ?</strong> — Variable Rate Series A Perpetual Stretch Preferred Stock : caractéristiques, prospectus 424B5, place dans une stack de ~$18 Md de claims senior au commun.</li>
+            <li><strong class="text-darkGray">Le modèle économique de Strategy</strong> — Strategy ne génère pas de cashflow opérationnel pour couvrir ses ~1,3-1,5 Md $ d'obligations annuelles préférentielles. Le dispositif fonctionne tant que l'ATM tourne.</li>
+            <li><strong class="text-darkGray">Dix modes de défaillance identifiables</strong> — De la suspension de dividende au cap implicite du taux, en passant par la duration cachée — le mispricing structurel principal.</li>
+            <li><strong class="text-darkGray">Décomposition du yield économiquement justifié</strong> — Empilement des primes de risque : 13,8 % à 19,8 % de yield exigé, point central 15,5-16,5 %.</li>
+            <li><strong class="text-darkGray">Comparables et alternatives</strong> — Pourquoi STRF à 10 % fixe cumulatif senior offre un profil risque-rendement supérieur, et comment STRC se situe par rapport au high yield BB-, CCC, AT1 bancaires et préférentielles REIT en stress.</li>
+            <li><strong class="text-darkGray">Verdict opérationnel</strong> — Probabilités subjectives explicites, scénarios institutionnels, pour qui STRC peut éventuellement avoir un sens.</li>
+          </ul>
+        </div>
+
+        <figure class="mt-6 mb-12"><img src="https://images.unsplash.com/photo-1639762681485-074b7f938ba0?w=1260&h=750&fit=crop&q=80" alt="Représentation visuelle de bitcoin et d'instruments financiers structurés sur fond de graphiques de marché" class="w-full rounded-lg object-cover max-h-[420px]" loading="lazy" width="1260" height="750" decoding="async" /></figure>
+
+        <h2 class="font-funnel-display text-2xl sm:text-custom-3xl text-darkGray mt-10 mb-4">1. Qu'est-ce que STRC, vraiment ?</h2>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">STRC est le nom commercial donné à la <strong class="text-darkGray">Variable Rate Series A Perpetual Stretch Preferred Stock</strong> émise par Strategy Inc., la société anciennement connue sous le nom MicroStrategy. L'instrument a été pricé le 24 juillet 2025 à 90 $ par action (28 011 111 actions, produit brut 2,521 Md $), puis Strategy a annoncé le 31 juillet 2025 un programme At-The-Market (ATM) de 4,2 Md $ pour continuer à émettre l'instrument au fil de l'eau (<a href="https://www.strategy.com/press/strategy-announces-pricing-of-strc-perpetual-preferred-stock_07-25-2025" class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200" target="_blank" rel="noopener noreferrer">Strategy press release</a>, juillet 2025 ; prospectus 424B5 disponible sur <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK=0001050446&type=424&dateb=&owner=include&count=40" class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200" target="_blank" rel="noopener noreferrer">SEC EDGAR</a>).</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Les caractéristiques techniques</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Stated amount de 100 $ par action. Perpétuelle — pas de maturité fixée contractuellement. Non convertible en actions ordinaires. Non callable à l'initiative du porteur. Strategy se réserve un droit de call à 101 $ par action plus les dividendes accumulés, à sa discrétion, à tout moment après le listing sur Nasdaq. Le dividende est versé mensuellement, à taux variable, indexé indirectement sur le 1-month term SOFR via un mécanisme propriétaire.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le mécanisme d'ajustement mensuel mérite une lecture attentive. Le prospectus 424B5 stipule que Strategy peut modifier le taux <em>in its sole and absolute discretion</em>, avec un garde-fou contractuel limité : une baisse mensuelle ne peut excéder 25 bps plus l'évolution du spread SOFR, et le taux résultant ne peut descendre sous le 1-month term SOFR observé le jour ouvré précédant la notification. Il n'existe en revanche <strong class="text-darkGray">aucun plafond contractuel à la hausse</strong> et aucun lien obligatoire avec un quelconque indicateur de marché ou de spread crédit (<a href="https://www.sec.gov/Archives/edgar/data/1050446/000119312525165531/d852456d424b5.htm" class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200" target="_blank" rel="noopener noreferrer">SEC EDGAR 424B5 IPO</a>, 2025).</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Ce que la plupart des détenteurs ne mesurent pas</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">STRC n'est pas un instrument de dette. C'est une action de préférence — un titre de capital subordonné à toute la dette de Strategy. Le dividende est versé sur des <em>funds legally available</em>, à la discrétion du conseil d'administration. Aucune covenant de couverture de coupon. Aucun collatéral, en particulier aucun lien contractuel avec les 818 334 BTC détenus par Strategy au 3 mai 2026, chiffre publié dans le rapport Q1 2026 du 5 mai (<a href="https://www.businesswire.com/news/home/20260505174709/en/Strategy-Announces-First-Quarter-Financial-Results-Currently-Holds-818334-BTC" class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200" target="_blank" rel="noopener noreferrer">Strategy Q1 2026</a>, 2026). Aucun event of default au sens où un créancier l'entendrait. Si Strategy suspend le versement, le détenteur n'a pas de mécanisme d'enforcement de type créancier — il subit la perte de revenu et la chute de prix qui en résulte.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le maintien du prix autour de 100 $ est <strong class="text-darkGray">une intention déclarée du management</strong>, pas une obligation contractuelle. L'ajustement mensuel du coupon est l'outil que Strategy se réserve pour stabiliser le cours autour du stated amount. Mais le prospectus ne contient aucune clause qui obligerait Strategy à monter le taux jusqu'au niveau requis pour défendre les 100 $. Si le coupon nécessaire pour stabiliser le cours devient économiquement insoutenable, Strategy peut, juridiquement, refuser de l'ajuster et laisser le prix dériver.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">La place dans la stack</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">La structure de capital de Strategy se lit dans l'ordre suivant, du plus senior au plus subordonné : dette convertible (environ 8,2 Md $ d'encours), puis STRF (Strife, 10 % fixe cumulatif), puis STRC (variable), puis STRK (Strike, 8 % convertible), puis STRD (Stride, 10 % non cumulatif), puis STRE (Stream, 10 % en euros listé à Luxembourg depuis novembre 2025), enfin l'action ordinaire MSTR. L'ensemble des claims senior à MSTR commun représente de l'ordre de 18 Md $ — la dette convertible plus la totalité de la masse préférentielle.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">À début mai 2026, l'encours notionnel STRC est de l'ordre de 8,5 Md $ (environ 85,4 millions d'actions × stated amount 100 $ — niveau de confiance modérée, à actualiser sur la base du prochain 10-Q). Le taux est maintenu à 11,50 % pour le troisième mois consécutif, après être passé de 9,00 % à l'émission à 10,50 % en novembre 2025, puis 11,00 % en janvier 2026, 11,25 % en février, et 11,50 % en mars (<a href="https://www.coindesk.com/markets/2026/05/01/strategy-keeps-strc-dividend-at-11-5-as-stock-logs-first-monthly-gain-in-nine" class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200" target="_blank" rel="noopener noreferrer">CoinDesk</a>, mai 2026). Le volume moyen quotidien sur 30 jours est de l'ordre de 375 M $ — un niveau confortable pour un détenteur particulier, plus contraint pour une sortie institutionnelle en stress.</p>
+
+        <h2 class="font-funnel-display text-2xl sm:text-custom-3xl text-darkGray mt-10 mb-4">2. Un Modèle Économique Dépendant de l'Émission Continue</h2>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Strategy a levé 25,3 Md $ en 2025 toutes structures confondues, ce qui en a fait le plus important émetteur equity des États-Unis sur l'exercice (<a href="https://www.strategy.com/press/strategy-announces-fourth-quarter-2025-financial-results_02-05-2026" class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200" target="_blank" rel="noopener noreferrer">Strategy Q4 2025</a>, 2026). Aucune ligne d'activité de la société ne génère un cashflow opérationnel récurrent à la hauteur des distributions préférentielles annuelles, estimées entre 1,3 et 1,5 Md $. Cette donnée conditionne l'ensemble du risque crédit de STRC.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">L'arithmétique des obligations préférentielles</h3>
+
+<!-- [ORIGINAL DATA] Recalcul propre de l'obligation préférentielle annuelle Strategy à partir des taux et encours par tranche : 977 M$ STRC seul (11,5% × 8,5 Md$), +STRF, STRK, STRD, STRE. Estimation 1,3-1,5 Md$ matériellement supérieure aux 800 M$ communément cités sur les plateformes retail. -->
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">STRC seul, à 11,50 % sur un encours d'environ 8,5 Md $, représente une obligation annuelle de l'ordre de 977 M $. À cela s'ajoutent STRF (10 % fixe cumulatif sur environ 1 Md $ d'encours), STRK (8 % sur environ 1,28 Md $ stated), STRD (10 % non cumulatif sur environ 1,2 Md $), et STRE (10 % en euros sur €350 M). En cumulant ces flux, l'obligation annuelle totale préférentielles de Strategy se situe vraisemblablement entre <strong class="text-darkGray">1,3 et 1,5 Md $</strong>. Cette estimation est sensiblement au-dessus des 800 M $ qui circulent sur certaines plateformes de recherche retail. Niveau de confiance : modérée, calcul propre à partir des taux et encours publics.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">À cela s'additionne le service de la dette convertible (coupons et amortissements éventuels) et les frais opérationnels structurels. Aucune ligne d'activité de Strategy ne génère un cashflow opérationnel récurrent à la hauteur de ces engagements. La société dépend donc de deux sources : ses activités d'investissement — c'est-à-dire la performance latente du portefeuille bitcoin et les opportunités d'arbitrage qu'elle peut exécuter — et surtout l'émission continue d'instruments equity et preferred via ses programmes ATM.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Le moteur ATM et la réserve cash</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">En 2025, Strategy a été le plus important émetteur equity des États-Unis, levant 25,3 Md $ toutes structures confondues — actions ordinaires MSTR, préférentielles STRK/STRF/STRC/STRD, dette convertible (<a href="https://www.strategy.com/press/strategy-announces-fourth-quarter-2025-financial-results_02-05-2026" class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200" target="_blank" rel="noopener noreferrer">Strategy Q4 2025</a>, 2026). Une part importante de ces capitaux a été redéployée en bitcoin. Une autre part a servi à constituer une réserve cash USD de 2,25 Md $ établie progressivement au cours du quatrième trimestre 2025, présentée par le management comme une couverture d'environ 2,5 années des distributions préférentielles à taux constant.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Cette réserve change le profil court terme de l'instrument. Elle ne change pas le profil structurel. À 2,5 ans de couverture sur un horizon d'instrument perpétuel, la réserve constitue un coussin de tranquillité, pas une garantie de pérennité. Au-delà de 2027-2028, le modèle revient à sa configuration de base : il faut que l'ATM continue à tourner pour que les distributions soient honorées sans rogner sur le portefeuille bitcoin.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Une mécanique structurellement Ponzi-adjacent</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le terme est volontairement direct, et sans jugement moral. Sur le plan strictement mécanique, la configuration de Strategy présente une caractéristique d'un schéma Ponzi-adjacent : les nouvelles émissions financent en partie les distributions des tranches antérieures, et le surplus net est redéployé en bitcoin. Tant que la fenêtre d'émission ATM reste ouverte à des conditions relutives, et tant que le bitcoin maintient sa valeur, le système fonctionne. La distinction avec un Ponzi classique est que l'actif sous-jacent existe — Strategy détient bien 818 334 BTC, vérifiable on-chain — et que les flux servent à acquérir un actif liquide, pas à être détournés.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">La mécanique se grippe dans deux configurations. Premièrement, si l'action ordinaire MSTR cote sous son mNAV (la valeur de marché des bitcoins détenus par action), l'émission d'actions devient dilutive en termes de bitcoin par action — Strategy détruit de la valeur en émettant. Deuxièmement, si le marché refuse d'absorber les volumes de préférentielles à des taux soutenables, le coupon nécessaire pour maintenir l'attractivité dépasse rapidement le rendement net que la performance du portefeuille bitcoin peut générer en moyenne. Dans les deux cas, Strategy doit choisir entre arrêter la dynamique d'accumulation, vendre du bitcoin, ou ajuster les coupons et risquer une perte de confiance des détenteurs.</p>
+
+        <h2 class="font-funnel-display text-2xl sm:text-custom-3xl text-darkGray mt-10 mb-4">3. Les Dix Modes de Défaillance Identifiables</h2>
+
+<!-- [UNIQUE INSIGHT] Décomposition propre en 10 modes de défaillance, articulés sur la lecture directe du prospectus 424B5 et de la mécanique ATM Strategy — taxonomie non publique ailleurs au format ainsi structuré. -->
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le taux STRC est passé de 9,00 % à l'émission en août 2025 à 11,50 % en mars 2026, soit une hausse de 250 bps en huit mois (<a href="https://www.coindesk.com/markets/2026/03/01/strategy-lifts-strc-dividend-to-11-5-as-mstr-extends-monthly-losing-streak-to-8" class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200" target="_blank" rel="noopener noreferrer">CoinDesk</a>, mars 2026). Cette trajectoire illustre déjà que le mécanisme de défense du peg consomme de la marge à un rythme rapide. Les dix risques ci-dessous décomposent ce qui peut casser l'instrument, avec probabilité subjective sur cinq à sept ans, mécanique, et impact prix estimé.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">A1. Suspension de dividende — probabilité modérée</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le dividende STRC est cumulatif selon le prospectus — les coupons non versés s'accumulent et doivent être payés avant toute distribution sur les tranches plus juniors ou sur l'action ordinaire. Mais le board conserve une discrétion totale sur le moment de versement, et il n'existe aucun trigger automatique qui forcerait la reprise des paiements. Un scénario typique de suspension combine une baisse prolongée du bitcoin sous environ 40 000 $, une fermeture effective de la fenêtre ATM (MSTR sous mNAV ou marché refusant les volumes), et l'épuisement de la réserve cash USD de 2,25 Md $. En cas de suspension, le prix STRC s'effondrerait vraisemblablement vers 40-60 $, reflétant à la fois la perte de revenu courant et le repricing du risque structurel.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">A2. Le cap implicite sur le taux variable — probabilité élevée d'être atteint</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le mécanisme d'ajustement mensuel a une limite mathématique non écrite. À 11,5 % sur 8,5 Md $, STRC coûte déjà 977 M $ par an. À 15 % le coût annualisé monterait à 1,275 Md $. À 18 %, à 1,53 Md $ — un niveau qui dépasse la capacité de levée raisonnable en environnement non favorable. Si le marché demande 20 % pour tenir 100 $, Strategy a deux choix : (a) monter le coupon, accélérer la dépendance ATM et risquer un emballement ; ou (b) refuser et laisser le prix dériver à 70-80 $. Le prospectus autorise explicitement la seconde option. <strong class="text-darkGray">Le peg n'est pas un peg, c'est une intention managériale</strong> bornée par un calcul de soutenabilité que le marché finira par tester.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">A3. Concurrence interne de la stack — probabilité élevée (déjà matérialisée)</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">L'émission parallèle de STRD, STRE et l'extension des programmes ATM sur les tranches préexistantes dégradent marginalement le profil de chaque tranche existante. Chaque nouvelle émission siphonne la même base d'investisseurs yield-seeking exposés au crédit Strategy, ce qui pèse sur le bid et oblige des coupons toujours plus attractifs. Cette dynamique est déjà à l'œuvre — la montée de 9 % à 11,5 % du taux STRC en moins d'un an en est l'illustration directe.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">A4. Death spiral du modèle ATM — probabilité modérée</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Trois ruptures peuvent gripper le moteur d'émission. Premièrement, un crash bitcoin prolongé qui consume la réserve cash USD et rend toute nouvelle émission dilutive en bitcoin par action. Deuxièmement, un événement de marché qui éteint l'appétit pour le produit indépendamment de la performance du bitcoin — un précédent de suspension de coupon chez un acteur comparable suffirait. Troisièmement, un ratio d'amplification trop important : à mesure que la masse préférentielle gonfle, la base equity nécessaire pour absorber un drawdown coupon doit grossir au moins aussi vite — ce qui devient mathématiquement instable au-delà d'un certain niveau.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">A5. Risque réglementaire et fiscal — probabilité modérée</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Strategy a annoncé en février 2026 que <strong class="text-darkGray">100 % des distributions aux porteurs de préférentielles pour l'année calendaire 2025 sont qualifiées de return of capital</strong> au sens fiscal américain, et que le management anticipe ce traitement <em>for the foreseeable future</em>, c'est-à-dire à horizon de dix ans ou plus, faute d'earnings & profits accumulés (<a href="https://www.strategy.com/press/strategys-distributions-to-digital-credit-investors-in-2025-are-return-of-capital_02-02-2026" class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200" target="_blank" rel="noopener noreferrer">Strategy 8-K</a>, février 2026). Pour un investisseur particulier américain, ce traitement réduit la base fiscale plutôt que de générer un revenu imposable immédiat. C'est un avantage fiscal significatif. Le risque est une reclassification IRS si Strategy générait soudain des earnings & profits, par exemple en cas de vente forcée d'une partie du portefeuille bitcoin. Pour un investisseur non-américain, la retenue à la source américaine de 30 % s'applique (réductible par convention fiscale). Une reclassification ou un changement de doctrine IRS pourrait amputer le yield net de 200 à 300 bps selon la juridiction du porteur. Le cadre réglementaire américain des actifs numériques évolue par ailleurs rapidement, comme l'illustre l'adoption récente du <a href="/fr/blog/clarity-act-us-impacts-investisseurs" class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200">CLARITY Act et ses implications pour les investisseurs</a>.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">A6. Risque bitcoin catastrophique — probabilité faible à modérée</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Cet article ne formule pas de prédiction sur le prix futur du bitcoin. Une analyse de scénario reste néanmoins légitime. Si le bitcoin restait durablement sous 30 000 $, niveau qui ramènerait la valeur du portefeuille à environ 25 Md $, la NAV de Strategy approcherait la somme des claims senior (dette plus préférentielles) et les préférentielles juniors commenceraient à pricer un risque de recouvrement. Sous 20 000 $, STRC coterait vraisemblablement entre 30 et 50 $, reflétant le risque de liquidation forcée. Le scénario inverse (bitcoin durablement très haut) ne profite pas particulièrement à STRC, dont l'upside reste plafonné au stated amount. Pour une vue d'ensemble des signaux objectifs à suivre côté actif sous-jacent, voir notre analyse des <a href="/fr/blog/indicateurs-marche-crypto-actifs" class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200">indicateurs de marché crypto-actifs</a>.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">A7. Risque gouvernance et key person — probabilité faible mais impact élevé</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Michael Saylor contrôle Strategy via des actions de classe supervoting. La narration publique, l'arbitrage des programmes ATM, la doctrine d'allocation BTC-only sont étroitement dépendants de sa présence active. Un décès, une incapacité, ou un changement stratégique imposé par les autres administrateurs (vente partielle de BTC, distribution de cash aux actionnaires ordinaires) déclencherait un repricing immédiat de tous les instruments Strategy, y compris STRC. Le concept de prime de risque key person est généralement chiffré entre 50 et 150 bps pour des sociétés analogues.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">A8. Liquidité secondaire — probabilité élevée d'être contraignante</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le volume moyen quotidien sur 30 jours de l'ordre de 375 M $ est confortable pour un investisseur particulier et permet une rotation de positions de quelques millions de dollars sans impact significatif. En revanche, ce niveau est inadéquat pour une sortie institutionnelle en stress. Un fonds de plusieurs centaines de millions cherchant à liquider rapidement déclencherait un élargissement brutal des spreads et une glissade du prix. La concentration de la base sur des particuliers (environ 80 % selon Strategy) amplifie le risque de discontinuité : la profondeur du carnet retail s'évapore rapidement en cas de signal négatif.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">A9. Duration cachée — le mispricing structurel principal</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">C'est probablement le risque le plus systématiquement sous-estimé par les détenteurs. STRC est commercialisé, dans la communication retail, comme un instrument à <em>short duration</em>, alternative aux money market funds — l'argument étant qu'à 100 $ stable, la duration effective est proche de zéro. Cette présentation est <strong class="text-darkGray">factuellement fausse</strong>. STRC est une perpétuelle. Sa duration analytique est élevée — typiquement entre 8 et 15 ans selon le scénario de coupon — et n'est masquée par le mécanisme de peg qu'aussi longtemps que Strategy choisit et peut le défendre.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le jour où le peg cède — pour l'une des raisons listées en A2 ou A4 —, la duration apparente passe en quelques jours d'un quasi-zéro à un niveau pleinement perpétuel, et le prix se réajuste violemment. Ce mécanisme est l'équivalent obligataire d'une option courte vendue gratuitement par le détenteur à Strategy : le porteur cède l'optionalité de duration au gestionnaire, sans contrepartie de prime claire. Toute évaluation crédit sérieuse de STRC doit incorporer une prime explicite pour cette duration cachée, que nous estimons entre 100 et 200 bps.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">A10. Cascading sell et runs — probabilité modérée</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Une base détenue à 80 % par des particuliers est structurellement procyclique. Le scénario type : STRC dérive vers 95 $, plusieurs newsletters retail amplifient le signal, des ETF income à exposition diversifiée commencent à alléger leur position, le board doit relever le coupon pour défendre le prix, ce qui est lu comme un signal de détresse, ce qui accélère les ventes. La boucle est classique sur les actifs à base retail dominante. Le coussin cash de 2,25 Md $ atténue le scénario à 12-18 mois mais ne le supprime pas.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Les risques exogènes additionnels</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Quatre facteurs exogènes méritent une mention. Premièrement, la concurrence des yields stablecoin institutionnels — Ondo OUSG, BlackRock BUIDL, Maple Finance — qui offrent du 5 à 6 % sur des structures collatéralisées par des Treasuries, profil de risque incomparablement plus simple. Deuxièmement, une hausse des Fed funds qui réduirait l'attractivité relative de STRC. Troisièmement, des drawdowns sur les ETF bitcoin spot qui mettraient les capitaux passifs en mode défensif. Quatrièmement, un éventuel encadrement réglementaire spécifique des Bitcoin treasury companies — une discussion qui émerge périodiquement à la SEC mais qui, à notre connaissance et à confiance modérée, n'a pas donné lieu à une proposition réglementaire formelle à mai 2026.</p>
+
+        <h2 class="font-funnel-display text-2xl sm:text-custom-3xl text-darkGray mt-10 mb-4">4. Décomposition du Yield Économiquement Justifié</h2>
+
+<!-- [ORIGINAL DATA] Décomposition propre des primes de risque empilées sur le UST 10Y (4,38 % au 8 mai 2026, source Fed H.15) — calibration analytique fondée sur la lecture comparée des comparables crédit identifiés et des spécificités structurelles STRC. Non disponible ailleurs sous cette forme. -->
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Au début du mois de mai 2026, le rendement du Treasury 10 ans évolue entre 4,36 % et 4,45 % selon les données officielles de la Réserve fédérale américaine (<a href="https://www.federalreserve.gov/releases/h15/" class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200" target="_blank" rel="noopener noreferrer">Federal Reserve H.15</a>, mai 2026). Nous retenons une baseline de 4,4 % pour la décomposition. Sur cette baseline, les primes de risque exigées pour STRC sont empilées ci-dessous. Le résultat est une fourchette de yield exigible, pas un point unique. La nature même de l'exercice est probabiliste.</p>
+
+        <div class="overflow-x-auto my-8 rounded-lg border border-lightGray">
+          <table class="w-full font-inter text-sm">
+            <thead class="bg-[#F9FAFB]">
+              <tr>
+                <th class="text-left text-darkGray font-semibold py-3 px-4 border-b border-lightGray">Composante</th>
+                <th class="text-left text-darkGray font-semibold py-3 px-4 border-b border-lightGray">Prime exigée</th>
+                <th class="text-left text-darkGray font-semibold py-3 px-4 border-b border-lightGray">Justification courte</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-lightGray">
+                <td class="py-3 px-4 font-medium text-darkGray">Baseline (UST 10Y, début mai 2026)</td>
+                <td class="py-3 px-4 text-mediumGray">~4,4 %</td>
+                <td class="py-3 px-4 text-mediumGray">Référence sans risque (Fed H.15)</td>
+              </tr>
+              <tr class="border-b border-lightGray bg-[#FAFAFA]">
+                <td class="py-3 px-4 font-medium text-darkGray">Risque crédit Strategy (équivalent BB)</td>
+                <td class="py-3 px-4 text-mediumGray">+250 à 350 bps</td>
+                <td class="py-3 px-4 text-mediumGray">Pas de cashflow opérationnel, dépendance ATM totale</td>
+              </tr>
+              <tr class="border-b border-lightGray">
+                <td class="py-3 px-4 font-medium text-darkGray">Subordination dette et STRF</td>
+                <td class="py-3 px-4 text-mediumGray">+100 à 150 bps</td>
+                <td class="py-3 px-4 text-mediumGray">~18 Md $ de claims senior à STRC</td>
+              </tr>
+              <tr class="border-b border-lightGray bg-[#FAFAFA]">
+                <td class="py-3 px-4 font-medium text-darkGray">Concentration single-asset BTC</td>
+                <td class="py-3 px-4 text-mediumGray">+200 à 300 bps</td>
+                <td class="py-3 px-4 text-mediumGray">100 % du collatéral implicite = un seul actif volatil</td>
+              </tr>
+              <tr class="border-b border-lightGray">
+                <td class="py-3 px-4 font-medium text-darkGray">Optionalité défavorable (discrétion board)</td>
+                <td class="py-3 px-4 text-mediumGray">+150 à 250 bps</td>
+                <td class="py-3 px-4 text-mediumGray">Asymétrie structurelle contre le porteur</td>
+              </tr>
+              <tr class="border-b border-lightGray bg-[#FAFAFA]">
+                <td class="py-3 px-4 font-medium text-darkGray">Duration cachée et peg break</td>
+                <td class="py-3 px-4 text-mediumGray">+100 à 200 bps</td>
+                <td class="py-3 px-4 text-mediumGray">Mispricing structurel principal</td>
+              </tr>
+              <tr class="border-b border-lightGray">
+                <td class="py-3 px-4 font-medium text-darkGray">Liquidité institutionnelle</td>
+                <td class="py-3 px-4 text-mediumGray">+50 à 100 bps</td>
+                <td class="py-3 px-4 text-mediumGray">OK retail, médiocre institutionnel</td>
+              </tr>
+              <tr class="border-b border-lightGray bg-[#FAFAFA]">
+                <td class="py-3 px-4 font-medium text-darkGray">Risque réglementaire et fiscal</td>
+                <td class="py-3 px-4 text-mediumGray">+50 à 100 bps</td>
+                <td class="py-3 px-4 text-mediumGray">ROC reclassification + encadrement BTC treasury</td>
+              </tr>
+              <tr class="border-b border-lightGray">
+                <td class="py-3 px-4 font-medium text-darkGray">Gouvernance et key person</td>
+                <td class="py-3 px-4 text-mediumGray">+50 à 100 bps</td>
+                <td class="py-3 px-4 text-mediumGray">Concentration Saylor supervoting</td>
+              </tr>
+              <tr class="border-b-2 border-darkGray bg-[#F9FAFB]">
+                <td class="py-3 px-4 font-semibold text-darkGray">Total spread exigé</td>
+                <td class="py-3 px-4 font-semibold text-darkGray">+950 à +1 650 bps</td>
+                <td class="py-3 px-4 text-mediumGray">Somme des primes</td>
+              </tr>
+              <tr class="bg-[#F9FAFB]">
+                <td class="py-3 px-4 font-semibold text-darkGray">Yield total exigé</td>
+                <td class="py-3 px-4 font-semibold text-darkGray">~13,8 % à ~19,8 %</td>
+                <td class="py-3 px-4 text-mediumGray">Point central 15,5-16,5 %</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="font-inter text-xs text-mediumGray leading-160 mt-2 mb-8 italic">Sources baseline : Federal Reserve H.15 Selected Interest Rates, 8 mai 2026 ; FRED DGS10. Primes de risque : estimation analytique à confiance modérée fondée sur la lecture du prospectus 424B5 et les comparables crédit identifiés.</p>
+
+        <figure class="my-8 rounded-lg bg-[#0f172a] p-4 sm:p-6 overflow-x-auto">
+<svg viewBox="0 0 560 420" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Décomposition du yield STRC exigible : empilement des primes de risque depuis le 10Y UST jusqu'à la fourchette 13,8-19,8% avec point central 15,5-16,5% vs taux actuel 11,5%">
+  <title>Décomposition du yield exigible STRC vs taux actuel</title>
+  <rect width="560" height="420" fill="#0f1117" rx="8"/>
+  <text x="280" y="26" text-anchor="middle" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="14" font-weight="bold">Empilement des primes de risque STRC</text>
+  <text x="280" y="44" text-anchor="middle" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="11">Yield exigible vs yield actuel — Mai 2026</text>
+
+  <!-- Y axis: 0 to 22%, plot height ~310px (top=60, bottom=370), scale=14px/% -->
+  <!-- y(val) = 370 - val * 14 -->
+
+  <!-- Horizontal grid -->
+  <line x1="60" y1="370" x2="500" y2="370" stroke="#475569" stroke-width="1"/>
+  <line x1="60" y1="300" x2="500" y2="300" stroke="#334155" stroke-width="0.75" stroke-dasharray="3,3"/>
+  <line x1="60" y1="230" x2="500" y2="230" stroke="#334155" stroke-width="0.75" stroke-dasharray="3,3"/>
+  <line x1="60" y1="160" x2="500" y2="160" stroke="#334155" stroke-width="0.75" stroke-dasharray="3,3"/>
+  <line x1="60" y1="90" x2="500" y2="90" stroke="#334155" stroke-width="0.75" stroke-dasharray="3,3"/>
+
+  <!-- Y labels -->
+  <text x="54" y="373" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">0%</text>
+  <text x="54" y="303" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">5%</text>
+  <text x="54" y="233" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">10%</text>
+  <text x="54" y="163" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">15%</text>
+  <text x="54" y="93" text-anchor="end" fill="#94a3b8" font-family="system-ui, sans-serif" font-size="10">20%</text>
+
+  <!-- Stack 1: Yield actuel STRC (left bar, x=110 width=70) -->
+  <!-- 11.5% → height = 11.5 * 14 = 161 → y_top=370-161=209 -->
+  <rect x="110" y="209" width="70" height="161" rx="3" fill="#ef4444" opacity="0.85"/>
+  <text x="145" y="200" text-anchor="middle" fill="#ef4444" font-family="system-ui, sans-serif" font-size="13" font-weight="bold">11,5 %</text>
+  <text x="145" y="395" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">Taux actuel</text>
+  <text x="145" y="410" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="10">STRC mai 2026</text>
+
+  <!-- Stack 2: Empilement primes (center bar, x=240 width=70) -->
+  <!-- Baseline UST 4.38% → from 370 to 370-4.38*14=370-61.3=308.7≈309 (h=61) -->
+  <rect x="240" y="309" width="70" height="61" rx="3" fill="#475569"/>
+  <text x="275" y="343" text-anchor="middle" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">UST 4,4%</text>
+
+  <!-- Crédit Strategy +3.0% (mid) → from 309 to 309-3.0*14=309-42=267 (h=42) -->
+  <rect x="240" y="267" width="70" height="42" rx="3" fill="#7c3aed"/>
+  <text x="275" y="291" text-anchor="middle" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="10">Crédit +3,0%</text>
+
+  <!-- Subordination +1.25% → from 267 to 267-1.25*14=267-17.5=250 (h=17) -->
+  <rect x="240" y="250" width="70" height="17" rx="3" fill="#8b5cf6"/>
+  <text x="275" y="262" text-anchor="middle" fill="#e2e8f0" font-family="system-ui, sans-serif" font-size="9">Subord +1,3%</text>
+
+  <!-- Concentration BTC +2.5% → from 250 to 250-2.5*14=250-35=215 (h=35) -->
+  <rect x="240" y="215" width="70" height="35" rx="3" fill="#a78bfa"/>
+  <text x="275" y="236" text-anchor="middle" fill="#1e1b4b" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">BTC +2,5%</text>
+
+  <!-- Optionalité +2.0% → from 215 to 215-2.0*14=215-28=187 (h=28) -->
+  <rect x="240" y="187" width="70" height="28" rx="3" fill="#c4b5fd"/>
+  <text x="275" y="205" text-anchor="middle" fill="#1e1b4b" font-family="system-ui, sans-serif" font-size="10" font-weight="bold">Option +2,0%</text>
+
+  <!-- Duration +1.5% → from 187 to 187-1.5*14=187-21=166 (h=21) -->
+  <rect x="240" y="166" width="70" height="21" rx="3" fill="#fbbf24"/>
+  <text x="275" y="180" text-anchor="middle" fill="#1e1b4b" font-family="system-ui, sans-serif" font-size="9" font-weight="bold">Duration +1,5%</text>
+
+  <!-- Liquidité +0.75% → from 166 to 166-0.75*14=166-10.5=155.5≈156 (h=10) -->
+  <rect x="240" y="156" width="70" height="10" rx="3" fill="#fcd34d"/>
+
+  <!-- Fiscal +0.75% → from 156 to 156-0.75*14=156-10.5=145.5≈146 (h=10) -->
+  <rect x="240" y="146" width="70" height="10" rx="3" fill="#fde68a"/>
+
+  <!-- Gouvernance +0.75% → from 146 to 146-0.75*14=146-10.5=135.5≈136 (h=10) -->
+  <rect x="240" y="136" width="70" height="10" rx="3" fill="#fef3c7"/>
+  <text x="318" y="152" fill="#fde68a" font-family="system-ui, sans-serif" font-size="9">Liq + Fiscal + Gouv</text>
+  <text x="318" y="163" fill="#fde68a" font-family="system-ui, sans-serif" font-size="9">+2,25%</text>
+
+  <!-- Total annotation -->
+  <text x="275" y="127" text-anchor="middle" fill="#22c55e" font-family="system-ui, sans-serif" font-size="13" font-weight="bold">~16,1 %</text>
+  <text x="275" y="395" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">Yield exigible</text>
+  <text x="275" y="410" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="10">Point central</text>
+
+  <!-- Stack 3: Fourchette (right bar, x=370 width=70) -->
+  <!-- Lower 13.8% → y=370-13.8*14=370-193.2=176.8≈177 -->
+  <!-- Upper 19.8% → y=370-19.8*14=370-277.2=92.8≈93 -->
+  <rect x="370" y="93" width="70" height="84" rx="3" fill="#22c55e" opacity="0.4"/>
+  <line x1="370" y1="135" x2="440" y2="135" stroke="#22c55e" stroke-width="2.5" stroke-dasharray="4,3"/>
+  <text x="405" y="84" text-anchor="middle" fill="#22c55e" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">19,8 %</text>
+  <text x="405" y="129" text-anchor="middle" fill="#22c55e" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">~16,1 %</text>
+  <text x="405" y="190" text-anchor="middle" fill="#22c55e" font-family="system-ui, sans-serif" font-size="12" font-weight="bold">13,8 %</text>
+  <text x="405" y="395" text-anchor="middle" fill="#cbd5e1" font-family="system-ui, sans-serif" font-size="11" font-weight="bold">Fourchette</text>
+  <text x="405" y="410" text-anchor="middle" fill="#64748b" font-family="system-ui, sans-serif" font-size="10">Low / high estimate</text>
+
+  <!-- Gap annotation -->
+  <line x1="180" y1="209" x2="240" y2="209" stroke="#fbbf24" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="210" y="220" text-anchor="middle" fill="#fbbf24" font-family="system-ui, sans-serif" font-size="9">Gap</text>
+  <text x="210" y="232" text-anchor="middle" fill="#fbbf24" font-family="system-ui, sans-serif" font-size="9">~460 bps</text>
+</svg>
+<figcaption class="font-inter text-sm text-slate-300 leading-160 mt-4">Décomposition analytique des primes de risque exigées. Sources : Federal Reserve H.15 (UST 10Y) ; estimations propres pour les primes de risque, à confiance modérée. Point central yield exigible 15,5-16,5 % vs taux STRC 11,5 % au 11 mai 2026.</figcaption>
+</figure>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Pourquoi le marché paie au-dessus du fair value</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le delta entre le yield observé et le yield économiquement justifié — environ 400 à 500 bps au point central — ne tient pas du hasard. Quatre dynamiques se conjuguent pour expliquer cet écart. Premièrement, le mécanisme de peg crée une illusion de stabilité court terme qui masque la duration sous-jacente : un détenteur qui voit son instrument coter entre 99 et 100 $ pendant douze mois en déduit, à tort, que la duration est nulle. Deuxièmement, la base détenue à 80 % par des particuliers ne réalise pas la décomposition des primes de risque exposée plus haut — la grille de lecture utilisée est typiquement le yield apparent versus les Treasury bills, pas une analyse crédit complète.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Troisièmement, le narratif Michael Saylor — accumulation BTC continue, croissance exponentielle du bilan, réserve cash USD de 2,25 Md $ — saturé l'attention au point de masquer la dépendance structurelle au moteur ATM. La réserve cash est un atout réel pour le court terme, mais elle ne change pas la mécanique perpétuelle. Quatrièmement, l'instrument n'a, à ce jour, pas traversé de cycle de stress complet. Le premier vrai test — un drawdown bitcoin durable conjugué à une fermeture de l'ATM — n'a pas eu lieu. Le pricing actuel reflète une absence de mémoire du scénario adverse, pas son improbabilité.</p>
+
+        <h2 class="font-funnel-display text-2xl sm:text-custom-3xl text-darkGray mt-10 mb-4">5. Comparables qui Valident l'Estimation</h2>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">L'exercice de décomposition est plus crédible quand il est confronté à des points d'ancrage observables sur des instruments comparables. Le tableau ci-dessous présente cinq familles de comparables crédit, leur yield typique en mai 2026, et le positionnement relatif de STRC.</p>
+
+        <div class="overflow-x-auto my-8 rounded-lg border border-lightGray">
+          <table class="w-full font-inter text-sm">
+            <thead class="bg-[#F9FAFB]">
+              <tr>
+                <th class="text-left text-darkGray font-semibold py-3 px-4 border-b border-lightGray">Comparable</th>
+                <th class="text-left text-darkGray font-semibold py-3 px-4 border-b border-lightGray">Yield typique</th>
+                <th class="text-left text-darkGray font-semibold py-3 px-4 border-b border-lightGray">Lecture par rapport à STRC</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="border-b border-lightGray">
+                <td class="py-3 px-4 font-medium text-darkGray">High yield BB-</td>
+                <td class="py-3 px-4 text-mediumGray">~6,5 à 7,5 %</td>
+                <td class="py-3 px-4 text-mediumGray">Emetteurs avec cashflow opérationnel — STRC nettement plus risqué</td>
+              </tr>
+              <tr class="border-b border-lightGray bg-[#FAFAFA]">
+                <td class="py-3 px-4 font-medium text-darkGray">High yield CCC</td>
+                <td class="py-3 px-4 text-mediumGray">~9 à 13 %</td>
+                <td class="py-3 px-4 text-mediumGray">Profil bilan dégradé — comparable approximatif au risque crédit pur STRC</td>
+              </tr>
+              <tr class="border-b border-lightGray">
+                <td class="py-3 px-4 font-medium text-darkGray">Préférentielles REIT mortgage en stress (NLY, AGNC 2022-2023)</td>
+                <td class="py-3 px-4 text-mediumGray">10 à 14 %</td>
+                <td class="py-3 px-4 text-mediumGray">Single-asset risk (MBS) — analogie pertinente sauf duration cachée</td>
+              </tr>
+              <tr class="border-b border-lightGray bg-[#FAFAFA]">
+                <td class="py-3 px-4 font-medium text-darkGray">AT1 banques européennes post-CS</td>
+                <td class="py-3 px-4 text-mediumGray">9 à 13 %</td>
+                <td class="py-3 px-4 text-mediumGray">Emetteurs IG, mais loss-absorption mechanism — STRC pas IG</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4 font-medium text-darkGray">Préférentielles shipping (cyclique forte volatilité)</td>
+                <td class="py-3 px-4 text-mediumGray">11 à 16 %</td>
+                <td class="py-3 px-4 text-mediumGray">Comparable le plus proche par la volatilité du collatéral implicite</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">La lecture de ces comparables est cohérente avec la décomposition analytique. STRC présente une combinaison de facteurs de risque — absence de cashflow opérationnel, single-asset BTC, gouvernance concentrée, perpétuelle non bornée, discrétion totale du board sur le taux — qui est, dans l'ensemble, plus défavorable que la plupart de ces familles d'instruments. Un yield exigible entre 13,8 % et 19,8 %, avec un point central autour de 15,5-16,5 %, est cohérent avec ce positionnement.</p>
+
+<!-- [UNIQUE INSIGHT] L'analogie avec les préférentielles shipping cyclique (Star Bulk, Diana Shipping, Genco) est la plus pertinente parmi les comparables crédit habituels, car elle combine les trois caractéristiques structurelles partagées avec STRC : (1) collatéral implicite à valorisation volatile, (2) absence de cashflow opérationnel garanti, (3) discrétion managériale élevée sur les distributions. Cette analogie est rarement mentionnée dans la couverture STRC mainstream, qui privilégie les comparables banking AT1 ou REIT. -->
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">La référence la plus pertinente reste vraisemblablement la préférentielle shipping en cycle bas. Cet instrument combine trois caractéristiques structurelles partagées avec STRC : un collatéral volatil (la valeur des navires versus celle du bitcoin), l'absence de cashflow opérationnel garanti, et une discrétion managériale élevée sur les distributions. Le fait que ces préférentielles cotent 11 à 16 % en environnement adverse, sans peg artificiel pour amortir le repricing, est instructif sur ce que STRC pourrait coter en cas de stress.</p>
+
+        <h2 class="font-funnel-display text-2xl sm:text-custom-3xl text-darkGray mt-10 mb-4">6. STRF : L'Alternative Structurellement Supérieure</h2>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">STRF cote à environ 10 % fixe cumulatif et occupe la position la plus senior de la masse préférentielle Strategy, devant STRC dans l'ordre de séniorité documenté par l'émetteur (<a href="https://www.strategy.com/strc/learn" class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200" target="_blank" rel="noopener noreferrer">Strategy</a>, 2026). Pour un investisseur cherchant une exposition yield à l'écosystème Strategy, STRF offre un profil risque-rendement nettement supérieur à STRC. Cette conclusion n'est pas une recommandation d'achat. Elle est un constat de positionnement relatif dans la stack du même émetteur.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Les quatre différences structurelles</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Premièrement, STRF est <strong class="text-darkGray">senior à STRC</strong> dans la stack préférentielle. En cas de stress, STRF doit recevoir ses distributions avant STRC. Deuxièmement, le coupon STRF est <strong class="text-darkGray">fixe à 10 %</strong> et cumulatif sans ambiguïté. Il n'y a pas de risque que Strategy refuse de relever le taux : il ne peut pas être baissé. Troisièmement, STRF <strong class="text-darkGray">n'a pas de peg à défendre</strong> — son prix flotte librement en fonction de l'équilibre offre-demande, sans illusion de stabilité artificielle. Quatrièmement, le caractère cumulatif est inscrit dans le prospectus de manière non ambiguë, ce qui renforce la priorité économique en cas de suspension temporaire.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">L'écart de yield entre les deux est d'environ 150 bps (11,5 % STRC vs 10 % STRF). À notre estimation, ce différentiel ne compense pas l'écart de risque structurel. Un investisseur rationnel exposé à Strategy devrait, dans un trade relative-value, préférer STRF — soit en l'achetant en absolu, soit en montant STRF / shortant STRC à risk neutral si la structure et le mandat le permettent.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Brève comparaison avec STRD et STRK</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">STRD (10 % non cumulatif) cote à un yield plus élevé que STRC mais reste plus junior dans la stack et perd le filet cumulatif — un investisseur cherchant un yield supérieur à STRC dans la stack Strategy doit accepter d'être dernier servi en cas de tension. STRK (8 % avec convertibilité limitée 0,1 action MSTR par action) offre une exposition partielle au directional MSTR avec un yield courant plus faible — c'est un instrument différent, qui privilégie la convexité bitcoin à la rémunération courante. Aucun de ces deux instruments ne remplace fonctionnellement STRC dans une thèse pure yield.</p>
+
+        <h2 class="font-funnel-display text-2xl sm:text-custom-3xl text-darkGray mt-10 mb-4">7. Verdict Opérationnel</h2>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">À 11,5 % au 11 mai 2026, STRC est un long médiocre pour la plupart des profils d'investisseurs. Le yield apparent est attractif pour qui ne mesure pas le risque structurel ; il devient nettement moins attractif quand chaque prime de risque est isolée et chiffrée. La défense de la position repose sur une seule conviction implicite : que le peg à 100 $ est une garantie économique. <strong class="text-darkGray">Ce qu'il n'est pas, juridiquement comme économiquement.</strong></p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Pour un investisseur institutionnel</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le profil de l'instrument est incompatible avec la plupart des mandats institutionnels classiques. Liquidité secondaire insuffisante pour une sortie en stress, profil crédit non noté, single-asset risk concentré sur le bitcoin, gouvernance dépendante d'une personne. La position long STRC ne se justifie pas dans un portefeuille fiduciaire structuré. En revanche, STRC peut être intéressant en short relative-value funded long STRF, dans une logique de capture du différentiel de prime injustifiée, pour les structures capables de tenir le carry sur 18 à 36 mois et de gérer le risque de roulement et de borrowing cost.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Probabilités subjectives explicites</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Sur la base de l'analyse précédente, nous formulons deux estimations probabilistes à confiance modérée. <strong class="text-darkGray">Probabilité d'une suspension de dividende STRC sur sept ans : 25 à 35 %.</strong> Le caractère cumulatif protège l'économie de la créance dans la durée mais pas le prix dans l'instant. <strong class="text-darkGray">Probabilité d'un STRC sous 90 $ dans les 24 prochains mois : 40 à 50 %.</strong> Ces estimations reflètent la combinaison de la dynamique de stack, du cycle bitcoin probable, et des frottements structurels du modèle ATM, plus que la prédiction d'un scénario particulier.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Pour qui STRC peut éventuellement faire sens</h3>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Trois conditions cumulatives doivent être réunies pour qu'une position long STRC se défende rationnellement. Un horizon court — typiquement moins de 12 mois — pendant lequel le mécanisme de peg a une probabilité raisonnable de tenir, conditionnel à un environnement bitcoin neutre ou positif. Une conscience explicite du risque de peg break, c'est-à-dire la compréhension que l'instrument peut perdre 20 à 30 % de sa valeur sans préavis. Une allocation marginale dans un portefeuille diversifié — typiquement moins de 2 % de la NAV — qui rend l'éventuelle perte absorbable. Et, dans tous les cas, ne <strong class="text-darkGray">pas considérer STRC comme une alternative aux money market funds</strong>. Le marketing en ce sens est, à notre lecture, trompeur sur la nature économique de l'instrument.</p>
+
+        <h2 class="font-funnel-display text-2xl sm:text-custom-3xl text-darkGray mt-10 mb-4">Conclusion : Une Option Vendue Gratuitement à Strategy</h2>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">STRC est un instrument <strong class="text-darkGray">structurellement intelligent dans l'écosystème Strategy</strong>. Il permet à la société de financer son accumulation bitcoin sans diluer l'action ordinaire MSTR, en captant un segment d'investisseurs particuliers attirés par un yield apparent de 11,5 % en cash mensuel. Le porteur de MSTR commun est le bénéficiaire structurel net de cet arbitrage : le coût des préférentielles est, en moyenne et en environnement favorable, inférieur au rendement net du portefeuille bitcoin accumulé via ces capitaux. STRC est, vu de Strategy, un mécanisme de financement à un coût acceptable.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Vu du détenteur, le tableau est différent. Le yield économiquement justifié, au regard des primes de risque empilées dans cet article, se situe entre 13,8 % et 19,8 % avec un point central autour de 15,5-16,5 %. À 11,5 %, l'écart de 400 à 500 bps avec ce fair value est la valeur de l'option implicite que le détenteur a vendue gratuitement à Strategy : optionalité sur le taux, optionalité sur le timing du call, optionalité sur la duration en cas de peg break, optionalité sur la suspension temporaire en environnement adverse. Aucune de ces optionalités n'est rémunérée par une prime spécifique.</p>
+
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Le marketing positionnant STRC comme alternative aux money market funds repose sur une lecture incomplète du prospectus 424B5 et de la structure de Strategy. Le yield apparent ne reflète pas la nature du risque porté. Le yield économiquement cohérent serait 15,5-16,5 %. Le marché peut continuer à payer au-dessus pendant un temps. Il finira par repricer.</p>
+
+        <div class="border-l-4 border-steelBlue bg-[#F9FAFB] pl-5 py-4 pr-4 mb-8 rounded-r-lg">
+          <p class="font-inter text-sm font-semibold text-darkGray mb-3">Points clés à retenir</p>
+          <ul class="font-inter text-base text-mediumGray leading-160 list-disc pl-5 space-y-2">
+            <li>STRC est une <strong class="text-darkGray">action de préférence perpétuelle</strong>, pas un instrument de dette. Pas de maturité, pas de covenants, pas de collatéral, pas de cas de défaut au sens créancier.</li>
+            <li>Le maintien autour de 100 $ est une <strong class="text-darkGray">intention déclarée du management</strong>, pas une obligation contractuelle. Le prospectus 424B5 laisse à Strategy une sole and absolute discretion sur le taux.</li>
+            <li>Le yield économiquement exigible se situe entre <strong class="text-darkGray">13,8 % et 19,8 %</strong>, point central 15,5-16,5 %. À 11,5 % actuel, STRC est sous-rémunéré d'environ 400 à 500 bps.</li>
+            <li>La duration cachée — <strong class="text-darkGray">8 à 15 ans en cas de peg break</strong> — est le mispricing structurel principal de l'instrument.</li>
+            <li>STRF (10 % fixe cumulatif senior) offre un profil structurellement supérieur dans la stack Strategy pour un porteur yield-seeking : 150 bps de yield en moins, plusieurs facteurs de risque en moins.</li>
+          </ul>
+        </div>
+
+        <h2 class="font-funnel-display text-2xl sm:text-custom-3xl text-darkGray mt-10 mb-4">Questions Fréquentes</h2>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">STRC est-il un instrument de dette ?</h3>
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Non. STRC est une action de préférence perpétuelle — Variable Rate Series A Perpetual Stretch Preferred Stock selon le prospectus 424B5 (<a href="https://www.sec.gov/Archives/edgar/data/1050446/000119312525165531/d852456d424b5.htm" class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200" target="_blank" rel="noopener noreferrer">SEC EDGAR</a>, juillet 2025). Le dividende est versé sur funds legally available, à la discrétion du conseil d'administration. Il n'y a pas de maturité, pas de covenants, pas de collatéral, pas de cas de défaut au sens crédit. Strategy peut suspendre la distribution sans déclencher de mécanisme d'enforcement de type créancier.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Le prix de 100 $ est-il garanti par Strategy ?</h3>
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Non. Le maintien autour de 100 $ est une intention déclarée du management, exprimée via un mécanisme d'ajustement mensuel du taux variable laissé à la sole and absolute discretion de Strategy selon le prospectus 424B5. Aucune obligation contractuelle ne garantit le niveau de cotation. Si le marché demande un coupon supérieur à la capacité de levée raisonnable, Strategy peut laisser le prix dériver.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Quel yield serait économiquement justifié pour STRC ?</h3>
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">L'empilement des primes de risque (baseline UST 10Y autour de 4,4 %, crédit Strategy équivalent BB, subordination, concentration single-asset BTC, optionalité défavorable, duration cachée, liquidité, fiscalité, gouvernance) aboutit à une fourchette de 13,8 % à 19,8 % avec un point central autour de 15,5-16,5 %. À 11,5 % actuel, l'instrument est sous-rémunéré d'environ 400 à 500 bps pour le risque porté.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">STRF est-il une meilleure alternative que STRC dans la stack Strategy ?</h3>
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Pour un profil yield-seeking exposé à Strategy, STRF présente un meilleur rapport risque-rendement. Le coupon fixe de 10 % cumulatif, la position senior dans la stack préférentielle, l'absence de peg à défendre, et l'absence de discrétion du board sur le taux le rendent structurellement supérieur. L'écart de 150 bps de yield ne compense pas, à notre estimation, le différentiel de risque entre les deux instruments.</p>
+
+        <h3 class="font-funnel-display text-xl sm:text-2xl text-darkGray mt-8 mb-3">Quelle est la probabilité d'une suspension de dividende STRC ?</h3>
+        <p class="font-inter text-base text-mediumGray leading-160 mb-4">Notre estimation subjective, à confiance modérée, place la probabilité d'une suspension de dividende sur un horizon de sept ans entre 25 % et 35 %. Le scénario déclencheur typique combine une baisse prolongée du bitcoin sous 40 000 $, une fermeture de la fenêtre ATM, et l'épuisement de la réserve cash USD de 2,25 Md $. Le caractère cumulatif n'efface pas le risque économique : les coupons s'accumulent mais le prix s'effondre.</p>
+
+        <p class="font-inter text-xs text-mediumGray leading-160 mt-8 italic border-t border-lightGray pt-8">Sources : SEC EDGAR — Prospectus 424B5 STRC (25 juillet 2025) ; SEC EDGAR — 424B5 ATM Program (31 juillet 2025) ; Strategy 8-K (31 janvier 2026) ; Strategy 8-K et Form 8937 traitement fiscal ROC (2 février 2026) ; Strategy Q4 2025 Earnings (5 février 2026) ; Strategy Q1 2026 Earnings (publication 5 mai 2026, holdings au 3 mai : 818 334 BTC) ; Federal Reserve H.15 Selected Interest Rates (semaine du 1-8 mai 2026, UST 10Y 4,36-4,45 %) ; FRED DGS10 ; CoinDesk — couverture STRC mars-mai 2026.</p>
+
+        <aside class="article-bio mt-10 pt-8 border-t border-lightGray flex items-start gap-4">
+          <img src="/assets/images/webp/team-member-third.webp" alt="Photo d'Alexandre VINAL" class="article-bio-avatar" width="832" height="800" loading="lazy" />
+          <div>
+            <h3 class="font-funnel-display text-lg text-darkGray mb-2">À propos de l'auteur</h3>
+            <p class="font-inter text-sm text-mediumGray leading-160">
+              Alexandre VINAL est Managing Partner de <strong>SparkCore Fund Management</strong> (SparkCore.investment OÜ), un gestionnaire d'AIF supervisé par la <a href="https://www.fi.ee/en/guides/fund-management-companies/investment-market/small-fund-managers-without-activity-licence/sparkcoreinvestment-ou" target="_blank" rel="noopener noreferrer" class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200">Finantsinspektsioon</a> en Estonie (Reg. 16265864, LEI <a href="https://search.gleif.org/#/record/8945003BBN0RVNNB0S84" target="_blank" rel="noopener noreferrer" class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200">8945003BBN0RVNNB0S84</a>). Ingénieur en informatique, il investit dans les crypto-actifs depuis 2014, a fondé la chaîne YouTube <a href="https://www.youtube.com/@cointips" target="_blank" rel="noopener noreferrer" class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200">Cointips</a> en 2017 et co-fondé DSM en 2020.
+              <span class="block mt-2"><a href="https://www.linkedin.com/in/alexandrevinal/" target="_blank" rel="noopener noreferrer" class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200">LinkedIn</a> &middot; <a href="https://www.youtube.com/@cointips" target="_blank" rel="noopener noreferrer" class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200">YouTube</a></span>
+            </p>
+          </div>
+        </aside>
+
+        <div class="border border-lightGray rounded-lg p-6 bg-[#F9FAFB] mt-10 mb-10">
+          <p class="font-inter text-sm text-mediumGray leading-160">
+            <strong class="text-darkGray">Avertissement :</strong> Cet article est fourni à titre informatif uniquement et ne constitue pas un conseil en investissement, une sollicitation ou une offre d'investir. Tout investissement en marchés financiers comporte des risques significatifs, y compris la perte possible de tout le capital investi. Les performances passées ne garantissent pas les résultats futurs. Les actions de préférence perpétuelles, les instruments hybrides et les sociétés exposées au bitcoin présentent des risques spécifiques et ne conviennent pas à tous les investisseurs. SparkCore.investment OÜ est enregistré en tant que petit gestionnaire de fonds d'investissement alternatifs auprès de l'Autorité de supervision financière estonienne (<a href="https://www.fi.ee/" class="text-darkGray underline underline-offset-2 hover:text-steelBlue transition-colors duration-200" target="_blank" rel="noopener noreferrer">Finantsinspektsioon</a>). Les lecteurs doivent consulter un conseiller juridique, fiscal et financier indépendant avant toute décision d'investissement.
+          </p>
+        </div>
+
+        <div class="text-center py-10 border-t border-lightGray">
+          <a href="/fr/blog/" class="font-inter text-sm text-steelBlue hover:text-darkGray transition-colors duration-200 inline-flex items-center gap-2">
+            &larr; Retour aux articles
+          </a>
+        </div>
+
+      </article>
+    </main>
+
+    <footer>
+      <div class="py-8 sm:py-12 lg:py-16 sm:border-t sm:border-lightGray">
+        <div class="max-w-[1360px] px-6 mx-auto">
+          <div class="flex items-center justify-between custom-xs:mb-4 mb-6">
+            <a rel="noopener noreferrer" href="/fr/" class="w-[209px] max-custom-xs:w-[167px] max-custom-xs:h-8 h-10">
+              <img class="w-full h-full" src="/assets/images/svg/logo.svg" alt="SparkCore Fund Management" width="210" height="40">
+            </a>
+          </div>
+          <p class="font-inter font-normal sm:text-base text-lg text-steelBlue leading-140">
+            &copy;<span id="year"></span> SparkCore.investment OÜ — Tous droits réservés.
+          </p>
+          <div class="w-full h-px bg-paleBlue custom-xs:my-4 my-6"></div>
+          <div class="flex gap-3 flex-wrap max-custom-xs:flex-col items-start justify-start">
+            <p class="font-inter text-steelBlue text-base sm:text-sm leading-140">
+              <span class="font-inter font-normal leading-140 text-darkGray">Société de gestion spécialisée dans les crypto-actifs, enregistrée en Estonie. Supervisée par la Finantsinspektsioon :</span>
+              <a rel="noopener noreferrer" href="https://www.fi.ee/en/guides/fund-management-companies/investment-market/small-fund-managers-without-activity-licence/sparkcoreinvestment-ou" target="_blank" class="underline underline-offset-2">Autorité estonienne de supervision financière (Small Fund Manager)</a>
+            </p>
+            <p class="font-inter text-steelBlue text-base sm:text-sm leading-140">
+              <span class="font-inter font-normal leading-140 text-darkGray">Licence :</span>
+              <a rel="noopener noreferrer" href="https://mtr.ttja.ee/taotluse_tulemus/609065" target="_blank" class="underline underline-offset-2">EFIU (Institution Financière)</a>
+            </p>
+          </div>
+          <p class="font-inter font-normal text-base text-sm leading-140 text-steelBlue custom-xs:mt-4 mt-6">
+            <span class="font-inter font-normal leading-140 text-darkGray">N° d'enregistrement : 16265864 — Männimäe 1, Pudisoo, 74626 comté de Harju, Estonie</span>
+            — <a rel="noopener noreferrer" href="https://search.gleif.org/#/record/8945003BBN0RVNNB0S84" target="_blank" class="underline underline-offset-2">LEI: 8945003BBN0RVNNB0S84</a>
+          </p>
+          <p class="font-inter font-normal text-base text-sm leading-140 text-steelBlue custom-xs:mt-4 mt-6">
+            <span class="text-darkGray">Avertissement :</span>
+            Les performances passées ne garantissent pas les performances futures. Les crypto-actifs présentent un risque élevé, incluant un risque de perte totale. Ce site et les graphiques de performance sont fournis à titre informatif uniquement et ne constituent pas une offre d'investissement. L'accès aux stratégies est réservé aux investisseurs qualifiés ou professionnels. Veuillez évaluer votre situation personnelle et obtenir un avis indépendant avant d'investir.
+          </p>
+          <p class="font-inter font-normal text-sm leading-140 text-steelBlue custom-xs:mt-2 mt-3">
+            <a rel="noopener noreferrer" href="/privacy-policy" class="underline underline-offset-2 hover:text-darkGray transition-colors duration-200">Politique de confidentialité</a>
+          </p>
+        </div>
+      </div>
+    </footer>
+    <script src="/assets/js/set-year.js"></script>
+  </body>
+</html>
