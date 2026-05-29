@@ -7,3 +7,7 @@ form_config.php
 *.pem
 logs/
 .claude/settings.local.json
+
+# SEO audit raw API dumps + screenshots — regenerable, kept local only (commit the .md reports + raw/ evidence)
+MD/seo/audit-*/data/
+MD/seo/audit-*/screenshots/
