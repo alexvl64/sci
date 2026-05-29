@@ -55,7 +55,7 @@ const translations = {
     approachP1Title: "Disciplinée",
     approachP1: "Chaque stratégie opère avec des objectifs de risque explicites, un dimensionnement de position systématique et un noyau défensif algorithmique indépendant.",
     approachP2Title: "Transparente",
-    approachP2: "Lettres mensuelles aux investisseurs, valorisation trimestrielle auditée par KPMG, reporting sur demande.",
+    approachP2: "Lettres mensuelles aux investisseurs, valorisation trimestrielle auditée par un cabinet Big Four, reporting sur demande.",
     approachP3Title: "Réglementée",
     approachP3: "Structure AIF estonienne supervisée par la Finantsinspektsioon — le même cadre opérationnel que les gestionnaires alternatifs traditionnels.",
 
@@ -241,7 +241,7 @@ const translations = {
     approachP1Title: "Disciplined",
     approachP1: "Each strategy operates with explicit risk targets, systematic position-sizing, and an independent algorithmic defensive core.",
     approachP2Title: "Transparent",
-    approachP2: "Monthly investor letters, quarterly NAV with KPMG-audited accounting, and on-demand portfolio reporting.",
+    approachP2: "Monthly investor letters, quarterly NAV with Big Four-audited accounting, and on-demand portfolio reporting.",
     approachP3Title: "Regulated",
     approachP3: "Estonian AIF structure supervised by Finantsinspektsioon — the same operational framework as traditional alternative asset managers.",
 
