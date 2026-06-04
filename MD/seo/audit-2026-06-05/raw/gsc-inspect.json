@@ -1,0 +1,269 @@
+Inspecting [1/5]: https://sparkcore.fund/resources/regulated-crypto-fund-estonia/
+Inspecting [2/5]: https://sparkcore.fund/blog/aif-vs-aifm-crypto-explained
+Inspecting [3/5]: https://sparkcore.fund/blog/cost-to-launch-regulated-crypto-fund-europe
+Inspecting [4/5]: https://sparkcore.fund/blog/crypto-fund-fees-2026
+Inspecting [5/5]: https://sparkcore.fund/blog/estonia-eresidency-crypto-fund-eu
+{
+  "property": "sc-domain:sparkcore.fund",
+  "total": 5,
+  "results": [
+    {
+      "url": "https://sparkcore.fund/resources/regulated-crypto-fund-estonia/",
+      "property": "sc-domain:sparkcore.fund",
+      "index_status": {
+        "verdict": "PASS",
+        "coverage_state": "Submitted and indexed",
+        "robots_txt_state": "ALLOWED",
+        "indexing_state": "INDEXING_ALLOWED",
+        "page_fetch_state": "SUCCESSFUL",
+        "last_crawl_time": "2026-06-04T15:03:52Z",
+        "crawled_as": "MOBILE",
+        "referring_urls": [
+          "https://sparkcore.fund/blog/aif-vs-aifm-crypto-explained"
+        ]
+      },
+      "crawl_info": null,
+      "canonical": {
+        "google_canonical": "https://sparkcore.fund/resources/regulated-crypto-fund-estonia/",
+        "user_canonical": "https://sparkcore.fund/resources/regulated-crypto-fund-estonia/",
+        "match": true
+      },
+      "mobile_usability": {
+        "verdict": "VERDICT_UNSPECIFIED",
+        "issues": []
+      },
+      "rich_results": {
+        "verdict": "PASS",
+        "detected_items": [
+          {
+            "type": "Breadcrumbs",
+            "items": [
+              {
+                "name": "Unnamed item",
+                "issues": []
+              }
+            ]
+          },
+          {
+            "type": "FAQ",
+            "items": [
+              {
+                "name": "Unnamed item",
+                "issues": []
+              }
+            ]
+          }
+        ]
+      },
+      "verdict": "PASS",
+      "error": null
+    },
+    {
+      "url": "https://sparkcore.fund/blog/aif-vs-aifm-crypto-explained",
+      "property": "sc-domain:sparkcore.fund",
+      "index_status": {
+        "verdict": "PASS",
+        "coverage_state": "Submitted and indexed",
+        "robots_txt_state": "ALLOWED",
+        "indexing_state": "INDEXING_ALLOWED",
+        "page_fetch_state": "SUCCESSFUL",
+        "last_crawl_time": "2026-06-04T05:31:42Z",
+        "crawled_as": "MOBILE",
+        "referring_urls": []
+      },
+      "crawl_info": null,
+      "canonical": {
+        "google_canonical": "https://sparkcore.fund/blog/aif-vs-aifm-crypto-explained",
+        "user_canonical": "https://sparkcore.fund/blog/aif-vs-aifm-crypto-explained",
+        "match": true
+      },
+      "mobile_usability": {
+        "verdict": "VERDICT_UNSPECIFIED",
+        "issues": []
+      },
+      "rich_results": {
+        "verdict": "PASS",
+        "detected_items": [
+          {
+            "type": "Breadcrumbs",
+            "items": [
+              {
+                "name": "Unnamed item",
+                "issues": []
+              }
+            ]
+          },
+          {
+            "type": "FAQ",
+            "items": [
+              {
+                "name": "Unnamed item",
+                "issues": []
+              }
+            ]
+          }
+        ]
+      },
+      "verdict": "PASS",
+      "error": null
+    },
+    {
+      "url": "https://sparkcore.fund/blog/cost-to-launch-regulated-crypto-fund-europe",
+      "property": "sc-domain:sparkcore.fund",
+      "index_status": {
+        "verdict": "PASS",
+        "coverage_state": "Submitted and indexed",
+        "robots_txt_state": "ALLOWED",
+        "indexing_state": "INDEXING_ALLOWED",
+        "page_fetch_state": "SUCCESSFUL",
+        "last_crawl_time": "2026-05-13T15:00:26Z",
+        "crawled_as": "MOBILE",
+        "referring_urls": []
+      },
+      "crawl_info": null,
+      "canonical": {
+        "google_canonical": "https://sparkcore.fund/blog/cost-to-launch-regulated-crypto-fund-europe",
+        "user_canonical": "https://sparkcore.fund/blog/cost-to-launch-regulated-crypto-fund-europe",
+        "match": true
+      },
+      "mobile_usability": {
+        "verdict": "VERDICT_UNSPECIFIED",
+        "issues": []
+      },
+      "rich_results": {
+        "verdict": "PASS",
+        "detected_items": [
+          {
+            "type": "Breadcrumbs",
+            "items": [
+              {
+                "name": "Unnamed item",
+                "issues": []
+              }
+            ]
+          },
+          {
+            "type": "FAQ",
+            "items": [
+              {
+                "name": "Unnamed item",
+                "issues": []
+              }
+            ]
+          }
+        ]
+      },
+      "verdict": "PASS",
+      "error": null
+    },
+    {
+      "url": "https://sparkcore.fund/blog/crypto-fund-fees-2026",
+      "property": "sc-domain:sparkcore.fund",
+      "index_status": {
+        "verdict": "PASS",
+        "coverage_state": "Submitted and indexed",
+        "robots_txt_state": "ALLOWED",
+        "indexing_state": "INDEXING_ALLOWED",
+        "page_fetch_state": "SUCCESSFUL",
+        "last_crawl_time": "2026-05-25T21:51:04Z",
+        "crawled_as": "MOBILE",
+        "referring_urls": [
+          "https://sparkcore.fund/fr/blog/agents-ia-blockchain-economie-agentique"
+        ]
+      },
+      "crawl_info": null,
+      "canonical": {
+        "google_canonical": "https://sparkcore.fund/blog/crypto-fund-fees-2026",
+        "user_canonical": "https://sparkcore.fund/blog/crypto-fund-fees-2026",
+        "match": true
+      },
+      "mobile_usability": {
+        "verdict": "VERDICT_UNSPECIFIED",
+        "issues": []
+      },
+      "rich_results": {
+        "verdict": "PASS",
+        "detected_items": [
+          {
+            "type": "Breadcrumbs",
+            "items": [
+              {
+                "name": "Unnamed item",
+                "issues": []
+              }
+            ]
+          },
+          {
+            "type": "FAQ",
+            "items": [
+              {
+                "name": "Unnamed item",
+                "issues": []
+              }
+            ]
+          }
+        ]
+      },
+      "verdict": "PASS",
+      "error": null
+    },
+    {
+      "url": "https://sparkcore.fund/blog/estonia-eresidency-crypto-fund-eu",
+      "property": "sc-domain:sparkcore.fund",
+      "index_status": {
+        "verdict": "PASS",
+        "coverage_state": "Submitted and indexed",
+        "robots_txt_state": "ALLOWED",
+        "indexing_state": "INDEXING_ALLOWED",
+        "page_fetch_state": "SUCCESSFUL",
+        "last_crawl_time": "2026-05-24T19:39:46Z",
+        "crawled_as": "MOBILE",
+        "referring_urls": [
+          "https://sparkcore.fund/blog/cost-to-launch-regulated-crypto-fund-europe"
+        ]
+      },
+      "crawl_info": null,
+      "canonical": {
+        "google_canonical": "https://sparkcore.fund/blog/estonia-eresidency-crypto-fund-eu",
+        "user_canonical": "https://sparkcore.fund/blog/estonia-eresidency-crypto-fund-eu",
+        "match": true
+      },
+      "mobile_usability": {
+        "verdict": "VERDICT_UNSPECIFIED",
+        "issues": []
+      },
+      "rich_results": {
+        "verdict": "PASS",
+        "detected_items": [
+          {
+            "type": "Breadcrumbs",
+            "items": [
+              {
+                "name": "Unnamed item",
+                "issues": []
+              }
+            ]
+          },
+          {
+            "type": "FAQ",
+            "items": [
+              {
+                "name": "Unnamed item",
+                "issues": []
+              }
+            ]
+          }
+        ]
+      },
+      "verdict": "PASS",
+      "error": null
+    }
+  ],
+  "summary": {
+    "pass": 5,
+    "fail": 0,
+    "neutral": 0,
+    "error": 0
+  },
+  "error": null
+}
