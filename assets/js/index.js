@@ -71,10 +71,12 @@ const sidebar = document.getElementById("form-sidebar");
 openSidebarButtons.forEach((button) => {
   button.addEventListener("click", () => {
     // GA4: capture which CTA opened the sidebar (re-used by contact_form_submit on success)
+    // Fund CTAs carry data-fund; data-i18n moved to the inner text span (kept as fallback).
     const i18n = button.dataset.i18n || "";
-    const fund = i18n === "dtFactsheet" ? "dynamic-trends"
-               : i18n === "cvFactsheet" ? "cryptovision"
-               : null;
+    const fund = button.dataset.fund
+               || (i18n === "dtFactsheet" ? "dynamic-trends"
+                 : i18n === "cvFactsheet" ? "cryptovision"
+                 : null);
     if (fund) {
       window.__lastCtaOrigin = `factsheet-${fund}`;
       if (typeof window.gtag === "function") {

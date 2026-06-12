@@ -73,7 +73,7 @@ const translations = {
     dtOffensiveBlockText: "Bloc principal — exposition directionnelle Bitcoin avec levier modéré (max 2x), strictement encadré.",
     dtDefensiveBlock: "Bloc Défensif",
     dtDefensiveBlockText: "Bloc minoritaire — stratégies neutres, arbitrages systémiques, modèles quantitatifs à drawdown contrôlé.",
-    dtFactsheet: "Demander la factsheet →",
+    dtFactsheet: "Demander la factsheet",
 
     // === CRYPTOVISION CARD ===
     cvRisk: "Risque modéré",
@@ -85,7 +85,7 @@ const translations = {
     cvDefensiveBlockText: "Bloc principal — stratégies neutres au marché, arbitrages systémiques, modèles quantitatifs. Aucun effet de levier directionnel.",
     cvOffensiveBlock: "Bloc Offensif",
     cvOffensiveBlockText: "Bloc minoritaire — exposition dynamique sur Bitcoin, Ethereum et crypto-actifs liquides. Levier modéré, strictement encadré.",
-    cvFactsheet: "Demander la factsheet →",
+    cvFactsheet: "Demander la factsheet",
 
     // === EQUINOXE CARD ===
     eqRisk: "Risque faible",
@@ -259,7 +259,7 @@ const translations = {
     dtOffensiveBlockText: "Primary block — directional Bitcoin exposure with moderate leverage (max 2x), strictly controlled.",
     dtDefensiveBlock: "Defensive Block",
     dtDefensiveBlockText: "Secondary block — neutral strategies, systemic arbitrage, quantitative models with controlled drawdown.",
-    dtFactsheet: "Request the Factsheet →",
+    dtFactsheet: "Request the Factsheet",
 
     // === CRYPTOVISION CARD ===
     cvRisk: "Moderate risk",
@@ -271,7 +271,7 @@ const translations = {
     cvDefensiveBlockText: "Primary block — market-neutral strategies, systemic arbitrage, quantitative models. No directional leverage.",
     cvOffensiveBlock: "Offensive Block",
     cvOffensiveBlockText: "Secondary block — dynamic exposure to Bitcoin, Ethereum and liquid crypto-assets. Moderate leverage, strictly controlled.",
-    cvFactsheet: "Request the Factsheet →",
+    cvFactsheet: "Request the Factsheet",
 
     // === EQUINOXE CARD ===
     eqRisk: "Low risk",
