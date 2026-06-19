@@ -38,7 +38,7 @@ const T = {
     lblKfMaxdd:'Max drawdown',
     lblKfVol:'Volatility',
     lblKfRatios:'Sharpe / Sortino',
-    valKfNote:'*Since April 2025 strategy update (target maximum drawdown 15%).',
+    valKfNote:'*Since March 2025 strategy update (target maximum drawdown 15%).',
     lblTeam:'Team',
     lblRole1:'Manager · Trading & Strategy',
     valBio1:'20+ years trading, co-founder DSM. Technical analysis strategies on crypto-assets.',
@@ -47,7 +47,7 @@ const T = {
     lblRole3:'Manager · Structuring',
     valBio3:'7+ years in financial markets & crypto-assets. Founder of SparkCore Fund Management (SparkCore.investment OÜ).',
     lblStratTitle:'Strategy Overview',
-    valStratIntro:'<strong>CryptoVision</strong> combines a robust defensive core with a dynamic directional block to deliver consistent returns with controlled volatility. The fund targets durable and resilient exposure to crypto-assets, including during phases of high market instability, with a maximum drawdown target of 15% following the April 2025 strategy update.',
+    valStratIntro:'<strong>CryptoVision</strong> combines a robust defensive core with a dynamic directional block to deliver consistent returns with controlled volatility. The fund targets durable and resilient exposure to crypto-assets, including during phases of high market instability, with a maximum drawdown target of 15% following the March 2025 strategy update.',
     lblDefensiveTag:'Defensive block · 70% AUM',
     lblDefensiveName:'Neutral Algorithmic',
     valDefensiveDesc:'Market-neutral strategies: systemic arbitrage, quantitative models, and high-frequency delta-neutral scalping with controlled drawdown. No directional leverage. Generates regular, low-volatility returns independently of market direction. Provides the structural stability of the portfolio.',
@@ -55,9 +55,9 @@ const T = {
     lblOffensiveName:'Directional Exposure',
     valOffensiveDesc:'Concentrated on Bitcoin, Ethereum and the most liquid crypto-assets. Moderate leverage, used opportunistically while maintaining controlled risk. Capable of fully reducing exposure or opening short positions on reversal signals. Reinforces overall performance during favourable market phases.',
     valStratBalance:'<strong>Overall strategic balance</strong> — Monthly rebalancing with a disciplined risk approach combining quantitative analysis, discretionary management and algorithmic execution. The defensive block acts as the structural anchor while the offensive block captures directional upside without compromising portfolio stability. This dual architecture delivers a smoother performance profile than purely directional strategies.',
-    valStratRisk:'<strong>Risk profile</strong> — Designed for investors seeking stable and controlled exposure to major crypto-assets, CryptoVision targets risk-adjusted performance with a historical maximum drawdown of -22.9% and an annualised volatility of 32.6%. Since April 2025, the strategy has been enhanced with a strengthened defensive algorithmic core targeting a maximum drawdown of 15%.',
+    valStratRisk:'<strong>Risk profile</strong> — Designed for investors seeking stable and controlled exposure to major crypto-assets, CryptoVision targets risk-adjusted performance with a historical maximum drawdown of -22.9% and an annualised volatility of 32.6%. Since March 2025, the strategy has been enhanced with a strengthened defensive algorithmic core targeting a maximum drawdown of 15%.',
     lblChartTitle:'Performance Evolution — Base 100 · Linear Scale',
-    valChartNote:'Fund launched 01/01/2025. Data from Feb 2021 to Dec 2024 from real strategies on managed accounts, no backtest. Gross of fees. Since April 2025, the strategy has been updated to integrate a strengthened defensive algorithmic core.',
+    valChartNote:'Fund launched 08/03/2025. Data from Feb 2021 to Dec 2024 from real strategies on managed accounts, no backtest. Gross of fees. Since March 2025, the strategy has been updated to integrate a strengthened defensive algorithmic core.',
     lblPerfTitle:'Monthly Performance History (%)',
     thYear:'Year',
     thJan:'Jan', thFeb:'Feb', thMar:'Mar', thApr:'Apr', thMay:'May', thJun:'Jun',
@@ -108,7 +108,7 @@ const T = {
     lblKfMaxdd:'Perte maximale',
     lblKfVol:'Volatilité',
     lblKfRatios:'Sharpe / Sortino',
-    valKfNote:'*Depuis la mise à jour de stratégie d\'avril 2025 (drawdown cible 15%).',
+    valKfNote:'*Depuis la mise à jour de stratégie de mars 2025 (drawdown cible 15%).',
     lblTeam:'Équipe',
     lblRole1:'Gérant · Trading & Stratégie',
     valBio1:'+20 ans de trading, co-fondateur DSM. Stratégies basées sur l\'analyse technique des crypto-actifs.',
@@ -127,7 +127,7 @@ const T = {
     valStratBalance:'<strong>Équilibre stratégique global</strong> — CryptoVision repose sur une allocation flexible entre un socle défensif principal et une poche directionnelle pilotée.<br><br>Le bloc défensif cherche à stabiliser le profil du fonds, tandis que le bloc offensif permet de participer aux phases favorables du marché. La pondération entre les blocs évolue dans le temps afin de préserver la cohérence entre performance recherchée, volatilité acceptée et maîtrise du drawdown.',
     valStratRisk:'<strong>Profil de risque</strong> — CryptoVision s\'adresse aux investisseurs recherchant une exposition active, structurée et défensive aux actifs numériques.<br><br>Le fonds se positionne entre une stratégie directionnelle offensive et une stratégie neutre au marché. Il accepte une part d\'exposition directionnelle, mais celle-ci reste pilotée dans un cadre de risque défini, avec une attention particulière portée à la volatilité, à la liquidité des instruments utilisés et au comportement du portefeuille en phase de stress de marché.',
     lblChartTitle:'Évolution de la performance — base 100 · échelle linéaire',
-    valChartNote:'Lancement du fonds le 1er janvier 2025. Données de février 2021 à décembre 2024 issues de stratégies réelles sur comptes gérés, sans backtest. Brut de frais. Depuis avril 2025, la stratégie a été modifiée pour intégrer un socle algorithmique défensif renforcé.',
+    valChartNote:'Lancement du fonds le 8 mars 2025. Données de février 2021 à décembre 2024 issues de stratégies réelles sur comptes gérés, sans backtest. Brut de frais. Depuis mars 2025, la stratégie a été modifiée pour intégrer un socle algorithmique défensif renforcé.',
     lblPerfTitle:'Historique mensuel des performances (%)',
     thYear:'Année',
     thJan:'Jan', thFeb:'Fév', thMar:'Mar', thApr:'Avr', thMay:'Mai', thJun:'Jun',
@@ -468,7 +468,7 @@ async function fetchJsonData() {
 }
 
 function renderChart() {
-  new ApexCharts(document.querySelector('#chart-el'), {
+  const draw = () => new ApexCharts(document.querySelector('#chart-el'), {
     series: [
       {name:'CryptoVision', data:cryptoVisionValue},
       {name:'CCi30', data:cci30Base100}
@@ -481,7 +481,7 @@ function renderChart() {
     colors: ['#1B2D4D','#988F85'],
     xaxis: {
       categories:period, tickAmount:7, axisTicks:{show:false}, axisBorder:{show:false},
-      labels:{hideOverlappingLabels:true, showDuplicates:false, rotate:0, style:{colors:'#5C4E3E', fontFamily:'Inter', fontSize:'9px'}}
+      labels:{hideOverlappingLabels:true, showDuplicates:false, rotate:0, style:{colors:'#5C4E3E', fontFamily:'Inter, sans-serif', fontSize:'9px'}}
     },
     yaxis: {
       logarithmic:false,
@@ -489,8 +489,9 @@ function renderChart() {
     },
     grid: {yaxis:{lines:{show:false}}, padding:{left:30, right:14, top:-10, bottom:-8}},
     legend: {show:false},
-    tooltip: {theme:'light', style:{fontFamily:'Inter', fontSize:'11px'}},
+    tooltip: {theme:'light', style:{fontFamily:'Inter, sans-serif', fontSize:'11px'}},
   }).render();
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(draw); } else { draw(); }
 }
 
 fetchJsonData();
