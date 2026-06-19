@@ -1,0 +1,84 @@
+/* ============================================================
+   CryptoVision — palette dédiée (scopée .fs-cryptovision)
+   N'affecte QUE /factsheets/cryptovision. Dynamic Trends &
+   discovery-call gardent factsheet.css inchangé.
+   Palette : FFFFFF · 988F85 · 111111 · AD9A7E ·
+             F3EFE7 · D8D1C2 · 5C4E3E · 1B2D4D
+   Chargé APRÈS factsheet.css → overrides couleur uniquement
+   (la mise en page reste pilotée par le CSS commun).
+   ============================================================ */
+
+/* ---- Base ---- */
+.fs-cryptovision { color: #111111; background: #FFFFFF; }
+
+/* ---- Bandeau (header) ---- */
+.fs-cryptovision .hdr { background: #AD9A7E; border-bottom: none; padding: 16px 20px 14px; }
+.fs-cryptovision .hdr-center strong { color: #5C4E3E; }
+.fs-cryptovision .hdr-center span { color: #5C4E3E; }
+
+/* CTA « Planifier un appel » — texte assombri pour lisibilité (~4,9:1) */
+.fs-cryptovision .btn-contact { background: #D8D1C2; color: #5C4E3E; border-color: transparent; }
+.fs-cryptovision .btn-contact:hover { background: transparent; color: #5C4E3E; border-color: #5C4E3E; }
+
+/* Toggle EN/FR — actif rempli (lisible), inactif contour crème */
+.fs-cryptovision .lang-toggle { border-color: #F3EFE7; }
+.fs-cryptovision .lang-btn { background: transparent; color: #F3EFE7; }
+.fs-cryptovision .lang-btn + .lang-btn { border-left-color: #F3EFE7; }
+.fs-cryptovision .lang-btn.active { background: #F3EFE7; color: #5C4E3E; }
+.fs-cryptovision .lang-btn:hover:not(.active) { background: #F3EFE7; color: #5C4E3E; }
+
+/* ---- Blocs / titres / séparateurs ---- */
+.fs-cryptovision .block,
+.fs-cryptovision .chart-wrap { background: #F3EFE7; }
+.fs-cryptovision .block-title { color: #5C4E3E; border-bottom-color: #988F85; }
+
+/* ---- Spécifications du produit ---- */
+.fs-cryptovision .specs tr { border-bottom-color: #988F85; }
+.fs-cryptovision .specs .k { color: #111111; }
+.fs-cryptovision .specs .v { color: #5C4E3E; }
+
+/* ---- Frais ---- */
+.fs-cryptovision .fee { background: #D8D1C2; border-color: #988F85; }
+.fs-cryptovision .fee-label { color: #5C4E3E; }
+.fs-cryptovision .fee-val { color: #111111; }
+.fs-cryptovision .fee-sub { color: #5C4E3E; }
+
+/* ---- Key Figures ---- */
+.fs-cryptovision .kf { background: #D8D1C2; border-color: #988F85; }
+.fs-cryptovision .kf-label { color: #5C4E3E; }
+.fs-cryptovision .kf-val { color: #111111; }
+
+/* ---- Stratégie ---- */
+.fs-cryptovision .strat-intro { color: #111111; }
+.fs-cryptovision .strat-intro strong { color: #5C4E3E; }
+.fs-cryptovision .strat-detail { color: #111111; border-top-color: #988F85; }
+.fs-cryptovision .strat-detail strong { color: #5C4E3E; }
+/* Aplati : défensif & offensif partagent le même fond beige */
+.fs-cryptovision .strat-block.primary,
+.fs-cryptovision .strat-block.secondary { background: #D8D1C2; border-color: #988F85; color: #111111; }
+.fs-cryptovision .strat-tag { color: #1B2D4D; opacity: 1; }
+.fs-cryptovision .strat-name { color: #5C4E3E; }
+.fs-cryptovision .strat-desc { color: #111111; opacity: 1; }
+
+/* ---- Graphique (légende + note) ---- */
+.fs-cryptovision .legend-item { background: #D8D1C2; color: #111111; border-color: #988F85; }
+.fs-cryptovision .chart-note { color: #111111; }
+
+/* ---- Équipe ---- */
+.fs-cryptovision .team-item { border-bottom-color: #988F85; }
+.fs-cryptovision .team-role { color: #5C4E3E; }
+.fs-cryptovision .team-name { color: #111111; }
+.fs-cryptovision .team-desc { color: #111111; }
+
+/* ---- Historique mensuel des performances ---- */
+.fs-cryptovision .perf-table th { color: #111111; border-bottom-color: #988F85; }
+.fs-cryptovision .perf-table td { color: #5C4E3E; border-bottom-color: #D8D1C2; }
+.fs-cryptovision .perf-table td:first-child { color: #111111; }
+.fs-cryptovision .perf-table .pos,
+.fs-cryptovision .perf-table .neg { color: #5C4E3E; }
+.fs-cryptovision .perf-table .ytd { background: #D8D1C2; color: #5C4E3E; }
+.fs-cryptovision .perf-note { color: #5C4E3E; }
+
+/* ---- Pied de page (hors spec — aligné palette chaude) ---- */
+.fs-cryptovision .ftr { border-top-color: #988F85; color: #5C4E3E; }
+.fs-cryptovision .ftr-right a { color: #5C4E3E; }
