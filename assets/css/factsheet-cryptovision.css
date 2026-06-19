@@ -61,7 +61,7 @@
 .fs-cryptovision .strat-desc { color: #111111; opacity: 1; }
 
 /* ---- Graphique (légende + note) ---- */
-.fs-cryptovision .legend-item { background: #D8D1C2; color: #111111; border-color: #988F85; }
+.fs-cryptovision .legend-item { background: #D8D1C2; color: #111111; border-color: #988F85; font-family: 'Inter', sans-serif; }
 .fs-cryptovision .chart-note { color: #111111; }
 
 /* ---- Équipe ---- */
