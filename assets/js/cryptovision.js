@@ -475,10 +475,10 @@ function renderChart() {
     ],
     chart: {
       height:260, type:'line', zoom:{enabled:false}, toolbar:{show:false},
-      animations:{enabled:false}, background:'transparent'
+      animations:{enabled:false}, background:'transparent', fontFamily:'Inter, sans-serif'
     },
-    stroke: {width:[2,1.5], dashArray:[0,6]},
-    colors: ['#1B2D4D','#FFFFFF'],
+    stroke: {width:[3,1.5], dashArray:[0,6]},
+    colors: ['#1B2D4D','#988F85'],
     xaxis: {
       categories:period, tickAmount:7, axisTicks:{show:false}, axisBorder:{show:false},
       labels:{hideOverlappingLabels:true, showDuplicates:false, rotate:0, style:{colors:'#5C4E3E', fontFamily:'Inter', fontSize:'9px'}}
