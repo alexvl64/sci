@@ -13,11 +13,11 @@
 
 /* ---- Bandeau (header) ---- */
 .fs-cryptovision .hdr { background: #AD9A7E; border-bottom: none; padding: 16px 20px 14px; }
-.fs-cryptovision .hdr-center strong { color: #111111; }
-.fs-cryptovision .hdr-center span { color: #111111; }
+.fs-cryptovision .hdr-center strong { color: #FFFFFF; }
+.fs-cryptovision .hdr-center span { color: #FFFFFF; }
 
 /* CTA « Planifier un appel » — texte assombri pour lisibilité (~4,9:1) */
-.fs-cryptovision .btn-contact { background: #D8D1C2; color: #5C4E3E; border-color: transparent; }
+.fs-cryptovision .btn-contact { background: #FFFFFF; color: #5C4E3E; border-color: transparent; }
 .fs-cryptovision .btn-contact:hover { background: transparent; color: #5C4E3E; border-color: #5C4E3E; }
 
 /* Toggle EN/FR — actif rempli (lisible), inactif contour crème */
@@ -80,5 +80,5 @@
 .fs-cryptovision .perf-note { color: #5C4E3E; }
 
 /* ---- Pied de page (hors spec — aligné palette chaude) ---- */
-.fs-cryptovision .ftr { border-top-color: #988F85; color: #5C4E3E; }
-.fs-cryptovision .ftr-right a { color: #5C4E3E; }
+.fs-cryptovision .ftr { border-top-color: #988F85; color: #111111; }
+.fs-cryptovision .ftr-right a { color: #111111; }
