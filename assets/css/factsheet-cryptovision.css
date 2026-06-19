@@ -13,8 +13,8 @@
 
 /* ---- Bandeau (header) ---- */
 .fs-cryptovision .hdr { background: #AD9A7E; border-bottom: none; padding: 16px 20px 14px; }
-.fs-cryptovision .hdr-center strong { color: #5C4E3E; }
-.fs-cryptovision .hdr-center span { color: #5C4E3E; }
+.fs-cryptovision .hdr-center strong { color: #111111; }
+.fs-cryptovision .hdr-center span { color: #111111; }
 
 /* CTA « Planifier un appel » — texte assombri pour lisibilité (~4,9:1) */
 .fs-cryptovision .btn-contact { background: #D8D1C2; color: #5C4E3E; border-color: transparent; }
