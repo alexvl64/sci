@@ -1,0 +1,89 @@
+/* ============================================================
+   Equinoxe — palette dédiée (scopée .fs-equinoxe)
+   N'affecte QUE /factsheets/equinoxe. Les autres factsheets
+   gardent leur CSS. Chargé APRÈS factsheet.css.
+   Palette : EDEEF1 · AFB1B6 · 111111 · 4C5B7A ·
+             DBDEE4 · 1B2D4D
+   Identité « pilier défensif » (bleu-gris froid, market neutral).
+   ============================================================ */
+
+/* ---- Base ---- */
+.fs-equinoxe { color: #111111; background: #EDEEF1; }
+
+/* ---- Bandeau ---- */
+.fs-equinoxe .hdr { background: #4C5B7A; border-bottom: none; padding: 16px 20px 14px; }
+/* Logo monochrome recoloré en blanc (bandeau medium-dark) */
+.fs-equinoxe .hdr-logo { filter: brightness(0) invert(1); }
+.fs-equinoxe .hdr-center strong { color: #FFFFFF; }
+.fs-equinoxe .hdr-center span { color: #FFFFFF; }
+
+/* CTA « Planifier un appel » — texte navy pour lisibilité */
+.fs-equinoxe .btn-contact { background: #DBDEE4; color: #1B2D4D; border-color: transparent; }
+.fs-equinoxe .btn-contact:hover { background: transparent; color: #FFFFFF; border-color: #FFFFFF; }
+
+/* Toggle EN/FR — actif rempli blanc, inactif texte blanc sur le bandeau */
+.fs-equinoxe .lang-toggle { border-color: #FFFFFF; }
+.fs-equinoxe .lang-btn { background: transparent; color: #FFFFFF; }
+.fs-equinoxe .lang-btn + .lang-btn { border-left-color: #FFFFFF; }
+.fs-equinoxe .lang-btn.active { background: #FFFFFF; color: #4C5B7A; }
+.fs-equinoxe .lang-btn:hover:not(.active) { background: #FFFFFF; color: #4C5B7A; }
+
+/* ---- Blocs / titres / séparateurs ---- */
+.fs-equinoxe .block,
+.fs-equinoxe .chart-wrap { background: #EDEEF1; }
+.fs-equinoxe .block-title { color: #1B2D4D; border-bottom-color: #AFB1B6; }
+
+/* ---- Spécifications du produit ---- */
+.fs-equinoxe .specs tr { border-bottom-color: #AFB1B6; }
+.fs-equinoxe .specs .k { color: #111111; }
+.fs-equinoxe .specs .v { color: #1B2D4D; }
+
+/* ---- Frais ---- */
+.fs-equinoxe .fee { background: #DBDEE4; border-color: #AFB1B6; }
+.fs-equinoxe .fee-label { color: #1B2D4D; }
+.fs-equinoxe .fee-val { color: #111111; }
+.fs-equinoxe .fee-sub { color: #1B2D4D; }
+
+/* ---- Key Figures ---- */
+.fs-equinoxe .kf { background: #DBDEE4; border-color: #AFB1B6; }
+.fs-equinoxe .kf-label { color: #1B2D4D; }
+.fs-equinoxe .kf-val { color: #111111; }
+
+/* ---- Stratégie ---- */
+.fs-equinoxe .strat-intro { color: #111111; }
+.fs-equinoxe .strat-intro strong { color: #1B2D4D; }
+.fs-equinoxe .strat-detail { color: #111111; border-top-color: #AFB1B6; }
+.fs-equinoxe .strat-detail strong { color: #1B2D4D; }
+/* Aplati : les 2 blocs partagent le même fond */
+.fs-equinoxe .strat-block.offensive,
+.fs-equinoxe .strat-block.defensive { background: #DBDEE4; border-color: #AFB1B6; color: #111111; }
+.fs-equinoxe .strat-tag { color: #111111; opacity: 1; }
+.fs-equinoxe .strat-name { color: #1B2D4D; }
+.fs-equinoxe .strat-desc { color: #111111; opacity: 1; }
+/* Espacement prose stratégie : intra serré, inter aéré */
+.fs-equinoxe .strat-intro .sp-next,
+.fs-equinoxe .strat-detail .sp-next { display: block; margin-top: 8px; }
+.fs-equinoxe .strat-detail + .strat-detail { margin-top: 18px; }
+
+/* ---- Graphique (légende + note) ---- */
+.fs-equinoxe .legend-item { background: #DBDEE4; color: #111111; border-color: #AFB1B6; font-family: 'Inter', sans-serif; }
+.fs-equinoxe .chart-note { color: #111111; }
+
+/* ---- Équipe ---- */
+.fs-equinoxe .team-item { border-bottom-color: #AFB1B6; }
+.fs-equinoxe .team-role { color: #1B2D4D; }
+.fs-equinoxe .team-name { color: #111111; }
+.fs-equinoxe .team-desc { color: #111111; }
+
+/* ---- Historique mensuel des performances ---- */
+.fs-equinoxe .perf-table th { color: #111111; border-bottom-color: #AFB1B6; }
+.fs-equinoxe .perf-table td { color: #1B2D4D; border-bottom-color: #DBDEE4; }
+.fs-equinoxe .perf-table td:first-child { color: #111111; }
+.fs-equinoxe .perf-table .pos,
+.fs-equinoxe .perf-table .neg { color: #1B2D4D; }
+.fs-equinoxe .perf-table .ytd { background: #DBDEE4; color: #1B2D4D; }
+.fs-equinoxe .perf-note { color: #1B2D4D; }
+
+/* ---- Pied de page ---- */
+.fs-equinoxe .ftr { border-top-color: #AFB1B6; color: #111111; }
+.fs-equinoxe .ftr-right a { color: #1B2D4D; }
