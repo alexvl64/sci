@@ -478,10 +478,10 @@ function renderChart() {
       animations:{enabled:false}, background:'transparent'
     },
     stroke: {width:[2,1.5], dashArray:[0,6]},
-    colors: ['#DBD1BC','#545047'],
+    colors: ['#1B2D4D','#5C4E3E'],
     xaxis: {
       categories:period, tickAmount:7, axisTicks:{show:false}, axisBorder:{show:false},
-      labels:{hideOverlappingLabels:true, showDuplicates:false, rotate:0, style:{colors:'#6B7B8D', fontFamily:'Inter', fontSize:'9px'}}
+      labels:{hideOverlappingLabels:true, showDuplicates:false, rotate:0, style:{colors:'#5C4E3E', fontFamily:'Inter', fontSize:'9px'}}
     },
     yaxis: {
       logarithmic:false,
