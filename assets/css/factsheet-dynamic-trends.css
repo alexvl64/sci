@@ -1,0 +1,90 @@
+/* ============================================================
+   Dynamic Trends — palette dédiée (scopée .fs-dynamic-trends)
+   N'affecte QUE /factsheets/dynamic-trends. CryptoVision &
+   discovery-call gardent factsheet.css inchangé.
+   Palette : FFFFFF · 999C9E · 111111 · 11161E ·
+             B2B6BA · 1B2D4D
+   Identité froide/sombre (directionnel Bitcoin), distincte du
+   CryptoVision chaud. Chargé APRÈS factsheet.css.
+   ============================================================ */
+
+/* ---- Base ---- */
+.fs-dynamic-trends { color: #111111; background: #FFFFFF; }
+
+/* ---- Bandeau (sombre) ---- */
+.fs-dynamic-trends .hdr { background: #11161E; border-bottom: none; padding: 16px 20px 14px; }
+/* Logo monochrome recoloré en blanc (sinon invisible sur le bandeau sombre) */
+.fs-dynamic-trends .hdr-logo { filter: brightness(0) invert(1); }
+.fs-dynamic-trends .hdr-center strong { color: #FFFFFF; }
+.fs-dynamic-trends .hdr-center span { color: #FFFFFF; }
+
+/* CTA « Planifier un appel » — texte navy pour lisibilité (~6,7:1) */
+.fs-dynamic-trends .btn-contact { background: #B2B6BA; color: #1B2D4D; border-color: transparent; }
+.fs-dynamic-trends .btn-contact:hover { background: transparent; color: #FFFFFF; border-color: #FFFFFF; }
+
+/* Toggle EN/FR — actif rempli blanc, inactif texte blanc sur sombre */
+.fs-dynamic-trends .lang-toggle { border-color: #FFFFFF; }
+.fs-dynamic-trends .lang-btn { background: transparent; color: #FFFFFF; }
+.fs-dynamic-trends .lang-btn + .lang-btn { border-left-color: #FFFFFF; }
+.fs-dynamic-trends .lang-btn.active { background: #FFFFFF; color: #11161E; }
+.fs-dynamic-trends .lang-btn:hover:not(.active) { background: #FFFFFF; color: #11161E; }
+
+/* ---- Blocs / titres / séparateurs ---- */
+.fs-dynamic-trends .block,
+.fs-dynamic-trends .chart-wrap { background: #FFFFFF; }
+.fs-dynamic-trends .block-title { color: #1B2D4D; border-bottom-color: #999C9E; }
+
+/* ---- Spécifications du produit ---- */
+.fs-dynamic-trends .specs tr { border-bottom-color: #999C9E; }
+.fs-dynamic-trends .specs .k { color: #111111; }
+.fs-dynamic-trends .specs .v { color: #1B2D4D; }
+
+/* ---- Frais ---- */
+.fs-dynamic-trends .fee { background: #B2B6BA; border-color: #999C9E; }
+.fs-dynamic-trends .fee-label { color: #1B2D4D; }
+.fs-dynamic-trends .fee-val { color: #111111; }
+.fs-dynamic-trends .fee-sub { color: #1B2D4D; }
+
+/* ---- Key Figures ---- */
+.fs-dynamic-trends .kf { background: #B2B6BA; border-color: #999C9E; }
+.fs-dynamic-trends .kf-label { color: #1B2D4D; }
+.fs-dynamic-trends .kf-val { color: #111111; }
+
+/* ---- Stratégie ---- */
+.fs-dynamic-trends .strat-intro { color: #111111; }
+.fs-dynamic-trends .strat-intro strong { color: #1B2D4D; }
+.fs-dynamic-trends .strat-detail { color: #111111; border-top-color: #999C9E; }
+.fs-dynamic-trends .strat-detail strong { color: #1B2D4D; }
+/* Aplati : offensif & défensif partagent le même fond gris */
+.fs-dynamic-trends .strat-block.offensive,
+.fs-dynamic-trends .strat-block.defensive { background: #B2B6BA; border-color: #999C9E; color: #111111; }
+.fs-dynamic-trends .strat-tag { color: #11161E; opacity: 1; }
+.fs-dynamic-trends .strat-name { color: #1B2D4D; }
+.fs-dynamic-trends .strat-desc { color: #111111; opacity: 1; }
+/* Espacement prose stratégie : intra-paragraphe serré, inter-section aéré */
+.fs-dynamic-trends .strat-intro .sp-next,
+.fs-dynamic-trends .strat-detail .sp-next { display: block; margin-top: 8px; }
+.fs-dynamic-trends .strat-detail + .strat-detail { margin-top: 18px; }
+
+/* ---- Graphique (légende + note) ---- */
+.fs-dynamic-trends .legend-item { background: #B2B6BA; color: #111111; border-color: #999C9E; font-family: 'Inter', sans-serif; }
+.fs-dynamic-trends .chart-note { color: #111111; }
+
+/* ---- Équipe ---- */
+.fs-dynamic-trends .team-item { border-bottom-color: #999C9E; }
+.fs-dynamic-trends .team-role { color: #1B2D4D; }
+.fs-dynamic-trends .team-name { color: #111111; }
+.fs-dynamic-trends .team-desc { color: #111111; }
+
+/* ---- Historique mensuel des performances ---- */
+.fs-dynamic-trends .perf-table th { color: #111111; border-bottom-color: #999C9E; }
+.fs-dynamic-trends .perf-table td { color: #1B2D4D; border-bottom-color: #B2B6BA; }
+.fs-dynamic-trends .perf-table td:first-child { color: #111111; }
+.fs-dynamic-trends .perf-table .pos,
+.fs-dynamic-trends .perf-table .neg { color: #1B2D4D; }
+.fs-dynamic-trends .perf-table .ytd { background: #B2B6BA; color: #1B2D4D; }
+.fs-dynamic-trends .perf-note { color: #1B2D4D; }
+
+/* ---- Pied de page (hors spec — aligné palette) ---- */
+.fs-dynamic-trends .ftr { border-top-color: #999C9E; color: #111111; }
+.fs-dynamic-trends .ftr-right a { color: #1B2D4D; }
