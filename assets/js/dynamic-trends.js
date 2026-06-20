@@ -391,7 +391,7 @@ function renderChart() {
     series: [{name:'Dynamic Trends',data:dynamicTrendsValue},{name:'Bitcoin',data:btcBase100}],
     chart: {height:260,type:'line',zoom:{enabled:false},toolbar:{show:false},animations:{enabled:false},background:'transparent',fontFamily:'Inter, sans-serif'},
     stroke: {width:[2,1.5],dashArray:[0,6]},
-    colors: ['#11161E','#1B2D4D'],
+    colors: ['#11161E','#8A8E96'],
     xaxis: {categories:period,tickAmount:7,axisTicks:{show:false},axisBorder:{show:false},labels:{hideOverlappingLabels:true,showDuplicates:false,rotate:0,style:{colors:'#1B2D4D',fontFamily:'Inter, sans-serif',fontSize:'9px'}}},
     yaxis: {logarithmic:true,labels:{show:false},axisTicks:{show:false},axisBorder:{show:false}},
     grid: {yaxis:{lines:{show:false}},padding:{left:30,right:14,top:-10,bottom:-8}},
