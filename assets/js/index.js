@@ -191,15 +191,29 @@ function isoToFlag(iso) {
     const opt = document.createElement("option");
     opt.value = dial;
     opt.dataset.iso = iso;
-    opt.textContent = `${isoToFlag(iso)} ${dial} ${name}`;
+    opt.dataset.full = `${isoToFlag(iso)} ${dial} ${name}`;
+    opt.dataset.short = `${isoToFlag(iso)} ${dial}`;
+    opt.textContent = opt.dataset.full;
     frag.appendChild(opt);
   });
   countryCodeSelect.appendChild(frag);
+
+  // Liste déroulante = nom complet ; champ compact = "drapeau + indicatif" sur
+  // l'option sélectionnée uniquement (un select natif partage le même texte
+  // ouvert/fermé, on raccourcit donc juste l'option courante).
+  function refreshCollapsedLabel() {
+    const opts = countryCodeSelect.options;
+    for (let i = 0; i < opts.length; i++) opts[i].textContent = opts[i].dataset.full;
+    const sel = opts[countryCodeSelect.selectedIndex];
+    if (sel) sel.textContent = sel.dataset.short;
+  }
+  countryCodeSelect.addEventListener("change", refreshCollapsedLabel);
 
   // Sélectionne l'option exacte par ISO (gère les indicatifs partagés, ex. +1 US/CA).
   function selectByIso(iso) {
     const opt = countryCodeSelect.querySelector(`option[data-iso="${iso}"]`);
     if (opt) opt.selected = true;
+    refreshCollapsedLabel();
   }
 
   // Défaut : France (marché principal), écrasé par la géo-détection si dispo.
