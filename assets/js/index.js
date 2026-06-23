@@ -241,6 +241,7 @@ form.addEventListener("submit", async (event) => {
   formData.append("email", email);
   formData.append("source", source);
   formData.append("source_tracking", sourceTracking);
+  formData.append("lang", document.documentElement.lang || "en");
   formData.append("cf-turnstile-response", turnstileToken);
 
   // Désactivez le bouton pour éviter les doubles soumissions
@@ -249,7 +250,7 @@ form.addEventListener("submit", async (event) => {
   submitButton.textContent = currentTranslations.formSubmitLoading;
 
   try {
-    const response = await fetch("https://formcarry.com/s/oHdZL-AalnM", {
+    const response = await fetch("/api/contact", {
       method: "POST",
       body: formData,
       headers: {
@@ -402,10 +403,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const formData = new FormData();
     formData.append("email", emailValue);
     formData.append("source_tracking", sourceTracking);
+    formData.append("lang", document.documentElement.lang || "en");
     formData.append("cf-turnstile-response", turnstileToken);
 
     try {
-      const response = await fetch("https://formcarry.com/s/_xD89dyxiXb", {
+      const response = await fetch("/api/newsletter", {
         method: "POST",
         body: formData,
         headers: {
