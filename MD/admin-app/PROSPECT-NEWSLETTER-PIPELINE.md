@@ -40,7 +40,7 @@ NEW CONTACT (webhook FormCarry)
 ```
 
 - **`source_format`** (module 8) = transformation de `source` faite dans Make, envoyée au SM.
-- **`cv_link` / `dt_link` / `calendar_link`** = lus dans un **Google Sheet** (colonne 15 des modules 11/12/13). Ce sont les liens factsheets (CryptoVision, Dynamic Trends) + le lien calendrier Cal.com (version FR). → **L'app Admin doit disposer de ces valeurs** (cf. §7 + décision D-3).
+- **`cv_link` / `dt_link` / `calendar_link`** = anciennement lus dans un **Google Sheet** (colonne 15 des modules 11/12/13). → **Résolu (D-3)** : ces liens sont **déjà présents dans la config `ResourceLink` de l'app Admin**. L'app Admin les lit directement depuis ResourceLink pour construire les emails — plus aucune dépendance au Google Sheet.
 - **Telegram** = module `SEND ERROR`, déclenché uniquement sur **erreur réelle** de l'appel SM (pas une notif de succès).
 
 Le flux newsletter (FormCarry `_xD89dyxiXb`) faisait : **même appel SM** (ajout prospect → le SM mettait à jour la liste Mailjet) + email abonné Mailjet tpl 6564289. **Pas** de notif équipe, **pas** de Telegram.
@@ -213,8 +213,8 @@ Sur réception d'un POST authentifié `…/newsletter` (JSON §2-B) :
 | **Mailjet `LIST_ID` newsletter** | abonnement liste (§6.3) | compte Mailjet (à récupérer) |
 | **Telegram bot token + chat id** | notifs équipe / erreurs | bot Telegram existant |
 | **`ADMIN_API_SECRET`** | auth de l'appel venant de la CF Function du site | généré, partagé avec le site |
-| **`cv_link`, `dt_link`** | liens factsheets dans les emails | aujourd'hui dans un **Google Sheet** (col. 15) → migrer en config Admin ou continuer à lire la sheet (D-3) |
-| **`calendar_link`** | lien Cal.com (version FR aujourd'hui) | idem Google Sheet — prévoir variante EN/FR selon `lang` (D-3) |
+| **`cv_link`, `dt_link`** | liens factsheets dans les emails | ✅ déjà dans la **config `ResourceLink`** de l'app Admin |
+| **`calendar_link`** | lien Cal.com | ✅ déjà dans la **config `ResourceLink`** ; choisir la variante EN/FR via `lang` si disponible |
 | **Turnstile secret** | *uniquement si* alternative « appel direct » (D-1) | Cloudflare |
 
 > ⚠️ Les **templates Mailjet** (6562257, 7461276, 6564289) vivent déjà dans le compte Mailjet — **à réutiliser tels quels**, ne pas recréer. Vérifier que la clé API utilisée par l'app Admin a accès à ce compte.
@@ -257,7 +257,7 @@ Sur réception d'un POST authentifié `…/newsletter` (JSON §2-B) :
 |---|---|---|
 | **D-1** | ✅ **DÉCIDÉ** : CF Function proxy | Fait — secrets serveur, pas de CORS, CF gratuit |
 | **D-2** | ✅ **DÉCIDÉ** : oui — contact **et** newsletter alimentent la liste Mailjet | Fait |
-| **D-3** | `cv_link` / `dt_link` / `calendar_link` : migrer en **config Admin** ou continuer à lire le **Google Sheet** ? + variante calendrier **EN/FR** selon `lang` | Config Admin (versionnée, fiable) ; lien calendrier par langue |
+| **D-3** | ✅ **RÉSOLU** : liens déjà dans la **config `ResourceLink`** de l'app Admin (factsheets + calendrier). L'app les lit depuis ResourceLink. | Fait — reste à confirmer une variante calendrier EN/FR via `lang` si elle existe |
 | **D-4** | Telegram : garder une notif **succès « nouveau prospect »**, ou seulement **alerte d'erreur** (legacy) ? | Erreur (fiabilité) + succès optionnel |
 | **D-5** | Domaine de l'API Admin (`ADMIN_API_BASE`) + génération du `ADMIN_API_SECRET` | À fournir par l'équipe Admin |
 
