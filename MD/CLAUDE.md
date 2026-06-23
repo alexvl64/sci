@@ -589,37 +589,29 @@ The auto-redirect from `/` → `/fr/` for FR-language browsers is intentional an
 - The FR JSON-LD (`FinancialService` block in `/fr/index.html`) must mirror the EN one with `url: https://sparkcore.fund/fr/` and a French `description`.
 - The active `lang-btn` is FR on `/fr/` and EN on `/` — set via the `active` class on the `<button>`.
 
-### Bilingual policy — dual-cluster strategy (formalized 2026-05-07)
+### Bilingual policy — EN-only content, bilingual homepage (updated 2026-06-23)
 
-SparkCore runs **two independent content clusters** that target different audiences and search intents. They are not translations of each other and should not be treated as parity content.
+> **Policy change 2026-06-23 — the FR blog cluster was retired.** The previous dual-cluster strategy (separate EN `/blog/` + FR `/fr/blog/` clusters, formalized 2026-05-07) is **discontinued**. The site now runs **a single English content cluster**; French survives only as the **homepage landing** (`/fr/index.html`) for the bilingual `/` ↔ `/fr/` experience and its hreflang pair. The 6 FR articles + the FR blog index + the 6 repurposed derivatives were deleted; `/fr/blog/*` now returns **HTTP 410 Gone** via `functions/fr/blog/[[path]].js`, and the matching `sitemap.xml` / `llms-full.txt` entries were removed.
 
-**1. EN cluster — regulatory hub (`/blog/`)**
+**1. EN cluster — the only content cluster (`/blog/`)**
 
-- 19 indexable articles + 1 explainer (B2) + 1 pillar page at `/resources/regulated-crypto-fund-estonia/` (B1).
+- 23 indexable articles + 1 pillar page at `/resources/regulated-crypto-fund-estonia/`.
 - Topics: AIFMD, MiCA, Estonia AIFM, white-label, custody, fund structure, fee benchmarks, eligibility, sub-threshold thresholds.
 - Audience: prospective fund managers + institutional allocators evaluating regulated crypto fund vehicles.
-- Search intent: regulatory / commercial.
 - All articles carry `"inLanguage": "en"` and `<html lang="en">`.
 
-**2. FR cluster — markets & strategy mini-cluster (`/fr/blog/`)**
+**2. FR surface = homepage only.**
 
-- 4 standalone articles: `indicateurs-marche-crypto-actifs`, `agents-ia-blockchain-economie-agentique`, `strategies-options-protection-portefeuille-actions`, `le-vrai-cout-du-market-timing`.
-- Topics: crypto-asset market indicators, agentic-AI / blockchain economy, options-based portfolio protection, the real cost of market timing.
-- Audience: French-speaking HNW investors, family offices, wealth-management readers.
-- Search intent: educational / investor research.
-- All articles carry `"inLanguage": "fr"` and `<html lang="fr">`.
+- `/fr/index.html` stays (localized landing + EN↔FR toggle + auto-redirect of FR browsers). It has **no blog**: its nav + footer "Articles" links point to the EN `/blog/`, and the hero "latest article" badge (which promoted the FR strc article) was removed.
+- `/fr/blog/*` is a **retired namespace** → 410 Gone. Do not recreate pages under it without restoring the full SEO surface (sitemap, hreflang, internal links).
+- The sitemap keeps EN/FR `hreflang` alternates **only for the homepage** (`/` ↔ `/fr/`). The `/blog/` index is now EN self-canonical (its FR alternate was removed).
 
-**3. No mirror translations.**
+**3. Future content rule.**
 
-- The EN cluster is **not** translated into FR; the FR cluster is **not** translated into EN.
-- The two clusters serve different audiences and intents, so cross-translation would create cannibalization without adding value.
-- Sitemap entries for blog articles are **self-canonical** with no `hreflang` cross-link between clusters. Only the homepage (`/` ↔ `/fr/`) and the blog index pages have full EN/FR `hreflang` alternates.
+- All new content → EN cluster (`/blog/`), `"inLanguage": "en"`.
+- If French content is ever wanted again, treat it as a **new decision**: either (a) a true EN↔FR parity pair shipped simultaneously with reciprocal `hreflang`, or (b) a deliberately re-scoped FR cluster — but the lone FR mini-cluster experiment is closed. Do not resurrect `/fr/blog/` ad hoc.
 
-**4. Future content rule.**
-
-- New regulatory / structural content (AIFMD, MiCA, AIFM mechanics, fund structuring, compliance, jurisdiction comparisons) → EN cluster (`/blog/`).
-- New investment-philosophy / markets / strategy content → either cluster, depending on which audience it targets.
-- If full EN ↔ FR parity is ever needed for a specific article, **both** versions must be created at the same time with reciprocal `hreflang` alternates and `inLanguage` set per locale. Do not ship a single-language article and add the alternate later — partial parity is worse than no parity for hreflang cluster integrity.
+> **Why the change:** the FR mini-cluster was time-sensitive market commentary that decayed ~3× faster than the EN evergreen regulatory content (blog-audit 2026-06-21: FR −4.7 vs EN −0.7), carried the heaviest YMYL/legal exposure (the strc "Ponzi" P0 on a named SEC issuer), and shared no topic or audience overlap with the EN buyer-journey hub. Consolidating on EN removes the maintenance + legal surface and concentrates authority on one cluster.
 
 ### Common pitfalls
 
