@@ -233,16 +233,17 @@ form.addEventListener("submit", async (event) => {
     return;
   }
 
-  // Créer les données à envoyer
-  const formData = new FormData();
-  formData.append("prenom", prenom);
-  formData.append("nom", nom);
-  formData.append("telephone", telephone);
-  formData.append("email", email);
-  formData.append("source", source);
-  formData.append("source_tracking", sourceTracking);
-  formData.append("lang", document.documentElement.lang || "en");
-  formData.append("cf-turnstile-response", turnstileToken);
+  // Créer les données à envoyer (JSON → Pages Function /api/contact)
+  const payload = {
+    prenom,
+    nom,
+    telephone,
+    email,
+    source,
+    source_tracking: sourceTracking,
+    lang: document.documentElement.lang || "en",
+    turnstileToken,
+  };
 
   // Désactivez le bouton pour éviter les doubles soumissions
   const submitButton = event.target.querySelector("[type='submit']");
@@ -252,10 +253,11 @@ form.addEventListener("submit", async (event) => {
   try {
     const response = await fetch("/api/contact", {
       method: "POST",
-      body: formData,
       headers: {
+        "Content-Type": "application/json",
         Accept: "application/json",
       },
+      body: JSON.stringify(payload),
     });
 
     if (!response.ok) {
@@ -264,7 +266,7 @@ form.addEventListener("submit", async (event) => {
 
     const data = await response.json();
 
-    if (data.status === "success") {
+    if (data.ok) {
       // GA4: contact_form_submit (Key Event) — captures dropdown source + CTA origin
       if (typeof window.gtag === "function") {
         window.gtag("event", "contact_form_submit", {
@@ -399,20 +401,22 @@ document.addEventListener("DOMContentLoaded", () => {
     subscribeButton.disabled = true;
     subscribeButton.textContent = currentTranslations.subscribeLoading;
 
-    // Créer les données à envoyer
-    const formData = new FormData();
-    formData.append("email", emailValue);
-    formData.append("source_tracking", sourceTracking);
-    formData.append("lang", document.documentElement.lang || "en");
-    formData.append("cf-turnstile-response", turnstileToken);
+    // Créer les données à envoyer (JSON → Pages Function /api/newsletter)
+    const payload = {
+      email: emailValue,
+      source_tracking: sourceTracking,
+      lang: document.documentElement.lang || "en",
+      turnstileToken,
+    };
 
     try {
       const response = await fetch("/api/newsletter", {
         method: "POST",
-        body: formData,
         headers: {
+          "Content-Type": "application/json",
           Accept: "application/json",
         },
+        body: JSON.stringify(payload),
       });
 
       if (!response.ok) {
@@ -421,7 +425,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const data = await response.json();
 
-      if (data.status === "success") {
+      if (data.ok) {
         emailInput.value = "";
         turnstile.reset("#cf-turnstile-newsletter");
 

@@ -47,9 +47,9 @@ Le flux newsletter (FormCarry `_xD89dyxiXb`) faisait : **même appel SM** (ajout
 
 ---
 
-## 2. Schéma de champs canonique (payload site → Admin)
+## 2. Schéma de champs canonique
 
-Le site envoie aujourd'hui ces noms (FormData). On les conserve comme contrat.
+Le navigateur POST en **JSON** vers la CF Function (`/api/contact` ou `/api/newsletter`), avec en plus `turnstileToken` (consommé par la Function, non relayé). La Function relaie ensuite ces champs en JSON vers l'API Admin. Réponse Function→navigateur : `{ "ok": true }` en succès, `{ "ok": false, "error": "..." }` sinon.
 
 ### (A) Contact
 | Champ envoyé | Type | Mapping legacy | Obligatoire |
@@ -112,17 +112,17 @@ Le site envoie aujourd'hui ces noms (FormData). On les conserve comme contrat.
 
 > **Endpoints attendus côté Admin** : `POST {ADMIN_API_BASE}/prospects/contact` et `POST {ADMIN_API_BASE}/prospects/newsletter`, body **JSON** (§2), header `Authorization: Bearer {ADMIN_API_SECRET}`, réponse 2xx = OK.
 
-### 4.2 Variables d'environnement (CF Pages → Settings → Environment variables)
+### 4.2 Variables d'environnement (CF Pages → Settings → Variables and Secrets — Production + Preview)
 | Variable | Rôle |
 |---|---|
 | `TURNSTILE_SECRET_KEY` | clé secrète Turnstile (siteverify) — sitekey publique déjà sur le site : `0x4AAAAAACy5d4Ot-ahI-r9S` |
-| `ADMIN_API_BASE` | base URL de l'API app Admin (ex. `https://admin.sparkcore.fund` — **à fournir par l'équipe Admin**) |
+| `ADMIN_API_BASE` | base URL de l'API app Admin : `https://admin.sparkcore-investment.com` (sans slash final) |
 | `ADMIN_API_SECRET` | secret partagé Function ↔ Admin (généré, stocké des 2 côtés) |
 
 ### 4.3 Modifs JS (`assets/js/index.js`)
-- Contact : remplacer `fetch("https://formcarry.com/s/oHdZL-AalnM", …)` → `fetch("/api/contact", …)`. Ajouter `formData.append("lang", document.documentElement.lang || "en")`. La logique de succès reste identique (`data.status === "success"`), donc l'event GA4 `contact_form_submit`, le reset, la fermeture sidebar et le toast sont **inchangés**.
-- Newsletter : remplacer `fetch("https://formcarry.com/s/_xD89dyxiXb", …)` → `fetch("/api/newsletter", …)`. Ajouter `lang`. Succès inchangé (`data.status === "success"`).
-- Honeypot (`website`) et Turnstile restent dans le HTML ; ils sont désormais **validés côté Function** au lieu de FormCarry.
+- Contact : `fetch("/api/contact", …)` en **JSON** (`Content-Type: application/json`), body = `{ prenom, nom, telephone, email, source, source_tracking, lang, turnstileToken }`. Succès = `data.ok === true` → event GA4 `contact_form_submit`, reset, fermeture sidebar, toast (inchangés).
+- Newsletter : `fetch("/api/newsletter", …)` en JSON, body = `{ email, source_tracking, lang, turnstileToken }`. Succès = `data.ok === true`.
+- Honeypot (`website`) reste un garde-fou client ; Turnstile est désormais **validé côté Function** (siteverify) au lieu de FormCarry.
 
 ### 4.4 CSP (Transform Rule Cloudflare)
 - `connect-src` : **retirer** `https://formcarry.com` (plus utilisé) ; `/api/*` est same-origin (`'self'`, déjà autorisé). Aucune nouvelle origine à whitelister si on garde le proxy (le browser ne parle qu'à `sparkcore.fund`).
