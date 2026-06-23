@@ -31,4 +31,6 @@
 # Blog trailing slash removal (generic — replaces CF Transform Rule)
 # ----------------------------------------------------------------
 /blog/:slug/     /blog/:slug     301
-/fr/blog/:slug/  /fr/blog/:slug  301
+
+# /fr/blog/* retired 2026-06-23 (site consolidated on EN blog) — see
+# functions/fr/blog/[[path]].js which returns 410 Gone for the whole namespace.
