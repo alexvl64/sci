@@ -360,11 +360,17 @@
               >
                 Téléphone
               </label>
-              <div class="flex flex-col items-start justify-center">
+              <div class="flex items-stretch gap-2 w-full">
+                <select
+                  id="country-code"
+                  aria-label="Indicatif téléphonique du pays"
+                  class="shrink-0 max-w-[132px] px-2 sm:h-[52px] h-[62px] border border-paleBlue rounded font-inter text-softBlueGray bg-white outline-none cursor-pointer"
+                ></select>
                 <input
                   id="telephone"
-                  type="number"
-                  min="0"
+                  type="tel"
+                  inputmode="tel"
+                  autocomplete="tel-national"
                   placeholder="Votre numéro de téléphone"
                   data-i18n-placeholder="sidebarPhonePlaceholder"
                   class="w-full sm:p-4 p-5 sm:h-[52px] h-[62px] border border-paleBlue rounded placeholder:text-softBlueGray placeholder:text-base placeholder:font-inter font-inter text-softBlueGray focus:none outline-none"

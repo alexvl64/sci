@@ -126,6 +126,7 @@ const prenomInput = document.getElementById("prenom");
 const nomInput = document.getElementById("nom");
 const telephoneInput = document.getElementById("telephone");
 const emailInputs = document.getElementById("email");
+const countryCodeSelect = document.getElementById("country-code");
 
 // Get error message elements
 const prenomError = document.getElementById("prenom-error");
@@ -133,6 +134,83 @@ const nomError = document.getElementById("nom-error");
 const emailError = document.getElementById("email-error");
 const telephoneError = document.getElementById("telephone-error");
 const selectError = document.getElementById("select-error");
+
+// === COUNTRY DIAL CODE SELECT (champ téléphone) ===
+// Données compactes [ISO-3166, indicatif, nom EN] ; le drapeau est calculé depuis l'ISO.
+const COUNTRY_CODES = [
+  ["AD", "+376", "Andorra"], ["AE", "+971", "United Arab Emirates"], ["AL", "+355", "Albania"],
+  ["AR", "+54", "Argentina"], ["AT", "+43", "Austria"], ["AU", "+61", "Australia"],
+  ["BA", "+387", "Bosnia and Herzegovina"], ["BE", "+32", "Belgium"], ["BG", "+359", "Bulgaria"],
+  ["BH", "+973", "Bahrain"], ["BR", "+55", "Brazil"], ["BY", "+375", "Belarus"],
+  ["CA", "+1", "Canada"], ["CH", "+41", "Switzerland"], ["CL", "+56", "Chile"],
+  ["CN", "+86", "China"], ["CO", "+57", "Colombia"], ["CY", "+357", "Cyprus"],
+  ["CZ", "+420", "Czechia"], ["DE", "+49", "Germany"], ["DK", "+45", "Denmark"],
+  ["DZ", "+213", "Algeria"], ["EE", "+372", "Estonia"], ["EG", "+20", "Egypt"],
+  ["ES", "+34", "Spain"], ["FI", "+358", "Finland"], ["FR", "+33", "France"],
+  ["GB", "+44", "United Kingdom"], ["GE", "+995", "Georgia"], ["GI", "+350", "Gibraltar"],
+  ["GR", "+30", "Greece"], ["HK", "+852", "Hong Kong"], ["HR", "+385", "Croatia"],
+  ["HU", "+36", "Hungary"], ["ID", "+62", "Indonesia"], ["IE", "+353", "Ireland"],
+  ["IL", "+972", "Israel"], ["IN", "+91", "India"], ["IS", "+354", "Iceland"],
+  ["IT", "+39", "Italy"], ["JO", "+962", "Jordan"], ["JP", "+81", "Japan"],
+  ["KR", "+82", "South Korea"], ["KW", "+965", "Kuwait"], ["KZ", "+7", "Kazakhstan"],
+  ["LB", "+961", "Lebanon"], ["LI", "+423", "Liechtenstein"], ["LT", "+370", "Lithuania"],
+  ["LU", "+352", "Luxembourg"], ["LV", "+371", "Latvia"], ["MA", "+212", "Morocco"],
+  ["MC", "+377", "Monaco"], ["MD", "+373", "Moldova"], ["ME", "+382", "Montenegro"],
+  ["MK", "+389", "North Macedonia"], ["MT", "+356", "Malta"], ["MU", "+230", "Mauritius"],
+  ["MX", "+52", "Mexico"], ["MY", "+60", "Malaysia"], ["NG", "+234", "Nigeria"],
+  ["NL", "+31", "Netherlands"], ["NO", "+47", "Norway"], ["NZ", "+64", "New Zealand"],
+  ["OM", "+968", "Oman"], ["PE", "+51", "Peru"], ["PH", "+63", "Philippines"],
+  ["PK", "+92", "Pakistan"], ["PL", "+48", "Poland"], ["PT", "+351", "Portugal"],
+  ["QA", "+974", "Qatar"], ["RO", "+40", "Romania"], ["RS", "+381", "Serbia"],
+  ["RU", "+7", "Russia"], ["SA", "+966", "Saudi Arabia"], ["SE", "+46", "Sweden"],
+  ["SG", "+65", "Singapore"], ["SI", "+386", "Slovenia"], ["SK", "+421", "Slovakia"],
+  ["SM", "+378", "San Marino"], ["SN", "+221", "Senegal"], ["TH", "+66", "Thailand"],
+  ["TN", "+216", "Tunisia"], ["TR", "+90", "Turkey"], ["TW", "+886", "Taiwan"],
+  ["UA", "+380", "Ukraine"], ["US", "+1", "United States"], ["UY", "+598", "Uruguay"],
+  ["VN", "+84", "Vietnam"], ["ZA", "+27", "South Africa"],
+];
+// Pays mis en avant en tête de liste (marchés prioritaires).
+const COUNTRY_PINNED = ["FR", "BE", "CH", "LU", "MC", "GB", "US", "CA"];
+
+function isoToFlag(iso) {
+  return iso.replace(/./g, (c) => String.fromCodePoint(127397 + c.charCodeAt(0)));
+}
+
+(function initCountryCode() {
+  if (!countryCodeSelect) return;
+
+  const byIso = {};
+  COUNTRY_CODES.forEach((c) => { byIso[c[0]] = c; });
+  const pinned = COUNTRY_PINNED.map((iso) => byIso[iso]).filter(Boolean);
+  const rest = COUNTRY_CODES
+    .filter((c) => !COUNTRY_PINNED.includes(c[0]))
+    .sort((a, b) => a[2].localeCompare(b[2]));
+
+  const frag = document.createDocumentFragment();
+  pinned.concat(rest).forEach(([iso, dial, name]) => {
+    const opt = document.createElement("option");
+    opt.value = dial;
+    opt.dataset.iso = iso;
+    opt.textContent = `${isoToFlag(iso)} ${name} ${dial}`;
+    frag.appendChild(opt);
+  });
+  countryCodeSelect.appendChild(frag);
+
+  // Sélectionne l'option exacte par ISO (gère les indicatifs partagés, ex. +1 US/CA).
+  function selectByIso(iso) {
+    const opt = countryCodeSelect.querySelector(`option[data-iso="${iso}"]`);
+    if (opt) opt.selected = true;
+  }
+
+  // Défaut : France (marché principal), écrasé par la géo-détection si dispo.
+  selectByIso("FR");
+
+  // Auto-détection du pays au niveau edge Cloudflare (gratuit, sans API IP tierce).
+  fetch("/api/geo")
+    .then((r) => (r.ok ? r.json() : null))
+    .then((d) => { if (d && d.country) selectByIso(d.country); })
+    .catch(() => {});
+})();
 
 // Handle Custom Select Dropdown
 selectInput.addEventListener("click", () => {
@@ -173,7 +251,11 @@ form.addEventListener("submit", async (event) => {
 
   const prenom = prenomInput.value.trim();
   const nom = nomInput.value.trim();
-  const telephone = telephoneInput.value.trim() || "Non renseigné";
+  const phoneRaw = telephoneInput.value.trim();
+  const dialCode = countryCodeSelect ? countryCodeSelect.value : "";
+  const telephone = phoneRaw
+    ? (dialCode ? `${dialCode} ${phoneRaw}` : phoneRaw)
+    : "Non renseigné";
   const email = emailInputs.value.trim();
   const source = selectInput.dataset.value; // Utiliser la valeur sélectionnée
 
