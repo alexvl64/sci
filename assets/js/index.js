@@ -191,7 +191,7 @@ function isoToFlag(iso) {
     const opt = document.createElement("option");
     opt.value = dial;
     opt.dataset.iso = iso;
-    opt.textContent = `${isoToFlag(iso)} ${name} ${dial}`;
+    opt.textContent = `${isoToFlag(iso)} ${dial} ${name}`;
     frag.appendChild(opt);
   });
   countryCodeSelect.appendChild(frag);
