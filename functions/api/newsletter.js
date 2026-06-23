@@ -43,12 +43,16 @@ export async function onRequestPost({ request, env }) {
     return Response.json({ ok: false, error: "not_configured" }, { status: 503 });
   }
 
+  const clientIp = request.headers.get("CF-Connecting-IP") || "";
+  const headers = {
+    "content-type": "application/json",
+    authorization: `Bearer ${env.ADMIN_API_SECRET}`,
+  };
+  // IP réelle du visiteur en tête du XFF ; nginx ajoute la sienne derrière (peut être IPv6).
+  if (clientIp) headers["x-forwarded-for"] = clientIp;
   const r = await fetch(`${env.ADMIN_API_BASE.replace(/\/$/, "")}/prospects/newsletter`, {
     method: "POST",
-    headers: {
-      "content-type": "application/json",
-      authorization: `Bearer ${env.ADMIN_API_SECRET}`,
-    },
+    headers,
     body: JSON.stringify({
       type: "newsletter",
       email: body.email || "",

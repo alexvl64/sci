@@ -48,12 +48,16 @@ export async function onRequestPost({ request, env }) {
   }
 
   // Relai serveur-à-serveur (le Bearer ne quitte jamais la Function)
+  const clientIp = request.headers.get("CF-Connecting-IP") || "";
+  const headers = {
+    "content-type": "application/json",
+    authorization: `Bearer ${env.ADMIN_API_SECRET}`,
+  };
+  // IP réelle du visiteur en tête du XFF ; nginx ajoute la sienne derrière (peut être IPv6).
+  if (clientIp) headers["x-forwarded-for"] = clientIp;
   const r = await fetch(`${env.ADMIN_API_BASE.replace(/\/$/, "")}/prospects/contact`, {
     method: "POST",
-    headers: {
-      "content-type": "application/json",
-      authorization: `Bearer ${env.ADMIN_API_SECRET}`,
-    },
+    headers,
     body: JSON.stringify({
       type: "contact",
       prenom: body.prenom || "",
