@@ -60,7 +60,7 @@ const translations = {
     approachP3: "Structure AIF estonienne supervisée par la Finantsinspektsioon — le même cadre opérationnel que les gestionnaires alternatifs traditionnels.",
 
     // === FUNDS SECTION ===
-    fundsTitle: "Nos fonds d'investissement crypto",
+    fundsTitle: "Nos stratégies d'investissement en actifs numériques",
     fundsParagraph: "Trois fonds complémentaires — <span class=\"text-darkGray font-medium\">Dynamic Trends, CryptoVision et Equinoxe</span> — conçus pour répondre à différents profils de risque dans un cadre de gestion institutionnel et réglementé.",
 
     // === DYNAMIC TRENDS CARD ===
@@ -246,7 +246,7 @@ const translations = {
     approachP3: "Estonian AIF structure supervised by Finantsinspektsioon — the same operational framework as traditional alternative asset managers.",
 
     // === FUNDS SECTION ===
-    fundsTitle: "Our crypto investment funds",
+    fundsTitle: "Our digital asset investment strategies",
     fundsParagraph: "Three complementary funds — <span class=\"text-darkGray font-medium\">Dynamic Trends, CryptoVision and Equinoxe</span> — designed for different risk profiles within a regulated institutional management framework.",
 
     // === DYNAMIC TRENDS CARD ===
