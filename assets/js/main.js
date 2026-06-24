@@ -17,50 +17,27 @@ const btcBase100 = [];
 //const currentLang = window.location.pathname.includes('/en/') ? 'en' : 'fr';
 
 async function fetchJsonData() {
-  const sheetID = "1GyKIEU3OS1QQVZ-Qm7EafRlZerNs3nZNHxuFFtkpQPk";
-  const gid = "0";
-  const url = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?tqx=out:json&gid=${gid}`;
-
+  // SparkCore-published JSON (R2, via the Pages Function) — same Dynamic Trends
+  // base-100 series the home chart used to read from the public Google Sheet.
   try {
-    const response = await fetch(url);
+    const response = await fetch("/data/funds/dynamic-trends.json", {
+      cache: "no-cache",
+    });
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
-    const text = await response.text();
+    const d = await response.json();
+    const locale = currentLang === "en" ? "en-US" : "fr-FR";
 
-    const jsonData = JSON.parse(text.substring(47).slice(0, -2));
-    const rows = jsonData.table.rows;
-
-    rows.forEach((row) => {
-      const date = row.c[0]?.v;
-      const dynamic_trends_base100 = row.c[1]?.v;
-      const btc_base100 = row.c[2]?.v;
-
-      const regex = /^Date\((\d+),(\d+),(\d+)\)$/;
-      const match = date.match(regex);
-
-      let formattedDate = "";
-      if (match) {
-        const year = match[1];
-        const month = match[2] - 1;
-        const day = match[3];
-
-        const parsedDate = new Date(year, month, day);
-
-        // Utilise currentLang pour définir dynamiquement la langue
-        formattedDate = parsedDate.toLocaleDateString(
-          currentLang === "en" ? "en-US" : "fr-FR",
-          {
-            year: "numeric",
-            month: "long",
-          }
-        );
-      }
-
-      period.push(formattedDate);
-
-      dynamicTrendsValue.push(parseFloat(dynamic_trends_base100) || 0);
-      btcBase100.push(parseFloat(btc_base100) || 0);
+    (d.chart_base100 || []).forEach((p) => {
+      period.push(
+        new Date(p.date + "T00:00:00").toLocaleDateString(locale, {
+          year: "numeric",
+          month: "long",
+        })
+      );
+      dynamicTrendsValue.push(p.fund);
+      btcBase100.push(p.benchmark);
     });
 
     renderChart(period, dynamicTrendsValue, btcBase100);
