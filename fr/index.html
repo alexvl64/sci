@@ -245,7 +245,7 @@
             src="/assets/images/svg/logo.svg"
             alt="SparkCore Fund Management" width="210" height="40"></a>
         <div class="flex items-center gap-7">
-        <a href="/fr/blog/" class="nav-articles-link" data-i18n="navArticles">Articles</a>
+        <a href="/blog/" class="nav-articles-link" data-i18n="navArticles">Articles</a>
           <button
             aria-label="sidebar-btn"
             class="open-sidebar font-inter font-normal md:h-[54px] md:px-6 md:py-4 px-4 py-3 h-11 rounded text-sm md:text-base bg-darkGray text-white !leading-140 hover:bg-transparent hover:text-darkGray border border-transparent hover:border-darkGray duration-300 flex items-center justify-center"
@@ -360,14 +360,22 @@
               >
                 Téléphone
               </label>
-              <div class="flex flex-col items-start justify-center">
+              <div class="flex gap-2 w-full">
+                <select
+                  id="country-code"
+                  aria-label="Indicatif téléphonique du pays"
+                  style="flex:0 0 auto;width:88px"
+                  class="px-2 sm:h-[52px] h-[62px] border border-paleBlue rounded font-inter text-softBlueGray bg-white outline-none cursor-pointer"
+                ></select>
                 <input
                   id="telephone"
-                  type="number"
-                  min="0"
+                  type="tel"
+                  inputmode="tel"
+                  autocomplete="tel-national"
                   placeholder="Votre numéro de téléphone"
                   data-i18n-placeholder="sidebarPhonePlaceholder"
-                  class="w-full sm:p-4 p-5 sm:h-[52px] h-[62px] border border-paleBlue rounded placeholder:text-softBlueGray placeholder:text-base placeholder:font-inter font-inter text-softBlueGray focus:none outline-none"
+                  style="flex:1 1 auto;min-width:0"
+                  class="sm:p-4 p-5 sm:h-[52px] h-[62px] border border-paleBlue rounded placeholder:text-softBlueGray placeholder:text-base placeholder:font-inter font-inter text-softBlueGray focus:none outline-none"
                 />
               </div>
             </div>
@@ -525,11 +533,6 @@
           class="hero-content-left md:ps-10 ps-6 pe-6 md:py-10 py-8 flex flex-col justify-between sm:max-w-[50%]"
         >
           <div class="relative">
-            <a href="/fr/blog/strc-strategy-yield-sous-remunere-analyse" class="hero-latest-badge relative z-[3]" data-i18n-html="heroLatestArticle">
-              <span class="hero-latest-badge__label">Nouveau</span>
-              <span class="hero-latest-badge__title">STRC à 11,5 % : pourquoi ce rendement sous-rémunère le risque</span>
-              <span class="hero-latest-badge__arrow" aria-hidden="true">→</span>
-            </a>
             <h1
               class="md:!leading-140 !leading-120 font-funnel-display md:text-[50px] text-custom-5xl text-white relative z-[3]"
               data-i18n-html="heroTitle"
@@ -671,7 +674,7 @@
         class="text-custom-5xl sm:text-5xl lg:text-custom-6xl text-darkGray leading-120 md:leading-140 font-funnel-display"
         data-i18n="fundsTitle"
       >
-        Nos fonds d'investissement crypto
+        Nos stratégies d'investissement en actifs numériques
       </h2>
       <div class="py-6 sm:py-8 lg:py-10">
         <p class="font-inter text-lg sm:text-xl text-steelBlue leading-160 md:!leading-140 max-w-[820px]" data-i18n-html="fundsParagraph">
@@ -685,14 +688,15 @@
       <div class="grid lg:grid-cols-3 sm:grid-cols-1 grid-cols-1 gap-6">
 
         <!-- DYNAMIC TRENDS -->
-        <div class="flex flex-col overflow-hidden rounded-[4px] border border-[#E5E7EB] bg-white">
-          <!-- Header card — noir bleuté -->
-          <div class="bg-[#11161E] px-6 py-6 flex items-start justify-between">
+        <div class="flex flex-col overflow-hidden rounded-[4px]" style="background:#F7F7F8;border:1px solid #EAEBEB;">
+          <!-- Bandeau supérieur -->
+          <div class="px-6 py-6 flex items-start justify-between" style="background:#11161E;">
             <div>
-              <p class="font-inter text-xs font-medium text-white uppercase tracking-widest mb-2" data-i18n="dtRisk">Risque élevé (maîtrisé)</p>
-              <h3 class="font-funnel-display text-2xl text-white leading-tight">Dynamic Trends</h3>
+              <p class="font-inter text-xs font-medium uppercase tracking-widest mb-2" style="color:#FFFFFF;">Pilier offensif</p>
+              <h3 class="font-funnel-display text-2xl leading-tight" style="color:#FFFFFF;">Dynamic Trends</h3>
+              <p class="font-inter text-sm italic mt-2" style="color:#FFFFFF;min-height:2.5rem;">La conviction Bitcoin, pilotée avec discipline.</p>
             </div>
-            <div class="flex gap-[3px] items-center mt-1">
+            <div class="flex gap-[3px] items-center mt-1 shrink-0">
               <span class="w-[6px] h-[22px] bg-white"></span>
               <span class="w-[6px] h-[22px] bg-white"></span>
               <span class="w-[6px] h-[22px] bg-white"></span>
@@ -700,53 +704,51 @@
               <span class="w-[6px] h-[22px] bg-white opacity-30"></span>
             </div>
           </div>
-          <!-- Body — fond blanc -->
+          <!-- Body -->
           <div class="flex flex-col flex-1 px-6 py-6">
-            <p class="font-inter text-xs text-[#1B2D4D] uppercase tracking-widest font-semibold mb-1" data-i18n="dtPitch">Synthèse</p>
-            <p class="font-funnel-display text-lg text-[#111111] leading-tight mb-4" data-i18n="dtPitchText">
-              Une stratégie directionnelle optimisée pour surperformer le Bitcoin.
-            </p>
-            <div class="w-full h-px bg-[#999C9E] mb-4"></div>
-            <p class="font-inter text-xs text-[#1B2D4D] uppercase tracking-widest font-semibold mb-1" data-i18n="dtObjective">Objectif</p>
-            <p class="font-inter text-base text-[#111111] leading-160 mb-4 text-justify" data-i18n="dtObjectiveText">
-              Surperformer le Bitcoin sur le moyen / long terme en captant les grandes tendances haussières tout en limitant les phases correctives.
-            </p>
-            <div class="bg-[#B9BDC0] rounded-[4px] flex-1 px-4 py-4 mb-3">
+            <p class="font-inter text-xs uppercase tracking-widest font-semibold mb-1" style="color:#1B2D4D;">Synthèse</p>
+            <p class="font-funnel-display text-lg leading-tight mb-4" style="color:#111111;min-height:3.25rem;">Stratégie directionnelle offensive centrée sur le Bitcoin</p>
+            <div class="w-full h-px mb-4" style="background:#999C9E;"></div>
+            <p class="font-inter text-xs uppercase tracking-widest font-semibold mb-1" style="color:#1B2D4D;">Objectif</p>
+            <p class="font-inter text-base leading-160 mb-4 text-justify" style="color:#111111;min-height:5.75rem;">Surperformer le Bitcoin sur le moyen / long terme, avec une exposition pilotée selon les conditions de marché.</p>
+            <div class="rounded-[4px] flex-1 px-4 py-4 mb-3" style="background:#B2B6BA;">
               <div class="flex items-center justify-between gap-2 mb-2">
-                <p class="font-inter text-xs text-[#11161E] uppercase tracking-widest font-semibold" data-i18n="dtOffensiveBlock">Bloc Offensif</p>
-                <span class="font-inter text-xs font-semibold text-white bg-[#2F3133] rounded-[4px] px-2.5 py-1 whitespace-nowrap">50 % AUM</span>
+                <p class="font-inter text-xs uppercase tracking-widest font-semibold" style="color:#11161E;">Moteur directionnel</p>
+                <span class="font-inter text-xs font-semibold rounded-[4px] px-2.5 py-1 whitespace-nowrap" style="background:#11161E;color:#FFFFFF;">Dominant</span>
               </div>
-              <p class="font-inter text-sm text-[#111111] leading-160 text-justify" data-i18n="dtOffensiveBlockText">Bloc principal — exposition directionnelle Bitcoin avec levier modéré (max 2x), strictement encadré.</p>
+              <p class="font-inter text-sm leading-160 text-justify" style="color:#111111;">Exposition Bitcoin avec levier modéré (max 2x), strictement encadrée.</p>
             </div>
-            <div class="bg-[#B9BDC0] rounded-[4px] flex-1 px-4 py-4 mb-4">
+            <div class="rounded-[4px] flex-1 px-4 py-4 mb-4" style="background:#B2B6BA;">
               <div class="flex items-center justify-between gap-2 mb-2">
-                <p class="font-inter text-xs text-[#11161E] uppercase tracking-widest font-semibold" data-i18n="dtDefensiveBlock">Bloc Défensif</p>
-                <span class="font-inter text-xs font-semibold text-white bg-[#2F3133] rounded-[4px] px-2.5 py-1 whitespace-nowrap">50 % AUM</span>
+                <p class="font-inter text-xs uppercase tracking-widest font-semibold" style="color:#11161E;">Poche défensive</p>
+                <span class="font-inter text-xs font-semibold rounded-[4px] px-2.5 py-1 whitespace-nowrap" style="border:1px solid #11161E;color:#11161E;">Secondaire</span>
               </div>
-              <p class="font-inter text-sm text-[#111111] leading-160 text-justify" data-i18n="dtDefensiveBlockText">Bloc minoritaire — stratégies neutres, arbitrages systémiques, modèles quantitatifs à drawdown contrôlé.</p>
+              <p class="font-inter text-sm leading-160 text-justify" style="color:#111111;">Stratégies faiblement corrélées pour renforcer la robustesse globale.</p>
             </div>
             <div class="mt-auto">
               <button
-                class="open-sidebar w-full bg-[#11161E] rounded-[4px] px-5 py-4 flex items-center gap-3 cursor-pointer border-none text-left hover:opacity-90 transition-opacity duration-200"
+                class="open-sidebar w-full rounded-[4px] px-5 py-4 flex items-center gap-3 cursor-pointer border-none text-left hover:opacity-90 transition-opacity duration-200"
+                style="background:#11161E;"
                 data-fund="dynamic-trends"
               >
                 <svg class="shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-                <span class="flex-1 font-inter text-sm text-white font-medium border-b border-white pb-1" data-i18n="dtFactsheet">Demander la factsheet</span>
-                <span class="font-inter text-lg text-white leading-none" aria-hidden="true">→</span>
+                <span class="flex-1 font-inter text-sm font-medium pb-1" style="color:#FFFFFF;border-bottom:1px solid #FFFFFF;" data-i18n="dtFactsheet">Demander la factsheet</span>
+                <span class="font-inter text-lg leading-none" style="color:#FFFFFF;" aria-hidden="true">→</span>
               </button>
             </div>
           </div>
         </div>
 
         <!-- CRYPTOVISION -->
-        <div class="flex flex-col overflow-hidden rounded-[4px] border border-[#E5E7EB] bg-[#F3EFE7]">
-          <!-- Header card — taupe doré -->
-          <div class="bg-[#AD9A7E] px-6 py-6 flex items-start justify-between">
+        <div class="flex flex-col overflow-hidden rounded-[4px]" style="background:#F3EFE7;border:1px solid #DED6CB;">
+          <!-- Bandeau supérieur -->
+          <div class="px-6 py-6 flex items-start justify-between" style="background:#AD9A7E;">
             <div>
-              <p class="font-inter text-xs font-medium text-white uppercase tracking-widest mb-2" data-i18n="cvRisk">Risque modéré</p>
-              <h3 class="font-funnel-display text-2xl text-white leading-tight">CryptoVision</h3>
+              <p class="font-inter text-xs font-medium uppercase tracking-widest mb-2" style="color:#FFFFFF;">Pilier équilibré</p>
+              <h3 class="font-funnel-display text-2xl leading-tight" style="color:#FFFFFF;">CryptoVision</h3>
+              <p class="font-inter text-sm italic mt-2" style="color:#FFFFFF;min-height:2.5rem;">Participer au potentiel des actifs numériques.</p>
             </div>
-            <div class="flex gap-[3px] items-center mt-1">
+            <div class="flex gap-[3px] items-center mt-1 shrink-0">
               <span class="w-[6px] h-[22px] bg-white"></span>
               <span class="w-[6px] h-[22px] bg-white"></span>
               <span class="w-[6px] h-[22px] bg-white"></span>
@@ -754,93 +756,89 @@
               <span class="w-[6px] h-[22px] bg-white opacity-30"></span>
             </div>
           </div>
-          <!-- Body — fond crème chaud -->
+          <!-- Body -->
           <div class="flex flex-col flex-1 px-6 py-6">
-            <p class="font-inter text-xs text-[#5C4E3E] uppercase tracking-widest font-semibold mb-1" data-i18n="cvPitch">Synthèse</p>
-            <p class="font-funnel-display text-lg text-[#111111] leading-tight mb-4" data-i18n="cvPitchText">
-              Une stratégie défensive et disciplinée sur les crypto-actifs majeurs.
-            </p>
-            <div class="w-full h-px bg-[#988F85] mb-4"></div>
-            <p class="font-inter text-xs text-[#5C4E3E] uppercase tracking-widest font-semibold mb-1" data-i18n="cvObjective">Objectif</p>
-            <p class="font-inter text-base text-[#111111] leading-160 mb-4 text-justify" data-i18n="cvObjectiveText">
-              Offrir une performance régulière avec une volatilité maîtrisée et un drawdown limité, même lors des phases d'instabilité du marché.
-            </p>
-            <div class="bg-[#D8D1C2] rounded-[4px] flex-1 px-4 py-4 mb-3">
+            <p class="font-inter text-xs uppercase tracking-widest font-semibold mb-1" style="color:#5C4E3E;">Synthèse</p>
+            <p class="font-funnel-display text-lg leading-tight mb-4" style="color:#111111;min-height:3.25rem;">Stratégie active sur les actifs numériques, défensive par nature.</p>
+            <div class="w-full h-px mb-4" style="background:#988F85;"></div>
+            <p class="font-inter text-xs uppercase tracking-widest font-semibold mb-1" style="color:#5C4E3E;">Objectif</p>
+            <p class="font-inter text-base leading-160 mb-4 text-justify" style="color:#111111;min-height:5.75rem;">Offrir une performance régulière avec une volatilité maîtrisée et un drawdown limité même lors des phases d'instabilité du marché.</p>
+            <div class="rounded-[4px] flex-1 px-4 py-4 mb-3" style="background:#D8D1C2;">
               <div class="flex items-center justify-between gap-2 mb-2">
-                <p class="font-inter text-xs text-[#5C4E3E] uppercase tracking-widest font-semibold" data-i18n="cvDefensiveBlock">Bloc Défensif</p>
-                <span class="font-inter text-xs font-semibold text-white bg-[#AD9A7E] rounded-[4px] px-2.5 py-1 whitespace-nowrap">70 % AUM</span>
+                <p class="font-inter text-xs uppercase tracking-widest font-semibold" style="color:#1B2D4D;">Socle principal</p>
+                <span class="font-inter text-xs font-semibold rounded-[4px] px-2.5 py-1 whitespace-nowrap" style="background:#AD9A7E;color:#FFFFFF;">Dominant</span>
               </div>
-              <p class="font-inter text-sm text-[#111111] leading-160 text-justify" data-i18n="cvDefensiveBlockText">Bloc principal — stratégies neutres au marché, arbitrages systémiques, modèles quantitatifs. Aucun effet de levier directionnel.</p>
+              <p class="font-inter text-sm leading-160 text-justify" style="color:#111111;">Stratégies neutres au marché et approches algorithmiques défensives. Aucun effet de levier directionnel.</p>
             </div>
-            <div class="bg-[#D8D1C2] rounded-[4px] flex-1 px-4 py-4 mb-4">
+            <div class="rounded-[4px] flex-1 px-4 py-4 mb-4" style="background:#D8D1C2;">
               <div class="flex items-center justify-between gap-2 mb-2">
-                <p class="font-inter text-xs text-[#5C4E3E] uppercase tracking-widest font-semibold" data-i18n="cvOffensiveBlock">Bloc Offensif</p>
-                <span class="font-inter text-xs font-semibold text-white bg-[#AD9A7E] rounded-[4px] px-2.5 py-1 whitespace-nowrap">30 % AUM</span>
+                <p class="font-inter text-xs uppercase tracking-widest font-semibold" style="color:#1B2D4D;">Poche directionnelle</p>
+                <span class="font-inter text-xs font-semibold rounded-[4px] px-2.5 py-1 whitespace-nowrap" style="border:1px solid #AD9A7E;color:#111111;">Secondaire</span>
               </div>
-              <p class="font-inter text-sm text-[#111111] leading-160 text-justify" data-i18n="cvOffensiveBlockText">Bloc minoritaire — exposition dynamique sur Bitcoin, Ethereum et crypto-actifs liquides. Levier modéré, strictement encadré.</p>
+              <p class="font-inter text-sm leading-160 text-justify" style="color:#111111;">Exposition dynamique axée principalement sur Bitcoin et Ethereum. Levier modéré, strictement encadré.</p>
             </div>
             <div class="mt-auto">
               <button
-                class="open-sidebar w-full bg-[#AD9A7E] rounded-[4px] px-5 py-4 flex items-center gap-3 cursor-pointer border-none text-left hover:opacity-90 transition-opacity duration-200"
+                class="open-sidebar w-full rounded-[4px] px-5 py-4 flex items-center gap-3 cursor-pointer border-none text-left hover:opacity-90 transition-opacity duration-200"
+                style="background:#AD9A7E;"
                 data-fund="cryptovision"
               >
                 <svg class="shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-                <span class="flex-1 font-inter text-sm text-white font-medium border-b border-white pb-1" data-i18n="cvFactsheet">Demander la factsheet</span>
-                <span class="font-inter text-lg text-white leading-none" aria-hidden="true">→</span>
+                <span class="flex-1 font-inter text-sm font-medium pb-1" style="color:#FFFFFF;border-bottom:1px solid #FFFFFF;" data-i18n="cvFactsheet">Demander la factsheet</span>
+                <span class="font-inter text-lg leading-none" style="color:#FFFFFF;" aria-hidden="true">→</span>
               </button>
             </div>
           </div>
         </div>
 
         <!-- EQUINOXE -->
-        <div class="flex flex-col overflow-hidden rounded-[4px] border border-[#E5E7EB] bg-[#EDEEF1]">
-          <!-- Header card — bleu ardoise -->
-          <div class="bg-[#4C5B7A] px-6 py-6 flex items-start justify-between">
+        <div class="flex flex-col overflow-hidden rounded-[4px]" style="background:#EDEEF1;border:1px solid #E0E4E4;">
+          <!-- Bandeau supérieur -->
+          <div class="px-6 py-6 flex items-start justify-between" style="background:#4C5B7A;">
             <div>
-              <p class="font-inter text-xs font-medium text-white uppercase tracking-widest mb-2" data-i18n="eqRisk">Risque faible</p>
-              <h3 class="font-funnel-display text-2xl text-white leading-tight">Equinoxe</h3>
+              <p class="font-inter text-xs font-medium uppercase tracking-widest mb-2" style="color:#FFFFFF;">Pilier défensif</p>
+              <h3 class="font-funnel-display text-2xl leading-tight" style="color:#FFFFFF;">Equinoxe</h3>
+              <p class="font-inter text-sm italic mt-2" style="color:#FFFFFF;min-height:2.5rem;">La performance non directionnelle au cœur des crypto-actifs.</p>
             </div>
-            <div class="flex flex-col items-end gap-2">
-              <div class="flex gap-[3px] items-center">
-                <span class="w-[6px] h-[22px] bg-white"></span>
-                <span class="w-[6px] h-[22px] bg-white opacity-30"></span>
-                <span class="w-[6px] h-[22px] bg-white opacity-30"></span>
-                <span class="w-[6px] h-[22px] bg-white opacity-30"></span>
-                <span class="w-[6px] h-[22px] bg-white opacity-30"></span>
-              </div>
-              <span class="font-inter text-[10px] font-semibold text-white border border-white border-opacity-70 rounded-[4px] px-2 py-0.5 uppercase tracking-wide whitespace-nowrap" data-i18n="eqLaunch">Lancement prévu en 2026</span>
+            <div class="flex gap-[3px] items-center mt-1 shrink-0">
+              <span class="w-[6px] h-[22px] bg-white"></span>
+              <span class="w-[6px] h-[22px] bg-white opacity-30"></span>
+              <span class="w-[6px] h-[22px] bg-white opacity-30"></span>
+              <span class="w-[6px] h-[22px] bg-white opacity-30"></span>
+              <span class="w-[6px] h-[22px] bg-white opacity-30"></span>
             </div>
           </div>
-          <!-- Body — gris clair froid -->
+          <!-- Body -->
           <div class="flex flex-col flex-1 px-6 py-6">
-            <p class="font-inter text-xs text-[#1B2D4D] uppercase tracking-widest font-semibold mb-1" data-i18n="eqPitch">Synthèse</p>
-            <p class="font-funnel-display text-lg text-[#111111] leading-tight mb-4" data-i18n="eqPitchText">
-              Stratégie neutre — rendement régulier, indépendant de la direction du marché.
-            </p>
-            <div class="w-full h-px bg-[#AFB1B6] mb-4"></div>
-            <p class="font-inter text-xs text-[#1B2D4D] uppercase tracking-widest font-semibold mb-1" data-i18n="eqObjective">Objectif</p>
-            <p class="font-inter text-base text-[#111111] leading-160 mb-4 text-justify" data-i18n="eqObjectiveText">
-              Générer une performance stable et faiblement volatile, sans prise de risque directionnel, quel que soit le contexte de marché.
-            </p>
-            <div class="bg-[#DBDEE4] rounded-[4px] flex-1 px-4 py-4 mb-3">
+            <p class="font-inter text-xs uppercase tracking-widest font-semibold mb-1" style="color:#1B2D4D;">Synthèse</p>
+            <p class="font-funnel-display text-lg leading-tight mb-4" style="color:#111111;min-height:3.25rem;">Stratégie neutre avec un rendement indépendant du sens des marchés.</p>
+            <div class="w-full h-px mb-4" style="background:#AFB1B6;"></div>
+            <p class="font-inter text-xs uppercase tracking-widest font-semibold mb-1" style="color:#1B2D4D;">Objectif</p>
+            <p class="font-inter text-base leading-160 mb-4 text-justify" style="color:#111111;min-height:5.75rem;">Générer une performance régulière à partir d'écarts relatifs et d'opportunités d'arbitrage.</p>
+            <div class="rounded-[4px] flex-1 px-4 py-4 mb-3" style="background:#DBDEE4;">
               <div class="flex items-center justify-between gap-2 mb-2">
-                <p class="font-inter text-xs text-[#1B2D4D] uppercase tracking-widest font-semibold">Beta Neutral</p>
-                <span class="font-inter text-xs font-semibold text-white bg-[#4C5B7A] rounded-[4px] px-2.5 py-1 whitespace-nowrap">60 % AUM</span>
+                <p class="font-inter text-xs uppercase tracking-widest font-semibold" style="color:#111111;">Sélection relative</p>
+                <span class="font-inter text-xs font-semibold rounded-[4px] px-2.5 py-1 whitespace-nowrap" style="background:#4C5B7A;color:#FFFFFF;">Dominant</span>
               </div>
-              <p class="font-inter text-sm text-[#111111] leading-160 text-justify" data-i18n="eqBetaNeutralText">Pairs trading & arbitrage statistique — long/short sur actifs corrélés pour profiter de leur convergence.</p>
+              <p class="font-inter text-sm leading-160 text-justify" style="color:#111111;">Long/Short Beta Neutral : capter des écarts de performance entre actifs numériques.</p>
             </div>
-            <div class="bg-[#DBDEE4] rounded-[4px] flex-1 px-4 py-4 mb-4">
+            <div class="rounded-[4px] flex-1 px-4 py-4 mb-4" style="background:#DBDEE4;">
               <div class="flex items-center justify-between gap-2 mb-2">
-                <p class="font-inter text-xs text-[#1B2D4D] uppercase tracking-widest font-semibold">Delta Neutral</p>
-                <span class="font-inter text-xs font-semibold text-white bg-[#4C5B7A] rounded-[4px] px-2.5 py-1 whitespace-nowrap">40 % AUM</span>
+                <p class="font-inter text-xs uppercase tracking-widest font-semibold" style="color:#111111;">Arbitrage</p>
+                <span class="font-inter text-xs font-semibold rounded-[4px] px-2.5 py-1 whitespace-nowrap" style="border:1px solid #4C5B7A;color:#111111;">Secondaire</span>
               </div>
-              <p class="font-inter text-sm text-[#111111] leading-160 text-justify" data-i18n="eqDeltaNeutralText">Arbitrage sur dérivés — exploite les écarts entre spot et futures/taux de financement. Exposition nette proche de zéro.</p>
+              <p class="font-inter text-sm leading-160 text-justify" style="color:#111111;">Relative Value / Arbitrage : exploiter des écarts de prix ou de rendement entre instruments liés.</p>
             </div>
             <div class="mt-auto">
-              <div class="w-full bg-[#4C5B7A] rounded-[4px] px-5 py-4 flex items-center gap-3">
+              <button
+                class="open-sidebar w-full rounded-[4px] px-5 py-4 flex items-center gap-3 cursor-pointer border-none text-left hover:opacity-90 transition-opacity duration-200"
+                style="background:#4C5B7A;"
+                data-fund="equinoxe"
+              >
                 <svg class="shrink-0" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-                <span class="flex-1 font-inter text-sm text-white font-medium" data-i18n="eqFactsheetNote">Factsheet disponible à l'ouverture du fonds.</span>
-              </div>
+                <span class="flex-1 font-inter text-sm font-medium pb-1" style="color:#FFFFFF;border-bottom:1px solid #FFFFFF;">Demander la factsheet</span>
+                <span class="font-inter text-lg leading-none" style="color:#FFFFFF;" aria-hidden="true">→</span>
+              </button>
             </div>
           </div>
         </div>
@@ -1440,7 +1438,7 @@
                class="underline underline-offset-2 hover:text-darkGray transition-colors duration-200"
                data-i18n="footerPrivacyLink">Politique de confidentialité</a>
             <span class="mx-2 text-paleBlue">|</span>
-            <a rel="noopener noreferrer" href="/fr/blog/"
+            <a rel="noopener noreferrer" href="/blog/"
                class="underline underline-offset-2 hover:text-darkGray transition-colors duration-200"
                data-i18n="footerInsightsLink">Articles</a>
             <span class="mx-2 text-paleBlue">|</span>
