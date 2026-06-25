@@ -34,7 +34,7 @@ const T = {
     lblFeeExit:'Exit',
     valFeeExit:'*4% before 1 year.',
     lblKeyFigs:'Key Figures',
-    lblKfReturn:'Annualised return',
+    lblKfReturn:'Annualised return**',
     lblKfMaxdd:'Max drawdown',
     lblKfVol:'Volatility',
     lblKfRatios:'Sharpe / Sortino',
@@ -57,7 +57,7 @@ const T = {
     valStratRisk:'<strong>Risk profile</strong> — Equinoxe is designed for investors seeking defensive exposure to digital assets, with reduced sensitivity to the market\'s directional cycles. The fund targets rigorous risk control, with a maximum drawdown target of 5%.<span class="sp-next">Portfolio construction is organised around four control axes: directional exposure, the liquidity of the instruments used, position concentration, and portfolio resilience in market-stress conditions.</span>',
     lblChartTitle:'Performance Evolution — Base 100 · Linear Scale',
     legendBench:'Risk-free rate',
-    valKfNote:'*Target maximum drawdown 5%.',
+    valKfNote:'*Target maximum drawdown 5%.<br>**Annualised return since 01/01/2025.',
     valChartNote:'Real performance, net of fees. From January 2025 to the end of August 2025, returns were generated on managed accounts (real strategies, no backtest), outside the fund structure, prior to the fund\'s launch on 01/09/2025.',
     lblPerfTitle:'Monthly Performance History (%)',
     thYear:'Year',
@@ -105,7 +105,7 @@ const T = {
     lblFeeExit:'Sortie',
     valFeeExit:'*4% avant 1 an.',
     lblKeyFigs:'Chiffres clés',
-    lblKfReturn:'Rendement annualisé',
+    lblKfReturn:'Rendement annualisé**',
     lblKfMaxdd:'Perte maximale',
     lblKfVol:'Volatilité',
     lblKfRatios:'Sharpe / Sortino',
@@ -128,7 +128,7 @@ const T = {
     valStratRisk:'<strong>Profil de risque</strong> — Equinoxe s\'adresse aux investisseurs recherchant une exposition défensive aux actifs numériques, avec une sensibilité réduite aux cycles directionnels du marché. Le fonds vise une maîtrise rigoureuse du risque, avec un drawdown maximum ciblé de 5 %.<span class="sp-next">La construction du portefeuille s\'articule autour de quatre axes de contrôle : l\'exposition directionnelle, la liquidité des instruments utilisés, la concentration des positions, et la résilience du portefeuille en phase de stress de marché.</span>',
     lblChartTitle:'Évolution de la performance — base 100 · échelle linéaire',
     legendBench:'Taux sans risque',
-    valKfNote:'*Drawdown maximum ciblé de 5 %.',
+    valKfNote:'*Drawdown maximum ciblé de 5 %.<br>**Rendement annualisé depuis le 01/01/2025.',
     valChartNote:'Performance réelle, nette de frais. De janvier 2025 à fin août 2025, les performances ont été réalisées sur comptes gérés (stratégies réelles, sans backtest), hors de la structure du fonds, avant le lancement du fonds le 01/09/2025.',
     lblPerfTitle:'Historique mensuel des performances (%)',
     thYear:'Année',
@@ -330,7 +330,7 @@ function applyLang(lang) {
   s('val-offensive-desc', t.valOffensiveDesc); s('lbl-defensive-tag', t.lblDefensiveTag);
   s('lbl-defensive-name', t.lblDefensiveName); s('val-defensive-desc', t.valDefensiveDesc);
   h('val-strat-balance', t.valStratBalance); h('val-strat-risk', t.valStratRisk);
-  s('val-kf-note', t.valKfNote);
+  h('val-kf-note', t.valKfNote);
   s('val-chart-note', t.valChartNote);
   s('th-year', t.thYear);
   s('th-jan', t.thJan); s('th-feb', t.thFeb); s('th-mar', t.thMar); s('th-apr', t.thApr); s('th-may', t.thMay); s('th-jun', t.thJun);
