@@ -56,7 +56,7 @@ const T = {
     valStratBalance:'<strong>Overall strategic balance</strong> — Equinoxe combines these two complementary approaches within a unified risk framework. The allocation between the blocks is adjusted dynamically according to market conditions — liquidity, volatility, depth of opportunities — in order to optimise the risk/return trade-off in each configuration.<span class="sp-next">Residual directional exposure may occasionally exist, for execution reasons or temporary position adjustments, but it remains marginal and is not a performance driver.</span>',
     valStratRisk:'<strong>Risk profile</strong> — Equinoxe is designed for investors seeking defensive exposure to digital assets, with reduced sensitivity to the market\'s directional cycles. The fund targets rigorous risk control, with a maximum drawdown target of 8%.<span class="sp-next">Portfolio construction is organised around four control axes: directional exposure, the liquidity of the instruments used, position concentration, and portfolio resilience in market-stress conditions.</span>',
     lblChartTitle:'Performance Evolution — Base 100 · Linear Scale',
-    valChartNote:'Illustrative data — sample figures, not actual fund performance. Gross of fees.',
+    valChartNote:'Real data, net of fees.',
     lblPerfTitle:'Monthly Performance History (%)',
     thYear:'Year',
     thJan:'Jan', thFeb:'Feb', thMar:'Mar', thApr:'Apr', thMay:'May', thJun:'Jun',
@@ -125,7 +125,7 @@ const T = {
     valStratBalance:'<strong>Équilibre stratégique global</strong> — Equinoxe combine ces deux approches complémentaires dans un cadre de risque unifié. La répartition entre les blocs est ajustée dynamiquement en fonction des conditions de marché — liquidité, volatilité, profondeur des opportunités — afin d\'optimiser le couple rendement/risque à chaque configuration.<span class="sp-next">Une exposition directionnelle résiduelle peut exister ponctuellement, pour des raisons d\'exécution ou d\'ajustement temporaire des positions, mais elle reste marginale et ne constitue pas un moteur de performance.</span>',
     valStratRisk:'<strong>Profil de risque</strong> — Equinoxe s\'adresse aux investisseurs recherchant une exposition défensive aux actifs numériques, avec une sensibilité réduite aux cycles directionnels du marché. Le fonds vise une maîtrise rigoureuse du risque, avec un drawdown maximum ciblé de 8 %.<span class="sp-next">La construction du portefeuille s\'articule autour de quatre axes de contrôle : l\'exposition directionnelle, la liquidité des instruments utilisés, la concentration des positions, et la résilience du portefeuille en phase de stress de marché.</span>',
     lblChartTitle:'Évolution de la performance — base 100 · échelle linéaire',
-    valChartNote:'Données illustratives — chiffres d\'exemple, ne reflètent pas la performance réelle du fonds. Brut de frais.',
+    valChartNote:'Données réelles et nettes de frais.',
     lblPerfTitle:'Historique mensuel des performances (%)',
     thYear:'Année',
     thJan:'Jan', thFeb:'Fév', thMar:'Mar', thApr:'Avr', thMay:'Mai', thJun:'Jun',
@@ -416,7 +416,7 @@ async function loadFactsheet() {
 
 function renderChart() {
   const draw = () => new ApexCharts(document.querySelector('#chart-el'), {
-    series: [{name:'Equinoxe',data:dynamicTrendsValue},{name:'US 10Y',data:btcBase100}],
+    series: [{name:'Equinoxe',data:dynamicTrendsValue},{name:(currentLang==='fr'?'Taux sans risque':'Risk-free rate'),data:btcBase100}],
     chart: {height:260,type:'line',zoom:{enabled:false},toolbar:{show:false},animations:{enabled:false},background:'transparent',fontFamily:'Inter, sans-serif'},
     stroke: {width:[2,1.5],dashArray:[0,6]},
     colors: ['#111111','#8A8E96'],
