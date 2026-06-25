@@ -88,7 +88,7 @@
         "@type": "FinancialProduct",
         "@id": "https://sparkcore.fund/factsheets/equinoxe#fund",
         "name": "Equinoxe",
-        "description": "Equinoxe is a non-directional, market-neutral crypto-asset investment fund managed by SparkCore Fund Management. The defensive pillar of the range, it combines a long/short beta-neutral block and a relative-value arbitrage block, targeting steady returns decorrelated from market direction with a maximum drawdown target of 8%. Quarterly liquidity, 50 000 € minimum investment.",
+        "description": "Equinoxe is a non-directional, market-neutral crypto-asset investment fund managed by SparkCore Fund Management. The defensive pillar of the range, it combines a long/short beta-neutral block and a relative-value arbitrage block, targeting steady returns decorrelated from market direction with a maximum drawdown target of 5%. Quarterly liquidity, 50 000 € minimum investment.",
         "url": "https://sparkcore.fund/factsheets/equinoxe",
         "provider": {
           "@id": "https://sparkcore.fund/#organization"
@@ -250,6 +250,7 @@
             <div class="kf-val" id="kf-ratios" aria-label="Sharpe / Sortino">—</div>
           </div>
         </div>
+        <p style="font-size:9px;color:#5C4E3E;margin-top:5px;" id="val-kf-note">*Target maximum drawdown 5%.</p>
       </section>
 
       <!-- TEAM -->
@@ -313,12 +314,12 @@
               <svg class="legend-sq" viewBox="0 0 12 12" aria-hidden="true"><rect width="12" height="12" fill="#111111"/></svg>Equinoxe
             </div>
             <div class="legend-item" role="listitem">
-              <svg class="legend-sq" viewBox="0 0 12 12" aria-hidden="true"><rect width="12" height="12" fill="#8A8E96"/></svg>CCi30
+              <svg class="legend-sq" viewBox="0 0 12 12" aria-hidden="true"><rect width="12" height="12" fill="#8A8E96"/></svg><span data-seo-id="legend-bench">Risk-free rate</span>
             </div>
           </div>
         </div>
         <div id="data-container" aria-live="polite" aria-label="Chart loading status"></div>
-        <div id="chart-el" role="img" aria-label="Line chart comparing Equinoxe performance vs CCi30, base 100, linear scale"></div>
+        <div id="chart-el" role="img" aria-label="Line chart comparing Equinoxe performance vs the risk-free rate, base 100, linear scale"></div>
         <div class="chart-note" id="val-chart-note">Illustrative data — sample figures, not actual fund performance. Gross of fees.</div>
       </section>
 

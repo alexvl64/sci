@@ -54,9 +54,11 @@ const T = {
     lblDefensiveName:'Relative Value / Arbitrage',
     valDefensiveDesc:'This block exploits price or valuation gaps between related instruments: spot and futures markets, funding rates, or highly correlated assets. These opportunities are captured without directional exposure, targeting identified and quantifiable inefficiency situations.',
     valStratBalance:'<strong>Overall strategic balance</strong> — Equinoxe combines these two complementary approaches within a unified risk framework. The allocation between the blocks is adjusted dynamically according to market conditions — liquidity, volatility, depth of opportunities — in order to optimise the risk/return trade-off in each configuration.<span class="sp-next">Residual directional exposure may occasionally exist, for execution reasons or temporary position adjustments, but it remains marginal and is not a performance driver.</span>',
-    valStratRisk:'<strong>Risk profile</strong> — Equinoxe is designed for investors seeking defensive exposure to digital assets, with reduced sensitivity to the market\'s directional cycles. The fund targets rigorous risk control, with a maximum drawdown target of 8%.<span class="sp-next">Portfolio construction is organised around four control axes: directional exposure, the liquidity of the instruments used, position concentration, and portfolio resilience in market-stress conditions.</span>',
+    valStratRisk:'<strong>Risk profile</strong> — Equinoxe is designed for investors seeking defensive exposure to digital assets, with reduced sensitivity to the market\'s directional cycles. The fund targets rigorous risk control, with a maximum drawdown target of 5%.<span class="sp-next">Portfolio construction is organised around four control axes: directional exposure, the liquidity of the instruments used, position concentration, and portfolio resilience in market-stress conditions.</span>',
     lblChartTitle:'Performance Evolution — Base 100 · Linear Scale',
-    valChartNote:'Real data, net of fees.',
+    legendBench:'Risk-free rate',
+    valKfNote:'*Target maximum drawdown 5%.',
+    valChartNote:'Real performance, net of fees. From January 2025 to the end of August 2025, returns were generated on managed accounts (real strategies, no backtest), outside the fund structure, prior to the fund\'s launch on 01/09/2025.',
     lblPerfTitle:'Monthly Performance History (%)',
     thYear:'Year',
     thJan:'Jan', thFeb:'Feb', thMar:'Mar', thApr:'Apr', thMay:'May', thJun:'Jun',
@@ -123,9 +125,11 @@ const T = {
     lblDefensiveName:'Relative Value / Arbitrage',
     valDefensiveDesc:'Ce bloc exploite des écarts de prix ou de valorisation entre instruments liés : marchés spot et futures, taux de financement, ou actifs fortement corrélés. Ces opportunités sont captées sans exposition directionnelle, en ciblant des situations d\'inefficience identifiées et quantifiables.',
     valStratBalance:'<strong>Équilibre stratégique global</strong> — Equinoxe combine ces deux approches complémentaires dans un cadre de risque unifié. La répartition entre les blocs est ajustée dynamiquement en fonction des conditions de marché — liquidité, volatilité, profondeur des opportunités — afin d\'optimiser le couple rendement/risque à chaque configuration.<span class="sp-next">Une exposition directionnelle résiduelle peut exister ponctuellement, pour des raisons d\'exécution ou d\'ajustement temporaire des positions, mais elle reste marginale et ne constitue pas un moteur de performance.</span>',
-    valStratRisk:'<strong>Profil de risque</strong> — Equinoxe s\'adresse aux investisseurs recherchant une exposition défensive aux actifs numériques, avec une sensibilité réduite aux cycles directionnels du marché. Le fonds vise une maîtrise rigoureuse du risque, avec un drawdown maximum ciblé de 8 %.<span class="sp-next">La construction du portefeuille s\'articule autour de quatre axes de contrôle : l\'exposition directionnelle, la liquidité des instruments utilisés, la concentration des positions, et la résilience du portefeuille en phase de stress de marché.</span>',
+    valStratRisk:'<strong>Profil de risque</strong> — Equinoxe s\'adresse aux investisseurs recherchant une exposition défensive aux actifs numériques, avec une sensibilité réduite aux cycles directionnels du marché. Le fonds vise une maîtrise rigoureuse du risque, avec un drawdown maximum ciblé de 5 %.<span class="sp-next">La construction du portefeuille s\'articule autour de quatre axes de contrôle : l\'exposition directionnelle, la liquidité des instruments utilisés, la concentration des positions, et la résilience du portefeuille en phase de stress de marché.</span>',
     lblChartTitle:'Évolution de la performance — base 100 · échelle linéaire',
-    valChartNote:'Données réelles et nettes de frais.',
+    legendBench:'Taux sans risque',
+    valKfNote:'*Drawdown maximum ciblé de 5 %.',
+    valChartNote:'Performance réelle, nette de frais. De janvier 2025 à fin août 2025, les performances ont été réalisées sur comptes gérés (stratégies réelles, sans backtest), hors de la structure du fonds, avant le lancement du fonds le 01/09/2025.',
     lblPerfTitle:'Historique mensuel des performances (%)',
     thYear:'Année',
     thJan:'Jan', thFeb:'Fév', thMar:'Mar', thApr:'Avr', thMay:'Mai', thJun:'Jun',
@@ -326,6 +330,7 @@ function applyLang(lang) {
   s('val-offensive-desc', t.valOffensiveDesc); s('lbl-defensive-tag', t.lblDefensiveTag);
   s('lbl-defensive-name', t.lblDefensiveName); s('val-defensive-desc', t.valDefensiveDesc);
   h('val-strat-balance', t.valStratBalance); h('val-strat-risk', t.valStratRisk);
+  s('val-kf-note', t.valKfNote);
   s('val-chart-note', t.valChartNote);
   s('th-year', t.thYear);
   s('th-jan', t.thJan); s('th-feb', t.thFeb); s('th-mar', t.thMar); s('th-apr', t.thApr); s('th-may', t.thMay); s('th-jun', t.thJun);
