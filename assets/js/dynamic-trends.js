@@ -33,7 +33,8 @@ const T = {
     valFeePerf:'High-Water Mark.',
     lblFeeExit:'Exit',
     valFeeExit:'*4% before 1 year.',
-    lblKeyFigs:'Key Figures',
+    lblKeyFigs:'Key Figures*',
+    valKfNote:'*All figures calculated since 01/01/2020.',
     lblKfReturn:'Annualised return',
     lblKfMaxdd:'Max drawdown',
     lblKfVol:'Volatility',
@@ -102,7 +103,8 @@ const T = {
     valFeePerf:'High-Water Mark.',
     lblFeeExit:'Sortie',
     valFeeExit:'*4% avant 1 an.',
-    lblKeyFigs:'Chiffres clés',
+    lblKeyFigs:'Chiffres clés*',
+    valKfNote:'*Indicateurs calculés depuis le 01/01/2020.',
     lblKfReturn:'Rendement annualisé',
     lblKfMaxdd:'Perte maximale',
     lblKfVol:'Volatilité',
@@ -326,6 +328,7 @@ function applyLang(lang) {
   s('val-offensive-desc', t.valOffensiveDesc); s('lbl-defensive-tag', t.lblDefensiveTag);
   s('lbl-defensive-name', t.lblDefensiveName); s('val-defensive-desc', t.valDefensiveDesc);
   h('val-strat-balance', t.valStratBalance); h('val-strat-risk', t.valStratRisk);
+  s('val-kf-note', t.valKfNote);
   s('val-chart-note', t.valChartNote);
   s('th-year', t.thYear);
   s('th-jan', t.thJan); s('th-feb', t.thFeb); s('th-mar', t.thMar); s('th-apr', t.thApr); s('th-may', t.thMay); s('th-jun', t.thJun);
