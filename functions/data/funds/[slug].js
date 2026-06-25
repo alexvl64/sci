@@ -34,8 +34,9 @@ export async function onRequest(context) {
   const response = new Response(obj.body, {
     headers: {
       'content-type': 'application/json; charset=utf-8',
-      // browser caches 5 min; the CDN edge holds it 1 h (R2 reads stay minimal)
-      'cache-control': 'public, max-age=300, s-maxage=3600',
+      // browser + edge cache 5 min — the data changes monthly, so R2 reads stay
+      // minimal while re-publishes still propagate quickly.
+      'cache-control': 'public, max-age=300, s-maxage=300',
       'access-control-allow-origin': '*',
     },
   });

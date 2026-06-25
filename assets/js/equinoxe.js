@@ -370,19 +370,53 @@ const EQX_CHART = [
   [2026,4,102.9,112.0],[2026,5,103.4,104.0],[2026,6,104.2,118.0],[2026,7,104.9,99.0],
   [2026,8,105.6,90.0],[2026,9,106.1,107.0],[2026,10,106.9,121.0],[2026,11,107.6,113.0],
 ];
-function fetchJsonData() {
-  const locale = currentLang === 'fr' ? 'fr-FR' : 'en-US';
-  EQX_CHART.forEach(([y,m,eqx,bench]) => {
-    period.push(new Date(y,m,1).toLocaleDateString(locale, {year:'numeric',month:'long'}));
-    dynamicTrendsValue.push(eqx);
-    btcBase100.push(bench);
-  });
-  renderChart();
+// Unified loader: real Equinoxe data from the SparkCore-published JSON (R2, via
+// the Pages Function) replaces the former invented placeholder (EQX_CHART + the
+// hardcoded summary/monthly below, now unused). Units: summary fractions,
+// monthly percent, chart base 100 — render functions unchanged.
+async function loadFactsheet() {
+  try {
+    const r = await fetch('/data/funds/equinoxe.json', { cache: 'no-cache' });
+    if (!r.ok) throw new Error(`HTTP ${r.status}`);
+    const d = await r.json();
+
+    summaryData = {
+      asOf: d.as_of ? new Date(d.as_of + 'T00:00:00') : null,
+      annualisedReturn: d.summary?.annualised_return ?? null,
+      maxDrawdown: d.summary?.max_drawdown ?? null,
+      volatility: d.summary?.volatility ?? null,
+      sharpe: d.summary?.sharpe ?? null,
+      sortino: d.summary?.sortino ?? null,
+    };
+    updateHdrDateFromSummary();
+    setKeyFiguresFromSummary();
+    updateJsonLdDateModifiedFromSummary();
+
+    monthlyReturns = new Map();
+    for (const m of (d.monthly_returns || [])) {
+      if (!monthlyReturns.has(m.year)) monthlyReturns.set(m.year, new Map());
+      monthlyReturns.get(m.year).set(m.month, m.return);
+    }
+    buildMonthlyTable();
+
+    const locale = currentLang === 'fr' ? 'fr-FR' : 'en-US';
+    period.length = 0; dynamicTrendsValue.length = 0; btcBase100.length = 0;
+    for (const p of (d.chart_base100 || [])) {
+      period.push(new Date(p.date + 'T00:00:00').toLocaleDateString(locale, { year: 'numeric', month: 'long' }));
+      dynamicTrendsValue.push(p.fund);
+      btcBase100.push(p.benchmark);
+    }
+    renderChart();
+  } catch (e) {
+    console.error(e);
+    const c = document.getElementById('data-container');
+    if (c) c.textContent = currentLang === 'fr' ? 'Impossible de charger les données.' : 'Unable to load data.';
+  }
 }
 
 function renderChart() {
   const draw = () => new ApexCharts(document.querySelector('#chart-el'), {
-    series: [{name:'Equinoxe',data:dynamicTrendsValue},{name:'CCi30',data:btcBase100}],
+    series: [{name:'Equinoxe',data:dynamicTrendsValue},{name:'US 10Y',data:btcBase100}],
     chart: {height:260,type:'line',zoom:{enabled:false},toolbar:{show:false},animations:{enabled:false},background:'transparent',fontFamily:'Inter, sans-serif'},
     stroke: {width:[2,1.5],dashArray:[0,6]},
     colors: ['#111111','#8A8E96'],
@@ -395,7 +429,7 @@ function renderChart() {
   if (document.fonts && document.fonts.ready) { document.fonts.ready.then(draw); } else { draw(); }
 }
 
-fetchJsonData();
+loadFactsheet();
 
 /* ── Cal.eu Popup Embed ── */
 (function (C, A, L) {
@@ -463,10 +497,5 @@ function fetchMonthlyReturns() {
   buildMonthlyTable();
 }
 
-(async function initDynamicFactsheet() {
-  try {
-    await Promise.all([fetchFactsheetSummary(), fetchMonthlyReturns()]);
-  } catch (e) {
-    console.error(e);
-  }
-})();
+/* SUMMARY + MONTHLY + CHART are now loaded together from R2 by loadFactsheet()
+   (see the CHART section). The placeholder data above is kept but unused. */

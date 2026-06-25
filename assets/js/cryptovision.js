@@ -430,14 +430,8 @@ async function fetchMonthlyReturns() {
   buildMonthlyTable();
 }
 
-// Initialisation des blocs dynamiques Summary + Monthly Returns
-(async function initDynamicFactsheet() {
-  try {
-    await Promise.all([fetchFactsheetSummary(), fetchMonthlyReturns()]);
-  } catch (e) {
-    console.error(e);
-  }
-})();
+/* SUMMARY + MONTHLY + CHART are now loaded together from R2 by loadFactsheet()
+   (see the CHART section). The gviz helpers above are kept but unused. */
 
 /* ── CHART — CryptoVision vs CCi30 (chart_base100) ── */
 // Utilise le même fichier de factsheet que le reste (FACTSHEET_SHEET_ID)
@@ -445,25 +439,46 @@ const SHEET_ID = FACTSHEET_SHEET_ID;
 const SHEET_GID = GID_CHART_BASE100;
 const period = [], cryptoVisionValue = [], cci30Base100 = [];
 
-async function fetchJsonData() {
-  const url = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&gid=${SHEET_GID}`;
+// Unified loader: one fetch of the SparkCore-published JSON (R2, via the Pages
+// Function /data/funds/…) replaces the 3 gviz tabs. Units match the previous
+// sheet (summary fractions, monthly percent, chart base 100) so render is unchanged.
+async function loadFactsheet() {
   try {
-    const r = await fetch(url);
+    const r = await fetch('/data/funds/cryptovision.json', { cache: 'no-cache' });
     if (!r.ok) throw new Error(`HTTP ${r.status}`);
-    const text = await r.text();
-    const data = JSON.parse(text.substring(47).slice(0, -2));
+    const d = await r.json();
+
+    summaryData = {
+      asOf: d.as_of ? new Date(d.as_of + 'T00:00:00') : null,
+      annualisedReturn: d.summary?.annualised_return ?? null,
+      maxDrawdown: d.summary?.max_drawdown ?? null,
+      volatility: d.summary?.volatility ?? null,
+      sharpe: d.summary?.sharpe ?? null,
+      sortino: d.summary?.sortino ?? null,
+    };
+    updateHdrDateFromSummary();
+    setKeyFiguresFromSummary();
+    updateJsonLdDateModifiedFromSummary();
+
+    monthlyReturns = new Map();
+    for (const m of (d.monthly_returns || [])) {
+      if (!monthlyReturns.has(m.year)) monthlyReturns.set(m.year, new Map());
+      monthlyReturns.get(m.year).set(m.month, m.return);
+    }
+    buildMonthlyTable();
+
     const locale = currentLang === 'fr' ? 'fr-FR' : 'en-US';
-    data.table.rows.forEach((row) => {
-      const date = row.c[0]?.v;
-      const match = date?.match(/^Date\((\d+),(\d+),(\d+)\)$/);
-      period.push(match ? new Date(+match[1], +match[2], +match[3]).toLocaleDateString(locale, {year:'numeric',month:'long'}) : '');
-      cryptoVisionValue.push(parseFloat(row.c[1]?.v) || 0);
-      cci30Base100.push(parseFloat(row.c[2]?.v) || 0);
-    });
+    period.length = 0; cryptoVisionValue.length = 0; cci30Base100.length = 0;
+    for (const p of (d.chart_base100 || [])) {
+      period.push(new Date(p.date + 'T00:00:00').toLocaleDateString(locale, { year: 'numeric', month: 'long' }));
+      cryptoVisionValue.push(p.fund);
+      cci30Base100.push(p.benchmark);
+    }
     renderChart();
-  } catch(e) {
+  } catch (e) {
     console.error(e);
-    document.getElementById('data-container').textContent = currentLang==='fr' ? 'Impossible de charger les données.' : 'Unable to load data.';
+    const c = document.getElementById('data-container');
+    if (c) c.textContent = currentLang === 'fr' ? 'Impossible de charger les données.' : 'Unable to load data.';
   }
 }
 
@@ -494,7 +509,7 @@ function renderChart() {
   if (document.fonts && document.fonts.ready) { document.fonts.ready.then(draw); } else { draw(); }
 }
 
-fetchJsonData();
+loadFactsheet();
 
 /* ── Cal.eu Popup Embed ── */
 (function (C, A, L) {
