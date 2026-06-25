@@ -2,13 +2,14 @@
    Equinoxe — palette dédiée (scopée .fs-equinoxe)
    N'affecte QUE /factsheets/equinoxe. Les autres factsheets
    gardent leur CSS. Chargé APRÈS factsheet.css.
-   Palette : EDEEF1 · AFB1B6 · 111111 · 4C5B7A ·
-             DBDEE4 · 1B2D4D
+   Palette : FFFFFF (fond) · EDEEF1 (blocs) · AFB1B6 · 111111 ·
+             4C5B7A · DBDEE4 · 1B2D4D
    Identité « pilier défensif » (bleu-gris froid, market neutral).
    ============================================================ */
 
 /* ---- Base ---- */
-.fs-equinoxe { color: #111111; background: #EDEEF1; }
+/* Fond général blanc ; les blocs ressortent en EDEEF1 (gris très clair). */
+.fs-equinoxe { color: #111111; background: #FFFFFF; }
 
 /* ---- Bandeau ---- */
 .fs-equinoxe .hdr { background: #4C5B7A; border-bottom: none; padding: 16px 20px 14px; }

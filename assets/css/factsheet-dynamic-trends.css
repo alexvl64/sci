@@ -2,8 +2,8 @@
    Dynamic Trends — palette dédiée (scopée .fs-dynamic-trends)
    N'affecte QUE /factsheets/dynamic-trends. CryptoVision &
    discovery-call gardent factsheet.css inchangé.
-   Palette : FFFFFF · 999C9E · 111111 · 11161E ·
-             B2B6BA · 1B2D4D
+   Palette : FFFFFF (fond) · F7F7F8 (blocs) · 999C9E · 111111 ·
+             11161E · B2B6BA · 1B2D4D
    Identité froide/sombre (directionnel Bitcoin), distincte du
    CryptoVision chaud. Chargé APRÈS factsheet.css.
    ============================================================ */
@@ -30,8 +30,9 @@
 .fs-dynamic-trends .lang-btn:hover:not(.active) { background: #FFFFFF; color: #11161E; }
 
 /* ---- Blocs / titres / séparateurs ---- */
+/* Blocs en F7F7F8 (gris quasi-blanc) sur le fond général FFFFFF. */
 .fs-dynamic-trends .block,
-.fs-dynamic-trends .chart-wrap { background: #FFFFFF; }
+.fs-dynamic-trends .chart-wrap { background: #F7F7F8; }
 .fs-dynamic-trends .block-title { color: #1B2D4D; border-bottom-color: #999C9E; }
 
 /* ---- Spécifications du produit ---- */
