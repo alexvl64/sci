@@ -93,7 +93,7 @@
         "provider": {
           "@id": "https://sparkcore.fund/#organization"
         },
-        "feesAndCommissionsSpecification": "2% management fee per annum (quarterly). 20% performance fee with High-Water Mark. No entry fee. 0% exit fee after 1-year commitment (4% early exit).",
+        "feesAndCommissionsSpecification": "1% management fee per annum (quarterly). 25% performance fee, quarterly, with High-Water Mark. No entry fee. 0% exit fee after a 1-year lock-up (no early exit).",
         "category": "Alternative Investment Fund — Crypto-assets",
         "offers": {
           "@type": "Offer",
@@ -190,11 +190,11 @@
             <tr><td class="k" id="lbl-currency">Reference currency</td><td class="v">USD</td></tr>
             <tr><td class="k" id="lbl-mininvest">Minimum investment</td><td class="v">50 000 €</td></tr>
             <tr><td class="k" id="lbl-currencies">Accepted currencies</td><td class="v">EUR · USD · MiCA Stablecoins</td></tr>
-            <tr><td class="k" id="lbl-leverage">Leverage</td><td class="v" id="val-leverage">No</td></tr>
+            <tr><td class="k" id="lbl-leverage">Leverage</td><td class="v" id="val-leverage">No directional leverage</td></tr>
             <tr><td class="k" id="lbl-liquidity">Liquidity</td><td class="v" id="val-liquidity">Quarterly</td></tr>
             <tr><td class="k" id="lbl-lockup">Minimum commitment</td><td class="v" id="val-lockup">1 year</td></tr>
             <tr><td class="k" id="lbl-manager">Fund manager</td><td class="v">SparkCore.investment OÜ</td></tr>
-            <tr><td class="k" id="lbl-brokers">Brokers &amp; custodians</td><td class="v">FundBank · OKX · Binance</td></tr>
+            <tr><td class="k" id="lbl-brokers">Brokers &amp; custodians</td><td class="v">FundBank · OKX</td></tr>
             <tr><td class="k" id="lbl-legal">Legal counsel</td><td class="v">Hedman Partners &amp; Co</td></tr>
             <tr><td class="k" id="lbl-accounting">Accounting</td><td class="v">KPMG</td></tr>
             <tr><td class="k" id="lbl-compliance">Compliance</td><td class="v">Alpha UMI · Compliance Factory</td></tr>
@@ -213,18 +213,18 @@
           </div>
           <div class="fee">
             <div class="fee-label" id="lbl-fee-mgmt">Management</div>
-            <div class="fee-val" aria-label="Management fee: 2 percent per annum">2%</div>
+            <div class="fee-val" aria-label="Management fee: 1 percent per annum">1%</div>
             <div class="fee-sub" id="val-fee-mgmt">Per year, quarterly.</div>
           </div>
           <div class="fee">
             <div class="fee-label" id="lbl-fee-perf">Performance</div>
-            <div class="fee-val" aria-label="Performance fee: 20 percent with High-Water Mark">20%</div>
-            <div class="fee-sub" id="val-fee-perf">High-Water Mark.</div>
+            <div class="fee-val" aria-label="Performance fee: 25 percent with High-Water Mark">25%</div>
+            <div class="fee-sub" id="val-fee-perf">Quarterly, High-Water Mark.</div>
           </div>
           <div class="fee">
             <div class="fee-label" id="lbl-fee-exit">Exit</div>
-            <div class="fee-val" aria-label="Exit fee: 0 percent, 4 percent if early exit before 1 year">0%*</div>
-            <div class="fee-sub" id="val-fee-exit">*4% before 1 year.</div>
+            <div class="fee-val" aria-label="Exit fee: 0 percent. No exit before the 1-year lock-up">0%</div>
+            <div class="fee-sub" id="val-fee-exit">No exit before 1 year.</div>
           </div>
         </div>
       </section>
@@ -320,7 +320,7 @@
         </div>
         <div id="data-container" aria-live="polite" aria-label="Chart loading status"></div>
         <div id="chart-el" role="img" aria-label="Line chart comparing Equinoxe performance vs the risk-free rate, base 100, linear scale"></div>
-        <div class="chart-note" id="val-chart-note">Illustrative data — sample figures, not actual fund performance. Gross of fees.</div>
+        <div class="chart-note" id="val-chart-note"><strong class="chart-note-lead">Real performance, net of fees.</strong> From January 2025 to the end of August 2025, returns were generated on managed accounts (real strategies, no backtest), outside the fund structure, prior to the fund's launch on 01/09/2025.</div>
       </section>
 
       <!-- PERFORMANCE TABLE -->
